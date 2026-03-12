@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendars — Cendyn Design System</title>
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body class="min-h-screen bg-secondary-50">
+  <header class="border-b border-secondary-200 bg-white">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="../index.html" class="text-xl font-semibold text-primary">Cendyn Design System</a>
+      <nav class="flex gap-6">
+        <a href="../index.html" class="text-secondary-600 hover:text-primary">Overview</a>
+        <a href="../tokens.html" class="text-secondary-600 hover:text-primary">Tokens</a>
+        <a href="../typography.html" class="text-secondary-600 hover:text-primary">Typography</a>
+        <a href="buttons.html" class="text-secondary-600 hover:text-primary">Components</a>
+      </nav>
+    </div>
+  </header>
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <aside class="w-56 float-left pr-8 border-r border-secondary-200 min-h-[60vh]">
+      <p class="text-xs font-semibold text-secondary-500 uppercase tracking-wider mb-3">Foundations</p>
+      <ul class="space-y-1 text-sm mb-6">
+        <li><a href="../typography.html" class="text-secondary-600 hover:text-primary">Typography</a></li>
+      </ul>
+      <p class="text-xs font-semibold text-secondary-500 uppercase tracking-wider mb-3">Components</p>
+      <ul class="space-y-1 text-sm">
+        <li><a href="alerts.html" class="text-secondary-600 hover:text-primary">Alerts</a></li>
+        <li><a href="avatar.html" class="text-secondary-600 hover:text-primary">Avatar</a></li>
+        <li><a href="badges.html" class="text-secondary-600 hover:text-primary">Badges</a></li>
+        <li><a href="breadcrumbs.html" class="text-secondary-600 hover:text-primary">Breadcrumbs</a></li>
+        <li><a href="buttons.html" class="text-secondary-600 hover:text-primary">Buttons</a></li>
+        <li><a href="button-group.html" class="text-secondary-600 hover:text-primary">Button Group</a></li>
+        <li><a href="calendars.html" class="text-primary font-medium">Calendars</a></li>
+        <li><a href="cards.html" class="text-secondary-600 hover:text-primary">Cards</a></li>
+        <li><a href="charts.html" class="text-secondary-600 hover:text-primary">Charts</a></li>
+        <li><a href="data-grid.html" class="text-secondary-600 hover:text-primary">Data Grid</a></li>
+        <li><a href="data-grid-filter.html" class="text-secondary-600 hover:text-primary">Data Grid Filter</a></li>
+        <li><a href="dropdowns.html" class="text-secondary-600 hover:text-primary">Dropdowns</a></li>
+        <li><a href="dropzone.html" class="text-secondary-600 hover:text-primary">Dropzone</a></li>
+        <li><a href="empty-states.html" class="text-secondary-600 hover:text-primary">Empty States</a></li>
+        <li><a href="forms.html" class="text-secondary-600 hover:text-primary">Forms</a></li>
+        <li><a href="form-inputs.html" class="text-secondary-600 hover:text-primary">Form Inputs</a></li>
+        <li><a href="form-toggle.html" class="text-secondary-600 hover:text-primary">Form Toggle</a></li>
+        <li><a href="header.html" class="text-secondary-600 hover:text-primary">Header</a></li>
+        <li><a href="icons.html" class="text-secondary-600 hover:text-primary">Icons</a></li>
+        <li><a href="lists.html" class="text-secondary-600 hover:text-primary">Lists</a></li>
+        <li><a href="loaders.html" class="text-secondary-600 hover:text-primary">Loaders</a></li>
+        <li><a href="modals-dialogs.html" class="text-secondary-600 hover:text-primary">Modals &amp; Dialogs</a></li>
+        <li><a href="mobile-frame.html" class="text-secondary-600 hover:text-primary">Mobile Frame</a></li>
+        <li><a href="navigation-icons.html" class="text-secondary-600 hover:text-primary">Navigation Icons</a></li>
+        <li><a href="navigation-tabs.html" class="text-secondary-600 hover:text-primary">Navigation Tabs</a></li>
+        <li><a href="scrollbar.html" class="text-secondary-600 hover:text-primary">Scrollbar</a></li>
+        <li><a href="tooltips-popovers.html" class="text-secondary-600 hover:text-primary">Tooltips &amp; Popovers</a></li>
+        <li><a href="toasts.html" class="text-secondary-600 hover:text-primary">Toasts</a></li>
+        <li><a href="tree-view.html" class="text-secondary-600 hover:text-primary">Tree View</a></li>
+        <li><a href="wizard.html" class="text-secondary-600 hover:text-primary">Wizard</a></li>
+      </ul>
+    </aside>
+    <main class="overflow-hidden pl-8">
+      <h1 class="text-display-sm text-secondary-900 mb-6">Calendars</h1>
+      <p class="text-secondary-600 mb-8">Date picker, date range, and full-page month calendar. Class names use the <code class="bg-secondary-100 px-1 rounded">calendar-*</code> prefix. Picker/range use a 240px-wide body and row-based date grid (7×6, 24×24px cells, 12px gap). Full-page view fills the viewport with a bordered grid and can be opened in a new tab.</p>
+
+      <section class="mb-10">
+        <h2 class="text-heading-2 text-secondary-900 mb-2">Date Picker</h2>
+        <p class="text-secondary-600 mb-4">Single month with month/year navigation and a &ldquo;Today&rdquo; footer action.</p>
+        <div class="p-4 bg-white rounded-card border border-secondary-200">
+          <div class="calendar inline-block w-[290px]">
+            <div class="calendar-month flex items-center justify-between px-6 py-4 h-[60px] border-b border-neutrals-gray-400">
+              <button type="button" class="calendar-prev-month inline-flex items-center justify-center text-neutrals-black hover:text-primary focus:outline-none" aria-label="Previous month">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <span class="calendar-current-month text-heading-4 text-neutrals-black font-semibold">February 2021</span>
+              <button type="button" class="calendar-next-month inline-flex items-center justify-center text-neutrals-black hover:text-primary focus:outline-none" aria-label="Next month">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+            </div>
+            <div class="px-6 pt-4 flex flex-col items-center">
+              <div class="calendar-weekdays flex gap-space-12 pb-space-12 w-[240px]">
+                <span class="calendar-weekday">Su</span>
+                <span class="calendar-weekday">Mo</span>
+                <span class="calendar-weekday">Tu</span>
+                <span class="calendar-weekday">We</span>
+                <span class="calendar-weekday">Th</span>
+                <span class="calendar-weekday">Fr</span>
+                <span class="calendar-weekday">Sa</span>
+              </div>
+              <div class="calendar-dates w-[240px] pb-6">
+                <div class="calendar-dates-row">
+                  <span class="calendar-day prevMonthDay">28</span>
+                  <span class="calendar-day prevMonthDay">29</span>
+                  <span class="calendar-day prevMonthDay">30</span>
+                  <span class="calendar-day selected">1</span>
+                  <span class="calendar-day">2</span>
+                  <span class="calendar-day">3</span>
+                  <span class="calendar-day">4</span>
+                </div>
+                <div class="calendar-dates-row">
+                  <span class="calendar-day">5</span>
+                  <span class="calendar-day">6</span>
+                  <span class="calendar-day">7</span>
+                  <span class="calendar-day">8</span>
+                  <span class="calendar-day">9</span>
+                  <span class="calendar-day">10</span>
+                  <span class="calendar-day">11</span>
+                </div>
+                <div class="calendar-dates-row">
+                  <span class="calendar-day">12</span>
+                  <span class="calendar-day">13</span>
+                  <span class="calendar-day">14</span>
+                  <span class="calendar-day">15</span>
+                  <span class="calendar-day">16</span>
+                  <span class="calendar-day">17</span>
+                  <span class="calendar-day">18</span>
+                </div>
+                <div class="calendar-dates-row">
+                  <span class="calendar-day">19</span>
+                  <span class="calendar-day">20</span>
+                  <span class="calendar-day">21</span>
+                  <span class="calendar-day">22</span>
+                  <span class="calendar-day">23</span>
+                  <span class="calendar-day">24</span>
+                  <span class="calendar-day">25</span>
+                </div>
+                <div class="calendar-dates-row">
+                  <span class="calendar-day">26</span>
+                  <span class="calendar-day">27</span>
+                  <span class="calendar-day">28</span>
+                  <span class="calendar-day nextMonthDay">1</span>
+                  <span class="calendar-day nextMonthDay">2</span>
+                  <span class="calendar-day nextMonthDay">3</span>
+                  <span class="calendar-day nextMonthDay">4</span>
+                </div>
+              </div>
+            </div>
+            <div class="calendar-footer flex items-center justify-end gap-space-12 px-6 py-4 border-t border-neutrals-gray-400">
+              <button type="button" class="btn-link-primary">Today</button>
+            </div>
+          </div>
+        </div>
+        <p class="text-sm text-secondary-600 mt-3">Classes: <code class="bg-secondary-100 px-1 rounded">calendar</code>, <code class="bg-secondary-100 px-1 rounded">calendar-month</code>, <code class="bg-secondary-100 px-1 rounded">calendar-current-month</code>, <code class="bg-secondary-100 px-1 rounded">calendar-prev-month</code> / <code class="bg-secondary-100 px-1 rounded">calendar-next-month</code>, <code class="bg-secondary-100 px-1 rounded">calendar-weekdays</code> / <code class="bg-secondary-100 px-1 rounded">calendar-weekday</code>, <code class="bg-secondary-100 px-1 rounded">calendar-dates</code> / <code class="bg-secondary-100 px-1 rounded">calendar-dates-row</code> / <code class="bg-secondary-100 px-1 rounded">calendar-day</code> (<code class="bg-secondary-100 px-1 rounded">prevMonthDay</code>, <code class="bg-secondary-100 px-1 rounded">nextMonthDay</code>, <code class="bg-secondary-100 px-1 rounded">selected</code>), <code class="bg-secondary-100 px-1 rounded">calendar-footer</code>.</p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-heading-2 text-secondary-900 mb-2">Date Range</h2>
+        <p class="text-secondary-600 mb-4">Two months side by side with range selection and Cancel / Apply footer.</p>
+        <div class="p-4 bg-white rounded-card border border-secondary-200">
+          <div class="inline-block bg-white border border-neutrals-gray-400 rounded-xl shadow-card w-[579px]">
+            <div class="flex items-center justify-between px-6 py-3 border-b border-neutrals-gray-400 text-paragraph-2 text-neutrals-black">
+              <span>Aug 21, 2021</span>
+              <span class="text-neutrals-gray-500" aria-hidden="true">→</span>
+              <span>Aug 30, 2021</span>
+            </div>
+            <div class="flex">
+              <div class="calendar border-0 border-r border-neutrals-gray-400 rounded-none shadow-none flex-1 w-[289px] min-w-0">
+                <div class="calendar-month flex items-center justify-between px-6 py-4 h-[60px] border-b border-neutrals-gray-400">
+                  <button type="button" class="calendar-prev-month inline-flex items-center justify-center text-neutrals-black hover:text-primary focus:outline-none" aria-label="Previous month">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+                  </button>
+                  <span class="calendar-current-month text-heading-4 text-neutrals-black font-semibold">August 2021</span>
+                  <span class="w-6 h-6 flex-shrink-0" aria-hidden="true"></span>
+                </div>
+                <div class="px-6 pt-4 flex flex-col items-center">
+                  <div class="calendar-weekdays flex gap-space-12 pb-space-12 w-[240px]">
+                    <span class="calendar-weekday">Su</span>
+                    <span class="calendar-weekday">Mo</span>
+                    <span class="calendar-weekday">Tu</span>
+                    <span class="calendar-weekday">We</span>
+                    <span class="calendar-weekday">Th</span>
+                    <span class="calendar-weekday">Fr</span>
+                    <span class="calendar-weekday">Sa</span>
+                  </div>
+                  <div class="calendar-dates w-[240px] pb-6">
+                    <div class="calendar-dates-row">
+                      <span class="calendar-day prevMonthDay">1</span>
+                      <span class="calendar-day prevMonthDay">2</span>
+                      <span class="calendar-day prevMonthDay">3</span>
+                      <span class="calendar-day prevMonthDay">4</span>
+                      <span class="calendar-day prevMonthDay">5</span>
+                      <span class="calendar-day prevMonthDay">6</span>
+                      <span class="calendar-day prevMonthDay">7</span>
+                    </div>
+                    <div class="calendar-dates-row">
+                      <span class="calendar-day">8</span>
+                      <span class="calendar-day">9</span>
+                      <span class="calendar-day">10</span>
+                      <span class="calendar-day">11</span>
+                      <span class="calendar-day">12</span>
+                      <span class="calendar-day">13</span>
+                      <span class="calendar-day">14</span>
+                    </div>
+                    <div class="calendar-dates-row">
+                      <span class="calendar-day">15</span>
+                      <span class="calendar-day">16</span>
+                      <span class="calendar-day">17</span>
+                      <span class="calendar-day">18</span>
+                      <span class="calendar-day">19</span>
+                      <span class="calendar-day">20</span>
+                      <span class="calendar-day startRange">21</span>
+                    </div>
+                    <div class="calendar-dates-row">
+                      <span class="calendar-day inRange">22</span>
+                      <span class="calendar-day inRange">23</span>
+                      <span class="calendar-day inRange">24</span>
+                      <span class="calendar-day inRange">25</span>
+                      <span class="calendar-day inRange">26</span>
+                      <span class="calendar-day inRange">27</span>
+                      <span class="calendar-day inRange">28</span>
+                    </div>
+                    <div class="calendar-dates-row">
+                      <span class="calendar-day inRange">29</span>
+                      <span class="calendar-day inRange">30</span>
+                      <span class="calendar-day endRange">31</span>
+                      <span class="calendar-day nextMonthDay">1</span>
+                      <span class="calendar-day nextMonthDay">2</span>
+                      <span class="calendar-day nextMonthDay">3</span>
+                      <span class="calendar-day nextMonthDay">4</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="calendar border-0 rounded-none shadow-none flex-1 w-[290px] min-w-0">
+                <div class="calendar-month flex items-center justify-between px-6 py-4 h-[60px] border-b border-neutrals-gray-400">
+                  <span class="w-6 h-6 flex-shrink-0" aria-hidden="true"></span>
+                  <span class="calendar-current-month text-heading-4 text-neutrals-black font-semibold">September 2021</span>
+                  <button type="button" class="calendar-next-month inline-flex items-center justify-center text-neutrals-black hover:text-primary focus:outline-none" aria-label="Next month">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+                  </button>
+                </div>
+                <div class="px-6 pt-4 flex flex-col items-center">
+                  <div class="calendar-weekdays flex gap-space-12 pb-space-12 w-[240px]">
+                    <span class="calendar-weekday">Su</span>
+                    <span class="calendar-weekday">Mo</span>
+                    <span class="calendar-weekday">Tu</span>
+                    <span class="calendar-weekday">We</span>
+                    <span class="calendar-weekday">Th</span>
+                    <span class="calendar-weekday">Fr</span>
+                    <span class="calendar-weekday">Sa</span>
+                  </div>
+                  <div class="calendar-dates w-[240px] pb-6">
+                    <div class="calendar-dates-row">
+                      <span class="calendar-day prevMonthDay">29</span>
+                      <span class="calendar-day prevMonthDay">30</span>
+                      <span class="calendar-day prevMonthDay">31</span>
+                      <span class="calendar-day">1</span>
+                      <span class="calendar-day">2</span>
+                      <span class="calendar-day">3</span>
+                      <span class="calendar-day">4</span>
+                    </div>
+                    <div class="calendar-dates-row">
+                      <span class="calendar-day">5</span>
+                      <span class="calendar-day">6</span>
+                      <span class="calendar-day">7</span>
+                      <span class="calendar-day">8</span>
+                      <span class="calendar-day">9</span>
+                      <span class="calendar-day">10</span>
+                      <span class="calendar-day">11</span>
+                    </div>
+                    <div class="calendar-dates-row">
+                      <span class="calendar-day">12</span>
+                      <span class="calendar-day">13</span>
+                      <span class="calendar-day">14</span>
+                      <span class="calendar-day">15</span>
+                      <span class="calendar-day">16</span>
+                      <span class="calendar-day">17</span>
+                      <span class="calendar-day">18</span>
+                    </div>
+                    <div class="calendar-dates-row">
+                      <span class="calendar-day">19</span>
+                      <span class="calendar-day">20</span>
+                      <span class="calendar-day">21</span>
+                      <span class="calendar-day">22</span>
+                      <span class="calendar-day">23</span>
+                      <span class="calendar-day">24</span>
+                      <span class="calendar-day">25</span>
+                    </div>
+                    <div class="calendar-dates-row">
+                      <span class="calendar-day">26</span>
+                      <span class="calendar-day">27</span>
+                      <span class="calendar-day">28</span>
+                      <span class="calendar-day">29</span>
+                      <span class="calendar-day">30</span>
+                      <span class="calendar-day nextMonthDay">1</span>
+                      <span class="calendar-day nextMonthDay">2</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="calendar-footer flex items-center justify-end gap-space-12 px-6 py-4 border-t border-neutrals-gray-400">
+              <button type="button" class="btn-solid-secondary">Cancel</button>
+              <button type="button" class="btn-solid-primary">Apply</button>
+            </div>
+          </div>
+        </div>
+        <p class="text-sm text-secondary-600 mt-3">Range states: <code class="bg-secondary-100 px-1 rounded">startRange</code>, <code class="bg-secondary-100 px-1 rounded">inRange</code>, <code class="bg-secondary-100 px-1 rounded">endRange</code>. In-range uses <code class="bg-secondary-100 px-1 rounded">bg-neutrals-gray-300</code>. Footer: Cancel = gray-700, Apply = primary.</p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-heading-2 text-secondary-900 mb-2">Full page calendar</h2>
+        <p class="text-secondary-600 mb-4">Month view that fills the viewport with a bordered grid, full weekday names (Sun–Sat), month/year header with prev/next and dropdown, and a &ldquo;Return to Today&rdquo; link. Matches Figma <a href="https://www.figma.com/design/hYuyPfbCcHwS3KN4CdFmDd/Cendyn-Product-Design-System?node-id=9247-55283" class="text-primary hover:underline" target="_blank" rel="noopener">node 9247-55283</a>. Open in a new tab to view at full size (pop out).</p>
+        <p class="mb-4">
+          <a href="calendar-full.html" target="_blank" rel="noopener" class="btn-solid-primary">Open full page calendar <span class="inline-block ml-1" aria-hidden="true">↗</span></a>
+        </p>
+        <div class="p-4 bg-secondary-100 rounded-card border border-secondary-200">
+          <iframe src="calendar-full.html" title="Full page calendar preview" class="w-full border border-neutrals-gray-400 rounded-xl bg-white overflow-hidden" style="height: 420px;"></iframe>
+        </div>
+        <p class="text-sm text-secondary-600 mt-3">Classes: <code class="bg-secondary-100 px-1 rounded">calendar-full</code>, <code class="bg-secondary-100 px-1 rounded">calendar-header</code>, <code class="bg-secondary-100 px-1 rounded">calendar-header-nav</code>, <code class="bg-secondary-100 px-1 rounded">calendar-month-dropdown</code>, <code class="bg-secondary-100 px-1 rounded">calendar-return-today</code>, <code class="bg-secondary-100 px-1 rounded">calendar-body</code>. Grid uses <code class="bg-secondary-100 px-1 rounded">grid-cols-7</code> with bordered cells.</p>
+      </section>
+    </main>
+  </div>
+  <script src="../js/copy.js"></script>
+</body>
+</html>

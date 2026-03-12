@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Header — Cendyn Design System</title>
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body class="min-h-screen bg-secondary-50">
+  <header class="border-b border-secondary-200 bg-white">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="../index.html" class="text-xl font-semibold text-primary">Cendyn Design System</a>
+      <nav class="flex gap-6">
+        <a href="../index.html" class="text-secondary-600 hover:text-primary">Overview</a>
+        <a href="../tokens.html" class="text-secondary-600 hover:text-primary">Tokens</a>
+        <a href="../typography.html" class="text-secondary-600 hover:text-primary">Typography</a>
+        <a href="buttons.html" class="text-secondary-600 hover:text-primary">Components</a>
+      </nav>
+    </div>
+  </header>
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <aside class="w-56 float-left pr-8 border-r border-secondary-200 min-h-[60vh]">
+      <p class="text-xs font-semibold text-secondary-500 uppercase tracking-wider mb-3">Foundations</p>
+      <ul class="space-y-1 text-sm mb-6">
+        <li><a href="../typography.html" class="text-secondary-600 hover:text-primary">Typography</a></li>
+      </ul>
+      <p class="text-xs font-semibold text-secondary-500 uppercase tracking-wider mb-3">Components</p>
+      <ul class="space-y-1 text-sm">
+        <li><a href="alerts.html" class="text-secondary-600 hover:text-primary">Alerts</a></li>
+        <li><a href="avatar.html" class="text-secondary-600 hover:text-primary">Avatar</a></li>
+        <li><a href="badges.html" class="text-secondary-600 hover:text-primary">Badges</a></li>
+        <li><a href="breadcrumbs.html" class="text-secondary-600 hover:text-primary">Breadcrumbs</a></li>
+        <li><a href="buttons.html" class="text-secondary-600 hover:text-primary">Buttons</a></li>
+        <li><a href="button-group.html" class="text-secondary-600 hover:text-primary">Button Group</a></li>
+        <li><a href="calendars.html" class="text-secondary-600 hover:text-primary">Calendars</a></li>
+        <li><a href="cards.html" class="text-secondary-600 hover:text-primary">Cards</a></li>
+        <li><a href="charts.html" class="text-secondary-600 hover:text-primary">Charts</a></li>
+        <li><a href="data-grid.html" class="text-secondary-600 hover:text-primary">Data Grid</a></li>
+        <li><a href="data-grid-filter.html" class="text-secondary-600 hover:text-primary">Data Grid Filter</a></li>
+        <li><a href="dropdowns.html" class="text-secondary-600 hover:text-primary">Dropdowns</a></li>
+        <li><a href="dropzone.html" class="text-secondary-600 hover:text-primary">Dropzone</a></li>
+        <li><a href="empty-states.html" class="text-secondary-600 hover:text-primary">Empty States</a></li>
+        <li><a href="forms.html" class="text-secondary-600 hover:text-primary">Forms</a></li>
+        <li><a href="form-inputs.html" class="text-secondary-600 hover:text-primary">Form Inputs</a></li>
+        <li><a href="form-toggle.html" class="text-secondary-600 hover:text-primary">Form Toggle</a></li>
+        <li><a href="header.html" class="text-primary font-medium">Header</a></li>
+        <li><a href="icons.html" class="text-secondary-600 hover:text-primary">Icons</a></li>
+        <li><a href="lists.html" class="text-secondary-600 hover:text-primary">Lists</a></li>
+        <li><a href="loaders.html" class="text-secondary-600 hover:text-primary">Loaders</a></li>
+        <li><a href="modals-dialogs.html" class="text-secondary-600 hover:text-primary">Modals &amp; Dialogs</a></li>
+        <li><a href="mobile-frame.html" class="text-secondary-600 hover:text-primary">Mobile Frame</a></li>
+        <li><a href="navigation-icons.html" class="text-secondary-600 hover:text-primary">Navigation Icons</a></li>
+        <li><a href="navigation-tabs.html" class="text-secondary-600 hover:text-primary">Navigation Tabs</a></li>
+        <li><a href="scrollbar.html" class="text-secondary-600 hover:text-primary">Scrollbar</a></li>
+        <li><a href="tooltips-popovers.html" class="text-secondary-600 hover:text-primary">Tooltips &amp; Popovers</a></li>
+        <li><a href="toasts.html" class="text-secondary-600 hover:text-primary">Toasts</a></li>
+        <li><a href="tree-view.html" class="text-secondary-600 hover:text-primary">Tree View</a></li>
+        <li><a href="wizard.html" class="text-secondary-600 hover:text-primary">Wizard</a></li>
+      </ul>
+    </aside>
+    <main class="overflow-hidden pl-8">
+      <h1 class="text-display-sm text-secondary-900 mb-6">Header</h1>
+      <p class="text-secondary-600 mb-8">Page or app header.</p>
+      <section class="mb-8">
+        <h2 class="text-lg font-semibold text-secondary-900 mb-3">Preview</h2>
+        <div class="p-4 bg-white rounded-card border border-secondary-200">
+          <header class="flex items-center justify-between px-4 py-3 border-b border-secondary-200 bg-white"><span class="font-semibold text-secondary-900">App name</span><nav class="flex gap-4"><a href="#" class="text-sm text-secondary-600 hover:text-primary">Nav 1</a><a href="#" class="text-sm text-secondary-600 hover:text-primary">Nav 2</a></nav></header>
+        </div>
+      </section>
+      <section>
+        <h2 class="text-lg font-semibold text-secondary-900 mb-3">Code</h2>
+        <pre class="relative pt-10 pr-14 pb-4 pl-4 bg-secondary-900 text-secondary-100 rounded-card overflow-x-auto text-sm"><code data-copyable>&lt;header class=&quot;flex items-center justify-between px-4 py-3 border-b border-secondary-200 bg-white&quot;&gt;
+  &lt;span class=&quot;font-semibold text-secondary-900&quot;&gt;App name&lt;/span&gt;
+  &lt;nav class=&quot;flex gap-4&quot;&gt;
+    &lt;a href=&quot;#&quot; class=&quot;text-sm text-secondary-600 hover:text-primary&quot;&gt;Nav 1&lt;/a&gt;
+    &lt;a href=&quot;#&quot; class=&quot;text-sm text-secondary-600 hover:text-primary&quot;&gt;Nav 2&lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;</code></pre>
+      </section>
+    </main>
+  </div>
+  <script src="../js/copy.js"></script>
+</body>
+</html>

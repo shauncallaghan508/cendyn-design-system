@@ -1,0 +1,33 @@
+{
+  "name": "@cendyn/design-system",
+  "version": "1.0.0",
+  "description": "Cendyn Tailwind design system preset — theme tokens for use across products",
+  "main": "preset.js",
+  "exports": {
+    ".": "./preset.js",
+    "./preset": "./preset.js",
+    "./fonts.css": "./fonts.css"
+  },
+  "files": [
+    "preset.js",
+    "fonts.css",
+    "fonts"
+  ],
+  "peerDependencies": {
+    "tailwindcss": ">=3.0.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  },
+  "scripts": {
+    "build:docs": "npx tailwindcss -i docs/input.css -o docs/css/docs.css",
+    "build:docs:watch": "npx tailwindcss -i docs/input.css -o docs/css/docs.css --watch"
+  },
+  "keywords": [
+    "tailwind",
+    "design-system",
+    "cendyn",
+    "preset"
+  ],
+  "license": "UNLICENSED"
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendar — Full page — Cendyn Design System</title>
+  <link rel="stylesheet" href="../css/docs.css">
+  <style>
+    /* Full-page calendar: body has no margin so calendar can fill viewport */
+    body.calendar-full-page { margin: 0; min-height: 100vh; }
+  </style>
+</head>
+<body class="calendar-full-page min-h-screen bg-white">
+  <div class="calendar-full">
+    <header class="calendar-header">
+      <div class="calendar-header-nav">
+        <button type="button" class="calendar-prev-month p-2 -ml-2 rounded-md text-neutrals-black hover:text-primary hover:bg-secondary-100 focus:outline-none focus:ring-2 focus:ring-primary-40 focus:ring-offset-2" aria-label="Previous month">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button type="button" class="calendar-month-dropdown p-2 rounded-md hover:bg-secondary-100 focus:outline-none focus:ring-2 focus:ring-primary-40 focus:ring-offset-2" aria-label="Change month" aria-haspopup="true">
+          August 2021
+          <svg class="icon-sm text-neutrals-gray-500" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6L8 10L12 6"/></svg>
+        </button>
+        <button type="button" class="calendar-next-month p-2 rounded-md text-neutrals-black hover:text-primary hover:bg-secondary-100 focus:outline-none focus:ring-2 focus:ring-primary-40 focus:ring-offset-2" aria-label="Next month">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+      <a href="calendars.html" class="calendar-return-today">Return to Today</a>
+    </header>
+    <div class="calendar-weekdays">
+      <span class="calendar-weekday">Sun</span>
+      <span class="calendar-weekday">Mon</span>
+      <span class="calendar-weekday">Tue</span>
+      <span class="calendar-weekday">Wed</span>
+      <span class="calendar-weekday">Thu</span>
+      <span class="calendar-weekday">Fri</span>
+      <span class="calendar-weekday">Sat</span>
+    </div>
+    <div class="calendar-body">
+      <div class="calendar-dates-row">
+        <span class="calendar-day">1</span>
+        <span class="calendar-day">2</span>
+        <span class="calendar-day">3</span>
+        <span class="calendar-day">4</span>
+        <span class="calendar-day">5</span>
+        <span class="calendar-day">6</span>
+        <span class="calendar-day">7</span>
+      </div>
+      <div class="calendar-dates-row">
+        <span class="calendar-day">8</span>
+        <span class="calendar-day selected"><span class="calendar-day-oval">9</span></span>
+        <span class="calendar-day">10</span>
+        <span class="calendar-day">11</span>
+        <span class="calendar-day">12</span>
+        <span class="calendar-day">13</span>
+        <span class="calendar-day">14</span>
+      </div>
+      <div class="calendar-dates-row">
+        <span class="calendar-day">15</span>
+        <span class="calendar-day">16</span>
+        <span class="calendar-day">17</span>
+        <span class="calendar-day">18</span>
+        <span class="calendar-day">19</span>
+        <span class="calendar-day">20</span>
+        <span class="calendar-day">21</span>
+      </div>
+      <div class="calendar-dates-row">
+        <span class="calendar-day">22</span>
+        <span class="calendar-day">23</span>
+        <span class="calendar-day">24</span>
+        <span class="calendar-day">25</span>
+        <span class="calendar-day">26</span>
+        <span class="calendar-day">27</span>
+        <span class="calendar-day">28</span>
+      </div>
+      <div class="calendar-dates-row">
+        <span class="calendar-day">29</span>
+        <span class="calendar-day">30</span>
+        <span class="calendar-day">31</span>
+        <span class="calendar-day nextMonthDay">1</span>
+        <span class="calendar-day nextMonthDay">2</span>
+        <span class="calendar-day nextMonthDay">3</span>
+        <span class="calendar-day nextMonthDay">4</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

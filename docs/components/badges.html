@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Badges — Cendyn Design System</title>
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body class="min-h-screen bg-secondary-50">
+  <header class="border-b border-secondary-200 bg-white">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="../index.html" class="text-xl font-semibold text-primary">Cendyn Design System</a>
+      <nav class="flex gap-6">
+        <a href="../index.html" class="text-secondary-600 hover:text-primary">Overview</a>
+        <a href="../tokens.html" class="text-secondary-600 hover:text-primary">Tokens</a>
+        <a href="../typography.html" class="text-secondary-600 hover:text-primary">Typography</a>
+        <a href="buttons.html" class="text-secondary-600 hover:text-primary">Components</a>
+      </nav>
+    </div>
+  </header>
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <aside class="w-56 float-left pr-8 border-r border-secondary-200 min-h-[60vh]">
+      <p class="text-xs font-semibold text-secondary-500 uppercase tracking-wider mb-3">Foundations</p>
+      <ul class="space-y-1 text-sm mb-6">
+        <li><a href="../typography.html" class="text-secondary-600 hover:text-primary">Typography</a></li>
+      </ul>
+      <p class="text-xs font-semibold text-secondary-500 uppercase tracking-wider mb-3">Components</p>
+      <ul class="space-y-1 text-sm">
+        <li><a href="alerts.html" class="text-secondary-600 hover:text-primary">Alerts</a></li>
+        <li><a href="avatar.html" class="text-secondary-600 hover:text-primary">Avatar</a></li>
+        <li><a href="badges.html" class="text-primary font-medium">Badges</a></li>
+        <li><a href="breadcrumbs.html" class="text-secondary-600 hover:text-primary">Breadcrumbs</a></li>
+        <li><a href="buttons.html" class="text-secondary-600 hover:text-primary">Buttons</a></li>
+        <li><a href="button-group.html" class="text-secondary-600 hover:text-primary">Button Group</a></li>
+        <li><a href="calendars.html" class="text-secondary-600 hover:text-primary">Calendars</a></li>
+        <li><a href="cards.html" class="text-secondary-600 hover:text-primary">Cards</a></li>
+        <li><a href="charts.html" class="text-secondary-600 hover:text-primary">Charts</a></li>
+        <li><a href="data-grid.html" class="text-secondary-600 hover:text-primary">Data Grid</a></li>
+        <li><a href="data-grid-filter.html" class="text-secondary-600 hover:text-primary">Data Grid Filter</a></li>
+        <li><a href="dropdowns.html" class="text-secondary-600 hover:text-primary">Dropdowns</a></li>
+        <li><a href="dropzone.html" class="text-secondary-600 hover:text-primary">Dropzone</a></li>
+        <li><a href="empty-states.html" class="text-secondary-600 hover:text-primary">Empty States</a></li>
+        <li><a href="forms.html" class="text-secondary-600 hover:text-primary">Forms</a></li>
+        <li><a href="form-inputs.html" class="text-secondary-600 hover:text-primary">Form Inputs</a></li>
+        <li><a href="form-toggle.html" class="text-secondary-600 hover:text-primary">Form Toggle</a></li>
+        <li><a href="header.html" class="text-secondary-600 hover:text-primary">Header</a></li>
+        <li><a href="icons.html" class="text-secondary-600 hover:text-primary">Icons</a></li>
+        <li><a href="lists.html" class="text-secondary-600 hover:text-primary">Lists</a></li>
+        <li><a href="loaders.html" class="text-secondary-600 hover:text-primary">Loaders</a></li>
+        <li><a href="modals-dialogs.html" class="text-secondary-600 hover:text-primary">Modals &amp; Dialogs</a></li>
+        <li><a href="mobile-frame.html" class="text-secondary-600 hover:text-primary">Mobile Frame</a></li>
+        <li><a href="navigation-icons.html" class="text-secondary-600 hover:text-primary">Navigation Icons</a></li>
+        <li><a href="navigation-tabs.html" class="text-secondary-600 hover:text-primary">Navigation Tabs</a></li>
+        <li><a href="scrollbar.html" class="text-secondary-600 hover:text-primary">Scrollbar</a></li>
+        <li><a href="tooltips-popovers.html" class="text-secondary-600 hover:text-primary">Tooltips &amp; Popovers</a></li>
+        <li><a href="toasts.html" class="text-secondary-600 hover:text-primary">Toasts</a></li>
+        <li><a href="tree-view.html" class="text-secondary-600 hover:text-primary">Tree View</a></li>
+        <li><a href="wizard.html" class="text-secondary-600 hover:text-primary">Wizard</a></li>
+      </ul>
+    </aside>
+    <main class="overflow-hidden pl-8">
+      <h1 class="text-display-sm text-secondary-900 mb-6">Badges</h1>
+      <p class="text-paragraph-1 text-secondary-600 mb-8">Visual indicators for short labels and counts. Use for statuses, categories, or metadata on tables, dashboards, and cards. Read-only.</p>
+
+      <section class="mb-10">
+        <h2 class="text-heading-2 text-secondary-900 mb-4">Colors</h2>
+        <p class="text-paragraph-2 text-secondary-600 mb-4">Five colors, each with a solid and a soft variant. Padding <code class="bg-secondary-100 px-1 rounded text-heading-6">px-3 py-1</code> (12px / 4px), <code class="bg-secondary-100 px-1 rounded text-heading-6">rounded-badge</code>, 12px Semibold.</p>
+        <div class="p-6 bg-white rounded-card border border-secondary-200 overflow-x-auto">
+          <table class="w-full text-paragraph-2 text-secondary-700 border-collapse">
+            <thead>
+              <tr class="border-b border-secondary-200">
+                <th class="text-left py-2 pr-4 font-semibold text-secondary-800">Color</th>
+                <th class="text-left py-2 pr-4 font-semibold text-secondary-800">Solid</th>
+                <th class="text-left py-2 pr-4 font-semibold text-secondary-800">Soft</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-secondary-200">
+                <td class="py-3 pr-4 font-medium text-secondary-800">Primary</td>
+                <td class="py-3 pr-4"><span class="inline-flex items-center px-3 py-1 rounded-badge text-xs font-semibold bg-primary-100 text-white whitespace-nowrap">Active</span></td>
+                <td class="py-3 pr-4"><span class="inline-flex items-center px-3 py-1 rounded-badge text-xs font-semibold bg-primary-10 text-primary-140 whitespace-nowrap">Active</span></td>
+              </tr>
+              <tr class="border-b border-secondary-200">
+                <td class="py-3 pr-4 font-medium text-secondary-800">Success</td>
+                <td class="py-3 pr-4"><span class="inline-flex items-center px-3 py-1 rounded-badge text-xs font-semibold bg-success-100 text-white whitespace-nowrap">Active</span></td>
+                <td class="py-3 pr-4"><span class="inline-flex items-center px-3 py-1 rounded-badge text-xs font-semibold bg-success-10 text-success-140 whitespace-nowrap">Active</span></td>
+              </tr>
+              <tr class="border-b border-secondary-200">
+                <td class="py-3 pr-4 font-medium text-secondary-800">Danger</td>
+                <td class="py-3 pr-4"><span class="inline-flex items-center px-3 py-1 rounded-badge text-xs font-semibold bg-error-100 text-white whitespace-nowrap">Active</span></td>
+                <td class="py-3 pr-4"><span class="inline-flex items-center px-3 py-1 rounded-badge text-xs font-semibold bg-error-10 text-error-140 whitespace-nowrap">Active</span></td>
+              </tr>
+              <tr class="border-b border-secondary-200">
+                <td class="py-3 pr-4 font-medium text-secondary-800">Warning</td>
+                <td class="py-3 pr-4"><span class="inline-flex items-center px-3 py-1 rounded-badge text-xs font-semibold bg-warning-100 text-neutrals-black whitespace-nowrap">Active</span></td>
+                <td class="py-3 pr-4"><span class="inline-flex items-center px-3 py-1 rounded-badge text-xs font-semibold bg-warning-10 text-warning-140 whitespace-nowrap">Active</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 pr-4 font-medium text-secondary-800">Secondary</td>
+                <td class="py-3 pr-4"><span class="inline-flex items-center px-3 py-1 rounded-badge text-xs font-semibold bg-secondary-700 text-white whitespace-nowrap">Active</span></td>
+                <td class="py-3 pr-4"><span class="inline-flex items-center px-3 py-1 rounded-badge text-xs font-semibold bg-secondary-300 text-secondary-800 whitespace-nowrap">Active</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-heading-2 text-secondary-900 mb-4">Badge status</h2>
+        <p class="text-paragraph-2 text-secondary-600 mb-4">Status indicator: colored dot (8px) plus optional label. Use 14px body text (Book), dark label color. Gap between dot and label: 8px.</p>
+        <div class="p-6 bg-white rounded-card border border-secondary-200">
+          <div class="flex flex-wrap gap-6 items-center">
+            <span class="inline-flex items-center gap-2">
+              <span class="icon-sm rounded-full bg-success-100" aria-hidden="true"></span>
+              <span class="text-paragraph-2 text-neutrals-black whitespace-nowrap">Label</span>
+            </span>
+            <span class="inline-flex items-center gap-2">
+              <span class="icon-sm rounded-full bg-error-100" aria-hidden="true"></span>
+              <span class="text-paragraph-2 text-neutrals-black whitespace-nowrap">Label</span>
+            </span>
+            <span class="inline-flex items-center gap-2">
+              <span class="icon-sm rounded-full bg-warning-100" aria-hidden="true"></span>
+              <span class="text-paragraph-2 text-neutrals-black whitespace-nowrap">Label</span>
+            </span>
+          </div>
+        </div>
+        <p class="text-paragraph-2 text-secondary-600 mt-3">Dot color: Success <code class="bg-secondary-100 px-1 rounded text-heading-6">bg-success-100</code>, Danger <code class="bg-secondary-100 px-1 rounded text-heading-6">bg-error-100</code>, Warning <code class="bg-secondary-100 px-1 rounded text-heading-6">bg-warning-100</code>.</p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-heading-2 text-secondary-900 mb-3">Class reference</h2>
+        <div class="overflow-x-auto rounded-card border border-secondary-200">
+          <table class="w-full text-paragraph-2 text-secondary-700">
+            <thead class="bg-secondary-100">
+              <tr>
+                <th class="text-left py-2 px-3 font-semibold text-secondary-800">Variant</th>
+                <th class="text-left py-2 px-3 font-semibold text-secondary-800">Classes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-t border-secondary-200"><td class="py-2 px-3">Base</td><td class="py-2 px-3"><code class="bg-secondary-100 px-1 rounded">inline-flex items-center px-3 py-1 rounded-badge text-xs font-semibold whitespace-nowrap</code></td></tr>
+              <tr class="border-t border-secondary-200"><td class="py-2 px-3">Primary solid</td><td class="py-2 px-3"><code class="bg-secondary-100 px-1 rounded">bg-primary-100 text-white</code></td></tr>
+              <tr class="border-t border-secondary-200"><td class="py-2 px-3">Primary soft</td><td class="py-2 px-3"><code class="bg-secondary-100 px-1 rounded">bg-primary-10 text-primary-140</code></td></tr>
+              <tr class="border-t border-secondary-200"><td class="py-2 px-3">Success solid</td><td class="py-2 px-3"><code class="bg-secondary-100 px-1 rounded">bg-success-100 text-white</code></td></tr>
+              <tr class="border-t border-secondary-200"><td class="py-2 px-3">Success soft</td><td class="py-2 px-3"><code class="bg-secondary-100 px-1 rounded">bg-success-10 text-success-140</code></td></tr>
+              <tr class="border-t border-secondary-200"><td class="py-2 px-3">Danger solid</td><td class="py-2 px-3"><code class="bg-secondary-100 px-1 rounded">bg-error-100 text-white</code></td></tr>
+              <tr class="border-t border-secondary-200"><td class="py-2 px-3">Danger soft</td><td class="py-2 px-3"><code class="bg-secondary-100 px-1 rounded">bg-error-10 text-error-140</code></td></tr>
+              <tr class="border-t border-secondary-200"><td class="py-2 px-3">Warning solid</td><td class="py-2 px-3"><code class="bg-secondary-100 px-1 rounded">bg-warning-100 text-neutrals-black</code></td></tr>
+              <tr class="border-t border-secondary-200"><td class="py-2 px-3">Warning soft</td><td class="py-2 px-3"><code class="bg-secondary-100 px-1 rounded">bg-warning-10 text-warning-140</code></td></tr>
+              <tr class="border-t border-secondary-200"><td class="py-2 px-3">Secondary solid</td><td class="py-2 px-3"><code class="bg-secondary-100 px-1 rounded">bg-secondary-700 text-white</code></td></tr>
+              <tr class="border-t border-secondary-200"><td class="py-2 px-3">Secondary soft</td><td class="py-2 px-3"><code class="bg-secondary-100 px-1 rounded">bg-secondary-300 text-secondary-800</code></td></tr>
+              <tr class="border-t border-secondary-200"><td class="py-2 px-3">Badge status (container)</td><td class="py-2 px-3"><code class="bg-secondary-100 px-1 rounded">inline-flex items-center gap-2</code></td></tr>
+              <tr class="border-t border-secondary-200"><td class="py-2 px-3">Badge status dot</td><td class="py-2 px-3"><code class="bg-secondary-100 px-1 rounded">icon-sm rounded-full</code> (16px, matches label) + <code class="bg-secondary-100 px-1 rounded">bg-success-100</code> / <code class="bg-secondary-100 px-1 rounded">bg-error-100</code> / <code class="bg-secondary-100 px-1 rounded">bg-warning-100</code></td></tr>
+              <tr class="border-t border-secondary-200"><td class="py-2 px-3">Badge status label</td><td class="py-2 px-3"><code class="bg-secondary-100 px-1 rounded">text-paragraph-2 text-neutrals-black whitespace-nowrap</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-heading-2 text-secondary-900 mb-3">Code examples</h2>
+        <pre class="relative pt-10 pr-14 pb-4 pl-4 bg-secondary-900 text-secondary-100 rounded-card overflow-x-auto text-sm mb-4"><code data-copyable>&lt;!-- Badge status (success, danger, warning) --&gt;
+&lt;span class=&quot;inline-flex items-center gap-2&quot;&gt;
+  &lt;span class=&quot;icon-sm rounded-full bg-success-100&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+  &lt;span class=&quot;text-paragraph-2 text-neutrals-black whitespace-nowrap&quot;&gt;Label&lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;inline-flex items-center gap-2&quot;&gt;
+  &lt;span class=&quot;icon-sm rounded-full bg-error-100&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+  &lt;span class=&quot;text-paragraph-2 text-neutrals-black whitespace-nowrap&quot;&gt;Label&lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;inline-flex items-center gap-2&quot;&gt;
+  &lt;span class=&quot;icon-sm rounded-full bg-warning-100&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+  &lt;span class=&quot;text-paragraph-2 text-neutrals-black whitespace-nowrap&quot;&gt;Label&lt;/span&gt;
+&lt;/span&gt;</code></pre>
+        <pre class="relative pt-10 pr-14 pb-4 pl-4 bg-secondary-900 text-secondary-100 rounded-card overflow-x-auto text-sm"><code data-copyable>&lt;!-- Solid --&gt;
+&lt;span class=&quot;inline-flex items-center px-3 py-1 rounded-badge text-xs font-semibold whitespace-nowrap bg-primary-100 text-white&quot;&gt;Active&lt;/span&gt;
+&lt;span class=&quot;inline-flex items-center px-3 py-1 rounded-badge text-xs font-semibold whitespace-nowrap bg-success-100 text-white&quot;&gt;Active&lt;/span&gt;
+
+&lt;!-- Soft --&gt;
+&lt;span class=&quot;inline-flex items-center px-3 py-1 rounded-badge text-xs font-semibold whitespace-nowrap bg-primary-10 text-primary-140&quot;&gt;Active&lt;/span&gt;
+&lt;span class=&quot;inline-flex items-center px-3 py-1 rounded-badge text-xs font-semibold whitespace-nowrap bg-warning-10 text-warning-140&quot;&gt;Active&lt;/span&gt;</code></pre>
+      </section>
+    </main>
+  </div>
+  <script src="../js/copy.js"></script>
+</body>
+</html>

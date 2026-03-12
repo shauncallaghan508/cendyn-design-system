@@ -1,0 +1,205 @@
+@import "./include-fonts.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans text-secondary-700 antialiased;
+  }
+}
+
+@layer components {
+  /* Icon sizes: base 24px, small 16px — use next to text; icon-sm for ~14px or smaller text */
+  .icon {
+    @apply w-icon h-icon flex-shrink-0;
+  }
+  .icon-sm {
+    @apply w-icon-sm h-icon-sm flex-shrink-0;
+  }
+
+  /* Breadcrumb item: link + caret via ::after so caret size is not affected by link border */
+  .breadcrumb-item {
+    @apply inline-flex items-center gap-1 pr-1 relative;
+  }
+  .breadcrumb-item + .breadcrumb-item {
+    margin-left: 1.4375rem;
+  }
+  .breadcrumb-item + .breadcrumb-item::before {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='5 0 24 24' width='18' height='13' stroke='%23B1C2D9' stroke-width='3.5' fill='none' stroke-linecap='round' stroke-linejoin='round' class='css-i6dzq1'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    left: -1.125rem;
+    margin-right: 0;
+    background: transparent;
+    padding-right: 0;
+    float: none;
+    width: auto;
+    height: auto;
+  }
+
+  /* Calendar — design system theme (Figma 9253-55530). Date section: 240px wide, row-based grid. */
+  .calendar {
+    @apply bg-white border border-neutrals-gray-400 rounded-xl shadow-card;
+  }
+  .calendar .calendar-month {
+    @apply h-[60px] flex items-center justify-between px-6 py-4 border-b border-neutrals-gray-400;
+  }
+  .calendar .calendar-current-month {
+    @apply text-heading-4 text-neutrals-black font-semibold;
+  }
+  .calendar .calendar-prev-month,
+  .calendar .calendar-next-month {
+    @apply p-0 inline-flex items-center justify-center text-neutrals-black hover:text-primary focus:outline-none;
+  }
+  .calendar .calendar-prev-month svg,
+  .calendar .calendar-next-month svg {
+    @apply icon;
+  }
+  .calendar .calendar-weekdays {
+    @apply flex gap-space-12 pb-space-12;
+  }
+  .calendar .calendar-weekday {
+    @apply w-6 h-6 flex items-center justify-center text-heading-5 text-neutrals-gray-700 font-semibold shrink-0;
+  }
+  .calendar .calendar-dates {
+    @apply flex flex-col gap-space-12;
+  }
+  .calendar .calendar-dates-row {
+    @apply flex gap-space-12;
+  }
+  .calendar .calendar-day {
+    @apply w-6 h-6 flex items-center justify-center text-heading-5 text-neutrals-black font-semibold shrink-0 cursor-pointer;
+  }
+  .calendar .calendar-day.prevMonthDay,
+  .calendar .calendar-day.nextMonthDay,
+  .calendar .calendar-day.calendar-disabled {
+    @apply text-neutrals-gray-600;
+  }
+  .calendar .calendar-day.selected,
+  .calendar .calendar-day.startRange,
+  .calendar .calendar-day.endRange {
+    @apply bg-primary text-neutrals-white rounded-full border-none;
+  }
+  .calendar .calendar-day.inRange {
+    @apply bg-neutrals-gray-300 text-neutrals-black rounded-none;
+  }
+  /* Only extend into gap when next cell (same row) is also in-range; avoids last cell in row (e.g. 28) overlapping next row */
+  .calendar .calendar-day.inRange:has(+ .calendar-day.inRange) {
+    box-shadow: 0.75rem 0 0 0 #e4ebf6;
+  }
+  .calendar .calendar-day.calendar-disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+  .calendar .calendar-footer {
+    @apply flex items-center justify-end gap-space-12 px-6 py-4 border-t border-neutrals-gray-400;
+  }
+
+  /* Full-page calendar — Figma 9247-55283: square cells, thin full borders, top-left numbers, small active oval */
+  .calendar-full {
+    @apply flex flex-col min-h-screen w-full bg-white rounded-none border-0 shadow-none;
+  }
+  .calendar-full .calendar-header {
+    @apply flex items-center justify-between flex-wrap gap-4 px-6 py-4 border-b border-neutrals-gray-300 shrink-0;
+  }
+  .calendar-full .calendar-header-nav {
+    @apply flex items-center gap-2;
+  }
+  .calendar-full .calendar-month-dropdown {
+    @apply flex items-center gap-1 text-heading-4 text-neutrals-black font-semibold;
+  }
+  .calendar-full .calendar-return-today {
+    @apply text-primary font-medium text-sm hover:underline focus:outline-none focus:ring-2 focus:ring-primary-40 focus:ring-offset-2 rounded;
+  }
+  /* Day names: centered in column, significant vertical padding, full border per cell */
+  .calendar-full .calendar-weekdays {
+    @apply grid grid-cols-7 bg-white;
+  }
+  .calendar-full .calendar-weekday {
+    @apply py-4 px-2 text-center text-heading-5 text-neutrals-gray-700 font-semibold border border-neutrals-gray-300;
+  }
+  /* Body: 7 equal columns, auto rows so cell aspect-ratio 1 gives square cells */
+  .calendar-full .calendar-body {
+    @apply flex-1 grid grid-cols-7 min-h-0;
+    grid-auto-rows: auto;
+  }
+  .calendar-full .calendar-dates-row {
+    @apply contents;
+  }
+  /* Square cell (aspect-ratio 1), thin full border, number in top-left with small padding */
+  .calendar-full .calendar-day {
+    @apply w-full flex items-start justify-start p-space-8 text-heading-4 text-neutrals-black font-semibold border border-neutrals-gray-300;
+    aspect-ratio: 1;
+    min-height: 0;
+  }
+  .calendar-full .calendar-day.prevMonthDay,
+  .calendar-full .calendar-day.nextMonthDay {
+    @apply text-neutrals-gray-400;
+  }
+  .calendar-full .calendar-day.selected {
+    @apply bg-transparent;
+  }
+  /* Active day: small oval just around the number, top-left */
+  .calendar-full .calendar-day-oval {
+    @apply inline-flex items-center justify-center w-5 h-5 rounded-full bg-primary text-neutrals-white text-heading-5 font-semibold flex-shrink-0;
+  }
+
+  /* Buttons — use btn-solid-primary, btn-outline-secondary, btn-link-primary, etc. Add btn-sm for small. */
+  .btn {
+    @apply inline-flex items-center justify-center gap-space-8 rounded-md font-medium text-sm px-space-12 py-2 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed;
+  }
+  .btn-solid-primary { @apply btn bg-primary text-neutrals-white hover:bg-primary-140 focus:ring-primary-40; }
+  .btn-solid-secondary { @apply btn bg-secondary-700 text-neutrals-white hover:bg-secondary-800 focus:ring-secondary-400; }
+  .btn-solid-success { @apply btn bg-success text-neutrals-white hover:bg-success-140 focus:ring-success-40; }
+  .btn-solid-error { @apply btn bg-error text-neutrals-white hover:bg-error-140 focus:ring-error-40; }
+  .btn-solid-warning { @apply btn bg-warning text-neutrals-white hover:bg-warning-140 focus:ring-warning-40; }
+  .btn-solid-info { @apply btn bg-info text-neutrals-white hover:bg-info-140 focus:ring-info-40; }
+  .btn-solid-default { @apply btn bg-white border border-neutrals-gray-400 text-neutrals-black hover:border-secondary-700 focus:ring-primary-40; }
+  .btn-outline-primary { @apply btn border border-primary text-primary bg-transparent hover:bg-primary hover:text-neutrals-white hover:border-primary focus:ring-primary-40; }
+  .btn-outline-secondary { @apply btn border border-secondary-400 text-secondary-700 bg-transparent hover:bg-secondary-700 hover:text-neutrals-white hover:border-secondary-700 focus:ring-secondary-400; }
+  .btn-outline-success { @apply btn border border-success text-success bg-transparent hover:bg-success hover:text-neutrals-white hover:border-success focus:ring-success-40; }
+  .btn-outline-error { @apply btn border border-error text-error bg-transparent hover:bg-error hover:text-neutrals-white hover:border-error focus:ring-error-40; }
+  .btn-outline-default { @apply btn border border-neutrals-gray-400 text-neutrals-black bg-transparent hover:bg-secondary-100 hover:border-secondary-700 focus:ring-primary-40; }
+  .btn-link-primary { @apply btn text-primary bg-transparent hover:underline focus:ring-primary-40 focus:ring-offset-1; }
+  .btn-link-secondary { @apply btn text-secondary-700 bg-transparent hover:underline focus:ring-secondary-400 focus:ring-offset-1; }
+  .btn-link-success { @apply btn text-success bg-transparent hover:underline focus:ring-success-40 focus:ring-offset-1; }
+  .btn-link-error { @apply btn text-error bg-transparent hover:underline focus:ring-error-40 focus:ring-offset-1; }
+  .btn-link-default { @apply btn text-neutrals-black bg-transparent hover:underline focus:ring-secondary-400 focus:ring-offset-1; }
+  /* Size modifier: place after variant so it overrides padding/font (e.g. btn-solid-primary btn-sm) */
+  .btn-sm {
+    @apply px-space-8 py-1.5 text-xs;
+  }
+  /* Split button: wrapper .btn-split, main .btn-split-main-*, trigger .btn-split-trigger-* */
+  .btn-split { @apply inline-flex rounded-md overflow-hidden; }
+  .btn-split-main-primary { @apply inline-flex items-center justify-center gap-space-8 px-space-12 py-2 bg-primary text-neutrals-white font-medium text-sm hover:bg-primary-140 focus:outline-none focus:ring-2 focus:ring-primary-40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed rounded-none; }
+  .btn-split-trigger-primary { @apply inline-flex items-center justify-center p-2 bg-primary text-neutrals-white font-medium text-sm border-l border-white/20 hover:bg-primary-140 focus:outline-none focus:ring-2 focus:ring-primary-40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed; }
+  .btn-split-main-secondary { @apply inline-flex items-center justify-center gap-space-8 px-space-12 py-2 bg-secondary-700 text-neutrals-white font-medium text-sm hover:bg-secondary-800 focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed rounded-none; }
+  .btn-split-trigger-secondary { @apply inline-flex items-center justify-center p-2 bg-secondary-700 text-neutrals-white font-medium text-sm border-l border-white/20 hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed; }
+  .btn-split-main-success { @apply inline-flex items-center justify-center gap-space-8 px-space-12 py-2 bg-success text-neutrals-white font-medium text-sm hover:bg-success-140 focus:outline-none focus:ring-2 focus:ring-success-40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed rounded-none; }
+  .btn-split-trigger-success { @apply inline-flex items-center justify-center p-2 bg-success text-neutrals-white font-medium text-sm border-l border-white/20 hover:bg-success-140 focus:outline-none focus:ring-2 focus:ring-success-40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed; }
+  .btn-split-main-error { @apply inline-flex items-center justify-center gap-space-8 px-space-12 py-2 bg-error text-neutrals-white font-medium text-sm hover:bg-error-140 focus:outline-none focus:ring-2 focus:ring-error-40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed rounded-none; }
+  .btn-split-trigger-error { @apply inline-flex items-center justify-center p-2 bg-error text-neutrals-white font-medium text-sm border-l border-white/20 hover:bg-error-140 focus:outline-none focus:ring-2 focus:ring-error-40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed; }
+  .btn-split-main-default { @apply inline-flex items-center justify-center gap-space-8 px-space-12 py-2 bg-white text-neutrals-black font-medium text-sm hover:border-secondary-700 focus:outline-none focus:ring-2 focus:ring-primary-40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed rounded-none border border-neutrals-gray-400 border-r-0; }
+  .btn-split-trigger-default { @apply inline-flex items-center justify-center p-2 bg-white text-neutrals-black font-medium text-sm border border-neutrals-gray-400 border-l-0 hover:border-secondary-700 hover:bg-secondary-100 focus:outline-none focus:ring-2 focus:ring-primary-40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed; }
+  .btn-split-main-primary.btn-sm, .btn-split-main-secondary.btn-sm, .btn-split-main-success.btn-sm, .btn-split-main-error.btn-sm, .btn-split-main-default.btn-sm { @apply px-space-8 py-1.5 text-xs; }
+  .btn-split-trigger-primary.btn-icon-sm, .btn-split-trigger-secondary.btn-icon-sm, .btn-split-trigger-success.btn-icon-sm, .btn-split-trigger-error.btn-icon-sm, .btn-split-trigger-default.btn-icon-sm { @apply p-1.5 text-xs; }
+  /* Icon-only buttons (default: p-space-12 / 24px; small: p-space-8 + icon-sm) */
+  .btn-icon-solid-primary { @apply inline-flex items-center justify-center p-space-12 rounded-md bg-primary text-neutrals-white hover:bg-primary-140 focus:outline-none focus:ring-2 focus:ring-primary-40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed; }
+  .btn-icon-solid-secondary { @apply inline-flex items-center justify-center p-space-12 rounded-md bg-secondary-700 text-neutrals-white hover:bg-secondary-800 focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed; }
+  .btn-icon-solid-success { @apply inline-flex items-center justify-center p-space-12 rounded-md bg-success text-neutrals-white hover:bg-success-140 focus:outline-none focus:ring-2 focus:ring-success-40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed; }
+  .btn-icon-solid-error { @apply inline-flex items-center justify-center p-space-12 rounded-md bg-error text-neutrals-white hover:bg-error-140 focus:outline-none focus:ring-2 focus:ring-error-40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed; }
+  .btn-icon-solid-default { @apply inline-flex items-center justify-center p-space-12 rounded-md bg-white border border-neutrals-gray-400 text-neutrals-black hover:border-secondary-700 focus:outline-none focus:ring-2 focus:ring-primary-40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed; }
+  .btn-icon-outline-primary { @apply inline-flex items-center justify-center p-space-12 rounded-md border border-primary text-primary bg-transparent hover:bg-primary hover:text-neutrals-white hover:border-primary focus:outline-none focus:ring-2 focus:ring-primary-40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed; }
+  .btn-icon-outline-secondary { @apply inline-flex items-center justify-center p-space-12 rounded-md border border-secondary-400 text-secondary-700 bg-transparent hover:bg-secondary-700 hover:text-neutrals-white hover:border-secondary-700 focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed; }
+  .btn-icon-outline-success { @apply inline-flex items-center justify-center p-space-12 rounded-md border border-success text-success bg-transparent hover:bg-success hover:text-neutrals-white hover:border-success focus:outline-none focus:ring-2 focus:ring-success-40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed; }
+  .btn-icon-outline-error { @apply inline-flex items-center justify-center p-space-12 rounded-md border border-error text-error bg-transparent hover:bg-error hover:text-neutrals-white hover:border-error focus:outline-none focus:ring-2 focus:ring-error-40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed; }
+  .btn-icon-outline-default { @apply inline-flex items-center justify-center p-space-12 rounded-md border border-neutrals-gray-400 text-neutrals-black bg-transparent hover:bg-secondary-100 hover:border-secondary-700 focus:outline-none focus:ring-2 focus:ring-primary-40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed; }
+  .btn-icon-link-primary { @apply inline-flex items-center justify-center p-space-12 rounded-md text-primary bg-transparent hover:underline focus:outline-none focus:ring-2 focus:ring-primary-40 focus:ring-offset-1 disabled:opacity-60 disabled:cursor-not-allowed; }
+  .btn-icon-link-secondary { @apply inline-flex items-center justify-center p-space-12 rounded-md text-secondary-700 bg-transparent hover:underline focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-1 disabled:opacity-60 disabled:cursor-not-allowed; }
+  .btn-icon-link-success { @apply inline-flex items-center justify-center p-space-12 rounded-md text-success bg-transparent hover:underline focus:outline-none focus:ring-2 focus:ring-success-40 focus:ring-offset-1 disabled:opacity-60 disabled:cursor-not-allowed; }
+  .btn-icon-link-error { @apply inline-flex items-center justify-center p-space-12 rounded-md text-error bg-transparent hover:underline focus:outline-none focus:ring-2 focus:ring-error-40 focus:ring-offset-1 disabled:opacity-60 disabled:cursor-not-allowed; }
+  .btn-icon-link-default { @apply inline-flex items-center justify-center p-space-12 rounded-md text-neutrals-black bg-transparent hover:underline focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-1 disabled:opacity-60 disabled:cursor-not-allowed; }
+  .btn-icon-sm { @apply p-2; }
+}

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alerts — Cendyn Design System</title>
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body class="min-h-screen bg-secondary-50">
+  <header class="border-b border-secondary-200 bg-white">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="../index.html" class="text-xl font-semibold text-primary">Cendyn Design System</a>
+      <nav class="flex gap-6">
+        <a href="../index.html" class="text-secondary-600 hover:text-primary">Overview</a>
+        <a href="../tokens.html" class="text-secondary-600 hover:text-primary">Tokens</a>
+        <a href="../typography.html" class="text-secondary-600 hover:text-primary">Typography</a>
+        <a href="buttons.html" class="text-secondary-600 hover:text-primary">Components</a>
+      </nav>
+    </div>
+  </header>
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <aside class="w-56 float-left pr-8 border-r border-secondary-200 min-h-[60vh]">
+      <p class="text-xs font-semibold text-secondary-500 uppercase tracking-wider mb-3">Foundations</p>
+      <ul class="space-y-1 text-sm mb-6">
+        <li><a href="../typography.html" class="text-secondary-600 hover:text-primary">Typography</a></li>
+      </ul>
+      <p class="text-xs font-semibold text-secondary-500 uppercase tracking-wider mb-3">Components</p>
+      <ul class="space-y-1 text-sm">
+        <li><a href="alerts.html" class="text-primary font-medium">Alerts</a></li>
+        <li><a href="avatar.html" class="text-secondary-600 hover:text-primary">Avatar</a></li>
+        <li><a href="badges.html" class="text-secondary-600 hover:text-primary">Badges</a></li>
+        <li><a href="breadcrumbs.html" class="text-secondary-600 hover:text-primary">Breadcrumbs</a></li>
+        <li><a href="buttons.html" class="text-secondary-600 hover:text-primary">Buttons</a></li>
+        <li><a href="button-group.html" class="text-secondary-600 hover:text-primary">Button Group</a></li>
+        <li><a href="calendars.html" class="text-secondary-600 hover:text-primary">Calendars</a></li>
+        <li><a href="cards.html" class="text-secondary-600 hover:text-primary">Cards</a></li>
+        <li><a href="charts.html" class="text-secondary-600 hover:text-primary">Charts</a></li>
+        <li><a href="data-grid.html" class="text-secondary-600 hover:text-primary">Data Grid</a></li>
+        <li><a href="data-grid-filter.html" class="text-secondary-600 hover:text-primary">Data Grid Filter</a></li>
+        <li><a href="dropdowns.html" class="text-secondary-600 hover:text-primary">Dropdowns</a></li>
+        <li><a href="dropzone.html" class="text-secondary-600 hover:text-primary">Dropzone</a></li>
+        <li><a href="empty-states.html" class="text-secondary-600 hover:text-primary">Empty States</a></li>
+        <li><a href="forms.html" class="text-secondary-600 hover:text-primary">Forms</a></li>
+        <li><a href="form-inputs.html" class="text-secondary-600 hover:text-primary">Form Inputs</a></li>
+        <li><a href="form-toggle.html" class="text-secondary-600 hover:text-primary">Form Toggle</a></li>
+        <li><a href="header.html" class="text-secondary-600 hover:text-primary">Header</a></li>
+        <li><a href="icons.html" class="text-secondary-600 hover:text-primary">Icons</a></li>
+        <li><a href="lists.html" class="text-secondary-600 hover:text-primary">Lists</a></li>
+        <li><a href="loaders.html" class="text-secondary-600 hover:text-primary">Loaders</a></li>
+        <li><a href="modals-dialogs.html" class="text-secondary-600 hover:text-primary">Modals &amp; Dialogs</a></li>
+        <li><a href="mobile-frame.html" class="text-secondary-600 hover:text-primary">Mobile Frame</a></li>
+        <li><a href="navigation-icons.html" class="text-secondary-600 hover:text-primary">Navigation Icons</a></li>
+        <li><a href="navigation-tabs.html" class="text-secondary-600 hover:text-primary">Navigation Tabs</a></li>
+        <li><a href="scrollbar.html" class="text-secondary-600 hover:text-primary">Scrollbar</a></li>
+        <li><a href="tooltips-popovers.html" class="text-secondary-600 hover:text-primary">Tooltips &amp; Popovers</a></li>
+        <li><a href="toasts.html" class="text-secondary-600 hover:text-primary">Toasts</a></li>
+        <li><a href="tree-view.html" class="text-secondary-600 hover:text-primary">Tree View</a></li>
+        <li><a href="wizard.html" class="text-secondary-600 hover:text-primary">Wizard</a></li>
+      </ul>
+    </aside>
+    <main class="overflow-hidden pl-8">
+      <h1 class="text-display-sm text-neutrals-black mb-6">Alerts</h1>
+      <p class="text-neutrals-gray-700 mb-8">Flash alerts for prominent messages; inline alerts for card-style content with title, body, and action.</p>
+
+      <section class="mb-10">
+        <h2 class="text-lg font-semibold text-neutrals-black mb-4">Flash alerts</h2>
+        <p class="text-sm text-neutrals-gray-700 mb-4">Full-width bars with an info icon. Use <strong>normal</strong> for high emphasis (solid background, white text) or <strong>soft</strong> for lower emphasis (light background, dark text).</p>
+        <div class="grid grid-cols-1 gap-6">
+          <div class="mb-2">
+            <h3 class="text-sm font-medium text-neutrals-gray-700 mb-3">Normal</h3>
+            <div class="space-y-3">
+              <div class="flex items-center gap-space-8 p-4 rounded-md bg-primary border-neutral-gray-400 text-neutrals-white text-sm">
+                <svg class="icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+                  <g clip-path="url(#clip0_30928_1936)">
+                  <path d="M8.00004 5.33333V8M8.00004 10.6667H8.00671M14.6667 8C14.6667 11.6819 11.6819 14.6667 8.00004 14.6667C4.31814 14.6667 1.33337 11.6819 1.33337 8C1.33337 4.3181 4.31814 1.33333 8.00004 1.33333C11.6819 1.33333 14.6667 4.3181 14.6667 8Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_30928_1936">
+                  <rect width="16" height="16" fill="white"/>
+                  </clipPath>
+                  </defs>
+                  </svg>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur sit amet nisi nec.</span>
+              </div>
+              <div class="flex items-center gap-space-8 p-4 rounded-md bg-success border-success-400 text-neutrals-white text-sm">
+                <svg class="icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+                  <g clip-path="url(#clip0_30928_1936)">
+                  <path d="M8.00004 5.33333V8M8.00004 10.6667H8.00671M14.6667 8C14.6667 11.6819 11.6819 14.6667 8.00004 14.6667C4.31814 14.6667 1.33337 11.6819 1.33337 8C1.33337 4.3181 4.31814 1.33333 8.00004 1.33333C11.6819 1.33333 14.6667 4.3181 14.6667 8Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_30928_1936">
+                  <rect width="16" height="16" fill="white"/>
+                  </clipPath>
+                  </defs>
+                  </svg>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur sit amet nisi nec.</span>
+              </div>
+              <div class="flex items-center gap-space-8 p-4 rounded-md bg-error text-neutrals-white text-sm">
+                <svg class="icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+                  <g clip-path="url(#clip0_30928_1936)">
+                  <path d="M8.00004 5.33333V8M8.00004 10.6667H8.00671M14.6667 8C14.6667 11.6819 11.6819 14.6667 8.00004 14.6667C4.31814 14.6667 1.33337 11.6819 1.33337 8C1.33337 4.3181 4.31814 1.33333 8.00004 1.33333C11.6819 1.33333 14.6667 4.3181 14.6667 8Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_30928_1936">
+                  <rect width="16" height="16" fill="white"/>
+                  </clipPath>
+                  </defs>
+                  </svg>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur sit amet nisi nec.</span>
+              </div>
+              <div class="flex items-center gap-space-8 p-4 rounded-md bg-warning text-neutrals-white text-sm">
+                <svg class="icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+                  <g clip-path="url(#clip0_30928_1936)">
+                  <path d="M8.00004 5.33333V8M8.00004 10.6667H8.00671M14.6667 8C14.6667 11.6819 11.6819 14.6667 8.00004 14.6667C4.31814 14.6667 1.33337 11.6819 1.33337 8C1.33337 4.3181 4.31814 1.33333 8.00004 1.33333C11.6819 1.33333 14.6667 4.3181 14.6667 8Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_30928_1936">
+                  <rect width="16" height="16" fill="white"/>
+                  </clipPath>
+                  </defs>
+                  </svg>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur sit amet nisi nec.</span>
+              </div>
+              <div class="flex items-center gap-space-8 p-4 rounded-md bg-info text-neutrals-white text-sm">
+                <svg class="icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+                  <g clip-path="url(#clip0_30928_1936)">
+                  <path d="M8.00004 5.33333V8M8.00004 10.6667H8.00671M14.6667 8C14.6667 11.6819 11.6819 14.6667 8.00004 14.6667C4.31814 14.6667 1.33337 11.6819 1.33337 8C1.33337 4.3181 4.31814 1.33333 8.00004 1.33333C11.6819 1.33333 14.6667 4.3181 14.6667 8Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_30928_1936">
+                  <rect width="16" height="16" fill="white"/>
+                  </clipPath>
+                  </defs>
+                  </svg>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur sit amet nisi nec.</span>
+              </div>
+              <div class="flex items-center gap-space-8 p-4 rounded-md bg-secondary-700 text-neutrals-white text-sm">
+                <svg class="icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+                  <g clip-path="url(#clip0_30928_1936)">
+                  <path d="M8.00004 5.33333V8M8.00004 10.6667H8.00671M14.6667 8C14.6667 11.6819 11.6819 14.6667 8.00004 14.6667C4.31814 14.6667 1.33337 11.6819 1.33337 8C1.33337 4.3181 4.31814 1.33333 8.00004 1.33333C11.6819 1.33333 14.6667 4.3181 14.6667 8Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_30928_1936">
+                  <rect width="16" height="16" fill="white"/>
+                  </clipPath>
+                  </defs>
+                  </svg>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur sit amet nisi nec.</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-sm font-medium text-neutrals-gray-700 mb-3">Soft</h3>
+            <div class="space-y-3">
+              <div class="flex items-center gap-space-8 p-4 rounded-md bg-primary-10 text-primary-140 text-sm">
+                <svg class="icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+                  <g clip-path="url(#clip0_30928_1936)">
+                  <path d="M8.00004 5.33333V8M8.00004 10.6667H8.00671M14.6667 8C14.6667 11.6819 11.6819 14.6667 8.00004 14.6667C4.31814 14.6667 1.33337 11.6819 1.33337 8C1.33337 4.3181 4.31814 1.33333 8.00004 1.33333C11.6819 1.33333 14.6667 4.3181 14.6667 8Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_30928_1936">
+                  <rect width="16" height="16" fill="currentColor"/>
+                  </clipPath>
+                  </defs>
+                  </svg>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur sit amet nisi nec.</span>
+              </div>
+              <div class="flex items-center gap-space-8 p-4 rounded-md bg-success-10 text-success-140 text-sm">
+                <svg class="icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+                  <g clip-path="url(#clip0_30928_1936)">
+                  <path d="M8.00004 5.33333V8M8.00004 10.6667H8.00671M14.6667 8C14.6667 11.6819 11.6819 14.6667 8.00004 14.6667C4.31814 14.6667 1.33337 11.6819 1.33337 8C1.33337 4.3181 4.31814 1.33333 8.00004 1.33333C11.6819 1.33333 14.6667 4.3181 14.6667 8Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_30928_1936">
+                  <rect width="16" height="16" fill="currentColor"/>
+                  </clipPath>
+                  </defs>
+                  </svg>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur sit amet nisi nec.</span>
+              </div>
+              <div class="flex items-center gap-space-8 p-4 rounded-md bg-error-10 text-error-140 text-sm">
+                <svg class="icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+                  <g clip-path="url(#clip0_30928_1936)">
+                  <path d="M8.00004 5.33333V8M8.00004 10.6667H8.00671M14.6667 8C14.6667 11.6819 11.6819 14.6667 8.00004 14.6667C4.31814 14.6667 1.33337 11.6819 1.33337 8C1.33337 4.3181 4.31814 1.33333 8.00004 1.33333C11.6819 1.33333 14.6667 4.3181 14.6667 8Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_30928_1936">
+                  <rect width="16" height="16" fill="currentColor"/>
+                  </clipPath>
+                  </defs>
+                  </svg>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur sit amet nisi nec.</span>
+              </div>
+              <div class="flex items-center gap-space-8 p-4 rounded-md bg-warning-10 text-warning-140 text-sm">
+                <svg class="icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+                  <g clip-path="url(#clip0_30928_1936)">
+                  <path d="M8.00004 5.33333V8M8.00004 10.6667H8.00671M14.6667 8C14.6667 11.6819 11.6819 14.6667 8.00004 14.6667C4.31814 14.6667 1.33337 11.6819 1.33337 8C1.33337 4.3181 4.31814 1.33333 8.00004 1.33333C11.6819 1.33333 14.6667 4.3181 14.6667 8Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_30928_1936">
+                  <rect width="16" height="16" fill="currentColor"/>
+                  </clipPath>
+                  </defs>
+                  </svg>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur sit amet nisi nec.</span>
+              </div>
+              <div class="flex items-center gap-space-8 p-4 rounded-md bg-info-10 text-info-140 text-sm">
+                <svg class="icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+                  <g clip-path="url(#clip0_30928_1936)">
+                  <path d="M8.00004 5.33333V8M8.00004 10.6667H8.00671M14.6667 8C14.6667 11.6819 11.6819 14.6667 8.00004 14.6667C4.31814 14.6667 1.33337 11.6819 1.33337 8C1.33337 4.3181 4.31814 1.33333 8.00004 1.33333C11.6819 1.33333 14.6667 4.3181 14.6667 8Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_30928_1936">
+                  <rect width="16" height="16" fill="currentColor"/>
+                  </clipPath>
+                  </defs>
+                  </svg>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur sit amet nisi nec.</span>
+              </div>
+              <div class="flex items-center gap-space-8 p-4 rounded-md bg-secondary-100 text-secondary-700 text-sm">
+                <svg class="icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+                  <g clip-path="url(#clip0_30928_1936)">
+                  <path d="M8.00004 5.33333V8M8.00004 10.6667H8.00671M14.6667 8C14.6667 11.6819 11.6819 14.6667 8.00004 14.6667C4.31814 14.6667 1.33337 11.6819 1.33337 8C1.33337 4.3181 4.31814 1.33333 8.00004 1.33333C11.6819 1.33333 14.6667 4.3181 14.6667 8Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_30928_1936">
+                  <rect width="16" height="16" fill="currentColor"/>
+                  </clipPath>
+                  </defs>
+                  </svg>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur sit amet nisi nec.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-lg font-semibold text-neutrals-black mb-4">Inline alerts</h2>
+        <p class="text-sm text-neutrals-gray-700 mb-4">Card-style alerts with a tinted header, title, body text, and action button. <strong>Normal</strong> uses primary, success, and error; <strong>soft</strong> uses warning, info, and neutral.</p>
+        <div class="space-y-6">
+          <div>
+            <h3 class="text-sm font-medium text-neutrals-gray-700 mb-3">Normal</h3>
+            <div class="flex items-center gap-4">
+              <div class="rounded-md border border-secondary-400 bg-primary-10">
+                <div class="p-space-24">
+                  <div class="flex items-center gap-2 mb-2">
+                    <svg class="icon-sm text-neutrals-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+                        <path d="M9.33333 1.33333L12 3.99999L4.66667 11.3333H2V8.66666L9.33333 1.33333Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 14.6667H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="font-semibold text-neutrals-black text-sm">Title</span>
+                  </div>
+                  <p class="text-sm text-neutrals-black">Lorem ipsum dolor sit amet, consect aconsectetur.</p>
+                </div>
+                <button type="button" class="btn-solid-primary w-full">Button</button>
+              </div>
+              <div class="rounded-md border border-success-40 bg-success-10">
+                <div class="p-space-24">
+                  <div class="flex items-center gap-2 mb-2">
+                    <svg class="icon-sm text-neutrals-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+                        <path d="M9.33333 1.33333L12 3.99999L4.66667 11.3333H2V8.66666L9.33333 1.33333Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 14.6667H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="font-semibold text-neutrals-black text-sm">Title</span>
+                  </div>
+                  <p class="text-sm text-neutrals-black">Lorem ipsum dolor sit amet, consect aconsectetur.</p>
+                </div>
+                <button type="button" class="btn-solid-success w-full">Button</button>
+              </div>
+              <div class="rounded-md border border-error-40 bg-error-10">
+                <div class="p-space-24">
+                  <div class="flex items-center gap-2 mb-2">
+                    <svg class="icon-sm text-neutrals-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+                        <path d="M9.33333 1.33333L12 3.99999L4.66667 11.3333H2V8.66666L9.33333 1.33333Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 14.6667H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="font-semibold text-neutrals-black text-sm">Title</span>
+                  </div>
+                  <p class="text-sm text-neutrals-black">Lorem ipsum dolor sit amet, consect aconsectetur.</p>
+                </div>
+                <button type="button" class="btn-solid-error w-full">Button</button>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-sm font-medium text-neutrals-gray-700 mb-3">Soft</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="rounded-md border border-warning-40 bg-warning-10">
+                <div class="p-space-24">
+                  <div class="flex items-center gap-2 mb-2">
+                    <svg class="icon-sm text-neutrals-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+                        <path d="M9.33333 1.33333L12 3.99999L4.66667 11.3333H2V8.66666L9.33333 1.33333Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 14.6667H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="font-semibold text-neutrals-black text-sm">Title</span>
+                  </div>
+                  <p class="text-sm text-neutrals-black">Lorem ipsum dolor sit amet, consect aconsectetur.</p>
+                </div>
+                <button type="button" class="btn-solid-warning w-full">Button</button>
+              </div>
+              <div class="rounded-md border border-info-40 bg-info-10">
+                <div class="p-space-24">
+                  <div class="flex items-center gap-2 mb-2">
+                    <svg class="icon-sm text-neutrals-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+                        <path d="M9.33333 1.33333L12 3.99999L4.66667 11.3333H2V8.66666L9.33333 1.33333Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 14.6667H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="font-semibold text-neutrals-black text-sm">Title</span>
+                  </div>
+                  <p class="text-sm text-neutrals-black">Lorem ipsum dolor sit amet, consect aconsectetur.</p>
+                </div>
+                <button type="button" class="btn-solid-info w-full">Button</button>
+              </div>
+              <div class="rounded-md border border-secondary-400 bg-secondary-100">
+                <div class="p-space-24">
+                  <div class="flex items-center gap-2 mb-2">
+                    <svg class="icon-sm text-neutrals-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+                        <path d="M9.33333 1.33333L12 3.99999L4.66667 11.3333H2V8.66666L9.33333 1.33333Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 14.6667H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="font-semibold text-neutrals-black text-sm">Title</span>
+                  </div>
+                  <p class="text-sm text-neutrals-black">Lorem ipsum dolor sit amet, consect aconsectetur.</p>
+                </div>
+                <button type="button" class="btn-solid-secondary w-full">Button</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-lg font-semibold text-neutrals-black mb-3">Code</h2>
+        <p class="text-sm text-neutrals-gray-700 mb-3">Flash alert (normal and soft) and inline alert (normal) examples:</p>
+        <pre class="relative pt-10 pr-14 pb-4 pl-4 bg-neutrals-black text-neutrals-gray-100 rounded-md overflow-x-auto text-sm"><code data-copyable>&lt;!-- Flash alert (normal) --&gt;
+&lt;div class="flex items-start gap-3 p-4 rounded-md bg-primary text-neutrals-white text-sm"&gt;
+  &lt;span class="flex-shrink-0 icon-sm rounded-full bg-white/20 flex items-center justify-center text-xs font-bold"&gt;i&lt;/span&gt;
+  &lt;span&gt;Your message here.&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;!-- Flash alert (soft) --&gt;
+&lt;div class="flex items-start gap-3 p-4 rounded-md bg-primary-10 text-neutrals-black text-sm"&gt;
+  &lt;span class="flex-shrink-0 icon-sm rounded-full bg-primary/20 flex items-center justify-center text-primary-140 text-xs font-bold"&gt;i&lt;/span&gt;
+  &lt;span&gt;Your message here.&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;!-- Inline alert (card with header + body + button) --&gt;
+&lt;div class="rounded-md border border-secondary-300 bg-white overflow-hidden"&gt;
+  &lt;div class="flex items-center gap-2 px-4 py-3 bg-primary-10"&gt;
+    &lt;svg class="icon-sm text-neutrals-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;...&lt;/svg&gt;
+    &lt;span class="font-semibold text-neutrals-black text-sm"&gt;Title&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="p-4"&gt;
+    &lt;p class="text-sm text-neutrals-black mb-4"&gt;Body text.&lt;/p&gt;
+    &lt;button type="button" class="btn-solid-primary w-full"&gt;Button&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </section>
+    </main>
+  </div>
+  <script src="../js/copy.js"></script>
+</body>
+</html>
