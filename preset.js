@@ -85,18 +85,18 @@ module.exports = {
         },
       },
       spacing: {
-        // From Figma: layout/spacing/space-* (named to avoid overriding Tailwind defaults)
-        'space-4': '0.25rem',
-        'space-8': '0.5rem',
-        'space-12': '0.75rem',
-        'space-20': '1.25rem',
-        'space-24': '1.5rem',
-        '4.5': '1.125rem',
-        '13': '3.25rem',
-        '15': '3.75rem',
-        '18': '4.5rem',
-        '22': '5.5rem',
-        '30': '7.5rem',
+        // space-x (x in px, values in rem): 0,4,8,12,16,20,24,28,32,36,40
+        'space-0': '0',
+        'space-4': '0.25rem',   // 4px
+        'space-8': '0.5rem',    // 8px
+        'space-12': '0.75rem',  // 12px
+        'space-16': '1rem',     // 16px
+        'space-20': '1.25rem',  // 20px
+        'space-24': '1.5rem',  // 24px
+        'space-28': '1.75rem',  // 28px
+        'space-32': '2rem',     // 32px
+        'space-36': '2.25rem',  // 36px
+        'space-40': '2.5rem',   // 40px
       },
       fontFamily: {
         // From Figma: typography/paragraph, typography/heading

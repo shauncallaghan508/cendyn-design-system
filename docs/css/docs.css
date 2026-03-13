@@ -859,8 +859,12 @@ body {
   min-height: 100vh;
   width: 100%;
   flex-direction: column;
-  border-radius: 0px;
-  border-width: 0px;
+  border-radius: 10px;
+  border-top-width: 1px;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(210 221 236 / var(--tw-border-opacity, 1));
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
   --tw-shadow: 0 0 #0000;
@@ -878,22 +882,26 @@ body {
   border-bottom-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(228 235 246 / var(--tw-border-opacity, 1));
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 0.75rem;
+}
+
+.calendar-full .calendar-prev-month,
+  .calendar-full .calendar-next-month {
+  height: 24px;
+  width: 24px;
+  text-align: center;
 }
 
 .calendar-full .calendar-header-nav {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 .calendar-full .calendar-month-dropdown {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.5rem;
   font-size: 0.9375rem;
   line-height: 1;
   font-weight: 600;
@@ -925,29 +933,33 @@ body {
   --tw-ring-offset-width: 2px;
 }
 
-/* Day names: centered in column, significant vertical padding, full border per cell */
+/* Day names: left-aligned, no borders between them; current day (e.g. Mon) uses text-primary */
 
 .calendar-full .calendar-weekdays {
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
+  border-bottom-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(228 235 246 / var(--tw-border-opacity, 1));
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
 .calendar-full .calendar-weekday {
-  border-width: 1px;
-  --tw-border-opacity: 1;
-  border-color: rgb(228 235 246 / var(--tw-border-opacity, 1));
   padding-top: 1rem;
   padding-bottom: 1rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  text-align: center;
-  font-size: 0.8125rem;
-  line-height: 1;
+  text-align: left;
   font-weight: 600;
   --tw-text-opacity: 1;
   color: rgb(110 132 163 / var(--tw-text-opacity, 1));
+  font-size: 15px;
+}
+
+.calendar-full .calendar-weekday-current {
+  --tw-text-opacity: 1;
+  color: rgb(39 110 205 / var(--tw-text-opacity, 1));
 }
 
 /* Body: 7 equal columns, auto rows so cell aspect-ratio 1 gives square cells */
@@ -964,42 +976,53 @@ body {
   display: contents;
 }
 
-/* Square cell (aspect-ratio 1), thin full border, number in top-left with small padding */
+/* Square cell (aspect-ratio 1). Use border-right + border-bottom only so adjacent cells don't double; first column gets border-left. No border-top on first row (weekdays already have border-b). All rows keep border-bottom. */
 
 .calendar-full .calendar-day {
   display: flex;
   width: 100%;
   align-items: flex-start;
   justify-content: flex-start;
-  border-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(228 235 246 / var(--tw-border-opacity, 1));
   padding: 0.5rem;
-  font-size: 0.9375rem;
-  line-height: 1;
-  font-weight: 600;
+  font-family: Cerebri Sans, ui-sans-serif, system-ui, sans-serif;
   --tw-text-opacity: 1;
   color: rgb(18 38 63 / var(--tw-text-opacity, 1));
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
   aspect-ratio: 1;
   min-height: 0;
 }
 
+.calendar-full .calendar-day:nth-child(7n + 1) {
+  border-left-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(228 235 246 / var(--tw-border-opacity, 1));
+}
+
+.calendar-full .calendar-day:nth-child(-n + 7) {
+  border-top-width: 0px;
+}
+
 .calendar-full .calendar-day.prevMonthDay,
   .calendar-full .calendar-day.nextMonthDay {
-  --tw-text-opacity: 1;
-  color: rgb(210 221 236 / var(--tw-text-opacity, 1));
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 251 253 / var(--tw-bg-opacity, 1));
 }
 
 .calendar-full .calendar-day.selected {
   background-color: transparent;
 }
 
-/* Active day: small oval just around the number, top-left */
+/* Active day: oval pill (35×22px), centered content */
 
 .calendar-full .calendar-day-oval {
-  display: inline-flex;
-  height: 1.25rem;
-  width: 1.25rem;
+  display: flex;
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
@@ -1011,6 +1034,9 @@ body {
   font-weight: 600;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+  width: 35px;
+  height: 22px;
+  padding: 0 3px;
 }
 
 /* Buttons — use btn-solid-primary, btn-outline-secondary, btn-link-primary, etc. Add btn-sm for small. */
@@ -2877,8 +2903,8 @@ body {
   float: left;
 }
 
-.m-13 {
-  margin: 3.25rem;
+.m-space-12 {
+  margin: 0.75rem;
 }
 
 .mx-auto {
@@ -3062,6 +3088,22 @@ body {
   height: 26px;
 }
 
+.h-space-12 {
+  height: 0.75rem;
+}
+
+.h-space-16 {
+  height: 1rem;
+}
+
+.h-space-20 {
+  height: 1.25rem;
+}
+
+.h-space-8 {
+  height: 0.5rem;
+}
+
 .min-h-\[60vh\] {
   min-height: 60vh;
 }
@@ -3098,8 +3140,8 @@ body {
   width: 0.875rem;
 }
 
-.w-30 {
-  width: 7.5rem;
+.w-32 {
+  width: 8rem;
 }
 
 .w-4 {
@@ -3172,6 +3214,26 @@ body {
 
 .w-full {
   width: 100%;
+}
+
+.w-space-12 {
+  width: 0.75rem;
+}
+
+.w-space-16 {
+  width: 1rem;
+}
+
+.w-space-20 {
+  width: 1.25rem;
+}
+
+.w-space-40 {
+  width: 2.5rem;
+}
+
+.w-space-8 {
+  width: 0.5rem;
 }
 
 .min-w-0 {
@@ -3285,10 +3347,6 @@ body {
   gap: 2.5rem;
 }
 
-.gap-18 {
-  gap: 4.5rem;
-}
-
 .gap-2 {
   gap: 0.5rem;
 }
@@ -3307,6 +3365,10 @@ body {
 
 .gap-space-12 {
   gap: 0.75rem;
+}
+
+.gap-space-20 {
+  gap: 1.25rem;
 }
 
 .gap-space-8 {
@@ -3646,10 +3708,6 @@ body {
   padding: 1rem;
 }
 
-.p-4\.5 {
-  padding: 1.125rem;
-}
-
 .p-6 {
   padding: 1.5rem;
 }
@@ -3664,6 +3722,10 @@ body {
 
 .p-space-24 {
   padding: 1.5rem;
+}
+
+.p-space-4 {
+  padding: 0.25rem;
 }
 
 .px-1 {
@@ -4085,9 +4147,27 @@ body {
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
 
+.ring-primary-40 {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(169 197 235 / var(--tw-ring-opacity, 1));
+}
+
+.ring-secondary-400 {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(210 221 236 / var(--tw-ring-opacity, 1));
+}
+
 .ring-white {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(255 255 255 / var(--tw-ring-opacity, 1));
+}
+
+.ring-offset-2 {
+  --tw-ring-offset-width: 2px;
+}
+
+.hover\:cursor-pointer:hover {
+  cursor: pointer;
 }
 
 .hover\:border-primary:hover {
@@ -4117,21 +4197,6 @@ body {
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
-}
-
-.focus\:ring-2:focus {
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-}
-
-.focus\:ring-primary-40:focus {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(169 197 235 / var(--tw-ring-opacity, 1));
-}
-
-.focus\:ring-offset-2:focus {
-  --tw-ring-offset-width: 2px;
 }
 
 @media (min-width: 768px) {
