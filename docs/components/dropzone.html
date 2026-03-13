@@ -59,18 +59,207 @@
       </ul>
     </aside>
     <main class="overflow-hidden pl-8">
-      <h1 class="text-display-sm text-secondary-900 mb-6">Dropzone</h1>
-      <p class="text-secondary-600 mb-8">File upload area.</p>
-      <section class="mb-8">
-        <h2 class="text-lg font-semibold text-secondary-900 mb-3">Preview</h2>
-        <div class="p-4 bg-white rounded-card border border-secondary-200">
-          <div class="border-2 border-dashed border-secondary-300 rounded-card p-8 text-center text-secondary-500 text-sm hover:border-primary-400 hover:bg-primary-50/50">Drag and drop files here, or click to browse</div>
+      <h1 class="text-display-sm text-secondary-900 mb-2">Dropzone</h1>
+      <p class="text-paragraph-1 text-secondary-600 mb-8">Dropzone allows users to upload content of their own (single or multiple files).</p>
+
+      <section class="mb-10">
+        <h2 class="text-heading-2 text-secondary-900 mb-2">General usage</h2>
+        <h3 class="text-heading-3 text-secondary-900 mb-2">Guidelines</h3>
+        <ul class="list-disc list-inside text-paragraph-1 text-secondary-700 space-y-1 mb-6">
+          <li>The user can click, or drag and drop the file to the zone to be uploaded.</li>
+        </ul>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-heading-2 text-secondary-900 mb-4">Examples</h2>
+
+        <h3 class="text-heading-3 text-secondary-900 mb-2">Single file — default</h3>
+        <p class="text-paragraph-1 text-secondary-600 mb-3">Dashed border and text use <code class="bg-secondary-100 px-1 rounded">neutrals-gray-600</code>. Use class <code class="bg-secondary-100 px-1 rounded">dropzone</code>. Wire a hidden file input to the click area.</p>
+        <div class="p-4 bg-secondary-100 rounded-card border border-secondary-200">
+          <label class="dropzone" for="dropzone-single">
+            <span>Drag and drop or click to upload</span>
+            <input type="file" id="dropzone-single" class="sr-only" accept="image/*,.pdf,.doc,.docx,.xls,.xlsx,.zip,.rar" />
+          </label>
+        </div>
+
+        <h3 class="text-heading-3 text-secondary-900 mb-2 mt-8">Single file — hover</h3>
+        <p class="text-paragraph-1 text-secondary-600 mb-3">On hover/focus, text uses <code class="bg-secondary-100 px-1 rounded">neutrals-gray-800</code>.</p>
+        <div class="p-4 bg-secondary-100 rounded-card border border-secondary-200">
+          <label class="dropzone text-neutrals-gray-800" for="dropzone-hover">
+            <span>Drag and drop or click to upload</span>
+            <input type="file" id="dropzone-hover" class="sr-only" accept="image/*,.pdf,.doc,.docx,.xls,.xlsx,.zip,.rar" />
+          </label>
+        </div>
+
+        <h3 class="text-heading-3 text-secondary-900 mb-2 mt-8">Single file — disabled</h3>
+        <p class="text-paragraph-1 text-secondary-600 mb-3">Disabled state: border and text <code class="bg-secondary-100 px-1 rounded">neutrals-gray-400</code>, <code class="bg-secondary-100 px-1 rounded">cursor-not-allowed</code>. Use <code class="bg-secondary-100 px-1 rounded">disabled</code> on the input or class <code class="bg-secondary-100 px-1 rounded">dropzone-disabled</code> on the label.</p>
+        <div class="p-4 bg-secondary-100 rounded-card border border-secondary-200">
+          <label class="dropzone dropzone-disabled" for="dropzone-disabled">
+            <span>Drag and drop or click to upload</span>
+            <input type="file" id="dropzone-disabled" class="sr-only" disabled accept="image/*,.pdf,.doc,.docx,.xls,.xlsx,.zip,.rar" />
+          </label>
+        </div>
+
+        <h3 class="text-heading-3 text-secondary-900 mb-2 mt-8">Image preview states</h3>
+        <p class="text-paragraph-1 text-secondary-600 mb-3">Same image (as filename-one) in three states: disabled (faded/desaturated), default (full color), hover (dark overlay with “Drag and drop or click to upload” in white).</p>
+        <div class="flex flex-wrap gap-3 items-start mb-8">
+          <div>
+            <p class="text-sm font-medium text-secondary-700 mb-2">Disabled</p>
+            <div class="dropzone-preview dropzone-preview-disabled w-[280px] aspect-video" style="background-image: url('../../images/test-img.jpg')">
+              <div class="dropzone-preview-overlay" aria-hidden="true"></div>
+            </div>
+          </div>
+          <div>
+            <p class="text-sm font-medium text-secondary-700 mb-2">Default</p>
+            <div class="dropzone-preview w-[280px] aspect-video cursor-pointer" style="background-image: url('../../images/test-img.jpg');">
+              <div class="dropzone-preview-overlay">Drag and drop or click to upload</div>
+            </div>
+          </div>
+          <div>
+            <p class="text-sm font-medium text-secondary-700 mb-2">Hover</p>
+            <div class="dropzone-preview dropzone-preview-hover w-[280px] aspect-video" style="background-image: url('../../images/test-img.jpg');">
+              <div class="dropzone-preview-overlay">Drag and drop or click to upload</div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="text-heading-3 text-secondary-900 mb-2 mt-8">Multiple files — with list</h3>
+        <p class="text-paragraph-1 text-secondary-600 mb-3">Dropzone on top; below it, a list of uploaded files with thumbnail by type, filename, size, and remove control.</p>
+        <div>
+          <div class="flex flex-col max-w-[383px]">
+            <label class="dropzone rounded-t-md max-w-none" for="dropzone-multi">
+              <span>Drag and drop or click to upload</span>
+              <input type="file" id="dropzone-multi" class="sr-only" multiple accept="image/*,.pdf,.doc,.docx,.xls,.xlsx,.zip,.rar" />
+            </label>
+            <div class="dropzone-file-list">
+              <div class="dropzone-file-item">
+                <div class="flex gap-3 items-center min-w-0 flex-1">
+                  <div class="dropzone-file-thumb">
+                    <img src="../../images/test-img.jpg" alt="" />
+                  </div>
+                  <div class="dropzone-file-info">
+                    <span class="dropzone-file-name">Filename-one.jpg</span>
+                    <span class="dropzone-file-size">2.4 MB</span>
+                  </div>
+                </div>
+                <button type="button" class="dropzone-file-remove" aria-label="Remove file">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M15 9L9 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M9 9L15 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="dropzone-file-item">
+                <div class="flex gap-3 items-center min-w-0 flex-1">
+                  <div class="dropzone-file-thumb">
+                    <img src="../../images/test-img.jpg" alt="" />
+                  </div>
+                  <div class="dropzone-file-info">
+                    <span class="dropzone-file-name">Filename-two.jpg</span>
+                    <span class="dropzone-file-size">2.4 MB</span>
+                  </div>
+                </div>
+                <button type="button" class="dropzone-file-remove" aria-label="Remove file">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+<path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15 9L9 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9 9L15 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                </button>
+              </div>
+              <div class="dropzone-file-item">
+                <div class="flex gap-3 items-center min-w-0 flex-1">
+                  <div class="dropzone-file-thumb">
+                    <svg class="icon w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+                  </div>
+                  <div class="dropzone-file-info">
+                    <span class="dropzone-file-name">Filename-three.doc</span>
+                    <span class="dropzone-file-size">2.4 MB</span>
+                  </div>
+                </div>
+                <button type="button" class="dropzone-file-remove" aria-label="Remove file">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M15 9L9 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M9 9L15 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
+
+      <section class="mb-10">
+        <h2 class="text-heading-2 text-secondary-900 mb-2">Thumbnails</h2>
+        <p class="text-paragraph-1 text-secondary-600 mb-4">The thumbnail will vary depending on the file uploaded.</p>
+        <ul class="space-y-4 list-none p-0">
+          <li class="flex gap-4 items-center">
+            <div class="dropzone-file-thumb w-12 h-12 flex-shrink-0">
+              <img src="../../images/test-img.jpg" alt="" class="w-full h-full object-cover" />
+            </div>
+            <p class="text-paragraph-1 text-secondary-900"><strong>Image.</strong> Used when the user uploads an image (.jpg, .jpeg, .png, etc)</p>
+          </li>
+          <li class="flex gap-4 items-center">
+            <div class="dropzone-file-thumb w-12 h-12 flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M14 2V8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 13H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 17H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10 9H9H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <p class="text-paragraph-1 text-secondary-900"><strong>Icon.</strong> Used when the user uploads a Word file (.doc, .docx)</p>
+          </li>
+          <li class="flex gap-4 items-center">
+            <div class="dropzone-file-thumb w-12 h-12 flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M21.21 15.89C20.5739 17.3945 19.5788 18.7202 18.3119 19.7513C17.045 20.7824 15.5448 21.4874 13.9425 21.8048C12.3401 22.1221 10.6845 22.0421 9.12018 21.5718C7.55591 21.1014 6.13066 20.2551 4.96906 19.1067C3.80745 17.9582 2.94485 16.5428 2.45667 14.9839C1.96849 13.4251 1.8696 11.7705 2.16863 10.1646C2.46767 8.55878 3.15553 7.05063 4.17208 5.77203C5.18863 4.49343 6.50292 3.48332 8.00004 2.83M22 12C22 10.6868 21.7414 9.38642 21.2388 8.17317C20.7363 6.95991 19.9997 5.85752 19.0711 4.92893C18.1425 4.00035 17.0401 3.26375 15.8269 2.7612C14.6136 2.25866 13.3133 2 12 2V12H22Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <p class="text-paragraph-1 text-secondary-900"><strong>Icon.</strong> Used when the user uploads an Excel file (.xls)</p>
+          </li>
+          <li class="flex gap-4 items-center">
+            <div class="dropzone-file-thumb w-12 h-12 flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M22 19C22 19.5304 21.7893 20.0391 21.4142 20.4142C21.0391 20.7893 20.5304 21 20 21H4C3.46957 21 2.96086 20.7893 2.58579 20.4142C2.21071 20.0391 2 19.5304 2 19V5C2 4.46957 2.21071 3.96086 2.58579 3.58579C2.96086 3.21071 3.46957 3 4 3H9L11 6H20C20.5304 6 21.0391 6.21071 21.4142 6.58579C21.7893 6.96086 22 7.46957 22 8V19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <p class="text-paragraph-1 text-secondary-900"><strong>Icon.</strong> Used when the user uploads a compressed file (.zip, .rar)</p>
+          </li>
+          <li class="flex gap-4 items-center">
+            <div class="dropzone-file-thumb w-12 h-12 flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M13 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V9L13 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M13 2V9H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <p class="text-paragraph-1 text-secondary-900"><strong>Icon.</strong> Used when the user uploads a PDF file, and also for all other options not included above. (.pdf, other)</p>
+          </li>
+        </ul>
+      </section>
+
       <section>
         <h2 class="text-lg font-semibold text-secondary-900 mb-3">Code</h2>
-        <pre class="relative pt-10 pr-14 pb-4 pl-4 bg-secondary-900 text-secondary-100 rounded-card overflow-x-auto text-sm"><code data-copyable>&lt;div class=&quot;border-2 border-dashed border-secondary-300 rounded-card p-8 text-center text-secondary-500 text-sm hover:border-primary-400 hover:bg-primary-50/50&quot;&gt;
-  Drag and drop files here, or click to browse
+        <p class="text-sm text-secondary-600 mb-3">Use <code class="bg-secondary-100 px-1 rounded">dropzone</code> for the empty area; <code class="bg-secondary-100 px-1 rounded">dropzone-file-list</code>, <code class="bg-secondary-100 px-1 rounded">dropzone-file-item</code>, <code class="bg-secondary-100 px-1 rounded">dropzone-file-thumb</code>, <code class="bg-secondary-100 px-1 rounded">dropzone-file-info</code>, <code class="bg-secondary-100 px-1 rounded">dropzone-file-name</code>, <code class="bg-secondary-100 px-1 rounded">dropzone-file-size</code>, <code class="bg-secondary-100 px-1 rounded">dropzone-file-remove</code> for the file list. Choose thumbnail: image preview for images, or icon by type (Word, Excel, zip, PDF/other).</p>
+        <pre class="relative pt-10 pr-14 pb-4 pl-4 bg-secondary-900 text-secondary-100 rounded-card overflow-x-auto text-sm"><code data-copyable>&lt;!-- Empty dropzone (single or multiple) --&gt;
+&lt;label class=&quot;dropzone&quot; for=&quot;file-input&quot;&gt;
+  &lt;span&gt;Drag and drop or click to upload&lt;/span&gt;
+  &lt;input type=&quot;file&quot; id=&quot;file-input&quot; class=&quot;sr-only&quot; multiple /&gt;
+&lt;/label&gt;
+
+&lt;!-- File list item --&gt;
+&lt;div class=&quot;dropzone-file-item&quot;&gt;
+  &lt;div class=&quot;flex gap-3 items-center min-w-0 flex-1&quot;&gt;
+    &lt;div class=&quot;dropzone-file-thumb&quot;&gt;&lt;img src=&quot;...&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;
+    &lt;div class=&quot;dropzone-file-info&quot;&gt;
+      &lt;span class=&quot;dropzone-file-name&quot;&gt;Filename.jpg&lt;/span&gt;
+      &lt;span class=&quot;dropzone-file-size&quot;&gt;2.4 MB&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button type=&quot;button&quot; class=&quot;dropzone-file-remove&quot; aria-label=&quot;Remove file&quot;&gt;...&lt;/button&gt;
 &lt;/div&gt;</code></pre>
       </section>
     </main>

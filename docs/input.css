@@ -231,4 +231,71 @@
   .dropdown-menu-item {
     @apply text-left w-full bg-transparent border-0 cursor-pointer py-0 px-0 text-inherit hover:bg-secondary-50 focus:outline-none focus:ring-0;
   }
+
+  /* Dropzone — Figma 10933-47876: default gray-600, hover text gray-800, disabled gray-400 */
+  .dropzone {
+    @apply bg-white border border-dashed border-neutrals-gray-600 rounded-md min-h-[190px] w-full max-w-[383px] flex items-center justify-center text-center cursor-pointer;
+    @apply text-paragraph-1 text-neutrals-gray-600;
+  }
+  .dropzone:hover,
+  .dropzone:focus-within {
+    @apply text-neutrals-gray-800;
+  }
+  .dropzone:disabled,
+  .dropzone.dropzone-disabled {
+    @apply border-neutrals-gray-400 text-neutrals-gray-400 cursor-not-allowed pointer-events-none;
+  }
+  /* Dropzone image preview states — Figma: 6px radius, 1px dashed gray-400, background image lightgray 50% / cover no-repeat */
+  .dropzone-preview {
+    @apply relative w-full aspect-video overflow-hidden border-neutrals-gray-400;
+    border-radius: 6px;
+    border-width: 1px;
+    border-style: dashed;
+    background-color: lightgray;
+    background-position: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .dropzone-preview-disabled .dropzone-preview-overlay {
+    @apply absolute inset-0;
+    background-color: rgba(211, 211, 211, 0.5); /* lightgray 50% opacity */
+  }
+  /* Default: overlay hidden until hover */
+  .dropzone-preview:not(.dropzone-preview-disabled):not(.dropzone-preview-hover) .dropzone-preview-overlay {
+    @apply absolute inset-0 flex items-center justify-center text-center bg-black/50 text-white text-paragraph-1 px-4 opacity-0 pointer-events-none transition-opacity duration-200;
+  }
+  .dropzone-preview:not(.dropzone-preview-disabled):not(.dropzone-preview-hover):hover .dropzone-preview-overlay {
+    @apply opacity-100 pointer-events-auto;
+  }
+  /* Static hover demo: overlay always visible */
+  .dropzone-preview-hover .dropzone-preview-overlay {
+    @apply absolute inset-0 flex items-center justify-center text-center bg-black/50 text-white text-paragraph-1 px-4;
+  }
+  .dropzone-file-list {
+    @apply flex flex-col w-full max-w-[383px];
+  }
+  .dropzone-file-item {
+    @apply flex items-center justify-between pt-6 pb-6 border-b border-neutrals-gray-400;
+  }
+  .dropzone-file-item:first-of-type {
+    @apply pt-6;
+  }
+  .dropzone-file-thumb {
+    @apply w-12 h-12 flex-shrink-0 rounded overflow-hidden flex items-center justify-center text-neutrals-gray-700;
+  }
+  .dropzone-file-thumb img {
+    @apply w-full h-full object-cover;
+  }
+  .dropzone-file-info {
+    @apply flex flex-col flex-1 min-w-0;
+  }
+  .dropzone-file-name {
+    @apply text-heading-5 text-neutrals-black font-semibold truncate;
+  }
+  .dropzone-file-size {
+    @apply text-paragraph-2 text-neutrals-gray-700;
+  }
+  .dropzone-file-remove {
+    @apply flex-shrink-0 w-6 h-6 flex items-center justify-center text-neutrals-gray-700 hover:bg-secondary-100 cursor-pointer;
+  }
 }
