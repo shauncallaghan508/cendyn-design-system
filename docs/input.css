@@ -223,4 +223,12 @@
   .btn-icon-link-error { @apply inline-flex items-center justify-center p-space-12 rounded-md text-error bg-transparent hover:underline focus:outline-none focus:ring-2 focus:ring-error-40 focus:ring-offset-1 disabled:opacity-60 disabled:cursor-not-allowed; }
   .btn-icon-link-default { @apply inline-flex items-center justify-center p-space-12 rounded-md text-neutrals-black bg-transparent hover:underline focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-1 disabled:opacity-60 disabled:cursor-not-allowed; }
   .btn-icon-sm { @apply p-2; }
+
+  /* Dropdown menu — Figma 7312-548: white panel, 160px, 8px radius, gray-400 border, 24px/16px padding, 16px gap, gray-700 text */
+  .dropdown-menu {
+    @apply bg-white border border-neutrals-gray-400 rounded-lg flex flex-col gap-4 min-w-[160px] w-[160px] px-space-24 py-space-16 text-base text-neutrals-gray-700 font-normal leading-normal;
+  }
+  .dropdown-menu-item {
+    @apply text-left w-full bg-transparent border-0 cursor-pointer py-0 px-0 text-inherit hover:bg-secondary-50 focus:outline-none focus:ring-0;
+  }
 }

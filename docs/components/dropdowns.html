@@ -63,20 +63,43 @@
       <p class="text-secondary-600 mb-8">Dropdown menus and selects.</p>
       <section class="mb-8">
         <h2 class="text-lg font-semibold text-secondary-900 mb-3">Preview</h2>
+        <p class="text-sm text-secondary-600 mb-4">Dropdown menu (Figma 7312-548): white panel, 160px wide, 8px radius, light border, three action items with 16px vertical gap.</p>
         <div class="p-4 bg-white rounded-card border border-secondary-200">
-          <div class="relative inline-block"><button type="button" class="px-4 py-2 rounded-button border border-secondary-300 bg-white text-secondary-700 text-sm font-medium hover:bg-secondary-50">Options ▾</button><div class="absolute top-full left-0 mt-1 w-48 py-1 bg-white border border-secondary-200 rounded-button shadow-dropdown z-10 hidden"><a href="#" class="block px-4 py-2 text-sm text-secondary-700 hover:bg-secondary-50">Item 1</a><a href="#" class="block px-4 py-2 text-sm text-secondary-700 hover:bg-secondary-50">Item 2</a></div></div>
+          <div class="relative inline-block">
+            <button type="button" class="btn-outline-secondary" id="dropdown-trigger" aria-haspopup="true" aria-expanded="false">Options ▾</button>
+            <div class="dropdown-menu absolute top-full left-0 mt-2 z-10" id="dropdown-panel" role="menu" aria-labelledby="dropdown-trigger" hidden>
+              <button type="button" class="dropdown-menu-item" role="menuitem">Action</button>
+              <button type="button" class="dropdown-menu-item" role="menuitem">Action</button>
+              <button type="button" class="dropdown-menu-item" role="menuitem">Action</button>
+            </div>
+          </div>
         </div>
       </section>
       <section>
         <h2 class="text-lg font-semibold text-secondary-900 mb-3">Code</h2>
+        <p class="text-sm text-secondary-600 mb-3">Use <code class="bg-secondary-100 px-1 rounded">dropdown-menu</code> for the panel and <code class="bg-secondary-100 px-1 rounded">dropdown-menu-item</code> for each action. Toggle visibility with JS (e.g. <code class="bg-secondary-100 px-1 rounded">aria-expanded</code>, <code class="bg-secondary-100 px-1 rounded">hidden</code>).</p>
         <pre class="relative pt-10 pr-14 pb-4 pl-4 bg-secondary-900 text-secondary-100 rounded-card overflow-x-auto text-sm"><code data-copyable>&lt;div class=&quot;relative inline-block&quot;&gt;
-  &lt;button type=&quot;button&quot; class=&quot;px-4 py-2 rounded-button border border-secondary-300 bg-white text-secondary-700 text-sm font-medium&quot;&gt;Options ▾&lt;/button&gt;
-  &lt;div class=&quot;absolute top-full left-0 mt-1 w-48 py-1 bg-white border border-secondary-200 rounded-button shadow-dropdown&quot;&gt;
-    &lt;a href=&quot;#&quot; class=&quot;block px-4 py-2 text-sm text-secondary-700 hover:bg-secondary-50&quot;&gt;Item 1&lt;/a&gt;
-    &lt;a href=&quot;#&quot; class=&quot;block px-4 py-2 text-sm text-secondary-700 hover:bg-secondary-50&quot;&gt;Item 2&lt;/a&gt;
+  &lt;button type=&quot;button&quot; class=&quot;btn-outline-secondary&quot; id=&quot;dropdown-trigger&quot; aria-haspopup=&quot;true&quot; aria-expanded=&quot;false&quot;&gt;Options ▾&lt;/button&gt;
+  &lt;div class=&quot;dropdown-menu absolute top-full left-0 mt-2 z-10&quot; role=&quot;menu&quot; aria-labelledby=&quot;dropdown-trigger&quot; hidden&gt;
+    &lt;button type=&quot;button&quot; class=&quot;dropdown-menu-item&quot; role=&quot;menuitem&quot;&gt;Action&lt;/button&gt;
+    &lt;button type=&quot;button&quot; class=&quot;dropdown-menu-item&quot; role=&quot;menuitem&quot;&gt;Action&lt;/button&gt;
+    &lt;button type=&quot;button&quot; class=&quot;dropdown-menu-item&quot; role=&quot;menuitem&quot;&gt;Action&lt;/button&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
       </section>
+      <script>
+        (function() {
+          var trigger = document.getElementById('dropdown-trigger');
+          var panel = document.getElementById('dropdown-panel');
+          if (trigger && panel) {
+            trigger.addEventListener('click', function() {
+              var open = panel.getAttribute('hidden') == null;
+              panel.toggleAttribute('hidden', open);
+              trigger.setAttribute('aria-expanded', !open);
+            });
+          }
+        })();
+      </script>
     </main>
   </div>
   <script src="../js/copy.js"></script>

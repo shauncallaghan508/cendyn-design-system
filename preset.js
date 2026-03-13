@@ -36,6 +36,7 @@ module.exports = {
         // Semantic alias (use neutrals in components)
         secondary: {
           DEFAULT: '#6e84a3',
+          50: '#FCFDFE',
           100: '#f9fbfd',
           300: '#e4ebf6',
           400: '#d2ddec',
