@@ -296,6 +296,6 @@
     @apply text-paragraph-2 text-neutrals-gray-700;
   }
   .dropzone-file-remove {
-    @apply flex-shrink-0 w-6 h-6 flex items-center justify-center text-neutrals-gray-700 hover:bg-secondary-100 cursor-pointer;
+    @apply flex-shrink-0 w-6 h-6 flex items-center justify-center text-neutrals-gray-700 hover:text-primary cursor-pointer;
   }
 }
