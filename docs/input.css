@@ -8,6 +8,11 @@
   body {
     @apply font-sans text-secondary-700 antialiased;
   }
+  /* All inputs and textareas: filled text neutrals-black, placeholder neutrals-gray-700 */
+  input,
+  textarea {
+    @apply text-neutrals-black placeholder:text-neutrals-gray-700;
+  }
 }
 
 @layer components {
@@ -226,15 +231,18 @@
 
   /* Dropdown menu — Figma 7312-548: white panel, 160px, 8px radius, gray-400 border, 24px/16px padding, 16px gap, gray-700 text */
   .dropdown-menu {
-    @apply bg-white border border-neutrals-gray-400 rounded-lg flex flex-col gap-4 min-w-[160px] w-[160px] px-space-24 py-space-16 text-base text-neutrals-gray-700 font-normal leading-normal;
+    @apply bg-white border border-neutrals-gray-400 rounded-lg flex flex-col gap-4 min-w-[10rem] px-space-24 py-space-16 text-base text-neutrals-gray-700 font-normal leading-normal;
   }
   .dropdown-menu-item {
-    @apply text-left w-full bg-transparent border-0 cursor-pointer py-0 px-0 text-inherit hover:bg-secondary-50 focus:outline-none focus:ring-0;
+    @apply text-left w-full bg-transparent border-0 cursor-pointer py-0 px-0 text-inherit mb-[space-8] hover:text-neutrals-gray-800 focus:outline-none focus:ring-0;
+  }
+  .dropdown-menu:first-child {
+    @apply mt-space-16;
   }
 
   /* Dropzone — Figma 10933-47876: default gray-600, hover text gray-800, disabled gray-400 */
   .dropzone {
-    @apply bg-white border border-dashed border-neutrals-gray-600 rounded-md min-h-[190px] w-full max-w-[383px] flex items-center justify-center text-center cursor-pointer;
+    @apply bg-white border border-dashed border-neutrals-gray-600 rounded-md min-h-[190px] w-full flex items-center justify-center text-center cursor-pointer;
     @apply text-paragraph-1 text-neutrals-gray-600;
   }
   .dropzone:hover,
@@ -272,7 +280,7 @@
     @apply absolute inset-0 flex items-center justify-center text-center bg-black/50 text-white text-paragraph-1 px-4;
   }
   .dropzone-file-list {
-    @apply flex flex-col w-full max-w-[383px];
+    @apply flex flex-col w-full;
   }
   .dropzone-file-item {
     @apply flex items-center justify-between pt-6 pb-6 border-b border-neutrals-gray-400;
@@ -297,5 +305,423 @@
   }
   .dropzone-file-remove {
     @apply flex-shrink-0 w-6 h-6 flex items-center justify-center text-neutrals-gray-700 hover:text-primary cursor-pointer;
+  }
+
+  /* Empty state — Figma 10524-73667: illustration, title, description, optional button + link */
+  .empty-state {
+    @apply flex flex-col items-center text-center gap-4 w-full;
+  }
+  .empty-state-sm .empty-state-illustration {
+    @apply w-20 h-20;
+  }
+  .empty-state-sm .empty-state-title {
+    @apply text-heading-3;
+  }
+  .empty-state-sm .empty-state-description {
+    @apply text-paragraph-2 text-neutrals-gray-700;
+  }
+  .empty-state-illustration {
+    @apply w-[100px] h-[100px] flex-shrink-0 flex items-center justify-center overflow-hidden;
+  }
+  .empty-state-illustration img {
+    @apply w-full h-full object-contain;
+  }
+  .empty-state-content {
+    @apply flex flex-col items-center gap-3 w-full;
+  }
+  .empty-state-title {
+    @apply text-heading-2 text-neutrals-black font-semibold;
+  }
+  .empty-state-description {
+    @apply text-paragraph-1 text-neutrals-gray-700 text-center;
+  }
+  /* Empty state with background: white, padding space-40, rounded-xl, border gray-400 */
+  .empty-state-bg {
+    @apply bg-white p-space-40 rounded-xl border border-neutrals-gray-400;
+  }
+
+  /* Link typography — 16px default, 14px small */
+  .link {
+    @apply text-base font-normal not-italic leading-normal text-primary hover:underline;
+  }
+  .link-sm {
+    @apply text-sm text-primary hover:underline;
+  }
+
+  /* Shared input styling — use for standalone inputs; same tokens as input-group/compose-text-area */
+  .input-base {
+    @apply w-full bg-white border border-neutrals-gray-400 rounded-md px-3 py-2 text-paragraph-1 focus:outline-none focus:ring-0;
+  }
+  .input-label {
+    @apply block text-paragraph-1 text-neutrals-black mb-1;
+  }
+
+  /* Compose text area — Figma 2056-13716: white bg, gray-400 border, 16px padding, optional counter */
+  .compose-text-area {
+    @apply bg-white border border-neutrals-gray-400 rounded-md flex flex-col gap-2.5 p-space-16 w-full min-h-[130px];
+  }
+  .compose-text-area textarea {
+    @apply flex-1 min-h-0 w-full resize-none bg-transparent border-0 p-0 text-paragraph-1 text-neutrals-black placeholder:text-neutrals-gray-700 focus:outline-none focus:ring-0;
+  }
+  .compose-text-area__counter {
+    @apply flex justify-end text-paragraph-2 text-neutrals-gray-700 shrink-0;
+  }
+
+  /* Input group — Figma 38256-3193: label (optional required *), field with optional prepend/append, 6px radius */
+  .input-group {
+    @apply flex flex-col gap-2 w-full;
+  }
+  .input-group__label {
+    @apply flex items-center justify-between gap-2 w-full;
+  }
+  .input-group__label-text {
+    @apply flex items-center gap-1 text-paragraph-1 text-neutrals-black;
+  }
+  .input-group__required {
+    @apply text-error;
+  }
+  .input-group__description {
+    @apply text-paragraph-2 text-neutrals-gray-700 w-full;
+  }
+  .input-group__field {
+    @apply bg-white border border-neutrals-gray-400 rounded-md flex items-center overflow-hidden w-full min-h-[40px] transition-[border-color,box-shadow] duration-150;
+  }
+  .input-group__field:hover:not(:has(input:disabled)):not(:has(select:disabled)):not(.input-group__field--disabled):not(.input-group__field--success):not(.input-group__field--error):not(.input-group__field--demo-hover):not(.input-group__field--demo-focus):not(.input-group__field--demo-disabled) {
+    @apply border-neutrals-gray-600;
+  }
+  .input-group__field:focus-within:not(.input-group__field--disabled):not(.input-group__field--success):not(.input-group__field--error):not(.input-group__field--demo-hover):not(.input-group__field--demo-focus):not(.input-group__field--demo-disabled) {
+    @apply border-neutrals-black ring-2 ring-neutrals-black/15;
+  }
+  .input-group__field--success {
+    @apply border-success;
+  }
+  .input-group__field--success:focus-within {
+    @apply border-success ring-2 ring-success/25;
+  }
+  .input-group__field--error {
+    @apply border-error;
+  }
+  .input-group__field--error:focus-within {
+    @apply border-error ring-2 ring-error/25;
+  }
+  .input-group__field--disabled,
+  .input-group__field:has(input:disabled),
+  .input-group__field:has(select:disabled) {
+    @apply bg-neutrals-gray-100 border-neutrals-gray-400 cursor-not-allowed;
+  }
+  .input-group__field--disabled .input-group__input-wrap input,
+  .input-group__field:has(input:disabled) .input-group__input-wrap input {
+    @apply text-neutrals-gray-700 placeholder:text-neutrals-gray-700 cursor-not-allowed;
+  }
+  /* Static demos for docs (hover/focus/disabled without interaction) */
+  .input-group__field--demo-hover {
+    @apply border-neutrals-gray-600;
+  }
+  .input-group__field--demo-focus {
+    @apply border-neutrals-black ring-2 ring-neutrals-black/15;
+  }
+  .input-group__field--demo-disabled {
+    @apply bg-neutrals-gray-100 border-neutrals-gray-400 cursor-not-allowed;
+  }
+  .input-group__field--demo-disabled .input-group__input-wrap input {
+    @apply text-neutrals-gray-700 placeholder:text-neutrals-gray-700 cursor-not-allowed;
+  }
+  .input-group__validation {
+    @apply text-paragraph-2 w-full;
+  }
+  .input-group__validation--success {
+    @apply text-success;
+  }
+  .input-group__validation--error {
+    @apply text-error;
+  }
+  .input-group__field--sm {
+    @apply min-h-[32px];
+  }
+  .input-group__field--sm .input-group__input-wrap input {
+    @apply py-1;
+  }
+  .input-group__prepend,
+  .input-group__append {
+    @apply flex items-center shrink-0 h-10 px-2 py-2.5 bg-neutrals-gray-200 text-paragraph-1 text-neutrals-gray-700;
+  }
+  .input-group__prepend {
+    @apply border-r border-neutrals-gray-400;
+  }
+  .input-group__append {
+    @apply border-l border-neutrals-gray-400;
+  }
+  /* Append with icon only (no gray background) — e.g. Select, Clear, Search */
+  .input-group__append-icon {
+    @apply flex items-center justify-center shrink-0 h-10 py-2 px-2 border-l border-neutrals-gray-400 bg-transparent text-neutrals-gray-800;
+  }
+  .input-group__input-wrap {
+    @apply flex-1 min-w-0 flex items-center gap-2 px-2;
+  }
+  .input-group__input-wrap input {
+    @apply w-full min-w-0 bg-transparent border-0 py-2 text-paragraph-1 text-neutrals-black placeholder:text-neutrals-gray-700 focus:outline-none focus:ring-0;
+  }
+
+  /* Input select — Figma 7082-4061: dropdown-style field with value + chevron (use for select triggers) */
+  .input-select {
+    @apply bg-neutrals-white border border-neutrals-gray-400 rounded-md flex items-center gap-2.5 overflow-hidden min-h-[40px] px-3 py-2 w-full transition-[border-color,box-shadow] duration-150;
+  }
+  .input-select:hover:not(.input-select--disabled) {
+    @apply border-neutrals-gray-600;
+  }
+  .input-select:focus-within:not(.input-select--disabled) {
+    @apply border-neutrals-black ring-2 ring-neutrals-black/15;
+  }
+  .input-select--disabled {
+    @apply bg-neutrals-gray-100 border-neutrals-gray-400 cursor-not-allowed;
+  }
+  .input-select__value {
+    @apply flex flex-1 min-w-0 items-center text-paragraph-1 text-neutrals-black truncate;
+  }
+  .input-select__value--placeholder {
+    @apply text-neutrals-gray-700;
+  }
+  .input-select__icon {
+    @apply flex shrink-0 items-center justify-center w-4 h-4 text-neutrals-gray-700 pointer-events-none;
+  }
+  .input-select__icon svg {
+    @apply w-full h-full;
+  }
+  /* Small size — Figma list item: py-[3px], px-12px, 14px text, 13px icon */
+  .input-select-sm {
+    @apply min-h-0 py-[3px] px-3 gap-2.5;
+  }
+  .input-select-sm .input-select__value {
+    @apply text-paragraph-2;
+  }
+  .input-select-sm .input-select__icon {
+    @apply w-[13px] h-[13px];
+  }
+
+  /* Numeric input stepper — up/down arrows */
+  .input-numeric-stepper {
+    @apply flex flex-col shrink-0 border-l border-neutrals-gray-400;
+  }
+  .input-numeric-stepper button {
+    @apply flex items-center justify-center h-1/2 min-h-[18px] px-1 bg-neutrals-gray-200 text-neutrals-gray-700 hover:bg-neutrals-gray-300 focus:outline-none focus:ring-0 rounded-none border-none cursor-pointer;
+  }
+  .input-numeric-stepper button:first-child {
+    @apply rounded-tr-md;
+  }
+  .input-numeric-stepper button:last-child {
+    @apply rounded-br-md;
+  }
+  /* Status indicator dot (e.g. 8px green circle) */
+  .input-status-dot {
+    @apply shrink-0 w-2 h-2 rounded-full bg-success;
+  }
+
+  /* Toggle — Figma 16932-145649: 40×22 track, 16px thumb, label positions and dual-label variant */
+  .toggle {
+    @apply flex items-center gap-2;
+  }
+  .toggle--dual {
+    @apply gap-space-8;
+  }
+  .toggle__label {
+    @apply text-paragraph-2 text-neutrals-black leading-[22px] shrink-0;
+  }
+  .toggle--dual .toggle__label {
+    @apply text-paragraph-1 leading-normal;
+  }
+  .toggle__label--left {
+    @apply text-right;
+  }
+  .toggle--disabled .toggle__label {
+    @apply text-neutrals-gray-700;
+  }
+  .toggle__switch {
+    @apply relative w-10 h-[22px] shrink-0 rounded-full cursor-pointer border-0 p-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2;
+  }
+  .toggle__switch[aria-disabled="true"],
+  .toggle__switch.toggle__switch--disabled {
+    @apply cursor-not-allowed opacity-60 pointer-events-none;
+  }
+  .toggle__track {
+    @apply absolute inset-0 rounded-full bg-neutrals-gray-400 transition-colors duration-150;
+  }
+  .toggle__thumb {
+    @apply absolute top-[3px] left-[3px] w-4 h-4 rounded-full bg-white transition-[left] duration-150 ease-out;
+  }
+  .toggle__switch.toggle__switch--on .toggle__track {
+    @apply bg-primary;
+  }
+  .toggle__switch.toggle__switch--on .toggle__thumb {
+    @apply left-[21px];
+  }
+  .toggle__switch.toggle__switch--disabled.toggle__switch--on .toggle__track {
+    @apply bg-neutrals-gray-600;
+  }
+
+  /* Page header — Figma 31779-5645: breadcrumbs row, then title left / tabs or actions right */
+  .page-header {
+    @apply flex flex-col w-full border-b border-neutrals-gray-400 pt-space-36 mb-space-36;
+  }
+  .page-header__breadcrumbs {
+    @apply w-full shrink-0 mb-space-8;
+  }
+  .page-header__updated {
+    @apply flex gap-1 items-center shrink-0 text-right;
+  }
+  .page-header__updated-icon {
+    @apply w-3 h-3 shrink-0 text-neutrals-gray-700;
+  }
+  .page-header__updated-text {
+    @apply text-heading-6-caps text-neutrals-gray-700 tracking-[0.08em];
+  }
+  .page-header__content {
+    @apply flex items-start w-full;
+  }
+  .page-header__content:has(.page-header__tabs) {
+    @apply gap-6 items-end;
+  }
+  .page-header__left {
+    @apply flex flex-1 min-w-0 flex-col pb-space-24;
+  }
+  .page-header__title {
+    @apply text-heading-1 text-neutrals-black font-semibold leading-tight;
+  }
+  .page-header__tabs {
+    @apply flex gap-4 shrink-0;
+  }
+  /* Right-side actions (buttons) — Figma 31779-5744, 31780-11779 */
+  .page-header__actions {
+    @apply flex gap-4 items-center shrink-0 pb-space-24;
+  }
+  .page-header__content:has(.page-header__actions) {
+    @apply items-center gap-6;
+  }
+  .page-header__actions-buttons {
+    @apply flex gap-3 items-center justify-end;
+  }
+  /* Tabs in a full-width row below content (header with tabs + buttons) */
+  .page-header__tabs-row {
+    @apply flex w-full items-end;
+  }
+  .page-header__tabs-row .tabs {
+    @apply gap-4;
+  }
+
+  /* Tabs — Figma 31779-5645: default gray-700, active black + primary underline, optional badge */
+  .tabs {
+    @apply flex gap-4 items-end;
+  }
+  .tab {
+    @apply flex flex-col cursor-pointer shrink-0;
+  }
+  .tab__content {
+    @apply flex gap-2 items-center pb-[19px] border-b-2 border-transparent transition-colors duration-150;
+  }
+  .tab--active .tab__content {
+    @apply border-primary text-neutrals-black;
+    margin-bottom: -1px;
+  }
+  .tab__label {
+    @apply text-paragraph-1 text-neutrals-gray-700 whitespace-nowrap;
+  }
+  .tab--active .tab__label {
+    @apply text-neutrals-black;
+  }
+  .tab:hover:not(.tab--active) .tab__label {
+    @apply text-primary;
+  }
+  .tab__badge {
+    @apply inline-flex items-center justify-center px-3 py-1 rounded-full text-xs font-semibold text-neutrals-gray-800 bg-neutrals-gray-200;
+  }
+  .tab--sm .tab__label {
+    @apply text-paragraph-2;
+  }
+  .tab--sm .tab__content {
+    @apply pb-3;
+  }
+}
+
+/* Card list — Figma 6939-26693: one card with optional header + list of label/data rows */
+.card-list {
+  @apply flex flex-col w-full bg-neutrals-white border border-neutrals-gray-400 border-solid rounded-[10px] overflow-hidden pt-px px-px;
+}
+.card-list__header {
+  @apply flex flex-col h-[62px] items-stretch justify-center overflow-clip shrink-0 w-full rounded-tl-[10px] rounded-tr-[10px] border-b border-neutrals-gray-400 border-solid bg-neutrals-white;
+}
+.card-list__header-content {
+  @apply flex h-[62px] items-center px-space-24 py-[17px] w-full;
+}
+.card-list__header-title {
+  @apply flex flex-col justify-center text-heading-4 text-neutrals-black font-semibold leading-normal;
+}
+.card-list__list {
+  @apply flex flex-col items-stretch shrink-0 w-full pb-px px-space-24;
+}
+.card-list__item {
+  @apply flex flex-col items-stretch shrink-0 w-full;
+}
+.card-list__item-row {
+  @apply flex items-center justify-center w-full h-[48px] shrink-0 border-b border-neutrals-gray-400 border-solid bg-neutrals-white;
+}
+.card-list__item:last-child .card-list__item-row {
+  @apply border-b-0;
+}
+.card-list__item-content {
+  @apply flex items-center w-full shrink-0;
+}
+.card-list__item-label {
+  @apply flex flex-col justify-center text-paragraph-2 text-neutrals-black flex-[1_0_0] min-h-0 min-w-0;
+}
+.card-list__item-data {
+  @apply flex flex-col justify-center text-paragraph-2 text-neutrals-gray-700 text-right shrink-0;
+}
+/* Card list item variants — Figma 6937-21 */
+.card-list__item-data--link {
+  @apply text-primary;
+}
+.card-list__item-row--title {
+  @apply h-auto min-h-[48px] py-[21px];
+}
+.card-list__item-row--with-description {
+  @apply h-auto min-h-0 py-space-12;
+}
+.card-list__item-label-wrap {
+  @apply flex flex-[1_0_0] flex-col items-start min-h-0 min-w-0 gap-2;
+}
+.card-list__item-label-with-icon {
+  @apply flex gap-2 items-center flex-[1_0_0] min-w-0;
+}
+.card-list__item-title-text {
+  @apply text-heading-4 text-neutrals-black font-semibold leading-normal;
+}
+.card-list__item-subtitle-text {
+  @apply text-[13px] font-semibold text-neutrals-black leading-normal;
+}
+.card-list__item-description {
+  @apply text-paragraph-2 text-neutrals-gray-700;
+}
+.card-list__item-data-wrap {
+  @apply flex flex-[1_0_0] items-center justify-end gap-2 min-h-0 min-w-0;
+}
+.card-list__item-status-dot {
+  @apply shrink-0 w-2 h-2 rounded-full bg-success;
+}
+.card-list__item-checkbox {
+  @apply shrink-0 w-4 h-4 rounded-md border border-neutrals-gray-500 bg-neutrals-white;
+}
+.card-list__badge {
+  @apply inline-flex items-center justify-center px-3 py-1 rounded-full text-xs font-semibold text-neutrals-white bg-primary;
+}
+.card-list__badge--muted {
+  @apply bg-neutrals-gray-200 text-neutrals-gray-800;
+}
+
+/* Tailwind's fontSize plugin doesn't output textTransform; add uppercase for caps font sizes */
+@layer utilities {
+  .text-heading-6-caps {
+    text-transform: uppercase;
+  }
+  .text-smallcaps {
+    text-transform: uppercase;
   }
 }

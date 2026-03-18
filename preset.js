@@ -113,7 +113,7 @@ module.exports = {
         'heading-4': ['0.9375rem', { lineHeight: '1', fontWeight: '600' }],  // 15px — h4
         'heading-5': ['0.8125rem', { lineHeight: '1', fontWeight: '600' }],  // 13px — h5
         'heading-6': ['0.625rem', { lineHeight: '1', fontWeight: '600' }],  // 10px — h6
-        'heading-6-caps': ['0.625rem', { lineHeight: '1', fontWeight: '600', letterSpacing: '0.08em' }], // 10px, 8% spacing
+        'heading-6-caps': ['0.625rem', { lineHeight: '1', fontWeight: '600', letterSpacing: '0.08em', textTransform: 'uppercase' }], // 10px, caps
         // Display: Semibold, lineHeight 1
         'display-1': ['4rem', { lineHeight: '1', fontWeight: '600' }],      // 64px
         'display-2': ['3.25rem', { lineHeight: '1', fontWeight: '600' }],   // 52px
@@ -125,7 +125,7 @@ module.exports = {
         'line-1': ['1rem', { lineHeight: '1', fontWeight: '400' }],          // 16px single line
         'line-2': ['0.875rem', { lineHeight: '1', fontWeight: '400' }],     // 14px single line
         // Smallcaps: 8px, Semibold, 8% letter spacing
-        'smallcaps': ['0.5rem', { lineHeight: '1', fontWeight: '600', letterSpacing: '0.08em' }],
+        'smallcaps': ['0.5rem', { lineHeight: '1', fontWeight: '600', letterSpacing: '0.08em', textTransform: 'uppercase' }],
         // Legacy aliases (keep for existing usage)
         '2xs': ['0.875rem', { lineHeight: '1.375rem' }],
         base: ['1rem', { lineHeight: '1.5rem' }],

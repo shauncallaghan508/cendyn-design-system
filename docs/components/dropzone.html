@@ -41,8 +41,6 @@
         <li><a href="dropzone.html" class="text-primary font-medium">Dropzone</a></li>
         <li><a href="empty-states.html" class="text-secondary-600 hover:text-primary">Empty States</a></li>
         <li><a href="forms.html" class="text-secondary-600 hover:text-primary">Forms</a></li>
-        <li><a href="form-inputs.html" class="text-secondary-600 hover:text-primary">Form Inputs</a></li>
-        <li><a href="form-toggle.html" class="text-secondary-600 hover:text-primary">Form Toggle</a></li>
         <li><a href="header.html" class="text-secondary-600 hover:text-primary">Header</a></li>
         <li><a href="icons.html" class="text-secondary-600 hover:text-primary">Icons</a></li>
         <li><a href="lists.html" class="text-secondary-600 hover:text-primary">Lists</a></li>
@@ -50,7 +48,7 @@
         <li><a href="modals-dialogs.html" class="text-secondary-600 hover:text-primary">Modals &amp; Dialogs</a></li>
         <li><a href="mobile-frame.html" class="text-secondary-600 hover:text-primary">Mobile Frame</a></li>
         <li><a href="navigation-icons.html" class="text-secondary-600 hover:text-primary">Navigation Icons</a></li>
-        <li><a href="navigation-tabs.html" class="text-secondary-600 hover:text-primary">Navigation Tabs</a></li>
+        <li><a href="navigation-tabs.html" class="text-secondary-600 hover:text-primary">Tabs</a></li>
         <li><a href="scrollbar.html" class="text-secondary-600 hover:text-primary">Scrollbar</a></li>
         <li><a href="tooltips-popovers.html" class="text-secondary-600 hover:text-primary">Tooltips &amp; Popovers</a></li>
         <li><a href="toasts.html" class="text-secondary-600 hover:text-primary">Toasts</a></li>
@@ -76,7 +74,7 @@
         <h3 class="text-heading-3 text-secondary-900 mb-2">Single file — default</h3>
         <p class="text-paragraph-1 text-secondary-600 mb-3">Dashed border and text use <code class="bg-secondary-100 px-1 rounded">neutrals-gray-600</code>. Use class <code class="bg-secondary-100 px-1 rounded">dropzone</code>. Wire a hidden file input to the click area.</p>
         <div class="p-4 bg-secondary-100 rounded-card border border-secondary-200">
-          <label class="dropzone" for="dropzone-single">
+          <label class="dropzone w-full max-w-[383px]" for="dropzone-single">
             <span>Drag and drop or click to upload</span>
             <input type="file" id="dropzone-single" class="sr-only" accept="image/*,.pdf,.doc,.docx,.xls,.xlsx,.zip,.rar" />
           </label>
@@ -85,7 +83,7 @@
         <h3 class="text-heading-3 text-secondary-900 mb-2 mt-8">Single file — hover</h3>
         <p class="text-paragraph-1 text-secondary-600 mb-3">On hover/focus, text uses <code class="bg-secondary-100 px-1 rounded">neutrals-gray-800</code>.</p>
         <div class="p-4 bg-secondary-100 rounded-card border border-secondary-200">
-          <label class="dropzone text-neutrals-gray-800" for="dropzone-hover">
+          <label class="dropzone w-full max-w-[383px] text-neutrals-gray-800" for="dropzone-hover">
             <span>Drag and drop or click to upload</span>
             <input type="file" id="dropzone-hover" class="sr-only" accept="image/*,.pdf,.doc,.docx,.xls,.xlsx,.zip,.rar" />
           </label>
@@ -94,7 +92,7 @@
         <h3 class="text-heading-3 text-secondary-900 mb-2 mt-8">Single file — disabled</h3>
         <p class="text-paragraph-1 text-secondary-600 mb-3">Disabled state: border and text <code class="bg-secondary-100 px-1 rounded">neutrals-gray-400</code>, <code class="bg-secondary-100 px-1 rounded">cursor-not-allowed</code>. Use <code class="bg-secondary-100 px-1 rounded">disabled</code> on the input or class <code class="bg-secondary-100 px-1 rounded">dropzone-disabled</code> on the label.</p>
         <div class="p-4 bg-secondary-100 rounded-card border border-secondary-200">
-          <label class="dropzone dropzone-disabled" for="dropzone-disabled">
+          <label class="dropzone dropzone-disabled w-full max-w-[383px]" for="dropzone-disabled">
             <span>Drag and drop or click to upload</span>
             <input type="file" id="dropzone-disabled" class="sr-only" disabled accept="image/*,.pdf,.doc,.docx,.xls,.xlsx,.zip,.rar" />
           </label>
@@ -126,7 +124,7 @@
         <h3 class="text-heading-3 text-secondary-900 mb-2 mt-8">Multiple files — with list</h3>
         <p class="text-paragraph-1 text-secondary-600 mb-3">Dropzone on top; below it, a list of uploaded files with thumbnail by type, filename, size, and remove control.</p>
         <div>
-          <div class="flex flex-col max-w-[383px]">
+          <div class="flex flex-col w-full max-w-[383px]">
             <label class="dropzone rounded-t-md max-w-none" for="dropzone-multi">
               <span>Drag and drop or click to upload</span>
               <input type="file" id="dropzone-multi" class="sr-only" multiple accept="image/*,.pdf,.doc,.docx,.xls,.xlsx,.zip,.rar" />
@@ -244,8 +242,8 @@
       <section>
         <h2 class="text-lg font-semibold text-secondary-900 mb-3">Code</h2>
         <p class="text-sm text-secondary-600 mb-3">Use <code class="bg-secondary-100 px-1 rounded">dropzone</code> for the empty area; <code class="bg-secondary-100 px-1 rounded">dropzone-file-list</code>, <code class="bg-secondary-100 px-1 rounded">dropzone-file-item</code>, <code class="bg-secondary-100 px-1 rounded">dropzone-file-thumb</code>, <code class="bg-secondary-100 px-1 rounded">dropzone-file-info</code>, <code class="bg-secondary-100 px-1 rounded">dropzone-file-name</code>, <code class="bg-secondary-100 px-1 rounded">dropzone-file-size</code>, <code class="bg-secondary-100 px-1 rounded">dropzone-file-remove</code> for the file list. Choose thumbnail: image preview for images, or icon by type (Word, Excel, zip, PDF/other).</p>
-        <pre class="relative pt-10 pr-14 pb-4 pl-4 bg-secondary-900 text-secondary-100 rounded-card overflow-x-auto text-sm"><code data-copyable>&lt;!-- Empty dropzone (single or multiple) --&gt;
-&lt;label class=&quot;dropzone&quot; for=&quot;file-input&quot;&gt;
+        <pre class="relative pt-10 pr-14 pb-4 pl-4 bg-secondary-900 text-secondary-100 rounded-card overflow-x-auto text-sm"><code data-copyable>&lt;!-- Empty dropzone (single or multiple) — add w-full max-w-[383px] on container for responsive width --&gt;
+&lt;label class=&quot;dropzone w-full max-w-[383px]&quot; for=&quot;file-input&quot;&gt;
   &lt;span&gt;Drag and drop or click to upload&lt;/span&gt;
   &lt;input type=&quot;file&quot; id=&quot;file-input&quot; class=&quot;sr-only&quot; multiple /&gt;
 &lt;/label&gt;

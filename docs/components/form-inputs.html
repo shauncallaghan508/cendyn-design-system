@@ -41,8 +41,6 @@
         <li><a href="dropzone.html" class="text-secondary-600 hover:text-primary">Dropzone</a></li>
         <li><a href="empty-states.html" class="text-secondary-600 hover:text-primary">Empty States</a></li>
         <li><a href="forms.html" class="text-secondary-600 hover:text-primary">Forms</a></li>
-        <li><a href="form-inputs.html" class="text-primary font-medium">Form Inputs</a></li>
-        <li><a href="form-toggle.html" class="text-secondary-600 hover:text-primary">Form Toggle</a></li>
         <li><a href="header.html" class="text-secondary-600 hover:text-primary">Header</a></li>
         <li><a href="icons.html" class="text-secondary-600 hover:text-primary">Icons</a></li>
         <li><a href="lists.html" class="text-secondary-600 hover:text-primary">Lists</a></li>
@@ -50,7 +48,7 @@
         <li><a href="modals-dialogs.html" class="text-secondary-600 hover:text-primary">Modals &amp; Dialogs</a></li>
         <li><a href="mobile-frame.html" class="text-secondary-600 hover:text-primary">Mobile Frame</a></li>
         <li><a href="navigation-icons.html" class="text-secondary-600 hover:text-primary">Navigation Icons</a></li>
-        <li><a href="navigation-tabs.html" class="text-secondary-600 hover:text-primary">Navigation Tabs</a></li>
+        <li><a href="navigation-tabs.html" class="text-secondary-600 hover:text-primary">Tabs</a></li>
         <li><a href="scrollbar.html" class="text-secondary-600 hover:text-primary">Scrollbar</a></li>
         <li><a href="tooltips-popovers.html" class="text-secondary-600 hover:text-primary">Tooltips &amp; Popovers</a></li>
         <li><a href="toasts.html" class="text-secondary-600 hover:text-primary">Toasts</a></li>
@@ -60,18 +58,25 @@
     </aside>
     <main class="overflow-hidden pl-8">
       <h1 class="text-display-sm text-secondary-900 mb-6">Form Inputs</h1>
-      <p class="text-secondary-600 mb-8">Text inputs, textareas, and select.</p>
+      <p class="text-secondary-600 mb-8">Text inputs, textareas, and select. Use <code class="bg-secondary-100 px-1 rounded text-xs">input-base</code> and <code class="bg-secondary-100 px-1 rounded text-xs">input-label</code> for standalone fields; same border, typography, and placeholder/filled colors as the <a href="forms.html" class="text-primary hover:underline">Forms</a> input group and compose text area.</p>
       <section class="mb-8">
         <h2 class="text-lg font-semibold text-secondary-900 mb-3">Preview</h2>
         <div class="p-4 bg-white rounded-card border border-secondary-200">
-          <div class="space-y-3 max-w-xs"><input type="text" class="w-full px-3 py-2 rounded-input border border-secondary-300" placeholder="Text input"><textarea class="w-full px-3 py-2 rounded-input border border-secondary-300" rows="2" placeholder="Textarea"></textarea><select class="w-full px-3 py-2 rounded-input border border-secondary-300 bg-white"><option>Select option</option></select></div>
+          <div class="space-y-3 max-w-xs">
+          <div><label class="input-label" for="fi-text">Text input</label><input type="text" id="fi-text" class="input-base" placeholder="Text input" aria-label="Text input"></div>
+          <div><label class="input-label" for="fi-textarea">Textarea</label><textarea id="fi-textarea" class="input-base" rows="2" placeholder="Textarea" aria-label="Textarea"></textarea></div>
+          <div><label class="input-label" for="fi-select">Select</label><select id="fi-select" class="input-base bg-white" aria-label="Select option"><option>Select option</option></select></div>
+        </div>
         </div>
       </section>
       <section>
         <h2 class="text-lg font-semibold text-secondary-900 mb-3">Code</h2>
-        <pre class="relative pt-10 pr-14 pb-4 pl-4 bg-secondary-900 text-secondary-100 rounded-card overflow-x-auto text-sm"><code data-copyable>&lt;input type=&quot;text&quot; class=&quot;w-full px-3 py-2 rounded-input border border-secondary-300&quot; placeholder=&quot;Text input&quot;&gt;
-&lt;textarea class=&quot;w-full px-3 py-2 rounded-input border border-secondary-300&quot; rows=&quot;2&quot; placeholder=&quot;Textarea&quot;&gt;&lt;/textarea&gt;
-&lt;select class=&quot;w-full px-3 py-2 rounded-input border border-secondary-300 bg-white&quot;&gt;&lt;option&gt;Select option&lt;/option&gt;&lt;/select&gt;</code></pre>
+        <pre class="relative pt-10 pr-14 pb-4 pl-4 bg-secondary-900 text-secondary-100 rounded-card overflow-x-auto text-sm"><code data-copyable>&lt;label class="input-label" for="..."&gt;Text input&lt;/label&gt;
+&lt;input type="text" id="..." class="input-base" placeholder="Text input"&gt;
+&lt;label class="input-label" for="..."&gt;Textarea&lt;/label&gt;
+&lt;textarea id="..." class="input-base" rows="2" placeholder="Textarea"&gt;&lt;/textarea&gt;
+&lt;label class="input-label" for="..."&gt;Select&lt;/label&gt;
+&lt;select id="..." class="input-base bg-white"&gt;&lt;option&gt;Select option&lt;/option&gt;&lt;/select&gt;</code></pre>
       </section>
     </main>
   </div>

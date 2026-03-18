@@ -41,8 +41,6 @@
         <li><a href="dropzone.html" class="text-secondary-600 hover:text-primary">Dropzone</a></li>
         <li><a href="empty-states.html" class="text-secondary-600 hover:text-primary">Empty States</a></li>
         <li><a href="forms.html" class="text-secondary-600 hover:text-primary">Forms</a></li>
-        <li><a href="form-inputs.html" class="text-secondary-600 hover:text-primary">Form Inputs</a></li>
-        <li><a href="form-toggle.html" class="text-secondary-600 hover:text-primary">Form Toggle</a></li>
         <li><a href="header.html" class="text-primary font-medium">Header</a></li>
         <li><a href="icons.html" class="text-secondary-600 hover:text-primary">Icons</a></li>
         <li><a href="lists.html" class="text-secondary-600 hover:text-primary">Lists</a></li>
@@ -50,7 +48,7 @@
         <li><a href="modals-dialogs.html" class="text-secondary-600 hover:text-primary">Modals &amp; Dialogs</a></li>
         <li><a href="mobile-frame.html" class="text-secondary-600 hover:text-primary">Mobile Frame</a></li>
         <li><a href="navigation-icons.html" class="text-secondary-600 hover:text-primary">Navigation Icons</a></li>
-        <li><a href="navigation-tabs.html" class="text-secondary-600 hover:text-primary">Navigation Tabs</a></li>
+        <li><a href="navigation-tabs.html" class="text-secondary-600 hover:text-primary">Tabs</a></li>
         <li><a href="scrollbar.html" class="text-secondary-600 hover:text-primary">Scrollbar</a></li>
         <li><a href="tooltips-popovers.html" class="text-secondary-600 hover:text-primary">Tooltips &amp; Popovers</a></li>
         <li><a href="toasts.html" class="text-secondary-600 hover:text-primary">Toasts</a></li>
@@ -60,22 +58,172 @@
     </aside>
     <main class="overflow-hidden pl-8">
       <h1 class="text-display-sm text-secondary-900 mb-6">Header</h1>
-      <p class="text-secondary-600 mb-8">Page or app header.</p>
-      <section class="mb-8">
-        <h2 class="text-lg font-semibold text-secondary-900 mb-3">Preview</h2>
-        <div class="p-4 bg-white rounded-card border border-secondary-200">
-          <header class="flex items-center justify-between px-4 py-3 border-b border-secondary-200 bg-white"><span class="font-semibold text-secondary-900">App name</span><nav class="flex gap-4"><a href="#" class="text-sm text-secondary-600 hover:text-primary">Nav 1</a><a href="#" class="text-sm text-secondary-600 hover:text-primary">Nav 2</a></nav></header>
-        </div>
+      <p class="text-paragraph-1 text-secondary-600 mb-8">Page header with optional breadcrumbs, title, updated text, and tabs. Figma 31779-5645. Use existing <a href="breadcrumbs.html" class="text-primary hover:underline">breadcrumb</a> and <a href="navigation-tabs.html" class="text-primary hover:underline">tabs</a> components.</p>
+
+      <section class="mb-10">
+        <h2 class="text-heading-2 text-secondary-900 mb-2">Page header (no tabs)</h2>
+        <p class="text-paragraph-1 text-secondary-600 mb-4">Breadcrumbs and title only. Optional “updated” line with icon and 10px caps label.</p>
+        <header class="page-header">
+          <div class="page-header__breadcrumbs">
+            <nav aria-label="Breadcrumb">
+              <ol class="list-none flex flex-wrap items-center gap-0">
+                <li class="breadcrumb-item">
+                  <a href="#" class="text-heading-6-caps text-secondary-700 hover:text-primary border-b border-transparent hover:border-primary whitespace-nowrap">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                  <a href="#" class="text-heading-6-caps text-secondary-700 hover:text-primary border-b border-transparent hover:border-primary whitespace-nowrap">Settings</a>
+                </li>
+                <li class="breadcrumb-item">
+                  <span class="text-heading-6-caps text-secondary-700 whitespace-nowrap border-b border-transparent" aria-current="page">Profile</span>
+                </li>
+              </ol>
+            </nav>
+          </div>
+          <div class="page-header__content">
+            <div class="page-header__left">
+              <h2 class="page-header__title">Title</h2>
+            </div>
+          </div>
+        </header>
       </section>
-      <section>
-        <h2 class="text-lg font-semibold text-secondary-900 mb-3">Code</h2>
-        <pre class="relative pt-10 pr-14 pb-4 pl-4 bg-secondary-900 text-secondary-100 rounded-card overflow-x-auto text-sm"><code data-copyable>&lt;header class=&quot;flex items-center justify-between px-4 py-3 border-b border-secondary-200 bg-white&quot;&gt;
-  &lt;span class=&quot;font-semibold text-secondary-900&quot;&gt;App name&lt;/span&gt;
-  &lt;nav class=&quot;flex gap-4&quot;&gt;
-    &lt;a href=&quot;#&quot; class=&quot;text-sm text-secondary-600 hover:text-primary&quot;&gt;Nav 1&lt;/a&gt;
-    &lt;a href=&quot;#&quot; class=&quot;text-sm text-secondary-600 hover:text-primary&quot;&gt;Nav 2&lt;/a&gt;
-  &lt;/nav&gt;
-&lt;/header&gt;</code></pre>
+
+      <section class="mb-10">
+        <h2 class="text-heading-2 text-secondary-900 mb-2">Page header with tabs</h2>
+        <p class="text-paragraph-1 text-secondary-600 mb-4">Add <code class="bg-secondary-100 px-1 rounded text-sm">page-header__tabs</code> and use the <a href="navigation-tabs.html" class="text-primary hover:underline">tabs</a> component. Tabs align to the bottom of the title row; active tab has a primary underline on the gray baseline.</p>
+        <header class="page-header">
+          <div class="page-header__breadcrumbs">
+            <nav aria-label="Breadcrumb">
+              <ol class="list-none flex flex-wrap items-center gap-0">
+                <li class="breadcrumb-item">
+                  <a href="#" class="text-heading-6-caps text-secondary-700 hover:text-primary border-b border-transparent hover:border-primary whitespace-nowrap">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                  <a href="#" class="text-heading-6-caps text-secondary-700 hover:text-primary border-b border-transparent hover:border-primary whitespace-nowrap">Section</a>
+                </li>
+                <li class="breadcrumb-item">
+                  <span class="text-heading-6-caps text-secondary-700 whitespace-nowrap border-b border-transparent" aria-current="page">Title</span>
+                </li>
+              </ol>
+            </nav>
+          </div>
+          <div class="page-header__content">
+            <div class="page-header__left">
+              <h2 class="page-header__title">Title</h2>
+            </div>
+            <div class="page-header__tabs" role="tablist">
+              <div class="tab tab--active" role="tab" aria-selected="true">
+                <div class="tab__content">
+                  <span class="tab__label">Tab Active</span>
+                </div>
+              </div>
+              <a href="#" class="tab" role="tab" aria-selected="false">
+                <div class="tab__content">
+                  <span class="tab__label">Tab Default</span>
+                </div>
+              </a>
+              <a href="#" class="tab" role="tab" aria-selected="false">
+                <div class="tab__content">
+                  <span class="tab__label">Tab Default</span>
+                </div>
+              </a>
+              <a href="#" class="tab" role="tab" aria-selected="false">
+                <div class="tab__content">
+                  <span class="tab__label">Tab Default</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </header>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-heading-2 text-secondary-900 mb-2">Page header with buttons</h2>
+        <p class="text-paragraph-1 text-secondary-600 mb-4">Add <code class="bg-secondary-100 px-1 rounded text-sm">page-header__actions</code> on the right with two <a href="buttons.html" class="text-primary hover:underline">buttons</a> (e.g. <code class="bg-secondary-100 px-1 rounded text-sm">btn-solid-primary</code>, <code class="bg-secondary-100 px-1 rounded text-sm">btn-outline-secondary</code>). Figma 31779-5744.</p>
+        <header class="page-header">
+          <div class="page-header__breadcrumbs">
+            <nav aria-label="Breadcrumb">
+              <ol class="list-none flex flex-wrap items-center gap-0">
+                <li class="breadcrumb-item">
+                  <a href="#" class="text-heading-6-caps text-secondary-700 hover:text-primary border-b border-transparent hover:border-primary whitespace-nowrap">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                  <a href="#" class="text-heading-6-caps text-secondary-700 hover:text-primary border-b border-transparent hover:border-primary whitespace-nowrap">Section</a>
+                </li>
+                <li class="breadcrumb-item">
+                  <span class="text-heading-6-caps text-secondary-700 whitespace-nowrap border-b border-transparent" aria-current="page">Title</span>
+                </li>
+              </ol>
+            </nav>
+          </div>
+          <div class="page-header__content">
+            <div class="page-header__left">
+              <h2 class="page-header__title">Title</h2>
+            </div>
+            <div class="page-header__actions">
+              <div class="page-header__actions-buttons">
+                <button type="button" class="btn-solid-primary">Button</button>
+                <button type="button" class="btn-outline-secondary">Button</button>
+              </div>
+            </div>
+          </div>
+        </header>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-heading-2 text-secondary-900 mb-2">Page header with tabs and buttons</h2>
+        <p class="text-paragraph-1 text-secondary-600 mb-4">Breadcrumbs on the first row; second row has title left and buttons right; a separate <code class="bg-secondary-100 px-1 rounded text-sm">page-header__tabs-row</code> below holds the <a href="navigation-tabs.html" class="text-primary hover:underline">tabs</a>. Figma 31780-11779.</p>
+        <header class="page-header">
+          <div class="page-header__breadcrumbs">
+            <nav aria-label="Breadcrumb">
+              <ol class="list-none flex flex-wrap items-center gap-0">
+                <li class="breadcrumb-item">
+                  <a href="#" class="text-heading-6-caps text-secondary-700 hover:text-primary border-b border-transparent hover:border-primary whitespace-nowrap">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                  <a href="#" class="text-heading-6-caps text-secondary-700 hover:text-primary border-b border-transparent hover:border-primary whitespace-nowrap">Section</a>
+                </li>
+                <li class="breadcrumb-item">
+                  <span class="text-heading-6-caps text-secondary-700 whitespace-nowrap border-b border-transparent" aria-current="page">Title</span>
+                </li>
+              </ol>
+            </nav>
+          </div>
+          <div class="page-header__content">
+            <div class="page-header__left">
+              <h2 class="page-header__title">Title</h2>
+            </div>
+            <div class="page-header__actions">
+              <div class="page-header__actions-buttons">
+                <button type="button" class="btn-solid-primary">Button</button>
+                <button type="button" class="btn-outline-secondary">Button</button>
+              </div>
+            </div>
+          </div>
+          <div class="page-header__tabs-row">
+            <div class="tabs" role="tablist">
+              <div class="tab tab--active" role="tab" aria-selected="true">
+                <div class="tab__content">
+                  <span class="tab__label">Tab Active</span>
+                </div>
+              </div>
+              <a href="#" class="tab" role="tab" aria-selected="false">
+                <div class="tab__content">
+                  <span class="tab__label">Tab Default</span>
+                </div>
+              </a>
+              <a href="#" class="tab" role="tab" aria-selected="false">
+                <div class="tab__content">
+                  <span class="tab__label">Tab Default</span>
+                </div>
+              </a>
+              <a href="#" class="tab" role="tab" aria-selected="false">
+                <div class="tab__content">
+                  <span class="tab__label">Tab Default</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </header>
       </section>
     </main>
   </div>

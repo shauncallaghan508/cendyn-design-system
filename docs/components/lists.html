@@ -41,8 +41,6 @@
         <li><a href="dropzone.html" class="text-secondary-600 hover:text-primary">Dropzone</a></li>
         <li><a href="empty-states.html" class="text-secondary-600 hover:text-primary">Empty States</a></li>
         <li><a href="forms.html" class="text-secondary-600 hover:text-primary">Forms</a></li>
-        <li><a href="form-inputs.html" class="text-secondary-600 hover:text-primary">Form Inputs</a></li>
-        <li><a href="form-toggle.html" class="text-secondary-600 hover:text-primary">Form Toggle</a></li>
         <li><a href="header.html" class="text-secondary-600 hover:text-primary">Header</a></li>
         <li><a href="icons.html" class="text-secondary-600 hover:text-primary">Icons</a></li>
         <li><a href="lists.html" class="text-primary font-medium">Lists</a></li>
@@ -50,7 +48,7 @@
         <li><a href="modals-dialogs.html" class="text-secondary-600 hover:text-primary">Modals &amp; Dialogs</a></li>
         <li><a href="mobile-frame.html" class="text-secondary-600 hover:text-primary">Mobile Frame</a></li>
         <li><a href="navigation-icons.html" class="text-secondary-600 hover:text-primary">Navigation Icons</a></li>
-        <li><a href="navigation-tabs.html" class="text-secondary-600 hover:text-primary">Navigation Tabs</a></li>
+        <li><a href="navigation-tabs.html" class="text-secondary-600 hover:text-primary">Tabs</a></li>
         <li><a href="scrollbar.html" class="text-secondary-600 hover:text-primary">Scrollbar</a></li>
         <li><a href="tooltips-popovers.html" class="text-secondary-600 hover:text-primary">Tooltips &amp; Popovers</a></li>
         <li><a href="toasts.html" class="text-secondary-600 hover:text-primary">Toasts</a></li>
@@ -61,8 +59,249 @@
     <main class="overflow-hidden pl-8">
       <h1 class="text-display-sm text-secondary-900 mb-6">Lists</h1>
       <p class="text-secondary-600 mb-8">List layouts and list items.</p>
+
+      <!-- Card list (Figma 6939-26693, 6937-21) -->
+      <section class="mb-10">
+        <h2 class="text-lg font-semibold text-secondary-900 mb-2">Card list</h2>
+        <p class="text-secondary-600 mb-4">A bordered card with an optional header and rows of label/data pairs. Use for key-value lists (e.g. search filters, property lists). Header: 62px height, 24px horizontal padding. Rows: 48px height, label left (black), data right (gray-700).</p>
+
+        <h3 class="text-base font-semibold text-secondary-800 mt-6 mb-3">Basic (text + data)</h3>
+        <div class="p-4 bg-white rounded-card border border-secondary-200">
+          <div class="w-full max-w-[411px]">
+            <div class="card-list">
+              <header class="card-list__header">
+                <div class="card-list__header-content">
+                  <h3 class="card-list__header-title">Search</h3>
+                </div>
+              </header>
+              <div class="card-list__list">
+                <div class="card-list__item">
+                  <div class="card-list__item-row">
+                    <div class="card-list__item-content">
+                      <span class="card-list__item-label">Label</span>
+                      <span class="card-list__item-data">Data</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-list__item">
+                  <div class="card-list__item-row">
+                    <div class="card-list__item-content">
+                      <span class="card-list__item-label">Label</span>
+                      <span class="card-list__item-data card-list__item-data--link">Data</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="text-base font-semibold text-secondary-800 mt-8 mb-3">All item variants (Figma 6937-21)</h3>
+        <p class="text-secondary-600 mb-4">Card list rows can show: text data (muted or primary link), status dot + data, toggle, avatar + data, icon (e.g. check), dropdown + data, button, input, badge, ellipsis, checkbox, description below label, or expandable row with icon + label + badge/checkbox.</p>
+        <div class="p-4 bg-white rounded-card border border-secondary-200">
+          <div class="w-full max-w-[411px]">
+            <div class="card-list">
+              <header class="card-list__header">
+                <div class="card-list__header-content">
+                  <h3 class="card-list__header-title">List item types</h3>
+                </div>
+              </header>
+              <div class="card-list__list">
+                <!-- 1. Text (muted data) -->
+                <div class="card-list__item">
+                  <div class="card-list__item-row">
+                    <div class="card-list__item-content">
+                      <span class="card-list__item-label">Label</span>
+                      <span class="card-list__item-data">Data</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- 2. Link (primary data) -->
+                <div class="card-list__item">
+                  <div class="card-list__item-row">
+                    <div class="card-list__item-content">
+                      <span class="card-list__item-label">Label</span>
+                      <span class="card-list__item-data card-list__item-data--link">Data</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- 3. Status (dot + data) -->
+                <div class="card-list__item">
+                  <div class="card-list__item-row">
+                    <div class="card-list__item-content">
+                      <span class="card-list__item-label">Label</span>
+                      <div class="card-list__item-data-wrap">
+                        <span class="card-list__item-status-dot" aria-hidden="true"></span>
+                        <span class="card-list__item-data">Data</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 4. Toggle -->
+                <div class="card-list__item">
+                  <div class="card-list__item-row">
+                    <div class="card-list__item-content">
+                      <span class="card-list__item-label">Label</span>
+                      <div class="toggle">
+                        <button type="button" class="toggle__switch" aria-label="Toggle" aria-pressed="false">
+                          <span class="toggle__track"></span>
+                          <span class="toggle__thumb"></span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 5. User (avatar + data) -->
+                <div class="card-list__item">
+                  <div class="card-list__item-row">
+                    <div class="card-list__item-content">
+                      <span class="card-list__item-label">Label</span>
+                      <div class="card-list__item-data-wrap" style="gap: 8px;">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Crect fill='%23d2ddec' width='26' height='26'/%3E%3Ccircle cx='13' cy='10.5' r='5' fill='%236e84a3'/%3E%3Cpath fill='%236e84a3' d='M6.5 26c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5H6.5z'/%3E%3C/svg%3E" alt="" class="w-avatar-xs h-avatar-xs rounded-full object-cover shrink-0" />
+                        <span class="card-list__item-data">Data</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 6. Icon (check) -->
+                <div class="card-list__item">
+                  <div class="card-list__item-row">
+                    <div class="card-list__item-content">
+                      <span class="card-list__item-label">Label</span>
+                      <span class="icon text-success shrink-0" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                    </div>
+                  </div>
+                </div>
+                <!-- 7. Dropdown (data + chevron) -->
+                <div class="card-list__item">
+                  <div class="card-list__item-row">
+                    <div class="card-list__item-content">
+                      <span class="card-list__item-label">Label</span>
+                      <div class="card-list__item-data-wrap">
+                        <span class="card-list__item-data">Data</span>
+                        <svg class="w-4 h-4 shrink-0 text-neutrals-gray-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 8. Button -->
+                <div class="card-list__item">
+                  <div class="card-list__item-row">
+                    <div class="card-list__item-content">
+                      <span class="card-list__item-label">Label</span>
+                      <button type="button" class="btn-solid-primary btn-sm shrink-0">Button</button>
+                    </div>
+                  </div>
+                </div>
+                <!-- 9. Input -->
+                <div class="card-list__item">
+                  <div class="card-list__item-row">
+                    <div class="card-list__item-content">
+                      <span class="card-list__item-label">Label</span>
+                      <div class="input-select input-select-sm shrink-0 w-[81px] min-w-0">
+                        <div class="input-select__value input-select__value--placeholder">Input</div>
+                        <div class="input-select__icon" aria-hidden="true">
+                          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6L8 10L12 6"/></svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 10. Badge -->
+                <div class="card-list__item">
+                  <div class="card-list__item-row">
+                    <div class="card-list__item-content">
+                      <span class="card-list__item-label">Label</span>
+                      <span class="card-list__badge">Active</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- 11. Ellipsis (more) -->
+                <div class="card-list__item">
+                  <div class="card-list__item-row">
+                    <div class="card-list__item-content">
+                      <span class="card-list__item-label">Label</span>
+                      <button type="button" class="p-1 text-neutrals-gray-700 hover:text-neutrals-black rounded shrink-0" aria-label="More options"><svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><circle cx="8" cy="3" r="1.5"/><circle cx="8" cy="8" r="1.5"/><circle cx="8" cy="13" r="1.5"/></svg></button>
+                    </div>
+                  </div>
+                </div>
+                <!-- 12. Checkbox -->
+                <div class="card-list__item">
+                  <div class="card-list__item-row">
+                    <div class="card-list__item-content">
+                      <span class="card-list__item-label">Label</span>
+                      <div class="card-list__item-checkbox" role="presentation"></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 13. With description (text below) -->
+                <div class="card-list__item">
+                  <div class="card-list__item-row card-list__item-row--with-description">
+                    <div class="card-list__item-content">
+                      <div class="card-list__item-label-wrap">
+                        <span class="card-list__item-label">Label</span>
+                        <span class="card-list__item-description">Description</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 14. Expandable with radio/checkbox -->
+                <div class="card-list__item">
+                  <div class="card-list__item-row card-list__item-row--title">
+                    <div class="card-list__item-content">
+                      <div class="card-list__item-label-with-icon">
+                        <svg class="w-5 h-5 shrink-0 text-neutrals-gray-700" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9L12 15L18 9"/></svg>
+                        <span class="card-list__item-title-text">Label</span>
+                      </div>
+                      <div class="card-list__item-checkbox rounded-full" role="presentation"></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 15. Expandable with counter badge -->
+                <div class="card-list__item">
+                  <div class="card-list__item-row card-list__item-row--title">
+                    <div class="card-list__item-content">
+                      <div class="card-list__item-label-with-icon">
+                        <svg class="w-5 h-5 shrink-0 text-neutrals-gray-700" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9L12 15L18 9"/></svg>
+                        <span class="card-list__item-title-text">Label</span>
+                      </div>
+                      <span class="card-list__badge card-list__badge--muted">100</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="text-sm font-semibold text-secondary-800 mt-4 mb-2">Code (basic row)</h3>
+        <pre class="relative pt-10 pr-14 pb-4 pl-4 bg-secondary-900 text-secondary-100 rounded-card overflow-x-auto text-sm"><code data-copyable>&lt;div class="card-list"&gt;
+  &lt;header class="card-list__header"&gt;
+    &lt;div class="card-list__header-content"&gt;
+      &lt;h3 class="card-list__header-title"&gt;Search&lt;/h3&gt;
+    &lt;/div&gt;
+  &lt;/header&gt;
+  &lt;div class="card-list__list"&gt;
+    &lt;div class="card-list__item"&gt;
+      &lt;div class="card-list__item-row"&gt;
+        &lt;div class="card-list__item-content"&gt;
+          &lt;span class="card-list__item-label"&gt;Label&lt;/span&gt;
+          &lt;span class="card-list__item-data"&gt;Data&lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- Data as link: add card-list__item-data--link to data span --&gt;
+    &lt;!-- Status: use card-list__item-data-wrap with card-list__item-status-dot + data --&gt;
+    &lt;!-- Toggle: use toggle component in data slot --&gt;
+    &lt;!-- Button: use btn-solid-primary btn-sm --&gt;
+    &lt;!-- Badge: use card-list__badge or card-list__badge--muted --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </section>
+
+      <!-- Simple list -->
       <section class="mb-8">
-        <h2 class="text-lg font-semibold text-secondary-900 mb-3">Preview</h2>
+        <h2 class="text-lg font-semibold text-secondary-900 mb-3">Simple list</h2>
         <div class="p-4 bg-white rounded-card border border-secondary-200">
           <ul class="border border-secondary-200 rounded-card divide-y divide-secondary-200"><li class="px-4 py-3 text-sm text-secondary-700">List item 1</li><li class="px-4 py-3 text-sm text-secondary-700">List item 2</li><li class="px-4 py-3 text-sm text-secondary-700">List item 3</li></ul>
         </div>

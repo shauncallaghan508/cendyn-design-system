@@ -41,8 +41,6 @@
         <li><a href="dropzone.html" class="text-secondary-600 hover:text-primary">Dropzone</a></li>
         <li><a href="empty-states.html" class="text-secondary-600 hover:text-primary">Empty States</a></li>
         <li><a href="forms.html" class="text-secondary-600 hover:text-primary">Forms</a></li>
-        <li><a href="form-inputs.html" class="text-secondary-600 hover:text-primary">Form Inputs</a></li>
-        <li><a href="form-toggle.html" class="text-secondary-600 hover:text-primary">Form Toggle</a></li>
         <li><a href="header.html" class="text-secondary-600 hover:text-primary">Header</a></li>
         <li><a href="icons.html" class="text-secondary-600 hover:text-primary">Icons</a></li>
         <li><a href="lists.html" class="text-secondary-600 hover:text-primary">Lists</a></li>
@@ -50,7 +48,7 @@
         <li><a href="modals-dialogs.html" class="text-secondary-600 hover:text-primary">Modals &amp; Dialogs</a></li>
         <li><a href="mobile-frame.html" class="text-secondary-600 hover:text-primary">Mobile Frame</a></li>
         <li><a href="navigation-icons.html" class="text-secondary-600 hover:text-primary">Navigation Icons</a></li>
-        <li><a href="navigation-tabs.html" class="text-secondary-600 hover:text-primary">Navigation Tabs</a></li>
+        <li><a href="navigation-tabs.html" class="text-secondary-600 hover:text-primary">Tabs</a></li>
         <li><a href="scrollbar.html" class="text-secondary-600 hover:text-primary">Scrollbar</a></li>
         <li><a href="tooltips-popovers.html" class="text-secondary-600 hover:text-primary">Tooltips &amp; Popovers</a></li>
         <li><a href="toasts.html" class="text-secondary-600 hover:text-primary">Toasts</a></li>
@@ -63,11 +61,16 @@
       <p class="text-secondary-600 mb-8">Dropdown menus and selects.</p>
       <section class="mb-8">
         <h2 class="text-lg font-semibold text-secondary-900 mb-3">Preview</h2>
-        <p class="text-sm text-secondary-600 mb-4">Dropdown menu (Figma 7312-548): white panel, 160px wide, 8px radius, light border, three action items with 16px vertical gap.</p>
+        <p class="text-sm text-secondary-600 mb-4">Dropdown with <code class="bg-secondary-100 px-1 rounded">input-select</code> trigger (Figma 7082-4061): select-style field with value + chevron. Panel: Figma 7312-548 — white, 160px wide, 8px radius, three action items.</p>
         <div class="p-4 bg-white rounded-card border border-secondary-200">
-          <div class="relative inline-block">
-            <button type="button" class="btn-outline-secondary" id="dropdown-trigger" aria-haspopup="true" aria-expanded="false">Options ▾</button>
-            <div class="dropdown-menu absolute top-full left-0 mt-2 z-10" id="dropdown-panel" role="menu" aria-labelledby="dropdown-trigger" hidden>
+          <div class="relative inline-block w-full max-w-[200px]">
+            <div class="input-select" id="dropdown-trigger" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false" aria-label="Choose option">
+              <div class="input-select__value input-select__value--placeholder">Options</div>
+              <div class="input-select__icon" aria-hidden="true">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6L8 10L12 6"/></svg>
+              </div>
+            </div>
+            <div class="dropdown-menu absolute top-full left-0 mt-2 z-10 w-full min-w-[160px]" id="dropdown-panel" role="menu" aria-labelledby="dropdown-trigger" hidden>
               <button type="button" class="dropdown-menu-item" role="menuitem">Action</button>
               <button type="button" class="dropdown-menu-item" role="menuitem">Action</button>
               <button type="button" class="dropdown-menu-item" role="menuitem">Action</button>
@@ -77,13 +80,16 @@
       </section>
       <section>
         <h2 class="text-lg font-semibold text-secondary-900 mb-3">Code</h2>
-        <p class="text-sm text-secondary-600 mb-3">Use <code class="bg-secondary-100 px-1 rounded">dropdown-menu</code> for the panel and <code class="bg-secondary-100 px-1 rounded">dropdown-menu-item</code> for each action. Toggle visibility with JS (e.g. <code class="bg-secondary-100 px-1 rounded">aria-expanded</code>, <code class="bg-secondary-100 px-1 rounded">hidden</code>).</p>
-        <pre class="relative pt-10 pr-14 pb-4 pl-4 bg-secondary-900 text-secondary-100 rounded-card overflow-x-auto text-sm"><code data-copyable>&lt;div class=&quot;relative inline-block&quot;&gt;
-  &lt;button type=&quot;button&quot; class=&quot;btn-outline-secondary&quot; id=&quot;dropdown-trigger&quot; aria-haspopup=&quot;true&quot; aria-expanded=&quot;false&quot;&gt;Options ▾&lt;/button&gt;
-  &lt;div class=&quot;dropdown-menu absolute top-full left-0 mt-2 z-10&quot; role=&quot;menu&quot; aria-labelledby=&quot;dropdown-trigger&quot; hidden&gt;
-    &lt;button type=&quot;button&quot; class=&quot;dropdown-menu-item&quot; role=&quot;menuitem&quot;&gt;Action&lt;/button&gt;
-    &lt;button type=&quot;button&quot; class=&quot;dropdown-menu-item&quot; role=&quot;menuitem&quot;&gt;Action&lt;/button&gt;
-    &lt;button type=&quot;button&quot; class=&quot;dropdown-menu-item&quot; role=&quot;menuitem&quot;&gt;Action&lt;/button&gt;
+        <p class="text-sm text-secondary-600 mb-3">Use <code class="bg-secondary-100 px-1 rounded">input-select</code> for the trigger (or <code class="bg-secondary-100 px-1 rounded">input-select-sm</code> in tight layouts like card lists), <code class="bg-secondary-100 px-1 rounded">dropdown-menu</code> for the panel, <code class="bg-secondary-100 px-1 rounded">dropdown-menu-item</code> for each action. Toggle visibility with JS.</p>
+        <pre class="relative pt-10 pr-14 pb-4 pl-4 bg-secondary-900 text-secondary-100 rounded-card overflow-x-auto text-sm"><code data-copyable>&lt;div class="relative inline-block w-full max-w-[200px]"&gt;
+  &lt;div class="input-select" id="dropdown-trigger" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false" aria-label="Choose option"&gt;
+    &lt;div class="input-select__value input-select__value--placeholder"&gt;Options&lt;/div&gt;
+    &lt;div class="input-select__icon" aria-hidden="true"&gt;
+      &lt;svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"&gt;&lt;path d="M4 6L8 10L12 6"/&gt;&lt;/svg&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="dropdown-menu absolute top-full left-0 mt-2 z-10" role="menu" aria-labelledby="dropdown-trigger" hidden&gt;
+    &lt;button type="button" class="dropdown-menu-item" role="menuitem"&gt;Action&lt;/button&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
       </section>
@@ -92,10 +98,14 @@
           var trigger = document.getElementById('dropdown-trigger');
           var panel = document.getElementById('dropdown-panel');
           if (trigger && panel) {
-            trigger.addEventListener('click', function() {
+            function toggle() {
               var open = panel.getAttribute('hidden') == null;
               panel.toggleAttribute('hidden', open);
               trigger.setAttribute('aria-expanded', !open);
+            }
+            trigger.addEventListener('click', toggle);
+            trigger.addEventListener('keydown', function(e) {
+              if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
             });
           }
         })();

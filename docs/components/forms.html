@@ -41,8 +41,6 @@
         <li><a href="dropzone.html" class="text-secondary-600 hover:text-primary">Dropzone</a></li>
         <li><a href="empty-states.html" class="text-secondary-600 hover:text-primary">Empty States</a></li>
         <li><a href="forms.html" class="text-primary font-medium">Forms</a></li>
-        <li><a href="form-inputs.html" class="text-secondary-600 hover:text-primary">Form Inputs</a></li>
-        <li><a href="form-toggle.html" class="text-secondary-600 hover:text-primary">Form Toggle</a></li>
         <li><a href="header.html" class="text-secondary-600 hover:text-primary">Header</a></li>
         <li><a href="icons.html" class="text-secondary-600 hover:text-primary">Icons</a></li>
         <li><a href="lists.html" class="text-secondary-600 hover:text-primary">Lists</a></li>
@@ -50,7 +48,7 @@
         <li><a href="modals-dialogs.html" class="text-secondary-600 hover:text-primary">Modals &amp; Dialogs</a></li>
         <li><a href="mobile-frame.html" class="text-secondary-600 hover:text-primary">Mobile Frame</a></li>
         <li><a href="navigation-icons.html" class="text-secondary-600 hover:text-primary">Navigation Icons</a></li>
-        <li><a href="navigation-tabs.html" class="text-secondary-600 hover:text-primary">Navigation Tabs</a></li>
+        <li><a href="navigation-tabs.html" class="text-secondary-600 hover:text-primary">Tabs</a></li>
         <li><a href="scrollbar.html" class="text-secondary-600 hover:text-primary">Scrollbar</a></li>
         <li><a href="tooltips-popovers.html" class="text-secondary-600 hover:text-primary">Tooltips &amp; Popovers</a></li>
         <li><a href="toasts.html" class="text-secondary-600 hover:text-primary">Toasts</a></li>
@@ -59,22 +57,638 @@
       </ul>
     </aside>
     <main class="overflow-hidden pl-8">
-      <h1 class="text-display-sm text-secondary-900 mb-6">Forms</h1>
-      <p class="text-secondary-600 mb-8">Form layout and structure.</p>
+      <h1 class="text-display-sm text-secondary-900 mb-2">Forms</h1>
+      <p class="text-paragraph-1 text-secondary-600 mb-10">Form layout and structure.</p>
+
+      <section class="mb-10">
+        <h2 class="text-heading-2 text-secondary-900 mb-2">Inputs — general guidelines</h2>
+        <p class="text-paragraph-1 text-secondary-600 mb-6">A component used within forms in order to capture information. Figma 16955-145583.</p>
+
+        <h3 class="text-heading-3 text-secondary-900 mb-2">Properties</h3>
+        <p class="text-paragraph-1 text-secondary-600 mb-3">Icon variants are available in different positions that can be replaced as needed.</p>
+        <ul class="list-disc list-inside text-paragraph-1 text-secondary-700 space-y-1 mb-6">
+          <li><strong>Text.</strong> Used to capture a string/text.</li>
+          <li><strong>Select.</strong> Used when a dropdown menu is needed.</li>
+          <li><strong>Clear.</strong> Used when there is a need to clear the content on the input.</li>
+          <li><strong>Icon Left.</strong> Used for visual reinforcement. Can indicate what the field is for such as a search.</li>
+          <li><strong>Icon Right.</strong> Used for visual reinforcement (e.g. validation icon such as a check, or a calendar for a date picker).</li>
+          <li><strong>Icon Left and Right.</strong> Typically used with chevrons for a date range or to navigate between elements.</li>
+          <li><strong>Numeric.</strong> Lets the user specify a numeric value using arrow buttons.</li>
+          <li><strong>Numeric with Unit.</strong> User can change the unit by clicking on it; a dropdown shows available options.</li>
+          <li><strong>Search.</strong> Used when a search bar is needed. User can press Return to trigger search.</li>
+          <li><strong>Status.</strong> Used for visual reinforcement (e.g. status).</li>
+        </ul>
+
+        <h3 class="text-heading-3 text-secondary-900 mb-2">Sizes</h3>
+        <p class="text-paragraph-1 text-secondary-600 mb-2">Size is chosen based on the space limitations.</p>
+        <ul class="list-disc list-inside text-paragraph-1 text-secondary-700 space-y-1 mb-6">
+          <li><strong>Default.</strong> Should be used the majority of the time. If buttons are used, use default buttons.</li>
+          <li><strong>Small.</strong> Can be used where space is limited (e.g. popovers). Use with small buttons if buttons are present.</li>
+        </ul>
+        <div class="flex flex-col gap-6 lg:flex-row lg:gap-[100px] border-b border-neutrals-gray-400 pb-10 mb-10">
+          <div class="lg:w-[350px] shrink-0">
+            <h4 class="text-heading-3 text-secondary-900 mb-2">Sizes</h4>
+            <p class="text-paragraph-1 text-secondary-600">Size is chosen based on the space limitations being used.</p>
+          </div>
+          <div class="flex flex-col gap-6 flex-1 min-w-0">
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-4">
+              <div class="w-full sm:w-[230px] shrink-0">
+                <div class="input-group__field">
+                  <div class="input-group__input-wrap">
+                    <input type="text" placeholder="Placeholder" aria-label="Default size" />
+                  </div>
+                </div>
+              </div>
+              <p class="text-paragraph-1 text-neutrals-black flex-1 min-w-0"><strong>Default.</strong> Should be used the majority of the time. If buttons are used, use default buttons.</p>
+            </div>
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-4">
+              <div class="w-full sm:w-[230px] shrink-0">
+                <div class="input-group__field input-group__field--sm">
+                  <div class="input-group__input-wrap">
+                    <input type="text" placeholder="Placeholder" aria-label="Small size" />
+                  </div>
+                </div>
+              </div>
+              <p class="text-paragraph-1 text-neutrals-black flex-1 min-w-0"><strong>Small.</strong> Can be used where space is limited (e.g. popovers). Use with small buttons if buttons are present.</p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="text-heading-3 text-secondary-900 mb-2">Text state</h3>
+        <p class="text-paragraph-1 text-secondary-600 mb-2">States indicate whether the user has filled out the field or not.</p>
+        <ul class="list-disc list-inside text-paragraph-1 text-secondary-700 space-y-1 mb-6">
+          <li><strong>Placeholder.</strong> Use when giving a hint (e.g. “Enter Address” or a suggested value). Placeholder text uses <code class="bg-secondary-100 px-1 rounded">text-neutrals-gray-700</code>.</li>
+          <li><strong>Filled.</strong> Shows that the user has filled the field, or an override to the placeholder. Filled text uses <code class="bg-secondary-100 px-1 rounded">text-neutrals-black</code>. States and icons can accompany to reinforce the message.</li>
+        </ul>
+        <div class="flex flex-col gap-6 lg:flex-row lg:gap-[100px] border-b border-neutrals-gray-400 pb-10 mb-10">
+          <div class="lg:w-[350px] shrink-0">
+            <h4 class="text-heading-3 text-secondary-900 mb-2">Text State</h4>
+            <p class="text-paragraph-1 text-secondary-600">States indicate whether the user has filled out the field or not.</p>
+          </div>
+          <div class="flex flex-col gap-6 flex-1 min-w-0">
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-4">
+              <div class="w-full sm:w-[230px] shrink-0">
+                <div class="input-group__field">
+                  <div class="input-group__input-wrap">
+                    <input type="text" placeholder="Placeholder" aria-label="Placeholder state" />
+                  </div>
+                </div>
+              </div>
+              <p class="text-paragraph-1 text-neutrals-black flex-1 min-w-0"><strong>Placeholder.</strong> Use when giving a hint (e.g. "Enter Address" or a suggested value). Placeholder text uses gray-700.</p>
+            </div>
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-4">
+              <div class="w-full sm:w-[230px] shrink-0">
+                <div class="input-group__field">
+                  <div class="input-group__input-wrap">
+                    <input type="text" value="Placeholder" aria-label="Filled state" />
+                  </div>
+                </div>
+              </div>
+              <p class="text-paragraph-1 text-neutrals-black flex-1 min-w-0"><strong>Filled.</strong> Shows that the user has filled the field, or an override to the placeholder. Filled text uses neutrals-black.</p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="text-heading-3 text-secondary-900 mb-2">Labels</h3>
+        <ul class="list-disc list-inside text-paragraph-1 text-secondary-700 space-y-1 mb-6">
+          <li><strong>Label.</strong> Should be used the majority of the time.</li>
+          <li><strong>Required.</strong> When the field is required to complete (e.g. Label*).</li>
+          <li><strong>Label + Help text.</strong> Use when short supplementary info brings clarity.</li>
+          <li><strong>Label + Link.</strong> Use when a link is associated (e.g. “Help link?”).</li>
+          <li><strong>Label with Badge.</strong> For status (e.g. “Complete”).</li>
+        </ul>
+        <div class="flex flex-col gap-6 lg:flex-row lg:gap-[100px] border-b border-neutrals-gray-400 pb-10 mb-10">
+          <div class="lg:w-[350px] shrink-0">
+            <h4 class="text-heading-3 text-secondary-900 mb-2">Labels</h4>
+            <p class="text-paragraph-1 text-secondary-600">Label variants for form fields.</p>
+          </div>
+          <div class="flex flex-col gap-6 flex-1 min-w-0">
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-4">
+              <div class="w-full sm:w-[230px] shrink-0">
+                <div class="input-group__label">
+                  <div class="input-group__label-text"><span>Label</span></div>
+                </div>
+              </div>
+              <p class="text-paragraph-1 text-neutrals-black flex-1 min-w-0"><strong>Label.</strong> Should be used the majority of the time.</p>
+            </div>
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-4">
+              <div class="w-full sm:w-[230px] shrink-0">
+                <div class="input-group__label">
+                  <div class="input-group__label-text"><span>Label</span><span class="input-group__required" aria-hidden="true">*</span></div>
+                </div>
+              </div>
+              <p class="text-paragraph-1 text-neutrals-black flex-1 min-w-0"><strong>Required.</strong> When the field is required to complete (e.g. Label*).</p>
+            </div>
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-4">
+              <div class="w-full sm:w-[230px] shrink-0">
+                <div class="input-group flex flex-col gap-1">
+                  <div class="input-group__label">
+                    <div class="input-group__label-text"><span>Label</span></div>
+                  </div>
+                  <p class="input-group__description">Help text</p>
+                </div>
+              </div>
+              <p class="text-paragraph-1 text-neutrals-black flex-1 min-w-0"><strong>Label + Help text.</strong> Use when short supplementary info brings clarity.</p>
+            </div>
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-4">
+              <div class="w-full sm:w-[230px] shrink-0">
+                <div class="input-group__label">
+                  <div class="input-group__label-text"><span>Label</span></div>
+                  <a href="#" class="link link-sm align-right">Help link?</a>
+                </div>
+              </div>
+              <p class="text-paragraph-1 text-neutrals-black flex-1 min-w-0"><strong>Label + Link.</strong> Use when a link is associated (e.g. "Help link?").</p>
+            </div>
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-4">
+              <div class="w-full sm:w-[230px] shrink-0">
+                <div class="input-group__label">
+                  <div class="input-group__label-text flex items-center gap-2">
+                    <span class="input-status-dot" aria-hidden="true"></span>
+                    <span>Label</span>
+                  </div>
+                </div>
+              </div>
+              <p class="text-paragraph-1 text-neutrals-black flex-1 min-w-0"><strong>Label with Badge.</strong> For status (e.g. "Complete").</p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="text-heading-3 text-secondary-900 mb-3 mt-8">Input examples</h3>
+        <p class="text-paragraph-1 text-secondary-600 mb-6">Visual reference for each property. Figma 16955-145590.</p>
+        <div class="flex flex-col gap-6 lg:flex-row lg:gap-[100px] border-b border-neutrals-gray-400 pb-10">
+          <div class="lg:w-[350px] shrink-0">
+            <h4 class="text-heading-3 text-secondary-900 mb-2">Content</h4>
+            <p class="text-paragraph-1 text-secondary-600">Icon variants are available in different positions that can be replaced as needed.</p>
+          </div>
+          <div class="flex flex-col gap-6 flex-1 min-w-0">
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-4">
+              <div class="w-full sm:w-[230px] shrink-0">
+                <div class="input-group__field">
+                  <div class="input-group__input-wrap">
+                    <input type="text" placeholder="Input" aria-label="Text input" />
+                  </div>
+                </div>
+              </div>
+              <p class="text-paragraph-1 text-neutrals-black flex-1 min-w-0"><strong>Text.</strong> Used to capture a string/text.</p>
+            </div>
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-4">
+              <div class="w-full sm:w-[230px] shrink-0">
+                <div class="input-group__field">
+                  <div class="input-group__input-wrap">
+                    <input type="text" placeholder="Input" aria-label="Select" readonly />
+                  </div>
+                  <div class="input-group__append-icon text-neutrals-gray-700" aria-hidden="true">
+                    <svg class="icon-sm" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6L8 10L12 6"/></svg>
+                  </div>
+                </div>
+              </div>
+              <p class="text-paragraph-1 text-neutrals-black flex-1 min-w-0"><strong>Select.</strong> Used when a dropdown menu is needed.</p>
+            </div>
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-4">
+              <div class="w-full sm:w-[230px] shrink-0">
+                <div class="input-group__field">
+                  <div class="input-group__input-wrap">
+                    <input type="text" placeholder="Input" aria-label="Clearable input" />
+                  </div>
+                  <div class="input-group__append-icon text-neutrals-gray-800" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M12 4L4 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M4 4L12 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <p class="text-paragraph-1 text-neutrals-black flex-1 min-w-0"><strong>Clear.</strong> Used when there is a need to clear the content on the input.</p>
+            </div>
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-4">
+              <div class="w-full sm:w-[230px] shrink-0">
+                <div class="input-group__field">
+                  <div class="input-group__input-wrap">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M7.33333 12.6667C10.2789 12.6667 12.6667 10.2789 12.6667 7.33333C12.6667 4.38781 10.2789 2 7.33333 2C4.38781 2 2 4.38781 2 7.33333C2 10.2789 4.38781 12.6667 7.33333 12.6667Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M14 14L11.1 11.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    <input type="text" placeholder="Input" aria-label="Search or icon left" />
+                  </div>
+                </div>
+              </div>
+              <p class="text-paragraph-1 text-neutrals-black flex-1 min-w-0"><strong>Icon Left.</strong> Used for visual reinforcement. Can indicate what the field is for such as a search.</p>
+            </div>
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-4">
+              <div class="w-full sm:w-[230px] shrink-0">
+                <div class="input-group__field">
+                  <div class="input-group__input-wrap">
+                    <input type="text" placeholder="Input" aria-label="Icon right" />
+                    <svg class="icon-sm text-neutrals-gray-700 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  </div>
+                </div>
+              </div>
+              <p class="text-paragraph-1 text-neutrals-black flex-1 min-w-0"><strong>Icon Right.</strong> Used for visual reinforcement (e.g. validation icon such as a check, or a calendar for a date picker).</p>
+            </div>
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-4">
+              <div class="w-full sm:w-[230px] shrink-0">
+                <div class="input-group__field">
+                  <div class="input-group__input-wrap">
+                    <svg class="icon-sm text-neutrals-gray-700 shrink-0" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 12L6 8l4-4"/></svg>
+                    <input type="text" placeholder="Input" aria-label="Date range or navigate" />
+                    <svg class="icon-sm text-neutrals-gray-700 shrink-0" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4l4 4-4 4"/></svg>
+                  </div>
+                </div>
+              </div>
+              <p class="text-paragraph-1 text-neutrals-black flex-1 min-w-0"><strong>Icon Left and Right.</strong> Typically used with chevrons for a date range or to navigate between elements.</p>
+            </div>
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-4">
+              <div class="w-full sm:w-[230px] shrink-0">
+                <div class="input-group__field">
+                  <div class="input-group__input-wrap">
+                    <input type="number" value="0" min="0" aria-label="Numeric value" />
+                  </div>
+                  <div class="input-numeric-stepper" aria-hidden="true">
+                    <button type="button" aria-label="Increment"><svg class="w-3 h-3" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6L6 3 3 6"/></svg></button>
+                    <button type="button" aria-label="Decrement"><svg class="w-3 h-3" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l3 3 3-3"/></svg></button>
+                  </div>
+                </div>
+              </div>
+              <p class="text-paragraph-1 text-neutrals-black flex-1 min-w-0"><strong>Numeric.</strong> Lets the user specify a numeric value using arrow buttons.</p>
+            </div>
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-4">
+              <div class="w-full sm:w-[230px] shrink-0">
+                <div class="input-group__field">
+                  <div class="input-group__input-wrap">
+                    <input type="number" value="0" min="0" aria-label="Numeric with unit" />
+                  </div>
+                  <div class="flex items-center border-l border-neutrals-gray-400 shrink-0">
+                    <span class="text-paragraph-2 text-neutrals-black px-2 py-2 underline decoration-solid">px</span>
+                    <div class="input-numeric-stepper" aria-hidden="true">
+                      <button type="button" aria-label="Increment"><svg class="w-3 h-3" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6L6 3 3 6"/></svg></button>
+                      <button type="button" aria-label="Decrement"><svg class="w-3 h-3" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l3 3 3-3"/></svg></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p class="text-paragraph-1 text-neutrals-black flex-1 min-w-0"><strong>Numeric with Unit.</strong> User can change the unit by clicking on it; a dropdown shows available options.</p>
+            </div>
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-4">
+              <div class="w-full sm:w-[230px] shrink-0">
+                <div class="input-group">
+                  <div class="input-group__label">
+                    <div class="input-group__label-text">
+                      <span>Label</span>
+                      <span class="input-group__required" aria-hidden="true">*</span>
+                    </div>
+                  </div>
+                  <div class="input-group__field">
+                    <div class="input-group__input-wrap">
+                      <input type="search" placeholder="Placeholder" aria-label="Search" />
+                    </div>
+                    <div class="input-group__append-icon text-neutrals-gray-800" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M7.33333 12.6667C10.2789 12.6667 12.6667 10.2789 12.6667 7.33333C12.6667 4.38781 10.2789 2 7.33333 2C4.38781 2 2 4.38781 2 7.33333C2 10.2789 4.38781 12.6667 7.33333 12.6667Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M14 14L11.1 11.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p class="text-paragraph-1 text-neutrals-black flex-1 min-w-0"><strong>Search.</strong> Used when a search bar is needed. User can press Return to trigger search.</p>
+            </div>
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-4">
+              <div class="w-full sm:w-[230px] shrink-0">
+                <div class="input-group__field">
+                  <div class="input-group__input-wrap">
+                    <span class="input-status-dot" aria-hidden="true"></span>
+                    <input type="text" placeholder="Input" aria-label="Status" />
+                  </div>
+                  <div class="input-group__append-icon text-neutrals-gray-800" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <p class="text-paragraph-1 text-neutrals-black flex-1 min-w-0"><strong>Status.</strong> Used for visual reinforcement (e.g. status).</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-heading-2 text-secondary-900 mb-2">Interaction guidelines</h2>
+        <p class="text-paragraph-1 text-secondary-600 mb-6">How inputs respond to interaction and validation. Figma 16958-145850.</p>
+
+        <h3 class="text-heading-3 text-secondary-900 mb-3">Interaction states</h3>
+        <p class="text-paragraph-1 text-secondary-600 mb-4">Border steps from default (gray-400) → hover (gray-600) → focus (black + ring). Disabled uses gray-100 background and muted border/text.</p>
+        <div class="border border-dashed border-neutrals-gray-400 rounded-xl p-6 mb-8 overflow-x-auto">
+          <table class="w-full min-w-[640px] text-sm border-collapse">
+            <thead>
+              <tr>
+                <th class="text-left p-3 font-semibold text-neutrals-black w-24"></th>
+                <th class="text-left p-3 font-semibold text-neutrals-black">Default</th>
+                <th class="text-left p-3 font-semibold text-neutrals-black">Hover</th>
+                <th class="text-left p-3 font-semibold text-neutrals-black">Focus</th>
+                <th class="text-left p-3 font-semibold text-neutrals-black">Disabled</th>
+              </tr>
+            </thead>
+            <tbody class="align-middle">
+              <tr>
+                <td class="p-3 font-medium text-neutrals-gray-700 align-top pt-4">Text</td>
+                <td class="p-3"><div class="input-group__field max-w-[200px]"><div class="input-group__input-wrap"><input type="text" placeholder="Input" aria-label="Default text" readonly tabindex="-1" /></div></div></td>
+                <td class="p-3"><div class="input-group__field input-group__field--demo-hover max-w-[200px]"><div class="input-group__input-wrap"><input type="text" placeholder="Input" aria-label="Hover text" readonly tabindex="-1" /></div></div></td>
+                <td class="p-3"><div class="input-group__field input-group__field--demo-focus max-w-[200px]"><div class="input-group__input-wrap"><input type="text" placeholder="Input" aria-label="Focus text" readonly tabindex="-1" /></div></div></td>
+                <td class="p-3"><div class="input-group__field max-w-[200px]"><div class="input-group__input-wrap"><input type="text" placeholder="Input" disabled aria-label="Disabled text" /></div></div></td>
+              </tr>
+              <tr>
+                <td class="p-3 font-medium text-neutrals-gray-700 align-top pt-4">Search</td>
+                <td class="p-3"><div class="input-group__field max-w-[200px]"><div class="input-group__input-wrap"><input type="search" placeholder="Input" aria-label="Default search" readonly tabindex="-1" /></div><div class="input-group__append-icon" aria-hidden="true"><svg class="icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div></div></td>
+                <td class="p-3"><div class="input-group__field input-group__field--demo-hover max-w-[200px]"><div class="input-group__input-wrap"><input type="search" placeholder="Input" aria-label="Hover search" readonly tabindex="-1" /></div><div class="input-group__append-icon" aria-hidden="true"><svg class="icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div></div></td>
+                <td class="p-3"><div class="input-group__field input-group__field--demo-focus max-w-[200px]"><div class="input-group__input-wrap"><input type="search" placeholder="Input" aria-label="Focus search" readonly tabindex="-1" /></div><div class="input-group__append-icon" aria-hidden="true"><svg class="icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div></div></td>
+                <td class="p-3"><div class="input-group__field max-w-[200px]"><div class="input-group__input-wrap"><input type="search" placeholder="Input" disabled aria-label="Disabled search" /></div><div class="input-group__append-icon" aria-hidden="true"><svg class="icon-sm text-neutrals-gray-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-sm text-secondary-600 mb-8">Live fields use <code class="bg-secondary-100 px-1 rounded">:hover</code> and <code class="bg-secondary-100 px-1 rounded">:focus-within</code> on <code class="bg-secondary-100 px-1 rounded">input-group__field</code>. Add <code class="bg-secondary-100 px-1 rounded">input-group__field--success</code> or <code class="bg-secondary-100 px-1 rounded">input-group__field--error</code> for validation borders.</p>
+
+        <h3 class="text-heading-3 text-secondary-900 mb-3">Validations</h3>
+        <p class="text-paragraph-1 text-secondary-600 mb-4">Show a short message under the field. Success: green border and green message. Error: red border and red message.</p>
+        <div class="border border-dashed border-neutrals-gray-400 rounded-xl p-6 mb-6">
+          <div class="flex flex-wrap gap-8">
+            <div class="input-group w-full max-w-[280px]">
+              <div class="input-group__label">
+                <div class="input-group__label-text"><span>Label</span><span class="input-group__required" aria-hidden="true">*</span></div>
+              </div>
+              <div class="input-group__field input-group__field--success">
+                <div class="input-group__input-wrap"><input type="text" value="Content" aria-label="Success example" aria-invalid="false" /></div>
+              </div>
+              <p class="input-group__validation input-group__validation--success" role="status">Validation message</p>
+            </div>
+            <div class="input-group w-full max-w-[280px]">
+              <div class="input-group__label">
+                <div class="input-group__label-text"><span>Label</span><span class="input-group__required" aria-hidden="true">*</span></div>
+              </div>
+              <div class="input-group__field input-group__field--error">
+                <div class="input-group__input-wrap"><input type="text" value="Content" aria-label="Error example" aria-invalid="true" /></div>
+              </div>
+              <p class="input-group__validation input-group__validation--error" role="alert">Validation message</p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="text-heading-3 text-secondary-900 mb-2">Text color</h3>
+        <ul class="list-disc list-inside text-paragraph-1 text-secondary-700 space-y-1">
+          <li><strong>Placeholder</strong> and <strong>dropdown</strong> (unselected): <code class="bg-secondary-100 px-1 rounded">text-neutrals-gray-700</code></li>
+          <li><strong>Filled / selected</strong> value: <code class="bg-secondary-100 px-1 rounded">text-neutrals-black</code></li>
+        </ul>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-heading-2 text-secondary-900 mb-2">Toggle</h2>
+        <p class="text-paragraph-1 text-secondary-600 mb-6">Switch control for binary choices. Track 40×22px, thumb 16px. States: default off (gray-400 track), default on (primary track), disabled off/on (opacity 60%; disabled on uses gray-600 track). Figma 16932-145649.</p>
+
+        <h3 class="text-heading-3 text-secondary-900 mb-3">Layout variants</h3>
+        <p class="text-paragraph-1 text-secondary-600 mb-4">Toggle only (no label), label right (14px), or label left (14px). Use <code class="bg-secondary-100 px-1 rounded">toggle</code>, <code class="bg-secondary-100 px-1 rounded">toggle__switch</code>, <code class="bg-secondary-100 px-1 rounded">toggle__label</code>. Add <code class="bg-secondary-100 px-1 rounded">toggle__switch--on</code> for on state, <code class="bg-secondary-100 px-1 rounded">toggle__switch--disabled</code> or <code class="bg-secondary-100 px-1 rounded">toggle--disabled</code> for disabled.</p>
+        <div class="border border-dashed border-neutrals-gray-400 rounded-xl p-6 mb-8 overflow-x-auto">
+          <table class="w-full min-w-[640px] text-sm border-collapse">
+            <thead>
+              <tr>
+                <th class="text-left p-3 font-semibold text-neutrals-black w-28"></th>
+                <th class="text-left p-3 font-semibold text-neutrals-black">Default off</th>
+                <th class="text-left p-3 font-semibold text-neutrals-black">Default on</th>
+                <th class="text-left p-3 font-semibold text-neutrals-black">Disabled off</th>
+                <th class="text-left p-3 font-semibold text-neutrals-black">Disabled on</th>
+              </tr>
+            </thead>
+            <tbody class="align-middle">
+              <tr>
+                <td class="p-3 font-medium text-neutrals-gray-700 align-top pt-4">Toggle only</td>
+                <td class="p-3">
+                  <button type="button" class="toggle__switch" role="switch" aria-checked="false" aria-label="Toggle off"><span class="toggle__track" aria-hidden="true"></span><span class="toggle__thumb" aria-hidden="true"></span></button>
+                </td>
+                <td class="p-3">
+                  <button type="button" class="toggle__switch toggle__switch--on" role="switch" aria-checked="true" aria-label="Toggle on"><span class="toggle__track" aria-hidden="true"></span><span class="toggle__thumb" aria-hidden="true"></span></button>
+                </td>
+                <td class="p-3">
+                  <div class="toggle__switch toggle__switch--disabled" aria-hidden="true"><span class="toggle__track" aria-hidden="true"></span><span class="toggle__thumb" aria-hidden="true"></span></div>
+                </td>
+                <td class="p-3">
+                  <div class="toggle__switch toggle__switch--on toggle__switch--disabled" aria-hidden="true"><span class="toggle__track" aria-hidden="true"></span><span class="toggle__thumb" aria-hidden="true"></span></div>
+                </td>
+              </tr>
+              <tr>
+                <td class="p-3 font-medium text-neutrals-gray-700 align-top pt-4">Label right</td>
+                <td class="p-3">
+                  <div class="toggle">
+                    <button type="button" class="toggle__switch" role="switch" aria-checked="false" aria-label="Label off"><span class="toggle__track" aria-hidden="true"></span><span class="toggle__thumb" aria-hidden="true"></span></button>
+                    <span class="toggle__label">Label</span>
+                  </div>
+                </td>
+                <td class="p-3">
+                  <div class="toggle">
+                    <button type="button" class="toggle__switch toggle__switch--on" role="switch" aria-checked="true" aria-label="Label on"><span class="toggle__track" aria-hidden="true"></span><span class="toggle__thumb" aria-hidden="true"></span></button>
+                    <span class="toggle__label">Label</span>
+                  </div>
+                </td>
+                <td class="p-3">
+                  <div class="toggle toggle--disabled">
+                    <div class="toggle__switch toggle__switch--disabled"><span class="toggle__track" aria-hidden="true"></span><span class="toggle__thumb" aria-hidden="true"></span></div>
+                    <span class="toggle__label">Label</span>
+                  </div>
+                </td>
+                <td class="p-3">
+                  <div class="toggle toggle--disabled">
+                    <div class="toggle__switch toggle__switch--on toggle__switch--disabled"><span class="toggle__track" aria-hidden="true"></span><span class="toggle__thumb" aria-hidden="true"></span></div>
+                    <span class="toggle__label">Label</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="p-3 font-medium text-neutrals-gray-700 align-top pt-4">Label left</td>
+                <td class="p-3">
+                  <div class="toggle">
+                    <span class="toggle__label toggle__label--left">Label</span>
+                    <button type="button" class="toggle__switch" role="switch" aria-checked="false" aria-label="Label off"><span class="toggle__track" aria-hidden="true"></span><span class="toggle__thumb" aria-hidden="true"></span></button>
+                  </div>
+                </td>
+                <td class="p-3">
+                  <div class="toggle">
+                    <span class="toggle__label toggle__label--left">Label</span>
+                    <button type="button" class="toggle__switch toggle__switch--on" role="switch" aria-checked="true" aria-label="Label on"><span class="toggle__track" aria-hidden="true"></span><span class="toggle__thumb" aria-hidden="true"></span></button>
+                  </div>
+                </td>
+                <td class="p-3">
+                  <div class="toggle toggle--disabled">
+                    <span class="toggle__label toggle__label--left">Label</span>
+                    <div class="toggle__switch toggle__switch--disabled"><span class="toggle__track" aria-hidden="true"></span><span class="toggle__thumb" aria-hidden="true"></span></div>
+                  </div>
+                </td>
+                <td class="p-3">
+                  <div class="toggle toggle--disabled">
+                    <span class="toggle__label toggle__label--left">Label</span>
+                    <div class="toggle__switch toggle__switch--on toggle__switch--disabled"><span class="toggle__track" aria-hidden="true"></span><span class="toggle__thumb" aria-hidden="true"></span></div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="text-heading-3 text-secondary-900 mb-3">Dual label</h3>
+        <p class="text-paragraph-1 text-secondary-600 mb-4">Toggle between two options with labels on both sides. Use <code class="bg-secondary-100 px-1 rounded">toggle toggle--dual</code> and two <code class="bg-secondary-100 px-1 rounded">toggle__label</code> elements (16px).</p>
+        <div class="border border-dashed border-neutrals-gray-400 rounded-xl p-6 mb-6">
+          <div class="flex flex-wrap gap-x-10 gap-y-6">
+            <div class="toggle toggle--dual">
+              <span class="toggle__label">Left label</span>
+              <button type="button" class="toggle__switch" role="switch" aria-checked="false" aria-label="Left label selected"><span class="toggle__track" aria-hidden="true"></span><span class="toggle__thumb" aria-hidden="true"></span></button>
+              <span class="toggle__label">Right label</span>
+            </div>
+            <div class="toggle toggle--dual">
+              <span class="toggle__label">Left label</span>
+              <button type="button" class="toggle__switch toggle__switch--on" role="switch" aria-checked="true" aria-label="Right label selected"><span class="toggle__track" aria-hidden="true"></span><span class="toggle__thumb" aria-hidden="true"></span></button>
+              <span class="toggle__label">Right label</span>
+            </div>
+            <div class="toggle toggle--dual toggle--disabled">
+              <span class="toggle__label">Left label</span>
+              <div class="toggle__switch toggle__switch--disabled"><span class="toggle__track" aria-hidden="true"></span><span class="toggle__thumb" aria-hidden="true"></span></div>
+              <span class="toggle__label">Right label</span>
+            </div>
+            <div class="toggle toggle--dual toggle--disabled">
+              <span class="toggle__label">Left label</span>
+              <div class="toggle__switch toggle__switch--on toggle__switch--disabled"><span class="toggle__track" aria-hidden="true"></span><span class="toggle__thumb" aria-hidden="true"></span></div>
+              <span class="toggle__label">Right label</span>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="text-heading-3 text-secondary-900 mb-2">Code</h3>
+        <pre class="relative pt-10 pr-14 pb-4 pl-4 bg-secondary-900 text-secondary-100 rounded-card overflow-x-auto text-sm"><code data-copyable>&lt;!-- Toggle only --&gt;
+&lt;button type="button" class="toggle__switch" role="switch" aria-checked="false" aria-label="Toggle"&gt;
+  &lt;span class="toggle__track" aria-hidden="true"&gt;&lt;/span&gt;
+  &lt;span class="toggle__thumb" aria-hidden="true"&gt;&lt;/span&gt;
+&lt;/button&gt;
+
+&lt;!-- Label right --&gt;
+&lt;div class="toggle"&gt;
+  &lt;button type="button" class="toggle__switch toggle__switch--on" role="switch" aria-checked="true" aria-label="Label"&gt;
+    &lt;span class="toggle__track" aria-hidden="true"&gt;&lt;/span&gt;
+    &lt;span class="toggle__thumb" aria-hidden="true"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;span class="toggle__label"&gt;Label&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;!-- Dual label --&gt;
+&lt;div class="toggle toggle--dual"&gt;
+  &lt;span class="toggle__label"&gt;Left label&lt;/span&gt;
+  &lt;button type="button" class="toggle__switch" role="switch" aria-checked="false" aria-label="Choose option"&gt;
+    &lt;span class="toggle__track" aria-hidden="true"&gt;&lt;/span&gt;
+    &lt;span class="toggle__thumb" aria-hidden="true"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;span class="toggle__label"&gt;Right label&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-heading-2 text-secondary-900 mb-2">Compose text area</h2>
+        <p class="text-paragraph-1 text-secondary-600 mb-4">Multi-line text input with optional character counter. Figma 2056-13716: white background, 1px gray-400 border, 6px radius, 16px padding, 10px gap between content and counter. Placeholder and counter use gray-700; body text paragraph-1 (16px/24px), counter paragraph-2 (14px/22px) right-aligned.</p>
+        <div class="p-4 bg-secondary-100 rounded-card border border-secondary-200">
+          <div class="compose-text-area w-full max-w-[450px]">
+            <textarea rows="4" placeholder="Start a post..." aria-label="Compose post"></textarea>
+            <div class="compose-text-area__counter" aria-live="polite">0/500</div>
+          </div>
+        </div>
+        <p class="text-sm text-secondary-600 mt-3">Classes: <code class="bg-secondary-100 px-1 rounded">compose-text-area</code>, <code class="bg-secondary-100 px-1 rounded">compose-text-area__counter</code>. Add <code class="bg-secondary-100 px-1 rounded">w-full max-w-[450px]</code> (or another max) on the wrapper for responsive width.</p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-heading-2 text-secondary-900 mb-2">Input group</h2>
+        <p class="text-paragraph-1 text-secondary-600 mb-4">Label above an input with optional left/right prepend or append (text, icon, or dropdown). Figma 38256-3193: 6px radius, gray-400 border, prepend/append bg gray-200 with divider.</p>
+        <div class="p-4 bg-secondary-100 rounded-card border border-secondary-200">
+          <div class="input-group w-full max-w-[344px]">
+            <div class="input-group__label">
+              <div class="input-group__label-text">
+                <span>Label</span>
+                <span class="input-group__required" aria-hidden="true">*</span>
+              </div>
+            </div>
+            <div class="input-group__field">
+              <div class="input-group__prepend">
+                <svg class="icon-sm text-neutrals-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+              </div>
+              <div class="input-group__input-wrap">
+                <input type="text" placeholder="Input" id="input-group-demo" aria-label="Input" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="text-sm text-secondary-600 mt-3">Classes: <code class="bg-secondary-100 px-1 rounded">input-group</code>, <code class="bg-secondary-100 px-1 rounded">input-group__label</code>, <code class="bg-secondary-100 px-1 rounded">input-group__label-text</code>, <code class="bg-secondary-100 px-1 rounded">input-group__required</code>, <code class="bg-secondary-100 px-1 rounded">input-group__field</code>, <code class="bg-secondary-100 px-1 rounded">input-group__prepend</code> / <code class="bg-secondary-100 px-1 rounded">input-group__append</code>, <code class="bg-secondary-100 px-1 rounded">input-group__input-wrap</code>. Add <code class="bg-secondary-100 px-1 rounded">w-full max-w-[344px]</code> on the group for responsive width.</p>
+      </section>
+
       <section class="mb-8">
         <h2 class="text-lg font-semibold text-secondary-900 mb-3">Preview</h2>
         <div class="p-4 bg-white rounded-card border border-secondary-200">
-          <form class="max-w-sm space-y-4"><div><label class="block text-sm font-medium text-secondary-700 mb-1">Email</label><input type="email" class="w-full px-3 py-2 rounded-input border border-secondary-300" placeholder="you@example.com"></div><div><label class="block text-sm font-medium text-secondary-700 mb-1">Password</label><input type="password" class="w-full px-3 py-2 rounded-input border border-secondary-300"></div><button type="submit" class="w-full px-4 py-2 rounded-button bg-primary-500 text-white font-medium">Submit</button></form>
+          <form class="max-w-sm space-y-4">
+            <div class="input-group">
+              <div class="input-group__label">
+                <label class="input-group__label-text" for="form-preview-email">Email</label>
+              </div>
+              <div class="input-group__field">
+                <div class="input-group__input-wrap">
+                  <input type="email" id="form-preview-email" placeholder="you@example.com" aria-label="Email" />
+                </div>
+              </div>
+            </div>
+            <div class="input-group">
+              <div class="input-group__label">
+                <label class="input-group__label-text" for="form-preview-password">Password</label>
+              </div>
+              <div class="input-group__field">
+                <div class="input-group__input-wrap">
+                  <input type="password" id="form-preview-password" aria-label="Password" />
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn-solid-primary w-full">Submit</button>
+          </form>
         </div>
       </section>
       <section>
         <h2 class="text-lg font-semibold text-secondary-900 mb-3">Code</h2>
-        <pre class="relative pt-10 pr-14 pb-4 pl-4 bg-secondary-900 text-secondary-100 rounded-card overflow-x-auto text-sm"><code data-copyable>&lt;form class=&quot;max-w-sm space-y-4&quot;&gt;
-  &lt;div&gt;
-    &lt;label class=&quot;block text-sm font-medium text-secondary-700 mb-1&quot;&gt;Email&lt;/label&gt;
-    &lt;input type=&quot;email&quot; class=&quot;w-full px-3 py-2 rounded-input border border-secondary-300&quot; placeholder=&quot;you@example.com&quot;&gt;
+        <pre class="relative pt-10 pr-14 pb-4 pl-4 bg-secondary-900 text-secondary-100 rounded-card overflow-x-auto text-sm"><code data-copyable>&lt;div class="input-group w-full max-w-[344px]"&gt;
+  &lt;div class="input-group__label"&gt;
+    &lt;div class="input-group__label-text"&gt;&lt;span&gt;Label&lt;/span&gt;&lt;span class="input-group__required" aria-hidden="true"&gt;*&lt;/span&gt;&lt;/div&gt;
   &lt;/div&gt;
-  &lt;button type=&quot;submit&quot; class=&quot;w-full px-4 py-2 rounded-button bg-primary-500 text-white font-medium&quot;&gt;Submit&lt;/button&gt;
+  &lt;div class="input-group__field"&gt;
+    &lt;div class="input-group__prepend"&gt;&lt;!-- icon --&gt;&lt;/div&gt;
+    &lt;div class="input-group__input-wrap"&gt;&lt;input type="text" placeholder="Input" aria-label="Input" /&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="compose-text-area w-full max-w-[450px]"&gt;
+  &lt;textarea rows="4" placeholder="Start a post..." aria-label="Compose post"&gt;&lt;/textarea&gt;
+  &lt;div class="compose-text-area__counter" aria-live="polite"&gt;0/500&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;form class="max-w-sm space-y-4"&gt;
+  &lt;div class="input-group"&gt;
+    &lt;div class="input-group__label"&gt;
+      &lt;label class="input-group__label-text" for="email"&gt;Email&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class="input-group__field"&gt;
+      &lt;div class="input-group__input-wrap"&gt;
+        &lt;input type="email" id="email" placeholder="you@example.com" aria-label="Email" /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="input-group"&gt;
+    &lt;div class="input-group__label"&gt;
+      &lt;label class="input-group__label-text" for="password"&gt;Password&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class="input-group__field"&gt;
+      &lt;div class="input-group__input-wrap"&gt;
+        &lt;input type="password" id="password" aria-label="Password" /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button type="submit" class="btn-solid-primary w-full"&gt;Submit&lt;/button&gt;
 &lt;/form&gt;</code></pre>
       </section>
     </main>
