@@ -1060,35 +1060,6 @@ input::placeholder,
 
 /* Buttons — use btn-solid-primary, btn-outline-secondary, btn-link-primary, etc. Add btn-sm for small. */
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  border-radius: 6px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-weight: 500;
-}
-
-.btn:focus {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-  --tw-ring-offset-width: 2px;
-}
-
-.btn:disabled {
-  cursor: not-allowed;
-  opacity: 0.6;
-}
-
 .btn-solid-primary {
   display: inline-flex;
   align-items: center;
@@ -3863,6 +3834,212 @@ input::placeholder,
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
+/* Modal — Figma 7800-2: header (title + close), body, footer (actions); 4 widths */
+
+.modal {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(210 221 236 / var(--tw-border-opacity, 1));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+
+.modal--sm {
+  height: 292px;
+  max-width: 300px;
+}
+
+.modal--default {
+  height: 300px;
+  max-width: 500px;
+}
+
+.modal--lg {
+  height: 300px;
+  max-width: 800px;
+}
+
+.modal--xl {
+  height: 300px;
+  max-width: 1140px;
+}
+
+/* Full width of parent; use with any size class — overrides fixed max-width */
+
+.modal-responsive {
+  width: 100%;
+  min-width: 0px;
+  max-width: 100% !important;
+}
+
+.modal-responsive.modal {
+  height: auto;
+}
+
+.modal__header {
+  display: flex;
+  width: 100%;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 1.5rem;
+  border-bottom-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(210 221 236 / var(--tw-border-opacity, 1));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.modal__title {
+  min-width: 0px;
+  flex: 1 1 0%;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.5;
+  --tw-text-opacity: 1;
+  color: rgb(18 38 63 / var(--tw-text-opacity, 1));
+}
+
+.modal__close {
+  display: flex;
+  height: 22px;
+  width: 22px;
+  flex-shrink: 0;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  border-width: 0px;
+  background-color: transparent;
+  padding: 0px;
+  --tw-text-opacity: 1;
+  color: rgb(110 132 163 / var(--tw-text-opacity, 1));
+}
+
+.modal__close:hover {
+  --tw-text-opacity: 1;
+  color: rgb(18 38 63 / var(--tw-text-opacity, 1));
+}
+
+.modal__close:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.modal__close:focus-visible {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(39 110 205 / var(--tw-ring-opacity, 1));
+  --tw-ring-offset-width: 2px;
+}
+
+.modal__body {
+  min-height: 0px;
+  width: 100%;
+  min-width: 0px;
+  flex: 1 1 0%;
+  overflow: auto;
+  padding: 1.5rem;
+}
+
+.modal__footer {
+  width: 100%;
+  flex-shrink: 0;
+  border-top-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(210 221 236 / var(--tw-border-opacity, 1));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.modal__actions {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+/* Dialog — Figma 7685-41782: compact decision UI, no chrome header; 400px; centered text + actions */
+
+.dialog {
+  display: flex;
+  width: 100%;
+  max-width: 400px;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(210 221 236 / var(--tw-border-opacity, 1));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+  padding: 1.5rem;
+  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.dialog__body {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1rem;
+  text-align: center;
+  --tw-text-opacity: 1;
+  color: rgb(18 38 63 / var(--tw-text-opacity, 1));
+}
+
+.dialog__title {
+  width: 100%;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.dialog__description {
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+
+.dialog__actions {
+  display: flex;
+  width: 100%;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+/* Compose area inside dialog — Figma: 113px height, 10px gap */
+
+.compose-text-area--dialog {
+  height: 113px;
+  min-height: 113px;
+  gap: 10px;
+}
+
 /* Toggle — Figma 16932-145649: 40×22 track, 16px thumb, label positions and dual-label variant */
 
 .toggle {
@@ -4135,6 +4312,10 @@ input::placeholder,
   border-width: 0;
 }
 
+.collapse {
+  visibility: collapse;
+}
+
 .fixed {
   position: fixed;
 }
@@ -4145,14 +4326,6 @@ input::placeholder,
 
 .relative {
   position: relative;
-}
-
-.inset-0 {
-  inset: 0px;
-}
-
-.bottom-0 {
-  bottom: 0px;
 }
 
 .bottom-4 {
@@ -4175,16 +4348,8 @@ input::placeholder,
   left: 50%;
 }
 
-.right-0 {
-  right: 0px;
-}
-
 .right-1 {
   right: 0.25rem;
-}
-
-.right-2 {
-  right: 0.5rem;
 }
 
 .right-4 {
@@ -4193,10 +4358,6 @@ input::placeholder,
 
 .top-1 {
   top: 0.25rem;
-}
-
-.top-2 {
-  top: 0.5rem;
 }
 
 .top-full {
@@ -4230,6 +4391,10 @@ input::placeholder,
 
 .-ml-4 {
   margin-left: -1rem;
+}
+
+.mb-0 {
+  margin-bottom: 0px;
 }
 
 .mb-1 {
@@ -4328,16 +4493,8 @@ input::placeholder,
   height: 0.125rem;
 }
 
-.h-10 {
-  height: 2.5rem;
-}
-
 .h-12 {
   height: 3rem;
-}
-
-.h-2 {
-  height: 0.5rem;
 }
 
 .h-24 {
@@ -4350,10 +4507,6 @@ input::placeholder,
 
 .h-3\.5 {
   height: 0.875rem;
-}
-
-.h-32 {
-  height: 8rem;
 }
 
 .h-4 {
@@ -4376,8 +4529,12 @@ input::placeholder,
   height: 2rem;
 }
 
-.h-\[400px\] {
-  height: 400px;
+.h-\[35px\] {
+  height: 35px;
+}
+
+.h-\[420px\] {
+  height: 420px;
 }
 
 .h-\[60px\] {
@@ -4428,6 +4585,14 @@ input::placeholder,
   height: 0.5rem;
 }
 
+.min-h-\[200px\] {
+  min-height: 200px;
+}
+
+.min-h-\[420px\] {
+  min-height: 420px;
+}
+
 .min-h-\[60vh\] {
   min-height: 60vh;
 }
@@ -4436,20 +4601,12 @@ input::placeholder,
   min-height: 100vh;
 }
 
-.w-10 {
-  width: 2.5rem;
-}
-
 .w-11 {
   width: 2.75rem;
 }
 
 .w-12 {
   width: 3rem;
-}
-
-.w-2 {
-  width: 0.5rem;
 }
 
 .w-24 {
@@ -4492,16 +4649,16 @@ input::placeholder,
   width: 1.5rem;
 }
 
-.w-64 {
-  width: 16rem;
-}
-
 .w-8 {
   width: 2rem;
 }
 
 .w-80 {
   width: 20rem;
+}
+
+.w-\[103px\] {
+  width: 103px;
 }
 
 .w-\[240px\] {
@@ -4592,6 +4749,10 @@ input::placeholder,
   min-width: 640px;
 }
 
+.max-w-3xl {
+  max-width: 48rem;
+}
+
 .max-w-6xl {
   max-width: 72rem;
 }
@@ -4626,6 +4787,14 @@ input::placeholder,
 
 .max-w-\[500px\] {
   max-width: 500px;
+}
+
+.max-w-full {
+  max-width: 100%;
+}
+
+.max-w-md {
+  max-width: 28rem;
 }
 
 .max-w-none {
@@ -4663,22 +4832,6 @@ input::placeholder,
 .-translate-x-1\/2 {
   --tw-translate-x: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(-25%);
-    animation-timing-function: cubic-bezier(0.8,0,1,1);
-  }
-
-  50% {
-    transform: none;
-    animation-timing-function: cubic-bezier(0,0,0.2,1);
-  }
-}
-
-.animate-bounce {
-  animation: bounce 1s infinite;
 }
 
 @keyframes spin {
@@ -4884,14 +5037,6 @@ input::placeholder,
   border-radius: 0.25rem;
 }
 
-.rounded-\[1\.5rem\] {
-  border-radius: 1.5rem;
-}
-
-.rounded-\[2rem\] {
-  border-radius: 2rem;
-}
-
 .rounded-badge {
   border-radius: 9999px;
 }
@@ -4902,10 +5047,6 @@ input::placeholder,
 
 .rounded-card {
   border-radius: 0.5rem;
-}
-
-.rounded-card-lg {
-  border-radius: 0.75rem;
 }
 
 .rounded-full {
@@ -4949,10 +5090,6 @@ input::placeholder,
   border-width: 2px;
 }
 
-.border-4 {
-  border-width: 4px;
-}
-
 .border-b {
   border-bottom-width: 1px;
 }
@@ -4992,13 +5129,14 @@ input::placeholder,
   border-color: rgb(210 221 236 / var(--tw-border-opacity, 1));
 }
 
+.border-neutrals-gray-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(177 194 217 / var(--tw-border-opacity, 1));
+}
+
 .border-primary {
   --tw-border-opacity: 1;
   border-color: rgb(39 110 205 / var(--tw-border-opacity, 1));
-}
-
-.border-primary\/20 {
-  border-color: rgb(39 110 205 / 0.2);
 }
 
 .border-secondary-300 {
@@ -5030,15 +5168,6 @@ input::placeholder,
   border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
 }
 
-.border-t-primary {
-  --tw-border-opacity: 1;
-  border-top-color: rgb(39 110 205 / var(--tw-border-opacity, 1));
-}
-
-.bg-black\/50 {
-  background-color: rgb(0 0 0 / 0.5);
-}
-
 .bg-error {
   --tw-bg-opacity: 1;
   background-color: rgb(184 44 69 / var(--tw-bg-opacity, 1));
@@ -5064,9 +5193,9 @@ input::placeholder,
   background-color: rgb(235 242 243 / var(--tw-bg-opacity, 1));
 }
 
-.bg-neutrals-black {
+.bg-neutrals-gray-100 {
   --tw-bg-opacity: 1;
-  background-color: rgb(18 38 63 / var(--tw-bg-opacity, 1));
+  background-color: rgb(249 251 253 / var(--tw-bg-opacity, 1));
 }
 
 .bg-neutrals-gray-300 {
@@ -5087,10 +5216,6 @@ input::placeholder,
 .bg-primary-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(39 110 205 / var(--tw-bg-opacity, 1));
-}
-
-.bg-primary\/20 {
-  background-color: rgb(39 110 205 / 0.2);
 }
 
 .bg-secondary-100 {
@@ -5151,10 +5276,6 @@ input::placeholder,
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-}
-
-.bg-white\/20 {
-  background-color: rgb(255 255 255 / 0.2);
 }
 
 .object-cover {
@@ -5237,11 +5358,6 @@ input::placeholder,
   padding-bottom: 0.25rem;
 }
 
-.py-1\.5 {
-  padding-top: 0.375rem;
-  padding-bottom: 0.375rem;
-}
-
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -5270,10 +5386,6 @@ input::placeholder,
   padding-bottom: 0.75rem;
 }
 
-.pb-4 {
-  padding-bottom: 1rem;
-}
-
 .pb-6 {
   padding-bottom: 1.5rem;
 }
@@ -5294,20 +5406,12 @@ input::placeholder,
   padding-left: 2rem;
 }
 
-.pr-14 {
-  padding-right: 3.5rem;
-}
-
 .pr-4 {
   padding-right: 1rem;
 }
 
 .pr-8 {
   padding-right: 2rem;
-}
-
-.pt-10 {
-  padding-top: 2.5rem;
 }
 
 .pt-4 {
@@ -5471,10 +5575,6 @@ input::placeholder,
   line-height: 1rem;
 }
 
-.font-bold {
-  font-weight: 700;
-}
-
 .font-medium {
   font-weight: 500;
 }
@@ -5499,6 +5599,10 @@ input::placeholder,
   letter-spacing: 0.08em;
 }
 
+.tracking-wide {
+  letter-spacing: 0.025em;
+}
+
 .tracking-wider {
   letter-spacing: 0.05em;
 }
@@ -5516,11 +5620,6 @@ input::placeholder,
 .text-neutrals-black {
   --tw-text-opacity: 1;
   color: rgb(18 38 63 / var(--tw-text-opacity, 1));
-}
-
-.text-neutrals-gray-100 {
-  --tw-text-opacity: 1;
-  color: rgb(249 251 253 / var(--tw-text-opacity, 1));
 }
 
 .text-neutrals-gray-700 {
@@ -5546,11 +5645,6 @@ input::placeholder,
 .text-primary-140 {
   --tw-text-opacity: 1;
   color: rgb(23 66 123 / var(--tw-text-opacity, 1));
-}
-
-.text-secondary-100 {
-  --tw-text-opacity: 1;
-  color: rgb(249 251 253 / var(--tw-text-opacity, 1));
 }
 
 .text-secondary-700 {
@@ -5916,6 +6010,328 @@ input::placeholder,
   color: rgb(59 81 108 / var(--tw-text-opacity, 1));
 }
 
+/* Main navigation (sidebar) — Figma 26742-4660 */
+
+.main-nav {
+  position: relative;
+  display: flex;
+  min-height: 0px;
+  width: 250px;
+  max-width: 100%;
+  flex-shrink: 0;
+  flex-direction: column;
+  --tw-bg-opacity: 1;
+  background-color: rgb(19 42 70 / var(--tw-bg-opacity, 1));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.main-nav__logo-wrap {
+  display: flex;
+  width: 100%;
+  flex-shrink: 0;
+  flex-direction: column;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.main-nav__logo-inner {
+  display: flex;
+  width: 100%;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom-width: 1px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(59 81 108 / var(--tw-border-opacity, 1));
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.main-nav__logo-img {
+  height: 35px;
+  width: 103px;
+  max-width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.main-nav__body {
+  display: flex;
+  min-height: 0px;
+  min-width: 0px;
+  flex: 1 1 0%;
+  flex-direction: column;
+  overflow-y: auto;
+  padding-top: 0.75rem;
+}
+
+.main-nav__section {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding-bottom: 0.75rem;
+}
+
+.main-nav__section-title {
+  width: 100%;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.25rem;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1.5;
+  letter-spacing: 0.08em;
+  --tw-text-opacity: 1;
+  color: rgb(177 194 217 / var(--tw-text-opacity, 1));
+}
+
+.main-nav__list {
+  margin: 0px;
+  display: flex;
+  width: 100%;
+  list-style-type: none;
+  flex-direction: column;
+  gap: 0px;
+  padding: 0px;
+}
+
+.main-nav__item {
+  margin: 0px;
+  padding: 0px;
+}
+
+.main-nav__link {
+  display: flex;
+  min-height: 40px;
+  width: 100%;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  --tw-text-opacity: 1;
+  color: rgb(149 170 201 / var(--tw-text-opacity, 1));
+  text-decoration-line: none;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.main-nav__link:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.main-nav__link:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.main-nav__link:focus-visible {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(39 110 205 / var(--tw-ring-opacity, 1));
+  --tw-ring-offset-width: 2px;
+  --tw-ring-offset-color: #132A46;
+}
+
+.main-nav__link--active {
+  border-left-width: 2px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(39 110 205 / var(--tw-border-opacity, 1));
+  padding-left: 18px;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.main-nav__icon {
+  pointer-events: none;
+  display: flex;
+  height: 1.25rem;
+  width: 1.25rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  color: currentColor;
+}
+
+.main-nav__icon svg {
+  display: block;
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
+.main-nav__label {
+  min-width: 0px;
+  flex: 1 1 0%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.main-nav__footer {
+  margin-top: auto;
+  display: flex;
+  width: 100%;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 0.75rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.main-nav__footer-mark {
+  display: flex;
+  height: 30px;
+  width: 30px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background-color: rgb(39 110 205 / 0.25);
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 600;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.main-nav__footer-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  line-height: 1.5;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.main-nav__collapse {
+  position: absolute;
+  top: 1rem;
+  left: 235px;
+  z-index: 10;
+  display: flex;
+  height: 1.75rem;
+  width: 1.75rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(19 42 70 / var(--tw-bg-opacity, 1));
+  padding: 0px;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.main-nav__collapse:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(177 194 217 / var(--tw-border-opacity, 1));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.main-nav__collapse:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.main-nav__collapse:focus-visible {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(39 110 205 / var(--tw-ring-opacity, 1));
+  --tw-ring-offset-width: 2px;
+  --tw-ring-offset-color: #132A46;
+}
+
+/* Nav item parts — Figma 8603-0 (main / sub / separation title, badge, parent chevron) */
+
+.main-nav.main-nav--items-demo {
+  height: auto;
+  min-height: 0px;
+}
+
+.main-nav__badge {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 138 80 / var(--tw-bg-opacity, 1));
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 600;
+  line-height: 1;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.main-nav__chevron {
+  pointer-events: none;
+  display: flex;
+  height: 15px;
+  width: 15px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  color: currentColor;
+}
+
+.main-nav__chevron svg {
+  display: block;
+  height: 15px;
+  width: 15px;
+}
+
+/* Sub-item: 14px type, extra left indent; active = primary left border + white label */
+
+.main-nav__link.main-nav__link--sub {
+  padding-left: 52px;
+  padding-right: 1.25rem;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 400;
+}
+
+.main-nav__link.main-nav__link--sub.main-nav__link--active {
+  border-left-width: 2px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(39 110 205 / var(--tw-border-opacity, 1));
+  padding-left: 46px;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
 /* Tailwind's fontSize plugin doesn't output textTransform; add uppercase for caps font sizes */
 
 .hover\:cursor-pointer:hover {
@@ -5935,11 +6351,6 @@ input::placeholder,
 .hover\:bg-secondary-100:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(249 251 253 / var(--tw-bg-opacity, 1));
-}
-
-.hover\:bg-secondary-50:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(252 253 254 / var(--tw-bg-opacity, 1));
 }
 
 .hover\:text-neutrals-black:hover {
@@ -5962,6 +6373,18 @@ input::placeholder,
 }
 
 @media (min-width: 640px) {
+  .sm\:h-auto {
+    height: auto;
+  }
+
+  .sm\:max-h-\[640px\] {
+    max-height: 640px;
+  }
+
+  .sm\:min-h-\[480px\] {
+    min-height: 480px;
+  }
+
   .sm\:w-\[230px\] {
     width: 230px;
   }

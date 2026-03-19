@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modals & Dialogs — Cendyn Design System</title>
+  <title>Modals &amp; Dialogs — Cendyn Design System</title>
   <link rel="stylesheet" href="../css/docs.css">
 </head>
 <body class="min-h-screen bg-secondary-50">
@@ -46,8 +46,7 @@
         <li><a href="lists.html" class="text-secondary-600 hover:text-primary">Lists</a></li>
         <li><a href="loaders.html" class="text-secondary-600 hover:text-primary">Loaders</a></li>
         <li><a href="modals-dialogs.html" class="text-primary font-medium">Modals &amp; Dialogs</a></li>
-        <li><a href="mobile-frame.html" class="text-secondary-600 hover:text-primary">Mobile Frame</a></li>
-        <li><a href="navigation-icons.html" class="text-secondary-600 hover:text-primary">Navigation Icons</a></li>
+        <li><a href="navigation.html" class="text-secondary-600 hover:text-primary">Navigation</a></li>
         <li><a href="navigation-tabs.html" class="text-secondary-600 hover:text-primary">Tabs</a></li>
         <li><a href="scrollbar.html" class="text-secondary-600 hover:text-primary">Scrollbar</a></li>
         <li><a href="tooltips-popovers.html" class="text-secondary-600 hover:text-primary">Tooltips &amp; Popovers</a></li>
@@ -57,15 +56,185 @@
       </ul>
     </aside>
     <main class="overflow-hidden pl-8">
-      <h1 class="text-display-sm text-secondary-900 mb-6">Modals & Dialogs</h1>
-      <p class="text-secondary-600 mb-8">Modal and dialog overlays.</p>
-      <section class="mb-8">
-        <h2 class="text-lg font-semibold text-secondary-900 mb-3">Preview</h2>
-        <div class="p-4 bg-white rounded-card border border-secondary-200">
-          <div class="relative h-32 flex items-center justify-center rounded-card border border-secondary-200 bg-secondary-100"><div class="bg-white rounded-card-lg shadow-modal p-6 max-w-sm border border-secondary-200"><h3 class="font-semibold text-secondary-900 mb-2">Dialog title</h3><p class="text-sm text-secondary-600 mb-4">Dialog body text.</p><div class="flex justify-end gap-2"><button type="button" class="px-3 py-1.5 rounded-button border border-secondary-300 text-sm">Cancel</button><button type="button" class="px-3 py-1.5 rounded-button bg-primary-500 text-white text-sm">Confirm</button></div></div></div>
+      <h1 class="text-display-sm text-secondary-900 mb-6">Modals &amp; Dialogs</h1>
+      <p class="text-secondary-600 mb-8"><strong>Modals</strong> surface information or ask for input related to the current task (<a href="https://www.figma.com/design/hYuyPfbCcHwS3KN4CdFmDd/Cendyn-Product-Design-System?node-id=7800-2" class="text-primary hover:underline">Figma 7800-2</a>). <strong>Dialogs</strong> are a focused type of modal for confirmations, warnings, or a required response before continuing (<a href="https://www.figma.com/design/hYuyPfbCcHwS3KN4CdFmDd/Cendyn-Product-Design-System?node-id=7685-41782" class="text-primary hover:underline">Figma 7685-41782</a>). Both sit above the page and block the background.</p>
+
+      <section class="mb-10">
+        <h2 class="text-lg font-semibold text-secondary-900 mb-3">Dialogs</h2>
+        <p class="text-sm text-secondary-600 mb-4">400px max width, centered copy, no title bar or close icon. Use <code class="bg-secondary-100 px-1 rounded text-xs">dialog</code>, <code class="bg-secondary-100 px-1 rounded text-xs">dialog__body</code>, <code class="bg-secondary-100 px-1 rounded text-xs">dialog__title</code>, <code class="bg-secondary-100 px-1 rounded text-xs">dialog__description</code>, <code class="bg-secondary-100 px-1 rounded text-xs">dialog__actions</code>. The compose variant reuses <code class="bg-secondary-100 px-1 rounded text-xs">compose-text-area</code> with <code class="bg-secondary-100 px-1 rounded text-xs">compose-text-area--dialog</code> for the Figma 113px field height.</p>
+        <div class="p-6 rounded-card border border-secondary-200 bg-neutrals-gray-100 space-y-10">
+          <div>
+            <p class="text-xs font-semibold text-secondary-600 uppercase tracking-wide mb-2">Confirmation / message</p>
+            <div class="flex justify-center">
+              <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-confirm-title" aria-describedby="dialog-confirm-desc">
+                <div class="dialog__body">
+                  <h2 id="dialog-confirm-title" class="dialog__title">Title</h2>
+                  <p id="dialog-confirm-desc" class="dialog__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet</p>
+                </div>
+                <div class="dialog__actions">
+                  <button type="button" class="btn-solid-secondary">Cancel</button>
+                  <button type="button" class="btn-solid-primary">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="text-xs font-semibold text-secondary-600 uppercase tracking-wide mb-2">With compose text area</p>
+            <div class="flex justify-center">
+              <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-compose-title" aria-describedby="dialog-compose-desc">
+                <div class="dialog__body">
+                  <h2 id="dialog-compose-title" class="dialog__title">Title</h2>
+                  <p id="dialog-compose-desc" class="dialog__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet</p>
+                </div>
+                <div class="compose-text-area compose-text-area--dialog w-full">
+                  <label class="sr-only" for="dialog-compose-field">Your message</label>
+                  <textarea id="dialog-compose-field" name="message" rows="2" placeholder="Placeholder" maxlength="500" aria-describedby="dialog-compose-counter"></textarea>
+                  <div id="dialog-compose-counter" class="compose-text-area__counter" aria-live="polite">0/500</div>
+                </div>
+                <div class="dialog__actions">
+                  <button type="button" class="btn-solid-secondary">Cancel</button>
+                  <button type="button" class="btn-solid-primary">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
-</main>
+
+      <section class="mb-10">
+        <h2 class="text-heading-3 text-secondary-900 mb-3">Modals</h1>
+        <h2 class="text-lg font-semibold text-secondary-900 mb-3">Responsive</h2>
+        <p class="text-sm text-secondary-600 mb-4">Combine any size class with <code class="bg-secondary-100 px-1 rounded text-xs">modal-responsive</code> so the dialog is <strong>100% width</strong> of its parent (fixed max-widths are overridden). It has <strong>auto height</strong> to fill any amount of content. Example is wrapped in a max-width container to show fill behavior.</p>
+        <div class="p-6 rounded-card border border-secondary-200 bg-neutrals-gray-100">
+          <div class="max-w-md mx-auto rounded-lg border-2 border-dashed border-neutrals-gray-500 p-3">
+            <div class="modal modal--default modal-responsive" role="dialog" aria-modal="true" aria-labelledby="modal-responsive-title">
+              <div class="modal__header">
+                <h2 id="modal-responsive-title" class="modal__title">Title</h2>
+                <button type="button" class="modal__close" aria-label="Close dialog">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                </button>
+              </div>
+              <div class="modal__body" aria-label="Dialog content"></div>
+              <div class="modal__footer">
+                <div class="modal__actions">
+                  <button type="button" class="btn-solid-secondary">Button</button>
+                  <button type="button" class="btn-solid-primary">Button</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-lg font-semibold text-secondary-900 mb-3">Sizes</h2>
+        <p class="text-sm text-secondary-600 mb-4">Four fixed widths: <strong>small</strong> (300×292px), <strong>default</strong> (500×300px), <strong>large</strong> (800×300px), <strong>x-large</strong> (1140×300px, capped to viewport). Apply <code class="bg-secondary-100 px-1 rounded text-xs">modal--sm</code>, <code class="bg-secondary-100 px-1 rounded text-xs">modal--default</code>, <code class="bg-secondary-100 px-1 rounded text-xs">modal--lg</code>, or <code class="bg-secondary-100 px-1 rounded text-xs">modal--xl</code> on <code class="bg-secondary-100 px-1 rounded text-xs">.modal</code>. Footer actions use <code class="bg-secondary-100 px-1 rounded text-xs">btn-solid-secondary</code> and <code class="bg-secondary-100 px-1 rounded text-xs">btn-solid-primary</code>.</p>
+
+        <div class="p-6 rounded-card border border-secondary-200 bg-neutrals-gray-100 space-y-10">
+          <!-- Small -->
+          <div>
+            <p class="text-xs font-semibold text-secondary-600 uppercase tracking-wide mb-2">Small — 300×292px</p>
+            <div class="flex justify-center">
+              <div class="modal modal--sm" role="dialog" aria-modal="true" aria-labelledby="modal-sm-title">
+                <div class="modal__header">
+                  <h2 id="modal-sm-title" class="modal__title">Title</h2>
+                  <button type="button" class="modal__close" aria-label="Close dialog">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                  </button>
+                </div>
+                <div class="modal__body" aria-label="Dialog content"></div>
+                <div class="modal__footer">
+                  <div class="modal__actions">
+                    <button type="button" class="btn-solid-secondary">Button</button>
+                    <button type="button" class="btn-solid-primary">Button</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Default -->
+          <div>
+            <p class="text-xs font-semibold text-secondary-600 uppercase tracking-wide mb-2">Default — 500×300px</p>
+            <div class="flex justify-center overflow-x-auto">
+              <div class="modal modal--default" role="dialog" aria-modal="true" aria-labelledby="modal-default-title">
+                <div class="modal__header">
+                  <h2 id="modal-default-title" class="modal__title">Title</h2>
+                  <button type="button" class="modal__close" aria-label="Close dialog">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                  </button>
+                </div>
+                <div class="modal__body" aria-label="Dialog content"></div>
+                <div class="modal__footer">
+                  <div class="modal__actions">
+                    <button type="button" class="btn-solid-secondary">Button</button>
+                    <button type="button" class="btn-solid-primary">Button</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Large -->
+          <div>
+            <p class="text-xs font-semibold text-secondary-600 uppercase tracking-wide mb-2">Large — 800×300px</p>
+            <div class="flex justify-center overflow-x-auto">
+              <div class="modal modal--lg" role="dialog" aria-modal="true" aria-labelledby="modal-lg-title">
+                <div class="modal__header">
+                  <h2 id="modal-lg-title" class="modal__title">Title</h2>
+                  <button type="button" class="modal__close" aria-label="Close dialog">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                  </button>
+                </div>
+                <div class="modal__body" aria-label="Dialog content"></div>
+                <div class="modal__footer">
+                  <div class="modal__actions">
+                    <button type="button" class="btn-solid-secondary">Button</button>
+                    <button type="button" class="btn-solid-primary">Button</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- X-Large -->
+          <div>
+            <p class="text-xs font-semibold text-secondary-600 uppercase tracking-wide mb-2">X-large — 1140×300px</p>
+            <div class="flex justify-center overflow-x-auto">
+              <div class="modal modal--xl" role="dialog" aria-modal="true" aria-labelledby="modal-xl-title">
+                <div class="modal__header">
+                  <h2 id="modal-xl-title" class="modal__title">Title</h2>
+                  <button type="button" class="modal__close" aria-label="Close dialog">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                  </button>
+                </div>
+                <div class="modal__body" aria-label="Dialog content"></div>
+                <div class="modal__footer">
+                  <div class="modal__actions">
+                    <button type="button" class="btn-solid-secondary">Button</button>
+                    <button type="button" class="btn-solid-primary">Button</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   </div>
+  <script src="../js/copy.js"></script>
+  <script>
+    (function () {
+      var ta = document.getElementById('dialog-compose-field');
+      var counter = document.getElementById('dialog-compose-counter');
+      if (ta && counter) {
+        function sync() {
+          counter.textContent = ta.value.length + '/500';
+        }
+        ta.addEventListener('input', sync);
+        sync();
+      }
+    })();
+  </script>
 </body>
 </html>

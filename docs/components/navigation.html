@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation — Cendyn Design System</title>
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body class="min-h-screen bg-secondary-50">
+  <header class="border-b border-secondary-200 bg-white">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="../index.html" class="text-xl font-semibold text-primary">Cendyn Design System</a>
+      <nav class="flex gap-6">
+        <a href="../index.html" class="text-secondary-600 hover:text-primary">Overview</a>
+        <a href="../tokens.html" class="text-secondary-600 hover:text-primary">Tokens</a>
+        <a href="../typography.html" class="text-secondary-600 hover:text-primary">Typography</a>
+        <a href="buttons.html" class="text-secondary-600 hover:text-primary">Components</a>
+      </nav>
+    </div>
+  </header>
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <aside class="w-56 float-left pr-8 border-r border-secondary-200 min-h-[60vh]">
+      <p class="text-xs font-semibold text-secondary-500 uppercase tracking-wider mb-3">Foundations</p>
+      <ul class="space-y-1 text-sm mb-6">
+        <li><a href="../typography.html" class="text-secondary-600 hover:text-primary">Typography</a></li>
+      </ul>
+      <p class="text-xs font-semibold text-secondary-500 uppercase tracking-wider mb-3">Components</p>
+      <ul class="space-y-1 text-sm">
+        <li><a href="alerts.html" class="text-secondary-600 hover:text-primary">Alerts</a></li>
+        <li><a href="avatar.html" class="text-secondary-600 hover:text-primary">Avatar</a></li>
+        <li><a href="badges.html" class="text-secondary-600 hover:text-primary">Badges</a></li>
+        <li><a href="breadcrumbs.html" class="text-secondary-600 hover:text-primary">Breadcrumbs</a></li>
+        <li><a href="buttons.html" class="text-secondary-600 hover:text-primary">Buttons</a></li>
+        <li><a href="button-group.html" class="text-secondary-600 hover:text-primary">Button Group</a></li>
+        <li><a href="calendars.html" class="text-secondary-600 hover:text-primary">Calendars</a></li>
+        <li><a href="cards.html" class="text-secondary-600 hover:text-primary">Cards</a></li>
+        <li><a href="charts.html" class="text-secondary-600 hover:text-primary">Charts</a></li>
+        <li><a href="data-grid.html" class="text-secondary-600 hover:text-primary">Data Grid</a></li>
+        <li><a href="data-grid-filter.html" class="text-secondary-600 hover:text-primary">Data Grid Filter</a></li>
+        <li><a href="dropdowns.html" class="text-secondary-600 hover:text-primary">Dropdowns</a></li>
+        <li><a href="dropzone.html" class="text-secondary-600 hover:text-primary">Dropzone</a></li>
+        <li><a href="empty-states.html" class="text-secondary-600 hover:text-primary">Empty States</a></li>
+        <li><a href="forms.html" class="text-secondary-600 hover:text-primary">Forms</a></li>
+        <li><a href="header.html" class="text-secondary-600 hover:text-primary">Header</a></li>
+        <li><a href="icons.html" class="text-secondary-600 hover:text-primary">Icons</a></li>
+        <li><a href="lists.html" class="text-secondary-600 hover:text-primary">Lists</a></li>
+        <li><a href="loaders.html" class="text-secondary-600 hover:text-primary">Loaders</a></li>
+        <li><a href="modals-dialogs.html" class="text-secondary-600 hover:text-primary">Modals &amp; Dialogs</a></li>
+        <li><a href="navigation.html" class="text-primary font-medium">Navigation</a></li>
+        <li><a href="navigation-tabs.html" class="text-secondary-600 hover:text-primary">Tabs</a></li>
+        <li><a href="scrollbar.html" class="text-secondary-600 hover:text-primary">Scrollbar</a></li>
+        <li><a href="tooltips-popovers.html" class="text-secondary-600 hover:text-primary">Tooltips &amp; Popovers</a></li>
+        <li><a href="toasts.html" class="text-secondary-600 hover:text-primary">Toasts</a></li>
+        <li><a href="tree-view.html" class="text-secondary-600 hover:text-primary">Tree View</a></li>
+        <li><a href="wizard.html" class="text-secondary-600 hover:text-primary">Wizard</a></li>
+      </ul>
+    </aside>
+    <main class="overflow-hidden pl-8">
+      <h1 class="text-display-sm text-secondary-900 mb-2">Navigation</h1>
+      <p class="text-secondary-600 mb-2 max-w-3xl">App navigation patterns: primary sidebar (<strong>main navigation</strong>) and compact icon rail.</p>
+      <p class="text-secondary-600 text-sm mb-8 max-w-3xl">
+        Main navigation — Figma
+        <a href="https://www.figma.com/design/hYuyPfbCcHwS3KN4CdFmDd/Cendyn-Product-Design-System?node-id=26742-4660&m=dev" class="text-primary hover:underline" target="_blank" rel="noreferrer">26742-4660</a>.
+      </p>
+
+      <section class="mb-10">
+        <h2 class="text-lg font-semibold text-secondary-900 mb-3">Main navigation</h2>
+        <p class="text-secondary-600 text-sm mb-4 max-w-3xl">
+          Fixed-width (<code class="text-xs bg-secondary-100 px-1 rounded">250px</code>) vertical sidebar: product logo, section labels (uppercase micro heading), icon + label links (active state with primary left border and white label), supplementary group, and footer app switcher. Optional collapse control sits on the right edge of the rail. <strong>Module</strong> rows use the <strong>link</strong> icon SVG from the <a href="icons.html" class="text-primary hover:underline">Icons</a> page.
+        </p>
+        <div class="border-secondary-200 overflow-hidden bg-white">
+          <div class="flex flex-col sm:flex-row min-h-[420px]">
+            <nav class="main-nav h-[420px] sm:h-auto sm:min-h-[480px] sm:max-h-[640px]" aria-label="Main">
+              <button type="button" class="main-nav__collapse" aria-label="Collapse sidebar">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M14 8L2 8" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M14 4L8 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M14 12L8 12" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <div class="main-nav__logo-wrap">
+                <div class="main-nav__logo-inner">
+                  <!-- Replace with product logo: <img class="main-nav__logo-img" src="…" alt="…" /> -->
+                  <span class="flex h-[35px] w-[103px] max-w-full items-center justify-center text-sm font-semibold tracking-wide text-neutrals-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="103" height="35" viewBox="0 0 103 35" fill="none">
+                      <path d="M0 21.0472C0 15.4928 4.28456 12.2587 9.22829 12.2587C13.4922 12.2587 15.9229 14.6509 15.9229 16.7454C15.9229 17.7823 15.2946 18.7064 14.0381 18.7064C12.8949 18.7064 12.2666 17.9466 12.1842 16.7762C12.0709 15.0924 11.0101 13.2136 8.33224 13.2136C5.3248 13.2136 3.41941 15.6674 3.41941 19.6099C3.45031 24.8357 6.89032 27.9158 10.8144 27.9158C12.5344 27.9158 14.0587 27.2895 15.48 25.7084L16.0259 26.1396C15.3152 27.4435 13.0803 29.8665 9.012 29.8665C4.34636 29.8665 0 26.653 0 21.0472Z" fill="white"/>
+                      <path d="M16.8705 23.4394C16.8705 19.2505 20.0427 17.0739 23.4518 17.0739C26.2635 17.0739 28.1998 18.5421 28.1998 20.7187C28.1998 22.731 26.5107 23.2238 23.1531 23.3881L20.8357 23.5216C20.3208 23.5524 20.1251 23.7988 20.1251 24.3943C20.1251 26.4066 22.1747 28.039 24.7083 28.039C25.831 28.039 27.139 27.7413 28.0968 26.5709L28.6736 27.0637C28.1586 28.039 26.3253 29.7536 23.3488 29.7536C19.9294 29.7536 16.8705 27.4949 16.8705 23.4394ZM20.8563 22.7002L22.4939 22.6489C24.8422 22.5154 25.4705 22.0739 25.4705 20.7392C25.4705 19.2916 24.7598 17.9877 22.9883 17.9877C20.8357 17.9877 19.9603 20 19.9603 21.6325C19.9603 22.5154 20.2281 22.731 20.8563 22.7002Z" fill="white"/>
+                      <path d="M39.6734 27.4435V22.269C39.6734 20.2567 38.6949 18.7577 36.8616 18.7577C35.0283 18.7577 33.9366 20.2567 33.9366 22.269V27.2279C33.9366 28.3676 34.4001 28.7269 35.6875 28.8604V29.5996H29.3224V28.8604C30.6099 28.7269 31.0734 28.3676 31.0734 27.2279V20.0616C31.0734 18.809 30.6614 18.4292 29.3224 18.5421V17.8337L32.8449 17.1253C33.5555 16.9918 33.9366 17.3203 33.9366 17.9671C33.9366 18.9733 34.3177 19.2505 34.6782 18.8398C35.1725 18.2957 36.2643 17.0431 38.4992 17.0431C40.5488 17.0431 42.5366 18.1314 42.5366 21.6427V27.4127C42.5366 28.3676 43.0516 28.6653 43.8446 28.4497V28.8604C43.4945 29.4867 42.6396 29.7536 41.8465 29.7536C40.6003 29.7536 39.6734 29.0452 39.6734 27.4435Z" fill="white"/>
+                      <path d="M44.1536 23.5524C44.1536 19.3327 47.0478 17.0739 50.1067 17.0739C52.836 17.0739 53.8454 18.922 53.8454 16.9405V14.7125C53.8454 13.4908 53.4334 13.0801 52.0945 13.2136V12.4743L55.6169 11.7967C56.3275 11.6633 56.7086 11.9918 56.7086 12.6694V27.423C56.7086 28.3778 57.2236 28.6448 58.0166 28.46V28.8706C57.6871 29.4969 56.8425 29.7639 56.0804 29.7639C55.1843 29.7639 54.3604 29.384 54.0823 28.5626C53.9484 28.152 53.7012 28.0185 53.454 28.0185C52.7433 28.0185 51.8679 29.7639 49.3857 29.7639C46.6049 29.7536 44.1536 27.4127 44.1536 23.5524ZM51.0336 28.0082C52.2902 28.0082 53.8454 27.3306 53.8454 24.9076V22.4538C53.8454 19.2095 51.8267 17.9672 50.2097 17.9672C48.2425 17.9672 47.1199 19.8152 47.1199 22.4025C47.1302 25.4826 48.6854 28.0082 51.0336 28.0082Z" fill="white"/>
+                      <path d="M58.6758 33.0493C58.6758 32.2279 59.2526 31.5503 60.231 31.5503C62.0643 31.5503 61.055 33.922 62.2806 33.922C62.8574 33.922 63.3414 33.1827 63.671 32.3717C64.1654 31.0678 63.8873 30 63.4753 28.9938L60.1177 20.5031C59.4895 18.922 59.0775 18.4908 57.9034 18.0493V17.3101H63.9697V18.0493C62.4969 18.4805 62.4454 18.8706 63.0943 20.5031L65.3292 26.0062C65.7103 26.961 66.009 26.961 66.3901 25.9754L67.4509 23.2033C69.0885 18.9528 68.6251 18.4908 66.9874 18.0595V17.3203H72.1166V18.0595C70.5098 18.4908 70.0979 18.9322 69.4696 20.5133L65.1541 31.4066C64.1963 33.7988 63.2694 35 61.3022 35C59.716 34.9795 58.6758 34.1684 58.6758 33.0493Z" fill="white"/>
+                      <path d="M83.5798 27.4435V22.269C83.5798 20.2567 82.6014 18.7577 80.7681 18.7577C78.9348 18.7577 77.843 20.2567 77.843 22.269V27.2279C77.843 28.3676 78.3065 28.7269 79.5939 28.8604V29.5996H73.2289V28.8604C74.5163 28.7269 74.9798 28.3676 74.9798 27.2279V20.0616C74.9798 18.809 74.5678 18.4292 73.2289 18.5421V17.8337L76.7513 17.1253C77.4619 16.9918 77.843 17.3203 77.843 17.9671C77.843 18.9733 78.2241 19.2505 78.5846 18.8398C79.079 18.2957 80.1707 17.0431 82.4057 17.0431C84.4553 17.0431 86.443 18.1314 86.443 21.6427V27.4127C86.443 28.3676 86.958 28.6653 87.7511 28.4497V28.8604C87.4009 29.4867 86.546 29.7536 85.753 29.7536C84.5068 29.7536 83.5798 29.0452 83.5798 27.4435Z" fill="white"/>
+                      <path d="M77.8534 6.60164C74.4031 6.60164 73.8366 11.4476 77.8534 11.4476C85.959 11.4476 87.8232 0 94.9607 0C104.549 0 106.754 16.8994 94.9607 16.8994C84.96 16.9096 83.549 6.60164 77.8534 6.60164ZM77.8534 14.076C70.2421 14.076 72.8376 5.79055 77.8534 5.79055C84.6201 5.79055 86.0826 15.9856 94.9607 15.9856C102.644 15.9856 102.057 3.24435 94.9607 3.24435C87.5966 3.24435 86.6491 14.076 77.8534 14.076Z" fill="white"/>
+                      <path d="M91.0573 27.5257V27.2177H92.9009V27.5257H92.1593V29.5893H91.7988V27.5257H91.0573Z" fill="white"/>
+                      <path d="M93.3129 27.2177H93.7454L94.5076 29.0657H94.5385L95.3007 27.2177H95.7332V29.5893H95.3934V27.8747H95.3728L94.6724 29.5893H94.384L93.6836 27.8747H93.663V29.5996H93.3129V27.2177Z" fill="white"/>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="main-nav__body">
+                <div class="main-nav__section">
+                  <p class="main-nav__section-title" id="main-nav-section-app">Application Name</p>
+                  <ul class="main-nav__list" aria-labelledby="main-nav-section-app">
+                    <li class="main-nav__item">
+                      <a class="main-nav__link main-nav__link--active" href="#" aria-current="page">
+                        <span class="main-nav__icon" aria-hidden="true">
+                          <!-- icon-link — same SVG as Icons page (link) -->
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                            <path d="M10 13C10.4295 13.5742 10.9774 14.0492 11.6066 14.393C12.2357 14.7367 12.9315 14.9411 13.6467 14.9924C14.3618 15.0436 15.0796 14.9404 15.7513 14.6898C16.4231 14.4392 17.0331 14.0471 17.54 13.54L20.54 10.54C21.4508 9.59702 21.9548 8.334 21.9434 7.02302C21.932 5.71204 21.4061 4.45797 20.4791 3.53093C19.5521 2.60389 18.298 2.07805 16.987 2.06666C15.676 2.05526 14.413 2.55924 13.47 3.47003L11.75 5.18003" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14 11C13.5705 10.4259 13.0226 9.9508 12.3934 9.60704C11.7642 9.26328 11.0685 9.05886 10.3533 9.00765C9.63819 8.95643 8.9204 9.05961 8.24864 9.3102C7.57688 9.56079 6.96687 9.95291 6.45999 10.46L3.45999 13.46C2.5492 14.403 2.04522 15.666 2.05662 16.977C2.06801 18.288 2.59385 19.542 3.52089 20.4691C4.44793 21.3961 5.702 21.922 7.01298 21.9334C8.32396 21.9447 9.58697 21.4408 10.53 20.53L12.24 18.82" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </span>
+                        <span class="main-nav__label">Module</span>
+                      </a>
+                    </li>
+                    <li class="main-nav__item">
+                      <a class="main-nav__link" href="#">
+                        <span class="main-nav__icon" aria-hidden="true">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                            <path d="M10 13C10.4295 13.5742 10.9774 14.0492 11.6066 14.393C12.2357 14.7367 12.9315 14.9411 13.6467 14.9924C14.3618 15.0436 15.0796 14.9404 15.7513 14.6898C16.4231 14.4392 17.0331 14.0471 17.54 13.54L20.54 10.54C21.4508 9.59702 21.9548 8.334 21.9434 7.02302C21.932 5.71204 21.4061 4.45797 20.4791 3.53093C19.5521 2.60389 18.298 2.07805 16.987 2.06666C15.676 2.05526 14.413 2.55924 13.47 3.47003L11.75 5.18003" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14 11C13.5705 10.4259 13.0226 9.9508 12.3934 9.60704C11.7642 9.26328 11.0685 9.05886 10.3533 9.00765C9.63819 8.95643 8.9204 9.05961 8.24864 9.3102C7.57688 9.56079 6.96687 9.95291 6.45999 10.46L3.45999 13.46C2.5492 14.403 2.04522 15.666 2.05662 16.977C2.06801 18.288 2.59385 19.542 3.52089 20.4691C4.44793 21.3961 5.702 21.922 7.01298 21.9334C8.32396 21.9447 9.58697 21.4408 10.53 20.53L12.24 18.82" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </span>
+                        <span class="main-nav__label">Module</span>
+                      </a>
+                    </li>
+                    <li class="main-nav__item">
+                      <a class="main-nav__link" href="#">
+                        <span class="main-nav__icon" aria-hidden="true">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                            <path d="M10 13C10.4295 13.5742 10.9774 14.0492 11.6066 14.393C12.2357 14.7367 12.9315 14.9411 13.6467 14.9924C14.3618 15.0436 15.0796 14.9404 15.7513 14.6898C16.4231 14.4392 17.0331 14.0471 17.54 13.54L20.54 10.54C21.4508 9.59702 21.9548 8.334 21.9434 7.02302C21.932 5.71204 21.4061 4.45797 20.4791 3.53093C19.5521 2.60389 18.298 2.07805 16.987 2.06666C15.676 2.05526 14.413 2.55924 13.47 3.47003L11.75 5.18003" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14 11C13.5705 10.4259 13.0226 9.9508 12.3934 9.60704C11.7642 9.26328 11.0685 9.05886 10.3533 9.00765C9.63819 8.95643 8.9204 9.05961 8.24864 9.3102C7.57688 9.56079 6.96687 9.95291 6.45999 10.46L3.45999 13.46C2.5492 14.403 2.04522 15.666 2.05662 16.977C2.06801 18.288 2.59385 19.542 3.52089 20.4691C4.44793 21.3961 5.702 21.922 7.01298 21.9334C8.32396 21.9447 9.58697 21.4408 10.53 20.53L12.24 18.82" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </span>
+                        <span class="main-nav__label">Module</span>
+                      </a>
+                    </li>
+                    <li class="main-nav__item">
+                      <a class="main-nav__link" href="#">
+                        <span class="main-nav__icon" aria-hidden="true">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                            <path d="M10 13C10.4295 13.5742 10.9774 14.0492 11.6066 14.393C12.2357 14.7367 12.9315 14.9411 13.6467 14.9924C14.3618 15.0436 15.0796 14.9404 15.7513 14.6898C16.4231 14.4392 17.0331 14.0471 17.54 13.54L20.54 10.54C21.4508 9.59702 21.9548 8.334 21.9434 7.02302C21.932 5.71204 21.4061 4.45797 20.4791 3.53093C19.5521 2.60389 18.298 2.07805 16.987 2.06666C15.676 2.05526 14.413 2.55924 13.47 3.47003L11.75 5.18003" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14 11C13.5705 10.4259 13.0226 9.9508 12.3934 9.60704C11.7642 9.26328 11.0685 9.05886 10.3533 9.00765C9.63819 8.95643 8.9204 9.05961 8.24864 9.3102C7.57688 9.56079 6.96687 9.95291 6.45999 10.46L3.45999 13.46C2.5492 14.403 2.04522 15.666 2.05662 16.977C2.06801 18.288 2.59385 19.542 3.52089 20.4691C4.44793 21.3961 5.702 21.922 7.01298 21.9334C8.32396 21.9447 9.58697 21.4408 10.53 20.53L12.24 18.82" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </span>
+                        <span class="main-nav__label">Module</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="main-nav__section">
+                  <p class="main-nav__section-title" id="main-nav-section-sup">Supplementary Nav</p>
+                  <ul class="main-nav__list" aria-labelledby="main-nav-section-sup">
+                    <li class="main-nav__item">
+                      <a class="main-nav__link" href="#">
+                        <span class="main-nav__icon" aria-hidden="true">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                        </span>
+                        <span class="main-nav__label">Settings</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="main-nav__footer">
+                <span class="main-nav__footer-mark" aria-hidden="true">A</span>
+                <span class="main-nav__footer-name">Application Name</span>
+              </div>
+            </nav>
+            <div class="flex-1 min-h-[200px] p-6 bg-secondary-50 text-secondary-600 text-sm">
+              Page content area
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-lg font-semibold text-secondary-900 mb-2">Navigation items</h2>
+        <p class="text-secondary-600 text-sm mb-4 max-w-3xl">
+          Row patterns from Figma
+          <a href="https://www.figma.com/design/hYuyPfbCcHwS3KN4CdFmDd/Cendyn-Product-Design-System?node-id=8603-0&m=dev" class="text-primary hover:underline" target="_blank" rel="noreferrer">8603-0</a>:
+          <strong>separation title</strong> (section label),
+          <strong>main item</strong> (16px label, icon, optional success badge, optional parent chevron),
+          and <strong>sub-item</strong> (14px label, extra indent; active uses the same primary left border as main).
+        </p>
+        <div class="rounded-card border border-secondary-200 overflow-hidden bg-white p-6">
+          <div class="flex gap-6 mb-2">
+            <nav class="main-nav">
+              <ul class="main-nav__list">
+                <li class="main-nav__item">
+                  <a class="main-nav__link" href="#">
+                    <span class="main-nav__icon" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/></svg>
+                    </span>
+                    <span class="main-nav__label">Dashboard</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <div>
+              <p><strong class="text-secondary-900">Main item</strong></p>
+            </div>
+          </div>
+          <div class="flex gap-6 mb-2">
+            <nav class="main-nav">
+              <ul class="main-nav__list" aria-labelledby="nav-items-ex-sub">
+                <li class="main-nav__item">
+                  <a class="main-nav__link main-nav__link--sub" href="#">
+                    <span class="main-nav__label">Dashboard</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <div>
+              <p><strong class="text-secondary-900">Sub item</strong></p>
+            </div>
+          </div>
+          <div class="flex gap-6 mb-2">
+            <nav class="main-nav">
+              <ul class="main-nav__list" aria-labelledby="nav-items-ex-sub">
+                <li class="main-nav__item">
+                  <p class="main-nav__section-title" id="nav-items-ex-sub">Nested items</p>
+                </li>
+              </ul>
+            </nav>
+            <div>
+              <p><strong class="text-secondary-900">Separation title</strong></p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
