@@ -516,6 +516,53 @@
     @apply shrink-0 w-2 h-2 rounded-full bg-success;
   }
 
+  /* Spinner — Figma 33441-46824: primary arc, 32px default / 20px small, continuous rotation */
+  .spinner {
+    @apply inline-flex shrink-0 text-primary;
+  }
+  .spinner__svg {
+    @apply w-8 h-8 animate-spin;
+  }
+  .spinner--sm .spinner__svg {
+    @apply w-5 h-5;
+  }
+  /* Full loader block: spinner + title + description */
+  .spinner-block {
+    @apply flex flex-col items-center text-center w-full max-w-[281px] gap-space-24;
+  }
+  .spinner-block--sm {
+    @apply gap-space-20;
+  }
+  .spinner-block__content {
+    @apply flex flex-col items-stretch gap-space-12 w-full;
+  }
+  .spinner-block--sm .spinner-block__content {
+    @apply gap-space-8;
+  }
+  .spinner-block__title {
+    @apply text-heading-3 text-neutrals-black font-semibold;
+  }
+  .spinner-block--sm .spinner-block__title {
+    @apply text-heading-4;
+  }
+  .spinner-block__description {
+    @apply text-paragraph-1 text-neutrals-gray-700;
+  }
+  .spinner-block--sm .spinner-block__description {
+    @apply text-paragraph-2;
+  }
+
+  /* Progress bar — Figma 10259-57353: track neutrals-gray-400, fill primary, 8px radius; default 15px / slim 5px height */
+  .progress-bar {
+    @apply relative w-full max-w-[500px] h-[15px] rounded-lg bg-neutrals-gray-400 overflow-hidden;
+  }
+  .progress-bar--slim {
+    @apply h-[5px];
+  }
+  .progress-bar__fill {
+    @apply absolute left-0 top-0 h-full min-w-0 max-w-full rounded-lg bg-primary transition-[width] duration-300 ease-out;
+  }
+
   /* Toggle — Figma 16932-145649: 40×22 track, 16px thumb, label positions and dual-label variant */
   .toggle {
     @apply flex items-center gap-2;

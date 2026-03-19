@@ -73,16 +73,7 @@ function sidebar(activeId) {
   ).join('\n        ');
 }
 
-function escapeHtml(s) {
-  return s
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
-}
-
 function page(c) {
-  const codeEscaped = escapeHtml(c.code);
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -123,13 +114,8 @@ function page(c) {
           ${c.preview}
         </div>
       </section>
-      <section>
-        <h2 class="text-lg font-semibold text-secondary-900 mb-3">Code</h2>
-        <pre class="relative pt-10 pr-14 pb-4 pl-4 bg-secondary-900 text-secondary-100 rounded-card overflow-x-auto text-sm"><code data-copyable>${codeEscaped}</code></pre>
-      </section>
     </main>
   </div>
-  <script src="../js/copy.js"></script>
 </body>
 </html>
 `;

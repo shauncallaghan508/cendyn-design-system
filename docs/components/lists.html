@@ -168,7 +168,11 @@
                   <div class="card-list__item-row">
                     <div class="card-list__item-content">
                       <span class="card-list__item-label">Label</span>
-                      <span class="icon text-success shrink-0" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                      <span class="icon text-success shrink-0" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                          <path d="M20 6L9 17L4 12" stroke="#008A50" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -221,7 +225,13 @@
                   <div class="card-list__item-row">
                     <div class="card-list__item-content">
                       <span class="card-list__item-label">Label</span>
-                      <button type="button" class="p-1 text-neutrals-gray-700 hover:text-neutrals-black rounded shrink-0" aria-label="More options"><svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><circle cx="8" cy="3" r="1.5"/><circle cx="8" cy="8" r="1.5"/><circle cx="8" cy="13" r="1.5"/></svg></button>
+                      <button type="button" class="p-1 text-neutrals-gray-700 hover:text-neutrals-black rounded shrink-0" aria-label="More options">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                          <path d="M7.00002 7.58329C7.32219 7.58329 7.58335 7.32213 7.58335 6.99996C7.58335 6.67779 7.32219 6.41663 7.00002 6.41663C6.67785 6.41663 6.41669 6.67779 6.41669 6.99996C6.41669 7.32213 6.67785 7.58329 7.00002 7.58329Z" fill="#95AAC9" stroke="#95AAC9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M7.00002 3.50004C7.32219 3.50004 7.58335 3.23887 7.58335 2.91671C7.58335 2.59454 7.32219 2.33337 7.00002 2.33337C6.67785 2.33337 6.41669 2.59454 6.41669 2.91671C6.41669 3.23887 6.67785 3.50004 7.00002 3.50004Z" fill="#95AAC9" stroke="#95AAC9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M7.00002 11.6667C7.32219 11.6667 7.58335 11.4055 7.58335 11.0833C7.58335 10.7612 7.32219 10.5 7.00002 10.5C6.67785 10.5 6.41669 10.7612 6.41669 11.0833C6.41669 11.4055 6.67785 11.6667 7.00002 11.6667Z" fill="#95AAC9" stroke="#95AAC9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -273,30 +283,6 @@
             </div>
           </div>
         </div>
-
-        <h3 class="text-sm font-semibold text-secondary-800 mt-4 mb-2">Code (basic row)</h3>
-        <pre class="relative pt-10 pr-14 pb-4 pl-4 bg-secondary-900 text-secondary-100 rounded-card overflow-x-auto text-sm"><code data-copyable>&lt;div class="card-list"&gt;
-  &lt;header class="card-list__header"&gt;
-    &lt;div class="card-list__header-content"&gt;
-      &lt;h3 class="card-list__header-title"&gt;Search&lt;/h3&gt;
-    &lt;/div&gt;
-  &lt;/header&gt;
-  &lt;div class="card-list__list"&gt;
-    &lt;div class="card-list__item"&gt;
-      &lt;div class="card-list__item-row"&gt;
-        &lt;div class="card-list__item-content"&gt;
-          &lt;span class="card-list__item-label"&gt;Label&lt;/span&gt;
-          &lt;span class="card-list__item-data"&gt;Data&lt;/span&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;!-- Data as link: add card-list__item-data--link to data span --&gt;
-    &lt;!-- Status: use card-list__item-data-wrap with card-list__item-status-dot + data --&gt;
-    &lt;!-- Toggle: use toggle component in data slot --&gt;
-    &lt;!-- Button: use btn-solid-primary btn-sm --&gt;
-    &lt;!-- Badge: use card-list__badge or card-list__badge--muted --&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
       </section>
 
       <!-- Simple list -->
@@ -306,15 +292,7 @@
           <ul class="border border-secondary-200 rounded-card divide-y divide-secondary-200"><li class="px-4 py-3 text-sm text-secondary-700">List item 1</li><li class="px-4 py-3 text-sm text-secondary-700">List item 2</li><li class="px-4 py-3 text-sm text-secondary-700">List item 3</li></ul>
         </div>
       </section>
-      <section>
-        <h2 class="text-lg font-semibold text-secondary-900 mb-3">Code</h2>
-        <pre class="relative pt-10 pr-14 pb-4 pl-4 bg-secondary-900 text-secondary-100 rounded-card overflow-x-auto text-sm"><code data-copyable>&lt;ul class=&quot;border border-secondary-200 rounded-card divide-y divide-secondary-200&quot;&gt;
-  &lt;li class=&quot;px-4 py-3 text-sm text-secondary-700&quot;&gt;List item 1&lt;/li&gt;
-  &lt;li class=&quot;px-4 py-3 text-sm text-secondary-700&quot;&gt;List item 2&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
-      </section>
     </main>
   </div>
-  <script src="../js/copy.js"></script>
 </body>
 </html>
