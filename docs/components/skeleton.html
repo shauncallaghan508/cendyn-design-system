@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scrollbar — Cendyn Design System</title>
+  <title>Skeleton — Cendyn Design System</title>
   <link rel="stylesheet" href="../css/docs.css">
 </head>
 <body class="min-h-screen bg-secondary-50">
@@ -48,9 +48,9 @@
         <li><a href="modals-dialogs.html" class="text-secondary-600 hover:text-primary">Modals &amp; Dialogs</a></li>
         <li><a href="navigation.html" class="text-secondary-600 hover:text-primary">Navigation</a></li>
         <li><a href="navigation-tabs.html" class="text-secondary-600 hover:text-primary">Tabs</a></li>
-        <li><a href="scrollbar.html" class="text-primary font-medium">Scrollbar</a></li>
+        <li><a href="scrollbar.html" class="text-secondary-600 hover:text-primary">Scrollbar</a></li>
         <li><a href="side-panel.html" class="text-secondary-600 hover:text-primary">Side Panel</a></li>
-        <li><a href="skeleton.html" class="text-secondary-600 hover:text-primary">Skeleton</a></li>
+        <li><a href="skeleton.html" class="text-primary font-medium">Skeleton</a></li>
         <li><a href="snackbar.html" class="text-secondary-600 hover:text-primary">Snackbar</a></li>
         <li><a href="tooltips-popovers.html" class="text-secondary-600 hover:text-primary">Tooltips &amp; Popovers</a></li>
         <li><a href="toasts.html" class="text-secondary-600 hover:text-primary">Toasts</a></li>
@@ -59,56 +59,68 @@
       </ul>
     </aside>
     <main class="overflow-hidden pl-8">
-      <h1 class="text-display-sm text-secondary-900 mb-2">Scrollbar</h1>
+      <h1 class="text-display-sm text-secondary-900 mb-2">Skeleton</h1>
       <p class="text-secondary-600 text-sm mb-2 max-w-3xl">
         Figma:
-        <a href="https://www.figma.com/design/hYuyPfbCcHwS3KN4CdFmDd/Cendyn-Product-Design-System?node-id=13789-64424&amp;m=dev" class="text-primary hover:underline" target="_blank" rel="noreferrer">13789-64424</a>
+        <a href="https://www.figma.com/design/hYuyPfbCcHwS3KN4CdFmDd/Cendyn-Product-Design-System?node-id=33307-89909&amp;m=dev" class="text-primary hover:underline" target="_blank" rel="noreferrer">33307-89909</a> (rounded rectangle),
+        <a href="https://www.figma.com/design/hYuyPfbCcHwS3KN4CdFmDd/Cendyn-Product-Design-System?node-id=33307-89911&amp;m=dev" class="text-primary hover:underline" target="_blank" rel="noreferrer">33307-89911</a> (circle).
       </p>
       <p class="text-secondary-600 mb-8 max-w-3xl">
-        Scrollbars are styled globally in <code class="text-xs bg-secondary-100 px-1 rounded">@layer base</code> in <code class="text-xs bg-secondary-100 px-1 rounded">docs/input.css</code> (compiled into <code class="text-xs bg-secondary-100 px-1 rounded">docs.css</code>). Any element that scrolls—page, side panels, lists, tables—uses the same thumb and track treatment. Add <code class="text-xs bg-secondary-100 px-1 rounded">overflow-y-auto</code> or <code class="text-xs bg-secondary-100 px-1 rounded">overflow-x-auto</code> on the scroll container; no extra utility class is required.
+        Use skeleton blocks while content loads. The fill is a gradient from <strong>neutrals gray-300</strong> to <strong>neutrals gray-200</strong> (<code class="text-xs bg-secondary-100 px-1 rounded">#e4ebf6</code> → <code class="text-xs bg-secondary-100 px-1 rounded">#edf2f9</code>), matching the spec. Rectangles use <strong>8px</strong> corner radius; avatars and icon placeholders use the circle variant.
       </p>
 
       <section class="mb-10">
-        <h2 class="text-heading-2 text-secondary-900 mb-3">Guidelines</h2>
-        <ul class="list-disc pl-6 space-y-2 text-paragraph-1 text-secondary-600 max-w-3xl">
-          <li><strong>Thumb:</strong> <code class="text-xs bg-secondary-100 px-1 rounded">neutrals / gray-600</code> (<code class="text-xs bg-secondary-100 px-1 rounded">#95AAC9</code>) at <strong>80% opacity</strong> (<code class="text-xs bg-secondary-100 px-1 rounded">rgb(149 170 201 / 0.8)</code>).</li>
-          <li><strong>Shape:</strong> Fully rounded ends (pill) — <code class="text-xs bg-secondary-100 px-1 rounded">border-radius: 100px</code> on WebKit scrollbar thumb.</li>
-          <li><strong>Track:</strong> Transparent so the content surface shows through; 8px scrollbar gutter (WebKit).</li>
-          <li><strong>Hover (WebKit):</strong> Thumb opacity increases slightly for feedback.</li>
-          <li><strong>Firefox:</strong> <code class="text-xs bg-secondary-100 px-1 rounded">scrollbar-width: thin</code> + <code class="text-xs bg-secondary-100 px-1 rounded">scrollbar-color</code> (thumb / transparent track).</li>
-        </ul>
+        <h2 class="text-heading-2 text-secondary-900 mb-3">Rounded rectangle</h2>
+        <p class="text-paragraph-1 text-secondary-600 mb-4 max-w-3xl">Set width/height (or Tailwind <code class="text-xs bg-secondary-100 px-1 rounded">w-*</code> / <code class="text-xs bg-secondary-100 px-1 rounded">h-*</code>) on <code class="text-xs bg-secondary-100 px-1 rounded">.skeleton</code>.</p>
+        <div class="p-6 bg-white rounded-card border border-secondary-200 max-w-lg">
+          <div class="skeleton w-full h-24" aria-hidden="true"></div>
+        </div>
       </section>
 
       <section class="mb-10">
-        <h2 class="text-heading-2 text-secondary-900 mb-3">Vertical</h2>
-        <div class="p-4 bg-white rounded-card border border-secondary-200 max-w-md">
-          <div class="h-36 overflow-y-auto border border-neutrals-gray-400 rounded-md p-3 text-sm text-neutrals-black space-y-2">
-            <p>Scroll this list. The thumb matches the design system spec.</p>
-            <p>Line 2</p><p>Line 3</p><p>Line 4</p><p>Line 5</p><p>Line 6</p><p>Line 7</p><p>Line 8</p><p>Line 9</p><p>Line 10</p>
+        <h2 class="text-heading-2 text-secondary-900 mb-3">Circle</h2>
+        <p class="text-paragraph-1 text-secondary-600 mb-4 max-w-3xl">Add <code class="text-xs bg-secondary-100 px-1 rounded">.skeleton--circle</code> for a circular placeholder (same gradient).</p>
+        <div class="p-6 bg-white rounded-card border border-secondary-200">
+          <div class="flex flex-wrap items-center gap-6">
+            <div class="skeleton skeleton--circle w-14 h-14" aria-hidden="true"></div>
+            <div class="skeleton skeleton--circle w-10 h-10" aria-hidden="true"></div>
+            <div class="skeleton skeleton--circle w-6 h-6" aria-hidden="true"></div>
           </div>
         </div>
       </section>
 
       <section class="mb-10">
-        <h2 class="text-heading-2 text-secondary-900 mb-3">Horizontal</h2>
-        <div class="p-4 bg-white rounded-card border border-secondary-200 max-w-md">
-          <div class="overflow-x-auto border border-neutrals-gray-400 rounded-md p-3">
-            <p class="text-sm text-neutrals-black whitespace-nowrap pr-8">
-              Wide content → ← drag horizontally → Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.
-            </p>
+        <h2 class="text-heading-2 text-secondary-900 mb-3">Composition</h2>
+        <p class="text-paragraph-1 text-secondary-600 mb-4 max-w-3xl">Typical text row: circle + stacked lines. Optional <code class="text-xs bg-secondary-100 px-1 rounded">.skeleton--pulse</code> adds a light pulse (not in Figma; use when you want motion).</p>
+        <div class="p-6 bg-white rounded-card border border-secondary-200 max-w-md">
+          <div class="flex gap-4 items-start">
+            <div class="skeleton skeleton--circle w-12 h-12 shrink-0" aria-hidden="true"></div>
+            <div class="flex-1 min-w-0 space-y-3 pt-0.5">
+              <div class="skeleton skeleton--block h-4 w-3/4 max-w-full" aria-hidden="true"></div>
+              <div class="skeleton skeleton--block h-4 w-full" aria-hidden="true"></div>
+              <div class="skeleton skeleton--block h-4 w-5/6 max-w-full" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+        <div class="p-6 bg-white rounded-card border border-secondary-200 max-w-md mt-6">
+          <div class="flex gap-4 items-start">
+            <div class="skeleton skeleton--circle skeleton--pulse w-12 h-12 shrink-0" aria-hidden="true"></div>
+            <div class="flex-1 min-w-0 space-y-3 pt-0.5">
+              <div class="skeleton skeleton--block skeleton--pulse h-4 w-3/4 max-w-full" aria-hidden="true"></div>
+              <div class="skeleton skeleton--block skeleton--pulse h-4 w-full" aria-hidden="true"></div>
+              <div class="skeleton skeleton--block skeleton--pulse h-4 w-5/6 max-w-full" aria-hidden="true"></div>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="mb-10">
-        <h2 class="text-heading-2 text-secondary-900 mb-3">Implementation</h2>
-        <p class="text-paragraph-1 text-secondary-600 mb-4 max-w-3xl">Rules target <code class="text-xs bg-secondary-100 px-1 rounded">*</code> so scrollbars are consistent everywhere. To ship the same behavior in an app that consumes this repo, include the compiled CSS or copy the scrollbar block from <code class="text-xs bg-secondary-100 px-1 rounded">docs/input.css</code> into your global styles.</p>
-        <pre class="text-xs bg-secondary-900 text-secondary-100 p-4 rounded-lg overflow-x-auto max-w-3xl"><code>&lt;!-- Scroll container only: styling is global --&gt;
-&lt;div class="max-h-60 overflow-y-auto"&gt;
-  ...scrollable content...
-&lt;/div&gt;</code></pre>
+        <h2 class="text-heading-2 text-secondary-900 mb-3">Code</h2>
+        <pre class="text-xs bg-secondary-900 text-secondary-100 p-4 rounded-lg overflow-x-auto max-w-3xl"><code>&lt;div class="skeleton w-full h-24" aria-hidden="true"&gt;&lt;/div&gt;
+&lt;div class="skeleton skeleton--circle w-12 h-12" aria-hidden="true"&gt;&lt;/div&gt;</code></pre>
+        <p class="text-sm text-secondary-600 mt-4">Prefer <code class="text-xs bg-secondary-100 px-1 rounded">aria-busy</code> or <code class="text-xs bg-secondary-100 px-1 rounded">aria-live</code> on the parent region when replacing skeletons with real content.</p>
       </section>
-</main>
+    </main>
   </div>
 </body>
 </html>

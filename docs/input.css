@@ -13,6 +13,36 @@
   textarea {
     @apply text-neutrals-black placeholder:text-neutrals-gray-700;
   }
+
+  /*
+   * Scrollbar — Figma 13789-64424 (Cendyn Product Design System)
+   * Thumb: neutrals/gray-600 (#95AAC9) at 80% opacity, fully rounded (pill).
+   * Applied globally so any overflow-y-auto / overflow-x-auto region matches the spec.
+   */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(149 170 201 / 0.8) transparent;
+  }
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: rgb(149 170 201 / 0.8);
+    border-radius: 100px;
+    /* Inset thumb so it reads slimmer, closer to Figma proportions */
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(149 170 201 / 0.95);
+  }
+  *::-webkit-scrollbar-corner {
+    background: transparent;
+  }
 }
 
 @layer components {
@@ -561,6 +591,82 @@
   }
   .progress-bar__fill {
     @apply absolute left-0 top-0 h-full min-w-0 max-w-full rounded-lg bg-primary transition-[width] duration-300 ease-out;
+  }
+
+  /*
+   * Skeleton — Figma 33307-89909 (rounded rect), 33307-89911 (circle)
+   * Fill: linear gradient neutrals gray-300 ↔ gray-200 (matches rgb(228,235,246) → rgb(237,242,249) stops)
+   */
+  .skeleton {
+    @apply shrink-0 block rounded-lg;
+    background-image: linear-gradient(270deg, #EDF2F9 0%, #E4EBF6 100%);
+  }
+  .skeleton--circle {
+    @apply rounded-full aspect-square;
+  }
+  .skeleton--pulse {
+    @apply animate-pulse;
+  }
+
+  .skeleton--block {
+    @apply rounded-none;
+  }
+
+  /* Snackbar — Figma 10489-53696: persistent selection / bulk-action bar, light + dark */
+  .snackbar {
+    @apply flex flex-row items-center justify-between gap-space-24 px-space-24 py-space-16 rounded-[10px] border border-solid w-full max-w-[400px] min-w-0;
+  }
+  .snackbar--light {
+    @apply bg-neutrals-white border-neutrals-gray-400;
+  }
+  .snackbar--dark {
+    @apply bg-neutrals-black border-neutrals-black;
+  }
+  .snackbar__leading {
+    @apply flex items-center gap-space-8 min-w-0 flex-1 mr-space-12;
+  }
+  .snackbar__indicator {
+    @apply shrink-0 inline-flex items-center justify-center w-4 h-4 rounded-[6px] bg-primary text-neutrals-white;
+  }
+  .snackbar__indicator svg {
+    @apply w-2.5 h-2.5 block;
+  }
+  .snackbar__message {
+    @apply min-w-0 text-base font-normal leading-normal text-neutrals-black truncate;
+  }
+  .snackbar--dark .snackbar__message {
+    @apply text-neutrals-white;
+  }
+  .snackbar__actions {
+    @apply flex items-center justify-end gap-space-12 shrink-0;
+  }
+  .snackbar__action {
+    @apply inline-flex items-center justify-center gap-space-4 px-space-8 py-space-4 rounded-md border border-solid text-[13px] font-semibold leading-[22px] text-neutrals-white whitespace-nowrap cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2;
+  }
+  .snackbar--light .snackbar__action {
+    @apply bg-primary border-primary hover:bg-primary-120 hover:border-primary-120;
+  }
+  .snackbar--dark .snackbar__action {
+    @apply bg-neutrals-gray-700 border-neutrals-gray-700 hover:bg-neutrals-gray-800 hover:border-neutrals-gray-800 focus-visible:ring-offset-neutrals-black;
+  }
+  .snackbar__close {
+    @apply shrink-0 flex items-center justify-center w-6 h-6 p-0 border-0 rounded-md bg-transparent cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2;
+  }
+  .snackbar--light .snackbar__close {
+    @apply text-neutrals-gray-700 hover:text-neutrals-black;
+  }
+  .snackbar--dark .snackbar__close {
+    @apply text-neutrals-gray-400 hover:text-neutrals-white focus-visible:ring-offset-neutrals-black;
+  }
+  .snackbar__close svg {
+    @apply w-[22px] h-[22px] block;
+  }
+  /* Viewport-fixed dock: centers bar, keeps margins; children stay interactive */
+  .snackbar-dock {
+    @apply fixed z-40 left-4 right-4 bottom-4 flex justify-center pointer-events-none;
+  }
+  .snackbar-dock .snackbar {
+    @apply pointer-events-auto;
   }
 
   /* Modal — Figma 7800-2: header (title + close), body, footer (actions); 4 widths */
