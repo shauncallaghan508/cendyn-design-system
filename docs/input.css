@@ -669,6 +669,169 @@
     @apply pointer-events-auto;
   }
 
+  /* Timeline — Figma 7076-30251: ordered events; icon / avatar / dot markers + connector */
+  .timeline {
+    @apply flex flex-col w-full max-w-[421px] list-none p-0 m-0;
+  }
+  .timeline__event {
+    @apply flex flex-row gap-space-24 items-start w-full;
+  }
+  .timeline__graphic {
+    @apply flex flex-col items-center self-stretch shrink-0 w-10 min-h-0;
+  }
+  .timeline__marker-icon {
+    @apply shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-primary-10 p-2.5 text-primary;
+  }
+  .timeline__marker-icon svg {
+    @apply w-[18px] h-[18px] block shrink-0;
+  }
+  .timeline__marker-avatar {
+    @apply shrink-0 w-10 h-10 rounded-full overflow-hidden bg-primary-10 flex items-center justify-center text-xs font-semibold text-primary;
+  }
+  .timeline__marker-avatar img {
+    @apply w-full h-full object-cover;
+  }
+  /* Same token as .timeline__connector (1px vertical line) */
+  .timeline__marker-dot {
+    @apply shrink-0 w-5 h-5 rounded-full bg-neutrals-gray-300;
+  }
+  .timeline__connector {
+    @apply flex-1 w-px min-h-[32px] bg-neutrals-gray-300 mx-auto;
+  }
+  .timeline__event:last-child .timeline__connector {
+    @apply hidden;
+  }
+  .timeline__content {
+    @apply flex flex-col flex-1 min-w-0 min-h-0;
+  }
+  .timeline__title {
+    @apply text-[13px] font-semibold leading-[21px] text-neutrals-black w-full;
+  }
+  .timeline__description {
+    @apply text-sm font-normal leading-[22px] text-neutrals-gray-700 w-full;
+  }
+  .timeline__meta {
+    @apply text-sm font-normal text-neutrals-gray-500 whitespace-nowrap leading-relaxed;
+  }
+  .timeline__spacer {
+    @apply h-6 w-full shrink-0;
+  }
+  .timeline__badge {
+    @apply shrink-0 inline-flex items-center px-space-12 py-space-4 rounded-full bg-primary text-neutrals-white text-xs font-semibold leading-none;
+  }
+  .timeline__action-btn {
+    @apply shrink-0 flex items-center justify-center w-5 h-5 p-0 border-0 rounded-md bg-transparent text-neutrals-black hover:text-neutrals-black cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2;
+  }
+  .timeline__action-btn svg {
+    @apply w-5 h-5 block;
+  }
+  /* Activity — Figma 12937-63670: list in a feed (row dividers, no vertical spine); max 390px */
+  .timeline--activity {
+    @apply max-w-[390px];
+  }
+  .timeline--activity .timeline__graphic {
+    @apply self-start;
+  }
+  .timeline--activity .timeline__connector {
+    @apply hidden;
+  }
+  .timeline--activity .timeline__meta {
+    @apply text-neutrals-gray-600;
+  }
+  .timeline--activity .timeline__event {
+    @apply border-b border-neutrals-gray-400;
+  }
+  .timeline--activity .timeline__event:last-child {
+    @apply border-b-0;
+  }
+  .timeline--activity .timeline__event:not(:first-child) {
+    @apply pt-space-16;
+  }
+  .timeline__actions-col {
+    @apply shrink-0 flex items-start self-stretch;
+  }
+  .timeline--activity .timeline__actions-col {
+    @apply flex flex-col items-center;
+  }
+
+  /* Popover — Figma 7305-789 / 7310-39799: panel + shared SVG arrow (rotate per placement) */
+  .popover {
+    @apply relative z-10 inline-flex text-left;
+  }
+  .popover__panel {
+    @apply w-full max-w-[187px] flex flex-col rounded-lg border border-neutrals-gray-400 bg-neutrals-white shadow-modal;
+  }
+  .popover__header {
+    @apply flex flex-col gap-space-16 px-space-24 pt-space-24;
+  }
+  .popover__title {
+    @apply text-[10px] font-semibold uppercase tracking-[0.08em] text-neutrals-gray-700 leading-normal;
+  }
+  .popover__rule {
+    @apply border-t border-neutrals-gray-400;
+  }
+  .popover__body {
+    @apply px-space-24 py-space-16 text-paragraph-2 text-neutrals-gray-700;
+  }
+  .popover__footer {
+    @apply flex flex-col gap-space-16 px-space-24 pb-space-24 pt-0;
+  }
+  .popover__actions {
+    @apply flex flex-wrap items-center justify-end gap-space-12;
+  }
+  .popover__actions .btn {
+    @apply text-[13px] font-semibold leading-[22px] px-space-8 py-space-4;
+  }
+  /* Same arrow path (tip points down in default orientation); rotate for other sides */
+  .popover__caret {
+    @apply pointer-events-none flex shrink-0 items-center justify-center text-neutrals-gray-400;
+  }
+  .popover__caret-svg {
+    @apply block h-[11px] w-6 text-neutrals-gray-400;
+  }
+  .popover__caret-svg path {
+    stroke: currentColor;
+  }
+  .popover--placement-top {
+    @apply flex-col items-stretch;
+  }
+  .popover--placement-top .popover__caret {
+    @apply -mt-px flex justify-center;
+  }
+  .popover--placement-bottom {
+    @apply flex-col items-stretch;
+  }
+  .popover--placement-bottom .popover__caret {
+    @apply order-first -mb-px flex justify-center;
+  }
+  .popover--placement-bottom .popover__caret-svg {
+    @apply rotate-180;
+  }
+  .popover--placement-left {
+    @apply flex-row items-center;
+  }
+  .popover--placement-left .popover__panel {
+    @apply min-w-0 flex-1;
+  }
+  .popover--placement-left .popover__caret {
+    @apply order-last -ml-px min-h-[24px] w-[11px];
+  }
+  .popover--placement-left .popover__caret-svg {
+    @apply -rotate-90;
+  }
+  .popover--placement-right {
+    @apply flex-row items-center;
+  }
+  .popover--placement-right .popover__panel {
+    @apply min-w-0 flex-1;
+  }
+  .popover--placement-right .popover__caret {
+    @apply order-first -mr-px min-h-[24px] w-[11px];
+  }
+  .popover--placement-right .popover__caret-svg {
+    @apply rotate-90;
+  }
+
   /* Modal — Figma 7800-2: header (title + close), body, footer (actions); 4 widths */
   .modal {
     @apply flex flex-col bg-neutrals-white border border-neutrals-gray-400 rounded-lg overflow-hidden w-full;

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tooltips & Popovers — Cendyn Design System</title>
+  <title>Tooltips &amp; Popovers — Cendyn Design System</title>
   <link rel="stylesheet" href="../css/docs.css">
 </head>
 <body class="min-h-screen bg-secondary-50">
@@ -52,6 +52,7 @@
         <li><a href="side-panel.html" class="text-secondary-600 hover:text-primary">Side Panel</a></li>
         <li><a href="skeleton.html" class="text-secondary-600 hover:text-primary">Skeleton</a></li>
         <li><a href="snackbar.html" class="text-secondary-600 hover:text-primary">Snackbar</a></li>
+        <li><a href="timeline.html" class="text-secondary-600 hover:text-primary">Timeline</a></li>
         <li><a href="tooltips-popovers.html" class="text-primary font-medium">Tooltips &amp; Popovers</a></li>
         <li><a href="toasts.html" class="text-secondary-600 hover:text-primary">Toasts</a></li>
         <li><a href="tree-view.html" class="text-secondary-600 hover:text-primary">Tree View</a></li>
@@ -59,15 +60,153 @@
       </ul>
     </aside>
     <main class="overflow-hidden pl-8">
-      <h1 class="text-display-sm text-secondary-900 mb-6">Tooltips & Popovers</h1>
-      <p class="text-secondary-600 mb-8">Tooltips and popover content.</p>
-      <section class="mb-8">
-        <h2 class="text-lg font-semibold text-secondary-900 mb-3">Preview</h2>
-        <div class="p-4 bg-white rounded-card border border-secondary-200">
-          <div class="relative inline-block"><button type="button" class="px-4 py-2 rounded-button border border-secondary-300 bg-white text-sm">Hover me</button><div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-secondary-900 text-white text-xs rounded whitespace-nowrap">Tooltip text</div></div>
+      <h1 class="text-display-sm text-secondary-900 mb-2">Tooltips &amp; Popovers</h1>
+      <p class="text-secondary-600 text-sm mb-8 max-w-3xl">
+        Lightweight <strong>tooltips</strong> for short hints; structured <strong>popovers</strong> for title, body, and actions. Popover layout:
+        <a href="https://www.figma.com/design/hYuyPfbCcHwS3KN4CdFmDd/Cendyn-Product-Design-System?node-id=7305-789&amp;m=dev" class="text-primary hover:underline" target="_blank" rel="noreferrer">7305-789</a>.
+      </p>
+
+      <section class="mb-10">
+        <h2 class="text-heading-2 text-secondary-900 mb-3">Tooltip</h2>
+        <p class="text-paragraph-1 text-secondary-600 mb-4 max-w-3xl">Use for brief, non-interactive hints. Position with utilities (<code class="text-xs bg-secondary-100 px-1 rounded">absolute</code>, <code class="text-xs bg-secondary-100 px-1 rounded">bottom-full</code>, etc.).</p>
+        <div class="p-6 bg-white rounded-card border border-secondary-200 inline-block max-w-full">
+          <div class="relative inline-block">
+            <button type="button" class="px-4 py-2 rounded-button border border-secondary-300 bg-white text-sm text-neutrals-black">Hover me</button>
+            <div class="absolute bottom-full left-1/2 z-10 mb-2 -translate-x-1/2 rounded-md bg-neutrals-black px-2 py-1.5 text-xs text-neutrals-white whitespace-nowrap shadow-modal" role="tooltip">Tooltip text</div>
+          </div>
         </div>
       </section>
-</main>
+
+      <section class="mb-10">
+        <h2 class="text-heading-2 text-secondary-900 mb-3">Popover</h2>
+        <p class="text-paragraph-1 text-secondary-600 mb-4 max-w-3xl">
+          Popovers use <code class="text-xs bg-secondary-100 px-1 rounded">.popover</code> with <code class="text-xs bg-secondary-100 px-1 rounded">.popover__panel</code> (bordered surface) and <code class="text-xs bg-secondary-100 px-1 rounded">popover--placement-{top|bottom|left|right}</code> for caret position. The caret is a shared <code class="text-xs bg-secondary-100 px-1 rounded">.popover__caret-svg</code> (rotate per side). Figma:
+          <a href="https://www.figma.com/design/hYuyPfbCcHwS3KN4CdFmDd/Cendyn-Product-Design-System?node-id=7310-39799&amp;m=dev" class="text-primary hover:underline" target="_blank" rel="noreferrer">7310-39799</a>.
+          Include <code class="text-xs bg-secondary-100 px-1 rounded">.popover__header</code> (uppercase title + rule), <code class="text-xs bg-secondary-100 px-1 rounded">.popover__body</code>, and <code class="text-xs bg-secondary-100 px-1 rounded">.popover__footer</code> with <code class="text-xs bg-secondary-100 px-1 rounded">.popover__actions</code>. Wire <code class="text-xs bg-secondary-100 px-1 rounded">role=&quot;dialog&quot;</code> / focus when used as a real overlay.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl items-start">
+          <div class="flex flex-col items-center gap-3">
+            <span class="text-xs font-semibold text-secondary-600">Placement: top</span>
+            <div class="popover popover--placement-top overflow-visible" role="presentation">
+              <div class="popover__panel">
+                <div class="popover__header">
+                  <p class="popover__title">Title</p>
+                  <div class="popover__rule" aria-hidden="true"></div>
+                </div>
+                <div class="popover__body">
+                  <p>Lorem ipsum dolor sit amet, consectetur et dos mi adipiscing elit.</p>
+                </div>
+                <div class="popover__footer">
+                  <div class="popover__rule" aria-hidden="true"></div>
+                  <div class="popover__actions">
+                    <button type="button" class="btn-solid-secondary">Button</button>
+                    <button type="button" class="btn-solid-primary">Button</button>
+                  </div>
+                </div>
+              </div>
+              <span class="popover__caret" aria-hidden="true">
+                <svg class="popover__caret-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="11" viewBox="0 0 24 11" fill="none" aria-hidden="true"><path d="M2 2L12 9L22 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+          </div>
+          <div class="flex flex-col items-center gap-3">
+            <span class="text-xs font-semibold text-secondary-600">Placement: bottom</span>
+            <div class="popover popover--placement-bottom overflow-visible" role="presentation">
+              <div class="popover__panel">
+                <div class="popover__header">
+                  <p class="popover__title">Title</p>
+                  <div class="popover__rule" aria-hidden="true"></div>
+                </div>
+                <div class="popover__body">
+                  <p>Lorem ipsum dolor sit amet, consectetur et dos mi adipiscing elit.</p>
+                </div>
+                <div class="popover__footer">
+                  <div class="popover__rule" aria-hidden="true"></div>
+                  <div class="popover__actions">
+                    <button type="button" class="btn-solid-secondary">Button</button>
+                    <button type="button" class="btn-solid-primary">Button</button>
+                  </div>
+                </div>
+              </div>
+              <span class="popover__caret" aria-hidden="true">
+                <svg class="popover__caret-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="11" viewBox="0 0 24 11" fill="none" aria-hidden="true"><path d="M2 2L12 9L22 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+          </div>
+          <div class="flex flex-col items-center gap-3">
+            <span class="text-xs font-semibold text-secondary-600">Placement: left</span>
+            <div class="popover popover--placement-left overflow-visible" role="presentation">
+              <div class="popover__panel">
+                <div class="popover__header">
+                  <p class="popover__title">Title</p>
+                  <div class="popover__rule" aria-hidden="true"></div>
+                </div>
+                <div class="popover__body">
+                  <p>Lorem ipsum dolor sit amet, consectetur et dos mi adipiscing elit.</p>
+                </div>
+                <div class="popover__footer">
+                  <div class="popover__rule" aria-hidden="true"></div>
+                  <div class="popover__actions">
+                    <button type="button" class="btn-solid-secondary">Button</button>
+                    <button type="button" class="btn-solid-primary">Button</button>
+                  </div>
+                </div>
+              </div>
+              <span class="popover__caret" aria-hidden="true">
+                <svg class="popover__caret-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="11" viewBox="0 0 24 11" fill="none" aria-hidden="true"><path d="M2 2L12 9L22 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+          </div>
+          <div class="flex flex-col items-center gap-3">
+            <span class="text-xs font-semibold text-secondary-600">Placement: right</span>
+            <div class="popover popover--placement-right overflow-visible" role="presentation">
+              <div class="popover__panel">
+                <div class="popover__header">
+                  <p class="popover__title">Title</p>
+                  <div class="popover__rule" aria-hidden="true"></div>
+                </div>
+                <div class="popover__body">
+                  <p>Lorem ipsum dolor sit amet, consectetur et dos mi adipiscing elit.</p>
+                </div>
+                <div class="popover__footer">
+                  <div class="popover__rule" aria-hidden="true"></div>
+                  <div class="popover__actions">
+                    <button type="button" class="btn-solid-secondary">Button</button>
+                    <button type="button" class="btn-solid-primary">Button</button>
+                  </div>
+                </div>
+              </div>
+              <span class="popover__caret" aria-hidden="true">
+                <svg class="popover__caret-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="11" viewBox="0 0 24 11" fill="none" aria-hidden="true"><path d="M2 2L12 9L22 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-heading-2 text-secondary-900 mb-3">Markup</h2>
+        <pre class="text-xs bg-secondary-900 text-secondary-100 p-4 rounded-lg overflow-x-auto max-w-3xl"><code>&lt;div class="popover popover--placement-top overflow-visible" role="dialog" aria-labelledby="popover-title"&gt;
+  &lt;div class="popover__panel"&gt;
+    &lt;div class="popover__header"&gt;
+      &lt;p class="popover__title" id="popover-title"&gt;Title&lt;/p&gt;
+      &lt;div class="popover__rule" aria-hidden="true"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="popover__body"&gt;…&lt;/div&gt;
+    &lt;div class="popover__footer"&gt;
+      &lt;div class="popover__rule" aria-hidden="true"&gt;&lt;/div&gt;
+      &lt;div class="popover__actions"&gt;
+        &lt;button type="button" class="btn-solid-secondary"&gt;Cancel&lt;/button&gt;
+        &lt;button type="button" class="btn-solid-primary"&gt;Confirm&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;span class="popover__caret" aria-hidden="true"&gt;
+    &lt;svg class="popover__caret-svg" …&gt;&lt;path d="…" stroke="currentColor" /&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+&lt;/div&gt;</code></pre>
+      </section>
+    </main>
   </div>
 </body>
 </html>
