@@ -626,6 +626,64 @@
     @apply min-h-[113px] h-[113px] gap-[10px];
   }
 
+  /* Side panel — Figma 13886-87247 (guidelines), 13147-59798 (sizes): overlay neutrals-black / 50%, card chrome, 5 widths */
+  .side-panel-overlay {
+    @apply fixed inset-0 z-50 flex flex-row items-stretch p-0;
+  }
+  .side-panel-overlay[hidden] {
+    @apply hidden;
+  }
+  .side-panel-backdrop {
+    @apply flex-1 min-h-0 min-w-0 border-0 bg-neutrals-black/50 p-0 cursor-pointer;
+  }
+  .side-panel {
+    @apply flex flex-col h-full max-h-screen min-h-0 shrink-0;
+  }
+  .side-panel__surface {
+    @apply flex flex-col h-full min-h-0 w-full bg-neutrals-white border border-neutrals-gray-400 overflow-hidden pt-px px-px;
+  }
+  .side-panel__header {
+    @apply flex flex-col h-[62px] items-stretch justify-center overflow-hidden shrink-0 w-full border-b border-neutrals-gray-400 border-solid bg-neutrals-white;
+  }
+  .side-panel__header-inner {
+    @apply flex h-[62px] items-center justify-end gap-space-24 px-space-24 py-[17px] w-full shrink-0;
+  }
+  .side-panel__title {
+    @apply flex-1 min-w-0 flex flex-col justify-center text-heading-4 text-neutrals-black font-semibold leading-normal;
+  }
+  .side-panel__close {
+    @apply shrink-0 flex items-center justify-center w-[22px] h-[22px] p-0 border-0 rounded-md bg-transparent text-neutrals-gray-700 hover:text-neutrals-black cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2;
+  }
+  .side-panel__close svg {
+    @apply w-[22px] h-[22px] block;
+  }
+  .side-panel__body {
+    @apply flex-1 min-h-0 min-w-0 w-full overflow-y-auto p-space-24 bg-neutrals-white;
+  }
+  /* Width tokens: XS 4 col / S 5 / M 6 / L 8 / XL 10 — max widths from Figma */
+  .side-panel--xs .side-panel__surface {
+    @apply w-[min(467px,calc(100vw-2rem))] max-w-[467px];
+  }
+  .side-panel--sm .side-panel__surface {
+    @apply w-[min(590px,calc(100vw-2rem))] max-w-[590px];
+  }
+  .side-panel--md .side-panel__surface {
+    @apply w-[min(710px,calc(100vw-2rem))] max-w-[710px];
+  }
+  .side-panel--lg .side-panel__surface {
+    @apply w-[min(953px,calc(100vw-2rem))] max-w-[953px];
+  }
+  .side-panel--xl .side-panel__surface {
+    @apply w-[min(1197px,calc(100vw-2rem))] max-w-[1197px];
+  }
+  /* Static docs preview: shorter panel without full viewport height */
+  .side-panel-preview {
+    @apply border border-dashed border-secondary-300 rounded-lg bg-secondary-50 p-4 flex items-stretch justify-end min-h-[200px] overflow-x-auto;
+  }
+  .side-panel-preview .side-panel {
+    @apply h-[280px] shrink-0;
+  }
+
   /* Toggle — Figma 16932-145649: 40×22 track, 16px thumb, label positions and dual-label variant */
   .toggle {
     @apply flex items-center gap-2;

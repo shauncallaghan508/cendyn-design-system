@@ -48,6 +48,8 @@
         <li><a href="modals-dialogs.html" class="text-secondary-600 hover:text-primary">Modals &amp; Dialogs</a></li>
         <li><a href="navigation.html" class="text-secondary-600 hover:text-primary">Navigation</a></li>
         <li><a href="navigation-tabs.html" class="text-primary font-medium">Tabs</a></li>
+        <li><a href="scrollbar.html" class="text-secondary-600 hover:text-primary">Scrollbar</a></li>
+        <li><a href="side-panel.html" class="text-secondary-600 hover:text-primary">Side Panel</a></li>
         <li><a href="tooltips-popovers.html" class="text-secondary-600 hover:text-primary">Tooltips &amp; Popovers</a></li>
         <li><a href="toasts.html" class="text-secondary-600 hover:text-primary">Toasts</a></li>
         <li><a href="tree-view.html" class="text-secondary-600 hover:text-primary">Tree View</a></li>
@@ -55,12 +57,34 @@
       </ul>
     </aside>
     <main class="overflow-hidden pl-8">
-      <h1 class="text-display-sm text-secondary-900 mb-6">Tabs</h1>
-      <p class="text-secondary-600 mb-8">Tab navigation.</p>
-      <section class="mb-8">
-        <h2 class="text-lg font-semibold text-secondary-900 mb-3">Preview</h2>
-        <div class="p-4 bg-white rounded-card border border-secondary-200">
-          <div class="border-b border-secondary-200"><nav class="flex gap-6"><a href="#" class="pb-3 border-b-2 border-primary text-primary font-medium text-sm">Tab one</a><a href="#" class="pb-3 border-b-2 border-transparent text-secondary-600 hover:text-secondary-900 text-sm">Tab two</a><a href="#" class="pb-3 border-b-2 border-transparent text-secondary-600 hover:text-secondary-900 text-sm">Tab three</a></nav></div>
+      <h1 class="text-display-sm text-secondary-900 mb-2">Tabs</h1>
+
+      <section class="mb-10">
+        <div class="p-6 bg-white rounded-card border border-secondary-200">
+          <div class="tabs border-b border-neutrals-gray-400" role="tablist" aria-label="Example tabs">
+            <div class="tab tab--active" role="tab" aria-selected="true" tabindex="0">
+              <div class="tab__content">
+                <span class="tab__label">Tab Active</span>
+              </div>
+            </div>
+            <a href="#" class="tab" role="tab" aria-selected="false" tabindex="-1">
+              <div class="tab__content">
+                <span class="tab__label">Tab Default</span>
+              </div>
+            </a>
+            <a href="#" class="tab" role="tab" aria-selected="false" tabindex="-1">
+              <div class="tab__content">
+                <span class="tab__label">Tab Default</span>
+              </div>
+            </a>
+            <a href="#" class="tab" role="tab" aria-selected="false" tabindex="-1">
+              <div class="tab__content">
+                <span class="tab__label">Tab with badge</span>
+                <span class="tab__badge">3</span>
+              </div>
+            </a>
+          </div>
+          <p class="mt-4 text-sm text-secondary-600">Panel content would live below this row in your layout.</p>
         </div>
       </section>
 </main>

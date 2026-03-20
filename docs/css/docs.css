@@ -4040,6 +4040,204 @@ input::placeholder,
   gap: 10px;
 }
 
+/* Side panel — Figma 13886-87247 (guidelines), 13147-59798 (sizes): overlay neutrals-black / 50%, card chrome, 5 widths */
+
+.side-panel-overlay {
+  position: fixed;
+  inset: 0px;
+  z-index: 50;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  padding: 0px;
+}
+
+.side-panel-overlay[hidden] {
+  display: none;
+}
+
+.side-panel-backdrop {
+  min-height: 0px;
+  min-width: 0px;
+  flex: 1 1 0%;
+  cursor: pointer;
+  border-width: 0px;
+  background-color: rgb(18 38 63 / 0.5);
+  padding: 0px;
+}
+
+.side-panel {
+  display: flex;
+  height: 100%;
+  max-height: 100vh;
+  min-height: 0px;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+
+.side-panel__surface {
+  display: flex;
+  height: 100%;
+  min-height: 0px;
+  width: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(210 221 236 / var(--tw-border-opacity, 1));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+  padding-left: 1px;
+  padding-right: 1px;
+  padding-top: 1px;
+}
+
+.side-panel__header {
+  display: flex;
+  height: 62px;
+  width: 100%;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  overflow: hidden;
+  border-bottom-width: 1px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(210 221 236 / var(--tw-border-opacity, 1));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+
+.side-panel__header-inner {
+  display: flex;
+  height: 62px;
+  width: 100%;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 17px;
+  padding-bottom: 17px;
+}
+
+.side-panel__title {
+  display: flex;
+  min-width: 0px;
+  flex: 1 1 0%;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.5;
+  --tw-text-opacity: 1;
+  color: rgb(18 38 63 / var(--tw-text-opacity, 1));
+}
+
+.side-panel__close {
+  display: flex;
+  height: 22px;
+  width: 22px;
+  flex-shrink: 0;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  border-width: 0px;
+  background-color: transparent;
+  padding: 0px;
+  --tw-text-opacity: 1;
+  color: rgb(110 132 163 / var(--tw-text-opacity, 1));
+}
+
+.side-panel__close:hover {
+  --tw-text-opacity: 1;
+  color: rgb(18 38 63 / var(--tw-text-opacity, 1));
+}
+
+.side-panel__close:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.side-panel__close:focus-visible {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(39 110 205 / var(--tw-ring-opacity, 1));
+  --tw-ring-offset-width: 2px;
+}
+
+.side-panel__close svg {
+  display: block;
+  height: 22px;
+  width: 22px;
+}
+
+.side-panel__body {
+  min-height: 0px;
+  width: 100%;
+  min-width: 0px;
+  flex: 1 1 0%;
+  overflow-y: auto;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+  padding: 1.5rem;
+}
+
+/* Width tokens: XS 4 col / S 5 / M 6 / L 8 / XL 10 — max widths from Figma */
+
+.side-panel--xs .side-panel__surface {
+  width: min(467px, calc(100vw - 2rem));
+  max-width: 467px;
+}
+
+.side-panel--sm .side-panel__surface {
+  width: min(590px, calc(100vw - 2rem));
+  max-width: 590px;
+}
+
+.side-panel--md .side-panel__surface {
+  width: min(710px, calc(100vw - 2rem));
+  max-width: 710px;
+}
+
+.side-panel--lg .side-panel__surface {
+  width: min(953px, calc(100vw - 2rem));
+  max-width: 953px;
+}
+
+.side-panel--xl .side-panel__surface {
+  width: min(1197px, calc(100vw - 2rem));
+  max-width: 1197px;
+}
+
+/* Static docs preview: shorter panel without full viewport height */
+
+.side-panel-preview {
+  display: flex;
+  min-height: 200px;
+  align-items: stretch;
+  justify-content: flex-end;
+  overflow-x: auto;
+  border-radius: 0.5rem;
+  border-width: 1px;
+  border-style: dashed;
+  --tw-border-opacity: 1;
+  border-color: rgb(228 235 246 / var(--tw-border-opacity, 1));
+  --tw-bg-opacity: 1;
+  background-color: rgb(252 253 254 / var(--tw-bg-opacity, 1));
+  padding: 1rem;
+}
+
+.side-panel-preview .side-panel {
+  height: 280px;
+  flex-shrink: 0;
+}
+
 /* Toggle — Figma 16932-145649: 40×22 track, 16px thumb, label positions and dual-label variant */
 
 .toggle {
@@ -4290,6 +4488,24 @@ input::placeholder,
   color: rgb(39 110 205 / var(--tw-text-opacity, 1));
 }
 
+.tab__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(237 242 249 / var(--tw-bg-opacity, 1));
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 600;
+  --tw-text-opacity: 1;
+  color: rgb(59 81 108 / var(--tw-text-opacity, 1));
+}
+
 .tab--sm .tab__label {
   font-size: 0.875rem;
   line-height: 1.375rem;
@@ -4312,8 +4528,16 @@ input::placeholder,
   border-width: 0;
 }
 
+.pointer-events-none {
+  pointer-events: none;
+}
+
 .collapse {
   visibility: collapse;
+}
+
+.static {
+  position: static;
 }
 
 .fixed {
@@ -5037,6 +5261,10 @@ input::placeholder,
   border-radius: 0.25rem;
 }
 
+.rounded-\[10px\] {
+  border-radius: 10px;
+}
+
 .rounded-badge {
   border-radius: 9999px;
 }
@@ -5092,10 +5320,6 @@ input::placeholder,
 
 .border-b {
   border-bottom-width: 1px;
-}
-
-.border-b-2 {
-  border-bottom-width: 2px;
 }
 
 .border-l {
@@ -5191,6 +5415,10 @@ input::placeholder,
 .bg-info-10 {
   --tw-bg-opacity: 1;
   background-color: rgb(235 242 243 / var(--tw-bg-opacity, 1));
+}
+
+.bg-neutrals-black\/50 {
+  background-color: rgb(18 38 63 / 0.5);
 }
 
 .bg-neutrals-gray-100 {
@@ -5382,10 +5610,6 @@ input::placeholder,
   padding-bottom: 2.5rem;
 }
 
-.pb-3 {
-  padding-bottom: 0.75rem;
-}
-
 .pb-6 {
   padding-bottom: 1.5rem;
 }
@@ -5400,6 +5624,10 @@ input::placeholder,
 
 .pl-4 {
   padding-left: 1rem;
+}
+
+.pl-6 {
+  padding-left: 1.5rem;
 }
 
 .pl-8 {
@@ -5575,6 +5803,10 @@ input::placeholder,
   line-height: 1rem;
 }
 
+.font-bold {
+  font-weight: 700;
+}
+
 .font-medium {
   font-weight: 500;
 }
@@ -5593,6 +5825,10 @@ input::placeholder,
 
 .italic {
   font-style: italic;
+}
+
+.leading-6 {
+  line-height: 1.5rem;
 }
 
 .tracking-caps {
@@ -5645,6 +5881,11 @@ input::placeholder,
 .text-primary-140 {
   --tw-text-opacity: 1;
   color: rgb(23 66 123 / var(--tw-text-opacity, 1));
+}
+
+.text-secondary-100 {
+  --tw-text-opacity: 1;
+  color: rgb(249 251 253 / var(--tw-text-opacity, 1));
 }
 
 .text-secondary-700 {
