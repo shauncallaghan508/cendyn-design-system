@@ -34,7 +34,6 @@
         <li><a href="button-group.html" class="text-secondary-600 hover:text-primary">Button Group</a></li>
         <li><a href="calendars.html" class="text-secondary-600 hover:text-primary">Calendars</a></li>
         <li><a href="cards.html" class="text-primary font-medium">Cards</a></li>
-        <li><a href="charts.html" class="text-secondary-600 hover:text-primary">Charts</a></li>
         <li><a href="data-grid.html" class="text-secondary-600 hover:text-primary">Data Grid</a></li>
         <li><a href="data-grid-filter.html" class="text-secondary-600 hover:text-primary">Data Grid Filter</a></li>
         <li><a href="dropdowns.html" class="text-secondary-600 hover:text-primary">Dropdowns</a></li>
@@ -60,13 +59,95 @@
       </ul>
     </aside>
     <main class="overflow-hidden pl-8">
-      <h1 class="text-display-sm text-secondary-900 mb-6">Cards</h1>
-      <p class="text-secondary-600 mb-8">Content containers with optional header and footer.</p>
-      <section class="mb-8">
-        <h2 class="text-lg font-semibold text-secondary-900 mb-3">Preview</h2>
-        <div class="p-4 bg-white rounded-card border border-secondary-200">
-          <div class="max-w-sm rounded-card border border-secondary-200 bg-white shadow-card overflow-hidden"><div class="p-4 border-b border-secondary-200"><h3 class="font-semibold text-secondary-900">Card title</h3></div><div class="p-4 text-secondary-600 text-sm">Card body content goes here.</div><div class="p-4 border-t border-secondary-200 bg-secondary-50"><button type="button" class="text-sm font-medium text-primary hover:underline">Action</button></div></div>
+      <h1 class="text-display-sm text-secondary-900 mb-2">Cards</h1>
+      <p class="text-paragraph-1 text-secondary-600 mb-8 max-w-3xl">Content containers with optional header, body, and footer actions — plus an <strong>alternate header card</strong> (<a href="https://www.figma.com/design/hYuyPfbCcHwS3KN4CdFmDd/Cendyn-Product-Design-System?node-id=38217-4881&amp;m=dev" class="text-primary hover:underline" target="_blank" rel="noreferrer">Figma 38217-4881</a>) with status bar, hero image, overlapping avatar, mail icon, and badge.</p>
+
+      <section class="mb-10">
+        <h2 class="text-heading-2 text-secondary-900 mb-3">Default card</h2>
+        <p class="text-paragraph-2 text-secondary-600 mb-4 max-w-3xl">Simple bordered card with header rule, body, and footer buttons. For the example, a max width has been set, but remove or change the class for usage.</p>
+        <div class="p-4 bg-secondary-100 rounded-card border border-secondary-200">
+          <div class="max-w-sm rounded-card border border-secondary-200 bg-white overflow-hidden">
+            <div class="px-space-24 py-space-20 border-b border-secondary-200">
+              <h3 class="font-semibold text-neutrals-black text-heading-4">Card title</h3>
+            </div>
+            <div class="p-space-24 text-neutrals-black text-paragraph-2">Card body content goes here.</div>
+            <div class="px-space-24 py-space-16 border-t border-secondary-200 bg-secondary-50">
+              <div class="flex justify-end gap-space-12">
+                <button type="button" class="btn-solid-secondary">Button</button>
+                <button type="button" class="btn-solid-primary">Button</button>
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-heading-2 text-secondary-900 mb-3">Card header (alternate)</h2>
+        <p class="text-paragraph-2 text-secondary-600 mb-4 max-w-3xl">
+          Rich header layout from Figma
+          <a href="https://www.figma.com/design/hYuyPfbCcHwS3KN4CdFmDd/Cendyn-Product-Design-System?node-id=38217-4881&amp;m=dev" class="text-primary hover:underline" target="_blank" rel="noreferrer">38217-4881</a>:
+          success status bar, hero image, primary tint band with overlapping <a href="avatar.html" class="text-primary hover:underline">avatar</a> (<code class="text-xs bg-secondary-100 px-1 rounded">w-avatar-xl h-avatar-xl rounded-full object-cover</code> + white ring), <a href="icons.html" class="text-primary hover:underline">mail</a> icon, title + description, and a primary solid <a href="badges.html" class="text-primary hover:underline">badge</a>.
+        </p>
+        <div class="p-6 bg-secondary-100 rounded-card border border-secondary-200 inline-block max-w-full">
+          <article class="card-header-alt" aria-label="Alternate card example">
+            <div class="card-header-alt__status">
+              <p class="m-0">Status</p>
+            </div>
+            <div class="card-header-alt__hero">
+              <img class="card-header-alt__hero-img" src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&amp;h=400&amp;fit=crop&amp;q=80" width="800" height="400" alt="" />
+            </div>
+            <div class="card-header-alt__overlap">
+              <div class="card-header-alt__tint" aria-hidden="true"></div>
+              <div class="card-header-alt__avatar">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&amp;h=200&amp;fit=crop&amp;q=80" alt="Portrait" class="w-avatar-xl h-avatar-xl rounded-full object-cover" />
+              </div>
+            </div>
+            <div class="card-header-alt__icon-wrap">
+              <span class="card-header-alt__icon" aria-hidden="true">
+                <!-- Common → mail — identical to icons.html (viewBox 0 0 18 18); 44px via card-header-alt__icon svg -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                  <path d="M3 3H15C15.825 3 16.5 3.675 16.5 4.5V13.5C16.5 14.325 15.825 15 15 15H3C2.175 15 1.5 14.325 1.5 13.5V4.5C1.5 3.675 2.175 3 3 3Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M16.5 4.5L9 9.75L1.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </div>
+            <div class="card-header-alt__body">
+              <h2 class="card-header-alt__title">Text goes here</h2>
+              <div class="card-header-alt__text">
+                <p class="card-header-alt__desc">Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                <div class="card-header-alt__badges">
+                  <!-- Primary solid badge — same utility string as badges.html “Primary → Solid” -->
+                  <span class="inline-flex items-center px-3 py-1 rounded-badge text-xs font-semibold bg-primary-100 text-white whitespace-nowrap">Badge</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <p class="text-paragraph-2 text-secondary-600 mt-4 max-w-3xl">Classes: <code class="text-xs bg-secondary-100 px-1 rounded">card-header-alt</code>, <code class="text-xs bg-secondary-100 px-1 rounded">card-header-alt__status</code>, <code class="text-xs bg-secondary-100 px-1 rounded">__hero</code> / <code class="text-xs bg-secondary-100 px-1 rounded">__hero-img</code>, <code class="text-xs bg-secondary-100 px-1 rounded">__overlap</code>, <code class="text-xs bg-secondary-100 px-1 rounded">__tint</code>, <code class="text-xs bg-secondary-100 px-1 rounded">__avatar</code> wraps an <code class="text-xs bg-secondary-100 px-1 rounded">img.w-avatar-xl.h-avatar-xl.rounded-full.object-cover</code> (see <a href="avatar.html" class="text-primary hover:underline">Avatar</a> X-Large); ring from <code class="text-xs bg-secondary-100 px-1 rounded">.card-header-alt__avatar img</code>, <code class="text-xs bg-secondary-100 px-1 rounded">__icon-wrap</code> / <code class="text-xs bg-secondary-100 px-1 rounded">__icon</code> (mail SVG paths from <a href="icons.html" class="text-primary hover:underline">Icons → Common → mail</a>), <code class="text-xs bg-secondary-100 px-1 rounded">__body</code>, <code class="text-xs bg-secondary-100 px-1 rounded">__title</code>, <code class="text-xs bg-secondary-100 px-1 rounded">__text</code>, <code class="text-xs bg-secondary-100 px-1 rounded">__desc</code>, <code class="text-xs bg-secondary-100 px-1 rounded">__badges</code> (use <a href="badges.html" class="text-primary hover:underline">primary solid badge</a> utilities inside).</p>
+        <pre class="text-xs bg-secondary-900 text-secondary-100 p-4 rounded-lg overflow-x-auto max-w-3xl mt-4"><code>&lt;article class="card-header-alt"&gt;
+  &lt;div class="card-header-alt__status"&gt;…&lt;/div&gt;
+  &lt;div class="card-header-alt__hero"&gt;
+    &lt;img class="card-header-alt__hero-img" src="…" alt="" /&gt;
+  &lt;/div&gt;
+  &lt;div class="card-header-alt__overlap"&gt;
+    &lt;div class="card-header-alt__tint" aria-hidden="true"&gt;&lt;/div&gt;
+    &lt;div class="card-header-alt__avatar"&gt;&lt;img class="w-avatar-xl h-avatar-xl rounded-full object-cover" src="…" alt="" /&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="card-header-alt__icon-wrap"&gt;
+    &lt;span class="card-header-alt__icon" aria-hidden="true"&gt;
+      &lt;!-- mail: same paths as icons.html Common → mail --&gt;
+    &lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="card-header-alt__body"&gt;
+    &lt;h2 class="card-header-alt__title"&gt;…&lt;/h2&gt;
+    &lt;div class="card-header-alt__text"&gt;
+      &lt;p class="card-header-alt__desc"&gt;…&lt;/p&gt;
+      &lt;div class="card-header-alt__badges"&gt;
+        &lt;span class="inline-flex items-center px-3 py-1 rounded-badge text-xs font-semibold bg-primary-100 text-white whitespace-nowrap"&gt;Badge&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></pre>
       </section>
 </main>
   </div>

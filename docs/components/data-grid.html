@@ -34,7 +34,6 @@
         <li><a href="button-group.html" class="text-secondary-600 hover:text-primary">Button Group</a></li>
         <li><a href="calendars.html" class="text-secondary-600 hover:text-primary">Calendars</a></li>
         <li><a href="cards.html" class="text-secondary-600 hover:text-primary">Cards</a></li>
-        <li><a href="charts.html" class="text-secondary-600 hover:text-primary">Charts</a></li>
         <li><a href="data-grid.html" class="text-primary font-medium">Data Grid</a></li>
         <li><a href="data-grid-filter.html" class="text-secondary-600 hover:text-primary">Data Grid Filter</a></li>
         <li><a href="dropdowns.html" class="text-secondary-600 hover:text-primary">Dropdowns</a></li>
@@ -60,15 +59,894 @@
       </ul>
     </aside>
     <main class="overflow-hidden pl-8">
-      <h1 class="text-display-sm text-secondary-900 mb-6">Data Grid</h1>
-      <p class="text-secondary-600 mb-8">Tabular data display.</p>
-      <section class="mb-8">
-        <h2 class="text-lg font-semibold text-secondary-900 mb-3">Preview</h2>
+      <h1 class="text-display-sm text-secondary-900 mb-2">Data Grid</h1>
+      <p class="text-secondary-600 mb-8 max-w-3xl">
+        Responsive data table with horizontal scrolling, sortable/filterable column headers, and pagination. Built from existing badges, avatars, tooltips, and scrollbar components. Long header or cell text is truncated with an ellipsis; hovering shows the full value in a tooltip.
+      </p>
+
+      <!-- Preview -->
+      <section class="mb-10">
+        <h2 class="text-heading-2 text-secondary-900 mb-3">Preview</h2>
         <div class="p-4 bg-white rounded-card border border-secondary-200">
-          <div class="border border-secondary-200 rounded-card overflow-hidden"><table class="w-full text-sm"><thead class="bg-secondary-100"><tr><th class="text-left p-3 font-semibold text-secondary-900">Name</th><th class="text-left p-3 font-semibold text-secondary-900">Status</th></tr></thead><tbody><tr class="border-t border-secondary-200"><td class="p-3">Row 1</td><td class="p-3"><span class="rounded-badge px-2 py-0.5 bg-success-light text-success-dark text-xs">Active</span></td></tr><tr class="border-t border-secondary-200"><td class="p-3">Row 2</td><td class="p-3"><span class="rounded-badge px-2 py-0.5 bg-secondary-200 text-secondary-700 text-xs">Pending</span></td></tr></tbody></table></div>
+          <div class="border border-secondary-200 rounded-card overflow-hidden">
+
+            <!-- Scrollable table wrapper — global scrollbar styles apply -->
+            <div class="overflow-x-auto">
+              <table class="w-full text-paragraph-2 text-neutrals-black border-collapse border-b" style="min-width: 2400px;" role="grid" aria-colcount="17" aria-rowcount="10">
+                <colgroup>
+                  <col style="width:60px">   <!-- ID -->
+                  <col style="width:180px">  <!-- Campaign -->
+                  <col style="width:110px">  <!-- Status -->
+                  <col style="width:70px">   <!-- Audience -->
+                  <col style="width:110px">  <!-- Direction -->
+                  <col style="width:120px">  <!-- Updated -->
+                  <col style="width:160px">  <!-- Avatar -->
+                  <col style="width:110px">  <!-- Link -->
+                  <col style="width:180px">  <!-- Tags -->
+                  <col style="width:120px">  <!-- Text -->
+                  <col style="width:100px">  <!-- Country -->
+                  <col style="width:100px">  <!-- Source -->
+                  <col style="width:90px">   <!-- Live Badge -->
+                  <col style="width:90px">   <!-- Live Status -->
+                  <col style="width:140px">  <!-- Email -->
+                  <col style="width:130px">  <!-- Contacts -->
+                  <col style="width:130px">  <!-- Status Desc -->
+                </colgroup>
+
+                <thead>
+                  <tr class="bg-neutrals-gray-100 border-b border-secondary-200">
+                    <th class="text-left px-3 py-2.5 font-semibold cursor-pointer" role="columnheader">
+                      <span class="inline-flex items-center gap-1 max-w-full" data-header-tip="ID">
+                        <span class="text-heading-6-caps text-neutrals-gray-700 truncate">ID</span>
+                        <svg class="w-3 h-3 text-neutrals-gray-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+                      </span>
+                    </th>
+                    <th class="text-left px-3 py-2.5 font-semibold cursor-pointer" role="columnheader">
+                      <span class="inline-flex items-center gap-1 max-w-full" data-header-tip="Campaign">
+                        <span class="text-heading-6-caps text-neutrals-gray-700 truncate">Campaign</span>
+                        <svg class="w-3 h-3 text-neutrals-gray-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+                      </span>
+                    </th>
+                    <th class="text-left px-3 py-2.5 font-semibold cursor-pointer" role="columnheader">
+                      <span class="inline-flex items-center gap-1 max-w-full" data-header-tip="Status">
+                        <span class="text-heading-6-caps text-neutrals-gray-700 truncate">Status</span>
+                        <svg class="w-3 h-3 text-neutrals-gray-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+                      </span>
+                    </th>
+                    <th class="text-left px-3 py-2.5 font-semibold cursor-pointer" role="columnheader">
+                      <span class="inline-flex items-center gap-1 max-w-full" data-header-tip="Audience">
+                        <span class="text-heading-6-caps text-neutrals-gray-700 truncate">Aud&hellip;</span>
+                        <svg class="w-3 h-3 text-neutrals-gray-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+                      </span>
+                    </th>
+                    <th class="text-left px-3 py-2.5 font-semibold cursor-pointer" role="columnheader">
+                      <span class="inline-flex items-center gap-1 max-w-full" data-header-tip="Direction">
+                        <span class="text-heading-6-caps text-neutrals-gray-700 truncate">Direc&hellip;</span>
+                        <svg class="w-3 h-3 text-neutrals-gray-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+                      </span>
+                    </th>
+                    <th class="text-left px-3 py-2.5 font-semibold cursor-pointer" role="columnheader">
+                      <span class="inline-flex items-center gap-1 max-w-full" data-header-tip="Updated">
+                        <span class="text-heading-6-caps text-neutrals-gray-700 truncate">Updat&hellip;</span>
+                        <svg class="w-3 h-3 text-neutrals-gray-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+                      </span>
+                    </th>
+                    <th class="text-left px-3 py-2.5 font-semibold cursor-pointer" role="columnheader">
+                      <span class="inline-flex items-center gap-1 max-w-full" data-header-tip="Avatar">
+                        <span class="text-heading-6-caps text-neutrals-gray-700 truncate">Avatar</span>
+                        <svg class="w-3 h-3 text-neutrals-gray-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+                      </span>
+                    </th>
+                    <th class="text-left px-3 py-2.5 font-semibold cursor-pointer" role="columnheader">
+                      <span class="inline-flex items-center gap-1 max-w-full" data-header-tip="Link">
+                        <span class="text-heading-6-caps text-neutrals-gray-700 truncate">Link</span>
+                        <svg class="w-3 h-3 text-neutrals-gray-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+                      </span>
+                    </th>
+                    <th class="text-left px-3 py-2.5 font-semibold cursor-pointer" role="columnheader">
+                      <span class="inline-flex items-center gap-1 max-w-full" data-header-tip="Tags">
+                        <span class="text-heading-6-caps text-neutrals-gray-700 truncate">Tags</span>
+                        <svg class="w-3 h-3 text-neutrals-gray-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+                      </span>
+                    </th>
+                    <th class="text-left px-3 py-2.5 font-semibold cursor-pointer" role="columnheader">
+                      <span class="inline-flex items-center gap-1 max-w-full" data-header-tip="Text Description">
+                        <span class="text-heading-6-caps text-neutrals-gray-700 truncate">Text&hellip;</span>
+                        <svg class="w-3 h-3 text-neutrals-gray-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+                      </span>
+                    </th>
+                    <th class="text-left px-3 py-2.5 font-semibold cursor-pointer" role="columnheader">
+                      <span class="inline-flex items-center gap-1 max-w-full" data-header-tip="Country">
+                        <span class="text-heading-6-caps text-neutrals-gray-700 truncate">Coun&hellip;</span>
+                        <svg class="w-3 h-3 text-neutrals-gray-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+                      </span>
+                    </th>
+                    <th class="text-left px-3 py-2.5 font-semibold cursor-pointer" role="columnheader">
+                      <span class="inline-flex items-center gap-1 max-w-full" data-header-tip="Source">
+                        <span class="text-heading-6-caps text-neutrals-gray-700 truncate">Sour&hellip;</span>
+                        <svg class="w-3 h-3 text-neutrals-gray-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+                      </span>
+                    </th>
+                    <th class="text-left px-3 py-2.5 font-semibold cursor-pointer" role="columnheader">
+                      <span class="inline-flex items-center gap-1 max-w-full" data-header-tip="Live Badge">
+                        <span class="text-heading-6-caps text-neutrals-gray-700 truncate">Live B&hellip;</span>
+                        <svg class="w-3 h-3 text-neutrals-gray-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+                      </span>
+                    </th>
+                    <th class="text-left px-3 py-2.5 font-semibold cursor-pointer" role="columnheader">
+                      <span class="inline-flex items-center gap-1 max-w-full" data-header-tip="Live Status">
+                        <span class="text-heading-6-caps text-neutrals-gray-700 truncate">Live S&hellip;</span>
+                        <svg class="w-3 h-3 text-neutrals-gray-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+                      </span>
+                    </th>
+                    <th class="text-left px-3 py-2.5 font-semibold cursor-pointer" role="columnheader">
+                      <span class="inline-flex items-center gap-1 max-w-full" data-header-tip="Email">
+                        <span class="text-heading-6-caps text-neutrals-gray-700 truncate">Email</span>
+                        <svg class="w-3 h-3 text-neutrals-gray-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+                      </span>
+                    </th>
+                    <th class="text-left px-3 py-2.5 font-semibold cursor-pointer" role="columnheader">
+                      <span class="inline-flex items-center gap-1 max-w-full" data-header-tip="Contacts">
+                        <span class="text-heading-6-caps text-neutrals-gray-700 truncate">Cont&hellip;</span>
+                      </span>
+                    </th>
+                    <th class="text-left px-3 py-2.5 font-semibold cursor-pointer" role="columnheader">
+                      <span class="inline-flex items-center gap-1 max-w-full" data-header-tip="Status Description">
+                        <span class="text-heading-6-caps text-neutrals-gray-700 truncate">Status Des&hellip;</span>
+                      </span>
+                    </th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <!-- Row 1 -->
+                  <tr class="border-b border-secondary-200 hover:bg-neutrals-gray-50">
+                    <td class="px-3 py-2.5">1</td>
+                    <td class="px-3 py-2.5"><span class="block truncate" data-truncate title="LivaNova PLC">LivaNova PLC</span></td>
+                    <td class="px-3 py-2.5"><span class="inline-flex items-center px-3 py-1 rounded-badge text-xs font-semibold bg-secondary-300 text-secondary-800 whitespace-nowrap">DRAFT</span></td>
+                    <td class="px-3 py-2.5"><span class="inline-flex items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none" class="shrink-0"><g clip-path="url(#aud-check)"><path d="M12.8333 6.96334V7.5C12.8326 8.75792 12.4253 9.9819 11.6721 10.9894C10.9189 11.9969 9.86021 12.7339 8.65392 13.0906C7.44763 13.4473 6.15836 13.4044 4.9784 12.9685C3.79844 12.5326 2.79101 11.7269 2.10635 10.6716C1.4217 9.61636 1.0965 8.36804 1.17927 7.11285C1.26204 5.85766 1.74833 4.66286 2.56562 3.70663C3.38292 2.7504 4.48742 2.08398 5.7144 1.80675C6.94139 1.52953 8.22512 1.65637 9.37413 2.16834" stroke="#00AD64" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.8333 2.83337L7 8.67254L5.25 6.92254" stroke="#00AD64" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></g><defs><clipPath id="aud-check"><rect width="14" height="14" fill="white" transform="translate(0 0.5)"/></clipPath></defs></svg>text</span></td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center gap-1">
+                        <svg class="w-4 h-4 text-neutrals-gray-700 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Inbound
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5 whitespace-nowrap">2022/03/27</td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center gap-2">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Crect fill='%23d2ddec' width='26' height='26'/%3E%3Ccircle cx='13' cy='10.5' r='5' fill='%236e84a3'/%3E%3Cpath fill='%236e84a3' d='M6.5 26c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5H6.5z'/%3E%3C/svg%3E" alt="" class="w-avatar-xs h-avatar-xs rounded-full object-cover flex-shrink-0" />
+                        <span class="truncate" data-truncate title="Butch Jamell">Butch Jamell</span>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5">
+                      <a href="#" class="inline-flex items-center gap-1 text-primary hover:underline">
+                        <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 3H21V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 14L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Duis
+                      </a>
+                    </td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center flex-wrap">
+                        <span class="grid-tag">Orange</span>
+                        <span class="grid-tag">Apple</span>
+                        <a href="#" class="text-xs text-primary font-semibold hover:underline">+1</a>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center">
+                        Orange
+                        <a href="#" class="text-xs text-primary font-semibold hover:underline ml-1">+1</a>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center gap-2">
+                        <span class="icon-sm rounded-full bg-primary-100 shrink-0" aria-hidden="true"></span>
+                        <span>US</span>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5"><span class="inline-flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0 text-neutrals-black" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>IMPORT</span></td>
+                    <td class="px-3 py-2.5"><span class="inline-flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-success-100 shrink-0" aria-hidden="true"></span>LIVE</span></td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-success-100 shrink-0" aria-hidden="true"></span>
+                        Live
+                        <svg class="w-3.5 h-3.5 text-neutrals-gray-600 shrink-0" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6L8 10L12 6"/></svg>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5"><span class="block truncate" data-truncate title="something@company.com">something...</span></td>
+                    <td class="px-3 py-2.5">
+                      <div class="flex items-center">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Crect fill='%23d2ddec' width='26' height='26'/%3E%3Ccircle cx='13' cy='10.5' r='5' fill='%236e84a3'/%3E%3Cpath fill='%236e84a3' d='M6.5 26c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5H6.5z'/%3E%3C/svg%3E" alt="" class="w-avatar-xs h-avatar-xs rounded-full object-cover ring-2 ring-white flex-shrink-0" />
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Crect fill='%23e4ebf6' width='26' height='26'/%3E%3Ccircle cx='13' cy='10.5' r='5' fill='%2395AAC9'/%3E%3Cpath fill='%2395AAC9' d='M6.5 26c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5H6.5z'/%3E%3C/svg%3E" alt="" class="w-avatar-xs h-avatar-xs rounded-full object-cover ring-2 ring-white -ml-2 flex-shrink-0" />
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Crect fill='%23B1C2D9' width='26' height='26'/%3E%3Ccircle cx='13' cy='10.5' r='5' fill='%236e84a3'/%3E%3Cpath fill='%236e84a3' d='M6.5 26c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5H6.5z'/%3E%3C/svg%3E" alt="" class="w-avatar-xs h-avatar-xs rounded-full object-cover ring-2 ring-white -ml-2 flex-shrink-0" />
+                      </div>
+                    </td>
+                    <td class="px-3 py-2.5"><span class="text-secondary-800">Draft</span></td>
+                  </tr>
+
+                  <!-- Row 2 (empty row) -->
+                  <tr class="border-b border-secondary-200 hover:bg-neutrals-gray-50">
+                    <td class="px-3 py-2.5">2</td>
+                    <td class="px-3 py-2.5 text-neutrals-gray-600">--</td>
+                    <td class="px-3 py-2.5 text-neutrals-gray-600">--</td>
+                    <td class="px-3 py-2.5 text-neutrals-gray-600">--</td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center gap-1">
+                        <svg class="w-4 h-4 text-neutrals-gray-700 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Inbound
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5 text-neutrals-gray-600">--</td>
+                    <td class="px-3 py-2.5 text-neutrals-gray-600">--</td>
+                    <td class="px-3 py-2.5 text-neutrals-gray-600">--</td>
+                    <td class="px-3 py-2.5 text-neutrals-gray-600">--</td>
+                    <td class="px-3 py-2.5 text-neutrals-gray-600">--</td>
+                    <td class="px-3 py-2.5 text-neutrals-gray-600">--</td>
+                    <td class="px-3 py-2.5 text-neutrals-gray-600">--</td>
+                    <td class="px-3 py-2.5"><span class="inline-flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-success-100 shrink-0" aria-hidden="true"></span>LIVE</span></td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-success-100 shrink-0" aria-hidden="true"></span>
+                        Live
+                        <svg class="w-3.5 h-3.5 text-neutrals-gray-600 shrink-0" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6L8 10L12 6"/></svg>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5"><span class="block truncate" data-truncate title="something@company.com">something...</span></td>
+                    <td class="px-3 py-2.5 text-neutrals-gray-600">--</td>
+                    <td class="px-3 py-2.5"><span class="text-secondary-800">Draft</span></td>
+                  </tr>
+
+                  <!-- Row 3 -->
+                  <tr class="border-b border-secondary-200 hover:bg-neutrals-gray-50">
+                    <td class="px-3 py-2.5">3</td>
+                    <td class="px-3 py-2.5"><span class="block truncate" data-truncate title="Community Health Systems, Inc.">Community Health Syste...</span></td>
+                    <td class="px-3 py-2.5"><span class="inline-flex items-center px-3 py-1 rounded-badge text-xs font-semibold bg-success-10 text-success-140 whitespace-nowrap">APPROVED</span></td>
+                    <td class="px-3 py-2.5"><span class="inline-flex items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none" class="shrink-0"><g clip-path="url(#aud-check)"><path d="M12.8333 6.96334V7.5C12.8326 8.75792 12.4253 9.9819 11.6721 10.9894C10.9189 11.9969 9.86021 12.7339 8.65392 13.0906C7.44763 13.4473 6.15836 13.4044 4.9784 12.9685C3.79844 12.5326 2.79101 11.7269 2.10635 10.6716C1.4217 9.61636 1.0965 8.36804 1.17927 7.11285C1.26204 5.85766 1.74833 4.66286 2.56562 3.70663C3.38292 2.7504 4.48742 2.08398 5.7144 1.80675C6.94139 1.52953 8.22512 1.65637 9.37413 2.16834" stroke="#00AD64" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.8333 2.83337L7 8.67254L5.25 6.92254" stroke="#00AD64" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></g><defs><clipPath id="aud-check"><rect width="14" height="14" fill="white" transform="translate(0 0.5)"/></clipPath></defs></svg>text</span></td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center gap-1">
+                        <svg class="w-4 h-4 text-neutrals-gray-700 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Inbound
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5 whitespace-nowrap">2022/01/17</td>
+                    <td class="px-3 py-2.5 text-neutrals-gray-600">--</td>
+                    <td class="px-3 py-2.5">
+                      <a href="#" class="inline-flex items-center gap-1 text-primary hover:underline">
+                        <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 3H21V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 14L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        At
+                      </a>
+                    </td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center flex-wrap">
+                        <span class="grid-tag">Orange</span>
+                        <span class="grid-tag">Apple</span>
+                        <a href="#" class="text-xs text-primary font-semibold hover:underline">+1</a>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center">
+                        Orange
+                        <a href="#" class="text-xs text-primary font-semibold hover:underline ml-1">+2</a>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center gap-2">
+                        <span class="icon-sm rounded-full bg-primary-100 shrink-0" aria-hidden="true"></span>
+                        <span>US</span>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5"><span class="inline-flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0 text-success-100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PMS</span></td>
+                    <td class="px-3 py-2.5"><span class="inline-flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-success-100 shrink-0" aria-hidden="true"></span>LIVE</span></td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-success-100 shrink-0" aria-hidden="true"></span>
+                        Live
+                        <svg class="w-3.5 h-3.5 text-neutrals-gray-600 shrink-0" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6L8 10L12 6"/></svg>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5 text-neutrals-gray-600">--</td>
+                    <td class="px-3 py-2.5">
+                      <div class="flex items-center">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Crect fill='%23d2ddec' width='26' height='26'/%3E%3Ccircle cx='13' cy='10.5' r='5' fill='%236e84a3'/%3E%3Cpath fill='%236e84a3' d='M6.5 26c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5H6.5z'/%3E%3C/svg%3E" alt="" class="w-avatar-xs h-avatar-xs rounded-full object-cover ring-2 ring-white flex-shrink-0" />
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Crect fill='%23e4ebf6' width='26' height='26'/%3E%3Ccircle cx='13' cy='10.5' r='5' fill='%2395AAC9'/%3E%3Cpath fill='%2395AAC9' d='M6.5 26c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5H6.5z'/%3E%3C/svg%3E" alt="" class="w-avatar-xs h-avatar-xs rounded-full object-cover ring-2 ring-white -ml-2 flex-shrink-0" />
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Crect fill='%23B1C2D9' width='26' height='26'/%3E%3Ccircle cx='13' cy='10.5' r='5' fill='%236e84a3'/%3E%3Cpath fill='%236e84a3' d='M6.5 26c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5H6.5z'/%3E%3C/svg%3E" alt="" class="w-avatar-xs h-avatar-xs rounded-full object-cover ring-2 ring-white -ml-2 flex-shrink-0" />
+                      </div>
+                    </td>
+                    <td class="px-3 py-2.5"><span class="text-success-140">Approved</span></td>
+                  </tr>
+
+                  <!-- Row 4 -->
+                  <tr class="border-b border-secondary-200 hover:bg-neutrals-gray-50">
+                    <td class="px-3 py-2.5">4</td>
+                    <td class="px-3 py-2.5"><span class="block truncate" data-truncate title="Brunswick Corporation">Brunswick Corporation</span></td>
+                    <td class="px-3 py-2.5"><span class="inline-flex items-center px-3 py-1 rounded-badge text-xs font-semibold bg-primary-10 text-primary-140 whitespace-nowrap">SENT</span></td>
+                    <td class="px-3 py-2.5"><span class="inline-flex items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none" class="shrink-0"><g clip-path="url(#aud-check)"><path d="M12.8333 6.96334V7.5C12.8326 8.75792 12.4253 9.9819 11.6721 10.9894C10.9189 11.9969 9.86021 12.7339 8.65392 13.0906C7.44763 13.4473 6.15836 13.4044 4.9784 12.9685C3.79844 12.5326 2.79101 11.7269 2.10635 10.6716C1.4217 9.61636 1.0965 8.36804 1.17927 7.11285C1.26204 5.85766 1.74833 4.66286 2.56562 3.70663C3.38292 2.7504 4.48742 2.08398 5.7144 1.80675C6.94139 1.52953 8.22512 1.65637 9.37413 2.16834" stroke="#00AD64" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.8333 2.83337L7 8.67254L5.25 6.92254" stroke="#00AD64" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></g><defs><clipPath id="aud-check"><rect width="14" height="14" fill="white" transform="translate(0 0.5)"/></clipPath></defs></svg>text</span></td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center gap-1">
+                        <svg class="w-4 h-4 text-neutrals-gray-700 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Inbound
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5 whitespace-nowrap">2021/08/07</td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center gap-2">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Crect fill='%23d2ddec' width='26' height='26'/%3E%3Ccircle cx='13' cy='10.5' r='5' fill='%236e84a3'/%3E%3Cpath fill='%236e84a3' d='M6.5 26c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5H6.5z'/%3E%3C/svg%3E" alt="" class="w-avatar-xs h-avatar-xs rounded-full object-cover flex-shrink-0" />
+                        <span class="truncate" data-truncate title="Ogdon Farahar">Ogdon Farahar</span>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5">
+                      <a href="#" class="inline-flex items-center gap-1 text-primary hover:underline">
+                        <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 3H21V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 14L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Blandit
+                      </a>
+                    </td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center flex-wrap">
+                        <span class="grid-tag">Orange</span>
+                        <span class="grid-tag">Apple</span>
+                        <a href="#" class="text-xs text-primary font-semibold hover:underline">+2</a>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center">
+                        Orange
+                        <a href="#" class="text-xs text-primary font-semibold hover:underline ml-1">+3</a>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center gap-2">
+                        <span class="icon-sm rounded-full bg-error-100 shrink-0" aria-hidden="true"></span>
+                        <span>CN</span>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5"><span class="inline-flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 12H22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 2C14.5013 4.73835 15.9228 8.29203 16 12C15.9228 15.708 14.5013 19.2616 12 22C9.49872 19.2616 8.07725 15.708 8 12C8.07725 8.29203 9.49872 4.73835 12 2V2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>WEB</span></td>
+                    <td class="px-3 py-2.5"><span class="inline-flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-success-100 shrink-0" aria-hidden="true"></span>LIVE</span></td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-success-100 shrink-0" aria-hidden="true"></span>
+                        Live
+                        <svg class="w-3.5 h-3.5 text-neutrals-gray-600 shrink-0" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6L8 10L12 6"/></svg>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5"><span class="block truncate" data-truncate title="user@cendyn.com">user@cend...</span></td>
+                    <td class="px-3 py-2.5">
+                      <div class="flex items-center">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Crect fill='%23d2ddec' width='26' height='26'/%3E%3Ccircle cx='13' cy='10.5' r='5' fill='%236e84a3'/%3E%3Cpath fill='%236e84a3' d='M6.5 26c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5H6.5z'/%3E%3C/svg%3E" alt="" class="w-avatar-xs h-avatar-xs rounded-full object-cover ring-2 ring-white flex-shrink-0" />
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Crect fill='%23e4ebf6' width='26' height='26'/%3E%3Ccircle cx='13' cy='10.5' r='5' fill='%2395AAC9'/%3E%3Cpath fill='%2395AAC9' d='M6.5 26c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5H6.5z'/%3E%3C/svg%3E" alt="" class="w-avatar-xs h-avatar-xs rounded-full object-cover ring-2 ring-white -ml-2 flex-shrink-0" />
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Crect fill='%23B1C2D9' width='26' height='26'/%3E%3Ccircle cx='13' cy='10.5' r='5' fill='%236e84a3'/%3E%3Cpath fill='%236e84a3' d='M6.5 26c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5H6.5z'/%3E%3C/svg%3E" alt="" class="w-avatar-xs h-avatar-xs rounded-full object-cover ring-2 ring-white -ml-2 flex-shrink-0" />
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Crect fill='%23d2ddec' width='26' height='26'/%3E%3Ccircle cx='13' cy='10.5' r='5' fill='%236e84a3'/%3E%3Cpath fill='%236e84a3' d='M6.5 26c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5H6.5z'/%3E%3C/svg%3E" alt="" class="w-avatar-xs h-avatar-xs rounded-full object-cover ring-2 ring-white -ml-2 flex-shrink-0" />
+                      </div>
+                    </td>
+                    <td class="px-3 py-2.5"><span class="text-primary">Sent</span></td>
+                  </tr>
+
+                  <!-- Row 5 -->
+                  <tr class="border-b border-secondary-200 hover:bg-neutrals-gray-50">
+                    <td class="px-3 py-2.5">5</td>
+                    <td class="px-3 py-2.5"><span class="block truncate" data-truncate title="Pinnacle Financial Partners, Inc.">Pinnacle Financial Partn...</span></td>
+                    <td class="px-3 py-2.5"><span class="inline-flex items-center px-3 py-1 rounded-badge text-xs font-semibold bg-error-10 text-error-140 whitespace-nowrap">REJECTED</span></td>
+                    <td class="px-3 py-2.5"><span class="inline-flex items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none" class="shrink-0"><g clip-path="url(#aud-check)"><path d="M12.8333 6.96334V7.5C12.8326 8.75792 12.4253 9.9819 11.6721 10.9894C10.9189 11.9969 9.86021 12.7339 8.65392 13.0906C7.44763 13.4473 6.15836 13.4044 4.9784 12.9685C3.79844 12.5326 2.79101 11.7269 2.10635 10.6716C1.4217 9.61636 1.0965 8.36804 1.17927 7.11285C1.26204 5.85766 1.74833 4.66286 2.56562 3.70663C3.38292 2.7504 4.48742 2.08398 5.7144 1.80675C6.94139 1.52953 8.22512 1.65637 9.37413 2.16834" stroke="#00AD64" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.8333 2.83337L7 8.67254L5.25 6.92254" stroke="#00AD64" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></g><defs><clipPath id="aud-check"><rect width="14" height="14" fill="white" transform="translate(0 0.5)"/></clipPath></defs></svg>text</span></td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center gap-1">
+                        <svg class="w-4 h-4 text-neutrals-gray-700 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19 12H5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 19L5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Outbound
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5 whitespace-nowrap">2022/02/21</td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center gap-2">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Crect fill='%23e4ebf6' width='26' height='26'/%3E%3Ccircle cx='13' cy='10.5' r='5' fill='%2395AAC9'/%3E%3Cpath fill='%2395AAC9' d='M6.5 26c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5H6.5z'/%3E%3C/svg%3E" alt="" class="w-avatar-xs h-avatar-xs rounded-full object-cover flex-shrink-0" />
+                        <span class="truncate" data-truncate title="Desirae Twinbourne">Desirae Twinbourne</span>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5">
+                      <a href="#" class="inline-flex items-center gap-1 text-primary hover:underline">
+                        <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 3H21V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 14L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Tincidunt
+                      </a>
+                    </td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center flex-wrap">
+                        <span class="grid-tag">Orange</span>
+                        <span class="grid-tag">Apple</span>
+                        <a href="#" class="text-xs text-primary font-semibold hover:underline">+3</a>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center">
+                        Orange
+                        <a href="#" class="text-xs text-primary font-semibold hover:underline ml-1">+4</a>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center gap-2">
+                        <span class="icon-sm rounded-full bg-primary-100 shrink-0" aria-hidden="true"></span>
+                        <span>US</span>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5"><span class="inline-flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0 text-neutrals-black" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>IMPORT</span></td>
+                    <td class="px-3 py-2.5"><span class="inline-flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-success-100 shrink-0" aria-hidden="true"></span>LIVE</span></td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-success-100 shrink-0" aria-hidden="true"></span>
+                        Live
+                        <svg class="w-3.5 h-3.5 text-neutrals-gray-600 shrink-0" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6L8 10L12 6"/></svg>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5"><span class="block truncate" data-truncate title="longemailu@cendyn.com">longemailu...</span></td>
+                    <td class="px-3 py-2.5 text-neutrals-gray-600">--</td>
+                    <td class="px-3 py-2.5"><span class="text-error-140">Rejected</span></td>
+                  </tr>
+
+                  <!-- Row 6 -->
+                  <tr class="border-b border-secondary-200 hover:bg-neutrals-gray-50">
+                    <td class="px-3 py-2.5">6</td>
+                    <td class="px-3 py-2.5"><span class="block truncate" data-truncate title="Avianca Holdings S.A.">Avianca Holdings S.A.</span></td>
+                    <td class="px-3 py-2.5"><span class="inline-flex items-center px-3 py-1 rounded-badge text-xs font-semibold bg-success-10 text-success-140 whitespace-nowrap">APPROVED</span></td>
+                    <td class="px-3 py-2.5"><span class="inline-flex items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none" class="shrink-0"><g clip-path="url(#aud-check)"><path d="M12.8333 6.96334V7.5C12.8326 8.75792 12.4253 9.9819 11.6721 10.9894C10.9189 11.9969 9.86021 12.7339 8.65392 13.0906C7.44763 13.4473 6.15836 13.4044 4.9784 12.9685C3.79844 12.5326 2.79101 11.7269 2.10635 10.6716C1.4217 9.61636 1.0965 8.36804 1.17927 7.11285C1.26204 5.85766 1.74833 4.66286 2.56562 3.70663C3.38292 2.7504 4.48742 2.08398 5.7144 1.80675C6.94139 1.52953 8.22512 1.65637 9.37413 2.16834" stroke="#00AD64" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.8333 2.83337L7 8.67254L5.25 6.92254" stroke="#00AD64" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></g><defs><clipPath id="aud-check"><rect width="14" height="14" fill="white" transform="translate(0 0.5)"/></clipPath></defs></svg>text</span></td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center gap-1">
+                        <svg class="w-4 h-4 text-neutrals-gray-700 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Inbound
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5 whitespace-nowrap">2021/06/12</td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center gap-2">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Crect fill='%23B1C2D9' width='26' height='26'/%3E%3Ccircle cx='13' cy='10.5' r='5' fill='%236e84a3'/%3E%3Cpath fill='%236e84a3' d='M6.5 26c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5H6.5z'/%3E%3C/svg%3E" alt="" class="w-avatar-xs h-avatar-xs rounded-full object-cover flex-shrink-0" />
+                        <span class="truncate" data-truncate title="Thornie Cowp">Thornie Cowp</span>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5">
+                      <a href="#" class="inline-flex items-center gap-1 text-primary hover:underline">
+                        <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 3H21V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 14L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Pede
+                      </a>
+                    </td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center flex-wrap">
+                        <span class="grid-tag">Orange</span>
+                        <span class="grid-tag">Apple</span>
+                        <a href="#" class="text-xs text-primary font-semibold hover:underline">+3</a>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center">
+                        Orange
+                        <a href="#" class="text-xs text-primary font-semibold hover:underline ml-1">+4</a>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center gap-2">
+                        <span class="icon-sm rounded-full bg-warning-100 shrink-0" aria-hidden="true"></span>
+                        <span>BM</span>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5"><span class="inline-flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0 text-error-100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.84 4.61C20.3292 4.09901 19.7228 3.69365 19.0554 3.41709C18.3879 3.14052 17.6725 2.99818 16.95 2.99818C16.2275 2.99818 15.5121 3.14052 14.8446 3.41709C14.1772 3.69365 13.5708 4.09901 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.9379 22.4518 9.22249 22.4518 8.5C22.4518 7.77751 22.3095 7.06211 22.0329 6.39465C21.7563 5.72719 21.351 5.12076 20.84 4.61V4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>LOYALTY</span></td>
+                    <td class="px-3 py-2.5"><span class="inline-flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-success-100 shrink-0" aria-hidden="true"></span>LIVE</span></td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-success-100 shrink-0" aria-hidden="true"></span>
+                        Live
+                        <svg class="w-3.5 h-3.5 text-neutrals-gray-600 shrink-0" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6L8 10L12 6"/></svg>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5 text-neutrals-gray-600">--</td>
+                    <td class="px-3 py-2.5">
+                      <div class="flex items-center">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Crect fill='%23d2ddec' width='26' height='26'/%3E%3Ccircle cx='13' cy='10.5' r='5' fill='%236e84a3'/%3E%3Cpath fill='%236e84a3' d='M6.5 26c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5H6.5z'/%3E%3C/svg%3E" alt="" class="w-avatar-xs h-avatar-xs rounded-full object-cover ring-2 ring-white flex-shrink-0" />
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Crect fill='%23e4ebf6' width='26' height='26'/%3E%3Ccircle cx='13' cy='10.5' r='5' fill='%2395AAC9'/%3E%3Cpath fill='%2395AAC9' d='M6.5 26c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5H6.5z'/%3E%3C/svg%3E" alt="" class="w-avatar-xs h-avatar-xs rounded-full object-cover ring-2 ring-white -ml-2 flex-shrink-0" />
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Crect fill='%23B1C2D9' width='26' height='26'/%3E%3Ccircle cx='13' cy='10.5' r='5' fill='%236e84a3'/%3E%3Cpath fill='%236e84a3' d='M6.5 26c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5H6.5z'/%3E%3C/svg%3E" alt="" class="w-avatar-xs h-avatar-xs rounded-full object-cover ring-2 ring-white -ml-2 flex-shrink-0" />
+                      </div>
+                    </td>
+                    <td class="px-3 py-2.5"><span class="text-success-140">Approved</span></td>
+                  </tr>
+
+                  <!-- Row 7 -->
+                  <tr class="border-b border-secondary-200 hover:bg-neutrals-gray-50">
+                    <td class="px-3 py-2.5">7</td>
+                    <td class="px-3 py-2.5"><span class="block truncate" data-truncate title="American Midstream Partners, LP">American Midstream Par...</span></td>
+                    <td class="px-3 py-2.5"><span class="inline-flex items-center px-3 py-1 rounded-badge text-xs font-semibold bg-primary-10 text-primary-140 whitespace-nowrap">SENT</span></td>
+                    <td class="px-3 py-2.5"><span class="inline-flex items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none" class="shrink-0"><g clip-path="url(#aud-check)"><path d="M12.8333 6.96334V7.5C12.8326 8.75792 12.4253 9.9819 11.6721 10.9894C10.9189 11.9969 9.86021 12.7339 8.65392 13.0906C7.44763 13.4473 6.15836 13.4044 4.9784 12.9685C3.79844 12.5326 2.79101 11.7269 2.10635 10.6716C1.4217 9.61636 1.0965 8.36804 1.17927 7.11285C1.26204 5.85766 1.74833 4.66286 2.56562 3.70663C3.38292 2.7504 4.48742 2.08398 5.7144 1.80675C6.94139 1.52953 8.22512 1.65637 9.37413 2.16834" stroke="#00AD64" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.8333 2.83337L7 8.67254L5.25 6.92254" stroke="#00AD64" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></g><defs><clipPath id="aud-check"><rect width="14" height="14" fill="white" transform="translate(0 0.5)"/></clipPath></defs></svg>text</span></td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center gap-1">
+                        <svg class="w-4 h-4 text-neutrals-gray-700 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19 12H5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 19L5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Outbound
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5 whitespace-nowrap">2021/06/22</td>
+                    <td class="px-3 py-2.5 text-neutrals-gray-600">--</td>
+                    <td class="px-3 py-2.5">
+                      <a href="#" class="inline-flex items-center gap-1 text-primary hover:underline">
+                        <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 3H21V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 14L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Platea
+                      </a>
+                    </td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center flex-wrap">
+                        <span class="grid-tag">Orange</span>
+                        <span class="grid-tag">Apple</span>
+                        <a href="#" class="text-xs text-primary font-semibold hover:underline">+3</a>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center">
+                        Orange
+                        <a href="#" class="text-xs text-primary font-semibold hover:underline ml-1">+4</a>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center gap-2">
+                        <span class="icon-sm rounded-full bg-warning-100 shrink-0" aria-hidden="true"></span>
+                        <span>BV</span>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5"><span class="inline-flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0 text-success-100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PMS</span></td>
+                    <td class="px-3 py-2.5"><span class="inline-flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-success-100 shrink-0" aria-hidden="true"></span>LIVE</span></td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-success-100 shrink-0" aria-hidden="true"></span>
+                        Live
+                        <svg class="w-3.5 h-3.5 text-neutrals-gray-600 shrink-0" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6L8 10L12 6"/></svg>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5"><span class="block truncate" data-truncate title="something@company.com">something...</span></td>
+                    <td class="px-3 py-2.5">
+                      <div class="flex items-center">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Crect fill='%23d2ddec' width='26' height='26'/%3E%3Ccircle cx='13' cy='10.5' r='5' fill='%236e84a3'/%3E%3Cpath fill='%236e84a3' d='M6.5 26c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5H6.5z'/%3E%3C/svg%3E" alt="" class="w-avatar-xs h-avatar-xs rounded-full object-cover ring-2 ring-white flex-shrink-0" />
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Crect fill='%23e4ebf6' width='26' height='26'/%3E%3Ccircle cx='13' cy='10.5' r='5' fill='%2395AAC9'/%3E%3Cpath fill='%2395AAC9' d='M6.5 26c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5H6.5z'/%3E%3C/svg%3E" alt="" class="w-avatar-xs h-avatar-xs rounded-full object-cover ring-2 ring-white -ml-2 flex-shrink-0" />
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Crect fill='%23B1C2D9' width='26' height='26'/%3E%3Ccircle cx='13' cy='10.5' r='5' fill='%236e84a3'/%3E%3Cpath fill='%236e84a3' d='M6.5 26c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5H6.5z'/%3E%3C/svg%3E" alt="" class="w-avatar-xs h-avatar-xs rounded-full object-cover ring-2 ring-white -ml-2 flex-shrink-0" />
+                      </div>
+                    </td>
+                    <td class="px-3 py-2.5"><span class="text-primary">Sent</span></td>
+                  </tr>
+
+                  <!-- Row 8 -->
+                  <tr class="border-b border-secondary-200 hover:bg-neutrals-gray-50">
+                    <td class="px-3 py-2.5">8</td>
+                    <td class="px-3 py-2.5"><span class="block truncate" data-truncate title="Sonic Foundry Inc.">Sonic Foundry Inc.</span></td>
+                    <td class="px-3 py-2.5"><span class="inline-flex items-center px-3 py-1 rounded-badge text-xs font-semibold bg-primary-10 text-primary-140 whitespace-nowrap">SENT</span></td>
+                    <td class="px-3 py-2.5"><span class="inline-flex items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none" class="shrink-0"><g clip-path="url(#aud-check)"><path d="M12.8333 6.96334V7.5C12.8326 8.75792 12.4253 9.9819 11.6721 10.9894C10.9189 11.9969 9.86021 12.7339 8.65392 13.0906C7.44763 13.4473 6.15836 13.4044 4.9784 12.9685C3.79844 12.5326 2.79101 11.7269 2.10635 10.6716C1.4217 9.61636 1.0965 8.36804 1.17927 7.11285C1.26204 5.85766 1.74833 4.66286 2.56562 3.70663C3.38292 2.7504 4.48742 2.08398 5.7144 1.80675C6.94139 1.52953 8.22512 1.65637 9.37413 2.16834" stroke="#00AD64" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.8333 2.83337L7 8.67254L5.25 6.92254" stroke="#00AD64" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></g><defs><clipPath id="aud-check"><rect width="14" height="14" fill="white" transform="translate(0 0.5)"/></clipPath></defs></svg>text</span></td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center gap-1">
+                        <svg class="w-4 h-4 text-neutrals-gray-700 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19 12H5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 19L5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Outbound
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5 whitespace-nowrap">2021/09/13</td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center gap-2">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Crect fill='%23d2ddec' width='26' height='26'/%3E%3Ccircle cx='13' cy='10.5' r='5' fill='%236e84a3'/%3E%3Cpath fill='%236e84a3' d='M6.5 26c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5H6.5z'/%3E%3C/svg%3E" alt="" class="w-avatar-xs h-avatar-xs rounded-full object-cover flex-shrink-0" />
+                        <span class="truncate" data-truncate title="Heidi Corner">Heidi Corner</span>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5">
+                      <a href="#" class="inline-flex items-center gap-1 text-primary hover:underline">
+                        <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 3H21V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 14L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Diam
+                      </a>
+                    </td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center flex-wrap">
+                        <span class="grid-tag">Orange</span>
+                        <span class="grid-tag">Apple</span>
+                        <a href="#" class="text-xs text-primary font-semibold hover:underline">+3</a>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center">
+                        Orange
+                        <a href="#" class="text-xs text-primary font-semibold hover:underline ml-1">+4</a>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center gap-2">
+                        <span class="icon-sm rounded-full bg-success-100 shrink-0" aria-hidden="true"></span>
+                        <span>ES</span>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5"><span class="inline-flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 12H22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 2C14.5013 4.73835 15.9228 8.29203 16 12C15.9228 15.708 14.5013 19.2616 12 22C9.49872 19.2616 8.07725 15.708 8 12C8.07725 8.29203 9.49872 4.73835 12 2V2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>WEB</span></td>
+                    <td class="px-3 py-2.5"><span class="inline-flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-success-100 shrink-0" aria-hidden="true"></span>LIVE</span></td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-success-100 shrink-0" aria-hidden="true"></span>
+                        Live
+                        <svg class="w-3.5 h-3.5 text-neutrals-gray-600 shrink-0" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6L8 10L12 6"/></svg>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5 text-neutrals-gray-600">--</td>
+                    <td class="px-3 py-2.5">
+                      <div class="flex items-center">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Crect fill='%23d2ddec' width='26' height='26'/%3E%3Ccircle cx='13' cy='10.5' r='5' fill='%236e84a3'/%3E%3Cpath fill='%236e84a3' d='M6.5 26c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5H6.5z'/%3E%3C/svg%3E" alt="" class="w-avatar-xs h-avatar-xs rounded-full object-cover ring-2 ring-white flex-shrink-0" />
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Crect fill='%23e4ebf6' width='26' height='26'/%3E%3Ccircle cx='13' cy='10.5' r='5' fill='%2395AAC9'/%3E%3Cpath fill='%2395AAC9' d='M6.5 26c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5H6.5z'/%3E%3C/svg%3E" alt="" class="w-avatar-xs h-avatar-xs rounded-full object-cover ring-2 ring-white -ml-2 flex-shrink-0" />
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Crect fill='%23B1C2D9' width='26' height='26'/%3E%3Ccircle cx='13' cy='10.5' r='5' fill='%236e84a3'/%3E%3Cpath fill='%236e84a3' d='M6.5 26c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5H6.5z'/%3E%3C/svg%3E" alt="" class="w-avatar-xs h-avatar-xs rounded-full object-cover ring-2 ring-white -ml-2 flex-shrink-0" />
+                      </div>
+                    </td>
+                    <td class="px-3 py-2.5"><span class="text-primary">Sent</span></td>
+                  </tr>
+
+                  <!-- Row 9 -->
+                  <tr class="border-b border-secondary-200 hover:bg-neutrals-gray-50">
+                    <td class="px-3 py-2.5">9</td>
+                    <td class="px-3 py-2.5"><span class="block truncate" data-truncate title="Euroseas Ltd">Euroseas Ltd</span></td>
+                    <td class="px-3 py-2.5"><span class="inline-flex items-center px-3 py-1 rounded-badge text-xs font-semibold bg-primary-10 text-primary-140 whitespace-nowrap">SENT</span></td>
+                    <td class="px-3 py-2.5"><span class="inline-flex items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none" class="shrink-0"><g clip-path="url(#aud-check)"><path d="M12.8333 6.96334V7.5C12.8326 8.75792 12.4253 9.9819 11.6721 10.9894C10.9189 11.9969 9.86021 12.7339 8.65392 13.0906C7.44763 13.4473 6.15836 13.4044 4.9784 12.9685C3.79844 12.5326 2.79101 11.7269 2.10635 10.6716C1.4217 9.61636 1.0965 8.36804 1.17927 7.11285C1.26204 5.85766 1.74833 4.66286 2.56562 3.70663C3.38292 2.7504 4.48742 2.08398 5.7144 1.80675C6.94139 1.52953 8.22512 1.65637 9.37413 2.16834" stroke="#00AD64" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.8333 2.83337L7 8.67254L5.25 6.92254" stroke="#00AD64" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></g><defs><clipPath id="aud-check"><rect width="14" height="14" fill="white" transform="translate(0 0.5)"/></clipPath></defs></svg>text</span></td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center gap-1">
+                        <svg class="w-4 h-4 text-neutrals-gray-700 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19 12H5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 19L5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Outbound
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5 whitespace-nowrap">2021/12/07</td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center gap-2">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Crect fill='%23e4ebf6' width='26' height='26'/%3E%3Ccircle cx='13' cy='10.5' r='5' fill='%2395AAC9'/%3E%3Cpath fill='%2395AAC9' d='M6.5 26c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5H6.5z'/%3E%3C/svg%3E" alt="" class="w-avatar-xs h-avatar-xs rounded-full object-cover flex-shrink-0" />
+                        <span class="truncate" data-truncate title="Keith Bloxland">Keith Bloxland</span>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5">
+                      <a href="#" class="inline-flex items-center gap-1 text-primary hover:underline">
+                        <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 3H21V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 14L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Luctus
+                      </a>
+                    </td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center flex-wrap">
+                        <span class="grid-tag">Orange</span>
+                        <span class="grid-tag">Apple</span>
+                        <a href="#" class="text-xs text-primary font-semibold hover:underline">+3</a>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center">
+                        Orange
+                        <a href="#" class="text-xs text-primary font-semibold hover:underline ml-1">+4</a>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center gap-2">
+                        <span class="icon-sm rounded-full bg-error-100 shrink-0" aria-hidden="true"></span>
+                        <span>GB</span>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5"><span class="inline-flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0 text-neutrals-black" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>IMPORT</span></td>
+                    <td class="px-3 py-2.5"><span class="inline-flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-success-100 shrink-0" aria-hidden="true"></span>LIVE</span></td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-success-100 shrink-0" aria-hidden="true"></span>
+                        Live
+                        <svg class="w-3.5 h-3.5 text-neutrals-gray-600 shrink-0" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6L8 10L12 6"/></svg>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5 text-neutrals-gray-600">--</td>
+                    <td class="px-3 py-2.5">
+                      <div class="flex items-center">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Crect fill='%23d2ddec' width='26' height='26'/%3E%3Ccircle cx='13' cy='10.5' r='5' fill='%236e84a3'/%3E%3Cpath fill='%236e84a3' d='M6.5 26c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5H6.5z'/%3E%3C/svg%3E" alt="" class="w-avatar-xs h-avatar-xs rounded-full object-cover ring-2 ring-white flex-shrink-0" />
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Crect fill='%23e4ebf6' width='26' height='26'/%3E%3Ccircle cx='13' cy='10.5' r='5' fill='%2395AAC9'/%3E%3Cpath fill='%2395AAC9' d='M6.5 26c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5H6.5z'/%3E%3C/svg%3E" alt="" class="w-avatar-xs h-avatar-xs rounded-full object-cover ring-2 ring-white -ml-2 flex-shrink-0" />
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Crect fill='%23B1C2D9' width='26' height='26'/%3E%3Ccircle cx='13' cy='10.5' r='5' fill='%236e84a3'/%3E%3Cpath fill='%236e84a3' d='M6.5 26c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5H6.5z'/%3E%3C/svg%3E" alt="" class="w-avatar-xs h-avatar-xs rounded-full object-cover ring-2 ring-white -ml-2 flex-shrink-0" />
+                      </div>
+                    </td>
+                    <td class="px-3 py-2.5"><span class="text-primary">Sent</span></td>
+                  </tr>
+
+                  <!-- Row 10 -->
+                  <tr class="hover:bg-neutrals-gray-50">
+                    <td class="px-3 py-2.5">10</td>
+                    <td class="px-3 py-2.5"><span class="block truncate" data-truncate title="Petroleo Brasileiro S.A. - Petrobras">Petroleo Brasileiro S.A....</span></td>
+                    <td class="px-3 py-2.5"><span class="inline-flex items-center px-3 py-1 rounded-badge text-xs font-semibold bg-secondary-300 text-secondary-800 whitespace-nowrap">DRAFT</span></td>
+                    <td class="px-3 py-2.5"><span class="inline-flex items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none" class="shrink-0"><g clip-path="url(#aud-check)"><path d="M12.8333 6.96334V7.5C12.8326 8.75792 12.4253 9.9819 11.6721 10.9894C10.9189 11.9969 9.86021 12.7339 8.65392 13.0906C7.44763 13.4473 6.15836 13.4044 4.9784 12.9685C3.79844 12.5326 2.79101 11.7269 2.10635 10.6716C1.4217 9.61636 1.0965 8.36804 1.17927 7.11285C1.26204 5.85766 1.74833 4.66286 2.56562 3.70663C3.38292 2.7504 4.48742 2.08398 5.7144 1.80675C6.94139 1.52953 8.22512 1.65637 9.37413 2.16834" stroke="#00AD64" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.8333 2.83337L7 8.67254L5.25 6.92254" stroke="#00AD64" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></g><defs><clipPath id="aud-check"><rect width="14" height="14" fill="white" transform="translate(0 0.5)"/></clipPath></defs></svg>text</span></td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center gap-1">
+                        <svg class="w-4 h-4 text-neutrals-gray-700 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19 12H5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 19L5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Outbound
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5 whitespace-nowrap">2021/09/20</td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center gap-2">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Crect fill='%23d2ddec' width='26' height='26'/%3E%3Ccircle cx='13' cy='10.5' r='5' fill='%236e84a3'/%3E%3Cpath fill='%236e84a3' d='M6.5 26c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5H6.5z'/%3E%3C/svg%3E" alt="" class="w-avatar-xs h-avatar-xs rounded-full object-cover flex-shrink-0" />
+                        <span class="truncate" data-truncate title="Evangelin Leving">Evangelin Leving</span>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5">
+                      <a href="#" class="inline-flex items-center gap-1 text-primary hover:underline">
+                        <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 3H21V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 14L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Mi
+                      </a>
+                    </td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center flex-wrap">
+                        <span class="grid-tag">Orange</span>
+                        <span class="grid-tag">Apple</span>
+                        <a href="#" class="text-xs text-primary font-semibold hover:underline">+3</a>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center">
+                        Orange
+                        <a href="#" class="text-xs text-primary font-semibold hover:underline ml-1">+4</a>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center gap-2">
+                        <span class="icon-sm rounded-full bg-primary-100 shrink-0" aria-hidden="true"></span>
+                        <span>US</span>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5"><span class="inline-flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0 text-error-100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.84 4.61C20.3292 4.09901 19.7228 3.69365 19.0554 3.41709C18.3879 3.14052 17.6725 2.99818 16.95 2.99818C16.2275 2.99818 15.5121 3.14052 14.8446 3.41709C14.1772 3.69365 13.5708 4.09901 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.9379 22.4518 9.22249 22.4518 8.5C22.4518 7.77751 22.3095 7.06211 22.0329 6.39465C21.7563 5.72719 21.351 5.12076 20.84 4.61V4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>LOYALTY</span></td>
+                    <td class="px-3 py-2.5"><span class="inline-flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-success-100 shrink-0" aria-hidden="true"></span>LIVE</span></td>
+                    <td class="px-3 py-2.5">
+                      <span class="inline-flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-success-100 shrink-0" aria-hidden="true"></span>
+                        Live
+                        <svg class="w-3.5 h-3.5 text-neutrals-gray-600 shrink-0" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6L8 10L12 6"/></svg>
+                      </span>
+                    </td>
+                    <td class="px-3 py-2.5 text-neutrals-gray-600">--</td>
+                    <td class="px-3 py-2.5">
+                      <div class="flex items-center">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Crect fill='%23d2ddec' width='26' height='26'/%3E%3Ccircle cx='13' cy='10.5' r='5' fill='%236e84a3'/%3E%3Cpath fill='%236e84a3' d='M6.5 26c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5H6.5z'/%3E%3C/svg%3E" alt="" class="w-avatar-xs h-avatar-xs rounded-full object-cover ring-2 ring-white flex-shrink-0" />
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Crect fill='%23e4ebf6' width='26' height='26'/%3E%3Ccircle cx='13' cy='10.5' r='5' fill='%2395AAC9'/%3E%3Cpath fill='%2395AAC9' d='M6.5 26c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5H6.5z'/%3E%3C/svg%3E" alt="" class="w-avatar-xs h-avatar-xs rounded-full object-cover ring-2 ring-white -ml-2 flex-shrink-0" />
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Crect fill='%23B1C2D9' width='26' height='26'/%3E%3Ccircle cx='13' cy='10.5' r='5' fill='%236e84a3'/%3E%3Cpath fill='%236e84a3' d='M6.5 26c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5H6.5z'/%3E%3C/svg%3E" alt="" class="w-avatar-xs h-avatar-xs rounded-full object-cover ring-2 ring-white -ml-2 flex-shrink-0" />
+                      </div>
+                    </td>
+                    <td class="px-3 py-2.5"><span class="text-secondary-800">Draft</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Pagination — sits below the scroll area -->
+            <div class="flex items-center justify-between px-4 border-t border-secondary-200 bg-white">
+              <div class="py-3 border-r border-secondary-200 pr-4">
+                <button type="button" class="inline-flex items-center gap-2 text-paragraph-2 text-neutrals-gray-700" aria-label="Previous page">
+                  <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19L5 12L12 5"/></svg>
+                  Prev
+                </button>
+              </div>
+              <div class="flex items-center gap-1 py-3">
+                <button type="button" class="pagination-page">1</button>
+                <button type="button" class="pagination-page">2</button>
+                <button type="button" class="pagination-page">3</button>
+                <button type="button" class="pagination-page active">4</button>
+                <button type="button" class="pagination-page">5</button>
+                <button type="button" class="pagination-page">6</button>
+                <button type="button" class="pagination-page">7</button>
+              </div>
+              <div class="py-3 border-l border-secondary-200 pl-4">
+                <button type="button" class="inline-flex items-center gap-2 text-paragraph-2 text-neutrals-gray-700" aria-label="Next page">
+                  Next
+                  <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12H19"/><path d="M12 5L19 12L12 19"/></svg>
+                </button>
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
-</main>
+
+      <!-- Floating tooltip for header hover (bottom placement, reuses tooltip-ds component) -->
+      <div id="grid-header-tooltip" class="tooltip-ds tooltip-ds--placement-bottom fixed z-50 pointer-events-none hidden" role="tooltip">
+        <div class="tooltip-ds__caret" aria-hidden="true"></div>
+        <div class="tooltip-ds__surface" id="grid-header-tooltip-text"></div>
+      </div>
+
+      <!-- Floating tooltip for truncated cell text (top placement, reuses tooltip-ds component) -->
+      <div id="grid-tooltip" class="tooltip-ds tooltip-ds--placement-top fixed z-50 pointer-events-none hidden" role="tooltip">
+        <div class="tooltip-ds__surface" id="grid-tooltip-text"></div>
+        <div class="tooltip-ds__caret" aria-hidden="true"></div>
+      </div>
+
+      <!-- Guidelines -->
+      <section class="mb-10">
+        <h2 class="text-heading-2 text-secondary-900 mb-3">Guidelines</h2>
+        <ul class="list-disc pl-6 space-y-2 text-paragraph-1 text-secondary-600 max-w-3xl">
+          <li>The grid fills its container. Columns use fixed widths via <code class="text-xs bg-secondary-100 px-1 rounded">colgroup</code>; the table overflows horizontally and scrolls via <code class="text-xs bg-secondary-100 px-1 rounded">overflow-x-auto</code> on the wrapper. The global scrollbar styles apply automatically.</li>
+          <li>Header text is <code class="text-xs bg-secondary-100 px-1 rounded">text-heading-6-caps</code> (10px semibold uppercase). When a header label is too wide for its column, it is truncated with an ellipsis.</li>
+          <li>Cells that can overflow use <code class="text-xs bg-secondary-100 px-1 rounded">truncate</code> (<code class="text-xs bg-secondary-100 px-1 rounded">overflow-hidden text-ellipsis whitespace-nowrap</code>). On hover, a <code class="text-xs bg-secondary-100 px-1 rounded">tooltip-ds</code> shows the full text.</li>
+          <li>Reused components: <strong>Badges</strong> (status pills, LIVE badge, tags), <strong>Avatar</strong> (xs circle, avatar groups with <code class="text-xs bg-secondary-100 px-1 rounded">-ml-2 ring-2 ring-white</code>), <strong>Tooltip</strong> (<code class="text-xs bg-secondary-100 px-1 rounded">tooltip-ds--placement-top</code>), <strong>Icons</strong> (filter, link, chevron, direction arrows).</li>
+          <li>Pagination sits below the scrollable area so it is always visible. Active page uses <code class="text-xs bg-secondary-100 px-1 rounded">bg-primary text-white</code>.</li>
+        </ul>
+      </section>
+
+      <!-- Class reference -->
+      <section class="mb-10">
+        <h2 class="text-heading-2 text-secondary-900 mb-3">Class reference</h2>
+        <div class="overflow-x-auto rounded-card border border-secondary-200">
+          <table class="w-full text-paragraph-2 text-secondary-700">
+            <thead class="bg-secondary-100">
+              <tr>
+                <th class="text-left py-2 px-3 font-semibold text-secondary-800">Element</th>
+                <th class="text-left py-2 px-3 font-semibold text-secondary-800">Classes / pattern</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-t border-secondary-200"><td class="py-2 px-3">Grid wrapper</td><td class="py-2 px-3"><code class="bg-secondary-100 px-1 rounded">border border-secondary-200 rounded-card overflow-hidden</code></td></tr>
+              <tr class="border-t border-secondary-200"><td class="py-2 px-3">Scroll container</td><td class="py-2 px-3"><code class="bg-secondary-100 px-1 rounded">overflow-x-auto</code> (global scrollbar styles)</td></tr>
+              <tr class="border-t border-secondary-200"><td class="py-2 px-3">Table</td><td class="py-2 px-3"><code class="bg-secondary-100 px-1 rounded">w-full text-paragraph-2 text-neutrals-black border-collapse</code> + <code class="bg-secondary-100 px-1 rounded">min-width</code> for overflow</td></tr>
+              <tr class="border-t border-secondary-200"><td class="py-2 px-3">Header row</td><td class="py-2 px-3"><code class="bg-secondary-100 px-1 rounded">bg-neutrals-gray-100 border-b border-secondary-200</code></td></tr>
+              <tr class="border-t border-secondary-200"><td class="py-2 px-3">Header text</td><td class="py-2 px-3"><code class="bg-secondary-100 px-1 rounded">text-heading-6-caps text-neutrals-gray-700 truncate</code></td></tr>
+              <tr class="border-t border-secondary-200"><td class="py-2 px-3">Body row</td><td class="py-2 px-3"><code class="bg-secondary-100 px-1 rounded">border-b border-secondary-200 hover:bg-neutrals-gray-50</code></td></tr>
+              <tr class="border-t border-secondary-200"><td class="py-2 px-3">Truncated cell</td><td class="py-2 px-3"><code class="bg-secondary-100 px-1 rounded">block truncate</code> + <code class="bg-secondary-100 px-1 rounded">data-truncate title="..."</code></td></tr>
+              <tr class="border-t border-secondary-200"><td class="py-2 px-3">Status badge</td><td class="py-2 px-3">Badge soft: <code class="bg-secondary-100 px-1 rounded">bg-success-10 text-success-140</code> / <code class="bg-secondary-100 px-1 rounded">bg-primary-10 text-primary-140</code> / <code class="bg-secondary-100 px-1 rounded">bg-error-10 text-error-140</code> / <code class="bg-secondary-100 px-1 rounded">bg-secondary-300 text-secondary-800</code></td></tr>
+              <tr class="border-t border-secondary-200"><td class="py-2 px-3">Avatar (single)</td><td class="py-2 px-3"><code class="bg-secondary-100 px-1 rounded">w-avatar-xs h-avatar-xs rounded-full object-cover</code></td></tr>
+              <tr class="border-t border-secondary-200"><td class="py-2 px-3">Avatar group</td><td class="py-2 px-3"><code class="bg-secondary-100 px-1 rounded">flex items-center</code>; first no margin, rest <code class="bg-secondary-100 px-1 rounded">-ml-2 ring-2 ring-white flex-shrink-0</code></td></tr>
+              <tr class="border-t border-secondary-200"><td class="py-2 px-3">Country dot</td><td class="py-2 px-3"><code class="bg-secondary-100 px-1 rounded">icon-sm rounded-full</code> + semantic color</td></tr>
+              <tr class="border-t border-secondary-200"><td class="py-2 px-3">Pagination active</td><td class="py-2 px-3"><code class="bg-secondary-100 px-1 rounded">w-8 h-8 rounded-md bg-primary text-white font-semibold</code></td></tr>
+              <tr class="border-t border-secondary-200"><td class="py-2 px-3">Tooltip (truncation)</td><td class="py-2 px-3"><code class="bg-secondary-100 px-1 rounded">tooltip-ds tooltip-ds--placement-top</code> (positioned with JS)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
   </div>
+
+  <script>
+    (function () {
+      /* --- Header tooltip (bottom placement, always shows) --- */
+      var hTip = document.getElementById('grid-header-tooltip');
+      var hText = document.getElementById('grid-header-tooltip-text');
+
+      function showHeader(el) {
+        var label = el.getAttribute('data-header-tip');
+        if (!label || !hTip) return;
+        hText.textContent = label;
+        hTip.classList.remove('hidden');
+        var r = el.getBoundingClientRect();
+        var tw = hTip.offsetWidth;
+        hTip.style.left = Math.max(4, r.left + r.width / 2 - tw / 2) + 'px';
+        hTip.style.top = (r.bottom + 6 + window.scrollY) + 'px';
+      }
+      function hideHeader() { if (hTip) hTip.classList.add('hidden'); }
+
+      function headerTarget(e) {
+        var el = e.target;
+        while (el && el !== document) {
+          if (el.hasAttribute && el.hasAttribute('data-header-tip')) return el;
+          el = el.parentElement;
+        }
+        return null;
+      }
+
+      document.addEventListener('mouseenter', function (e) {
+        var h = headerTarget(e);
+        if (h) showHeader(h);
+      }, true);
+      document.addEventListener('mouseleave', function (e) {
+        var h = headerTarget(e);
+        if (h) hideHeader();
+      }, true);
+
+      /* --- Cell tooltip (top placement, only when truncated) --- */
+      var cTip = document.getElementById('grid-tooltip');
+      var cText = document.getElementById('grid-tooltip-text');
+
+      function showCell(el) {
+        var full = el.getAttribute('title');
+        if (!full || !cTip) return;
+        if (el.scrollWidth <= el.clientWidth + 1) return;
+        cText.textContent = full;
+        cTip.classList.remove('hidden');
+        var r = el.getBoundingClientRect();
+        var tw = cTip.offsetWidth;
+        var th = cTip.offsetHeight;
+        cTip.style.left = Math.max(4, r.left + r.width / 2 - tw / 2) + 'px';
+        cTip.style.top = (r.top - th - 6 + window.scrollY) + 'px';
+        el._savedTitle = full;
+        el.removeAttribute('title');
+      }
+      function hideCell(el) {
+        if (cTip) cTip.classList.add('hidden');
+        if (el._savedTitle) { el.setAttribute('title', el._savedTitle); delete el._savedTitle; }
+      }
+
+      document.addEventListener('mouseenter', function (e) {
+        if (e.target.hasAttribute && e.target.hasAttribute('data-truncate')) showCell(e.target);
+      }, true);
+      document.addEventListener('mouseleave', function (e) {
+        if (e.target.hasAttribute && e.target.hasAttribute('data-truncate')) hideCell(e.target);
+      }, true);
+    })();
+  </script>
 </body>
 </html>

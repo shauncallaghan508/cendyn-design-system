@@ -34,7 +34,6 @@
         <li><a href="button-group.html" class="text-secondary-600 hover:text-primary">Button Group</a></li>
         <li><a href="calendars.html" class="text-secondary-600 hover:text-primary">Calendars</a></li>
         <li><a href="cards.html" class="text-secondary-600 hover:text-primary">Cards</a></li>
-        <li><a href="charts.html" class="text-secondary-600 hover:text-primary">Charts</a></li>
         <li><a href="data-grid.html" class="text-secondary-600 hover:text-primary">Data Grid</a></li>
         <li><a href="data-grid-filter.html" class="text-secondary-600 hover:text-primary">Data Grid Filter</a></li>
         <li><a href="dropdowns.html" class="text-secondary-600 hover:text-primary">Dropdowns</a></li>
@@ -60,15 +59,126 @@
       </ul>
     </aside>
     <main class="overflow-hidden pl-8">
-      <h1 class="text-display-sm text-secondary-900 mb-6">Wizard</h1>
-      <p class="text-secondary-600 mb-8">Stepper / wizard progress.</p>
-      <section class="mb-8">
-        <h2 class="text-lg font-semibold text-secondary-900 mb-3">Preview</h2>
-        <div class="p-4 bg-white rounded-card border border-secondary-200">
-          <div class="flex items-center gap-2"><span class="w-8 h-8 rounded-full bg-primary-500 text-white flex items-center justify-center text-sm font-medium">1</span><span class="w-12 h-0.5 bg-primary-500"></span><span class="w-8 h-8 rounded-full bg-primary-500 text-white flex items-center justify-center text-sm font-medium">2</span><span class="w-12 h-0.5 bg-secondary-200"></span><span class="w-8 h-8 rounded-full bg-secondary-200 text-secondary-500 flex items-center justify-center text-sm font-medium">3</span></div>
+      <h1 class="text-display-sm text-secondary-900 mb-2">Wizard</h1>
+      <p class="text-paragraph-1 text-secondary-600 mb-8 max-w-3xl">
+        Multi-step progress for long or complex workflows. The DOM matches the app wizard: <code class="text-xs bg-secondary-100 px-1 rounded">ul.wizard-nav</code> (<code class="text-xs bg-secondary-100 px-1 rounded">role="tablist"</code>) → <code class="text-xs bg-secondary-100 px-1 rounded">li.wizard-nav__step</code> → <code class="text-xs bg-secondary-100 px-1 rounded">a.wizard-nav__icon</code> + <code class="text-xs bg-secondary-100 px-1 rounded">h6.wizard-nav__title</code>, with connectors drawn in CSS between steps. Use <code class="text-xs bg-secondary-100 px-1 rounded">.header-wizard</code> for the full-width header with title, back/next actions, and bottom rule.
+        Design:
+        <a href="https://www.figma.com/design/hYuyPfbCcHwS3KN4CdFmDd/Cendyn-Product-Design-System?node-id=10259-57404&amp;m=dev" class="text-primary hover:underline" target="_blank" rel="noreferrer">10259-57404</a>.
+        Pair actions with <a href="buttons.html" class="text-primary hover:underline">Buttons</a> (<code class="text-xs bg-secondary-100 px-1 rounded">btn-solid-default</code> back, <code class="text-xs bg-secondary-100 px-1 rounded">btn-solid-primary</code> forward).
+      </p>
+
+      <section class="mb-10">
+        <h2 class="text-heading-2 text-secondary-900 mb-3">Anatomy</h2>
+        <ul class="list-disc pl-5 text-paragraph-2 text-secondary-700 max-w-3xl space-y-2 mb-4">
+          <li><strong>Completed</strong> — <code class="text-xs bg-secondary-100 px-1 rounded">wizard-nav__step--completed</code> on <code class="text-xs bg-secondary-100 px-1 rounded">li</code>: primary circle + visible check; label <code class="text-xs bg-secondary-100 px-1 rounded">text-primary</code>. Connector after this step is primary.</li>
+          <li><strong>Current</strong> — <code class="text-xs bg-secondary-100 px-1 rounded">active</code> on <code class="text-xs bg-secondary-100 px-1 rounded">li</code> (same as production): primary ring, empty circle, label primary. Connector after is gray.</li>
+          <li><strong>Upcoming</strong> — neither completed nor <code class="text-xs bg-secondary-100 px-1 rounded">active</code>: gray ring, hidden check, muted label. Connectors gray.</li>
+          <li>Titles use <code class="text-xs bg-secondary-100 px-1 rounded">wizard-nav__title</code> (<code class="text-xs bg-secondary-100 px-1 rounded">text-heading-6-caps</code>) with <code class="text-xs bg-secondary-100 px-1 rounded">whitespace-nowrap</code> so labels stay on one line and stay centered under the icon.</li>
+        </ul>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-heading-2 text-secondary-900 mb-3">Wizard (3 steps)</h2>
+        <p class="text-paragraph-1 text-secondary-600 mb-4 max-w-3xl">Narrow stepper — max width <code class="text-xs bg-secondary-100 px-1 rounded">480px</code> per Figma. Same <code class="text-xs bg-secondary-100 px-1 rounded">ul</code> / <code class="text-xs bg-secondary-100 px-1 rounded">li</code> / <code class="text-xs bg-secondary-100 px-1 rounded">a</code> / <code class="text-xs bg-secondary-100 px-1 rounded">h6</code> structure as production.</p>
+        <div class="p-6 bg-white rounded-card border border-secondary-200 inline-block max-w-full">
+          <ul class="wizard-nav" role="tablist" aria-label="Wizard steps">
+            <li class="wizard-nav__step wizard-nav__step--completed" role="presentation">
+              <a href="#" class="wizard-nav__icon" role="tab" aria-selected="false" tabindex="-1"><svg class="wizard-nav__check" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              <h6 class="wizard-nav__title">Step one</h6>
+            </li>
+            <li class="wizard-nav__step active" role="presentation">
+              <a href="#" class="wizard-nav__icon" role="tab" aria-selected="true" tabindex="0"><svg class="wizard-nav__check" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              <h6 class="wizard-nav__title">Step</h6>
+            </li>
+            <li class="wizard-nav__step" role="presentation">
+              <a href="#" class="wizard-nav__icon" role="tab" aria-selected="false" tabindex="-1"><svg class="wizard-nav__check" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              <h6 class="wizard-nav__title">Step</h6>
+            </li>
+          </ul>
         </div>
       </section>
-</main>
+
+      <section class="mb-10">
+        <h2 class="text-heading-2 text-secondary-900 mb-3">Example (production labels)</h2>
+        <p class="text-paragraph-1 text-secondary-600 mb-4 max-w-3xl">Same structure as the app wizard (all steps shown with checks in markup; completed steps use <code class="text-xs bg-secondary-100 px-1 rounded">wizard-nav__step--completed</code>, current uses <code class="text-xs bg-secondary-100 px-1 rounded">active</code>).</p>
+        <div class="p-6 bg-white rounded-card border border-secondary-200 overflow-x-auto max-w-full">
+          <ul class="wizard-nav min-w-[600px]" role="tablist" aria-label="Campaign wizard">
+            <li class="wizard-nav__step wizard-nav__step--completed" role="presentation"><a href="#" class="wizard-nav__icon" role="tab" aria-selected="false" tabindex="-1"><svg class="wizard-nav__check" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><h6 class="wizard-nav__title">Settings</h6></li>
+            <li class="wizard-nav__step active" role="presentation"><a href="#" class="wizard-nav__icon" role="tab" aria-selected="true" tabindex="0"><svg class="wizard-nav__check" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><h6 class="wizard-nav__title">Audience</h6></li>
+            <li class="wizard-nav__step" role="presentation"><a href="#" class="wizard-nav__icon" role="tab" aria-selected="false" tabindex="-1"><svg class="wizard-nav__check" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><h6 class="wizard-nav__title">Design</h6></li>
+            <li class="wizard-nav__step" role="presentation"><a href="#" class="wizard-nav__icon" role="tab" aria-selected="false" tabindex="-1"><svg class="wizard-nav__check" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><h6 class="wizard-nav__title">Testing</h6></li>
+            <li class="wizard-nav__step" role="presentation"><a href="#" class="wizard-nav__icon" role="tab" aria-selected="false" tabindex="-1"><svg class="wizard-nav__check" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><h6 class="wizard-nav__title">Confirm</h6></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-heading-2 text-secondary-900 mb-3">Wizard (8 steps)</h2>
+        <p class="text-paragraph-1 text-secondary-600 mb-4 max-w-3xl">First step completed, second <code class="text-xs bg-secondary-100 px-1 rounded">active</code>, remainder upcoming — eight <code class="text-xs bg-secondary-100 px-1 rounded">li</code> items, connectors through step 7→8.</p>
+        <div class="p-6 bg-neutrals-gray-100 rounded-card border border-secondary-200 overflow-x-auto max-w-full">
+          <ul class="wizard-nav wizard-nav--scroll" role="tablist" aria-label="Wizard steps">
+            <li class="wizard-nav__step wizard-nav__step--completed" role="presentation"><a href="#" class="wizard-nav__icon" role="tab" aria-selected="false" tabindex="-1"><svg class="wizard-nav__check" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><h6 class="wizard-nav__title">Step one</h6></li>
+            <li class="wizard-nav__step active" role="presentation"><a href="#" class="wizard-nav__icon" role="tab" aria-selected="true" tabindex="0"><svg class="wizard-nav__check" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><h6 class="wizard-nav__title">Step</h6></li>
+            <li class="wizard-nav__step" role="presentation"><a href="#" class="wizard-nav__icon" role="tab" aria-selected="false" tabindex="-1"><svg class="wizard-nav__check" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><h6 class="wizard-nav__title">Step</h6></li>
+            <li class="wizard-nav__step" role="presentation"><a href="#" class="wizard-nav__icon" role="tab" aria-selected="false" tabindex="-1"><svg class="wizard-nav__check" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><h6 class="wizard-nav__title">Step</h6></li>
+            <li class="wizard-nav__step" role="presentation"><a href="#" class="wizard-nav__icon" role="tab" aria-selected="false" tabindex="-1"><svg class="wizard-nav__check" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><h6 class="wizard-nav__title">Step</h6></li>
+            <li class="wizard-nav__step" role="presentation"><a href="#" class="wizard-nav__icon" role="tab" aria-selected="false" tabindex="-1"><svg class="wizard-nav__check" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><h6 class="wizard-nav__title">Step</h6></li>
+            <li class="wizard-nav__step" role="presentation"><a href="#" class="wizard-nav__icon" role="tab" aria-selected="false" tabindex="-1"><svg class="wizard-nav__check" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><h6 class="wizard-nav__title">Step</h6></li>
+            <li class="wizard-nav__step" role="presentation"><a href="#" class="wizard-nav__icon" role="tab" aria-selected="false" tabindex="-1"><svg class="wizard-nav__check" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><h6 class="wizard-nav__title">Step</h6></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-heading-2 text-secondary-900 mb-3">Header + wizard</h2>
+        <p class="text-paragraph-1 text-secondary-600 mb-4 max-w-3xl">Centered eyebrow + main title (<code class="text-xs bg-secondary-100 px-1 rounded">text-heading-1</code>), then a row: back (left), stepper (center, <code class="text-xs bg-secondary-100 px-1 rounded">max-w-[480px]</code>), primary action (right). Full-width <code class="text-xs bg-secondary-100 px-1 rounded">border-b border-neutrals-gray-400</code>.</p>
+        <div class="rounded-card border border-secondary-200 bg-secondary-100 p-4 overflow-x-auto">
+          <header class="header-wizard rounded-t-lg">
+            <div class="header-wizard__head">
+              <p class="header-wizard__eyebrow">Title Area</p>
+              <h2 class="header-wizard__title">Main Title</h2>
+            </div>
+            <div class="header-wizard__bar">
+              <div class="header-wizard__left">
+                <button type="button" class="btn-solid-default">Button</button>
+              </div>
+              <div class="header-wizard__center">
+                <ul class="wizard-nav w-full" role="tablist" aria-label="Wizard steps">
+                  <li class="wizard-nav__step wizard-nav__step--completed" role="presentation"><a href="#" class="wizard-nav__icon" role="tab" aria-selected="false" tabindex="-1"><svg class="wizard-nav__check" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><h6 class="wizard-nav__title">Step one</h6></li>
+                  <li class="wizard-nav__step active" role="presentation"><a href="#" class="wizard-nav__icon" role="tab" aria-selected="true" tabindex="0"><svg class="wizard-nav__check" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><h6 class="wizard-nav__title">Step</h6></li>
+                  <li class="wizard-nav__step" role="presentation"><a href="#" class="wizard-nav__icon" role="tab" aria-selected="false" tabindex="-1"><svg class="wizard-nav__check" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><h6 class="wizard-nav__title">Step</h6></li>
+                  <li class="wizard-nav__step" role="presentation"><a href="#" class="wizard-nav__icon" role="tab" aria-selected="false" tabindex="-1"><svg class="wizard-nav__check" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><h6 class="wizard-nav__title">Step</h6></li>
+                </ul>
+              </div>
+              <div class="header-wizard__right">
+                <button type="button" class="btn-solid-primary">Button</button>
+              </div>
+            </div>
+          </header>
+          <div class="rounded-b-lg bg-white px-6 py-8 text-paragraph-2 text-secondary-600 border border-t-0 border-secondary-200">
+            Page content would continue below the header rule.
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-heading-2 text-secondary-900 mb-3">Markup notes</h2>
+        <ul class="list-disc pl-5 text-paragraph-2 text-secondary-700 max-w-3xl space-y-2">
+          <li><code class="text-xs bg-secondary-100 px-1 rounded">ul.wizard-nav</code> with <code class="text-xs bg-secondary-100 px-1 rounded">role="tablist"</code>; each <code class="text-xs bg-secondary-100 px-1 rounded">li.wizard-nav__step</code> has <code class="text-xs bg-secondary-100 px-1 rounded">role="presentation"</code>; <code class="text-xs bg-secondary-100 px-1 rounded">a.wizard-nav__icon</code> with <code class="text-xs bg-secondary-100 px-1 rounded">role="tab"</code>, <code class="text-xs bg-secondary-100 px-1 rounded">aria-selected</code>, and <code class="text-xs bg-secondary-100 px-1 rounded">tabindex</code>; <code class="text-xs bg-secondary-100 px-1 rounded">h6.wizard-nav__title</code> for the label (matches production).</li>
+          <li>Put <code class="text-xs bg-secondary-100 px-1 rounded">active</code> on the current <code class="text-xs bg-secondary-100 px-1 rounded">li</code>; add <code class="text-xs bg-secondary-100 px-1 rounded">wizard-nav__step--completed</code> on finished steps. Connectors are <code class="text-xs bg-secondary-100 px-1 rounded">li:not(:last-child)::after</code> — primary when the <code class="text-xs bg-secondary-100 px-1 rounded">li</code> is <code class="text-xs bg-secondary-100 px-1 rounded">--completed</code>, gray otherwise.</li>
+          <li>Optional <code class="text-xs bg-secondary-100 px-1 rounded">wizard-nav--scroll</code> on the list for <code class="text-xs bg-secondary-100 px-1 rounded">min-w-[480px]</code> in tight layouts. App shell may use <code class="text-xs bg-secondary-100 px-1 rounded">hidden md:flex</code> (or similar) on the list to mirror Bootstrap <code class="text-xs bg-secondary-100 px-1 rounded">d-none d-md-flex</code>.</li>
+        </ul>
+        <pre class="text-xs bg-secondary-900 text-secondary-100 p-4 rounded-lg overflow-x-auto max-w-3xl mt-4"><code>&lt;ul class="wizard-nav" role="tablist" aria-label="Wizard steps"&gt;
+  &lt;li class="wizard-nav__step wizard-nav__step--completed" role="presentation"&gt;
+    &lt;a href="…" class="wizard-nav__icon" role="tab" aria-selected="false" tabindex="-1"&gt;
+      &lt;svg class="wizard-nav__check" …&gt;…&lt;/svg&gt;
+    &lt;/a&gt;
+    &lt;h6 class="wizard-nav__title"&gt;Settings&lt;/h6&gt;
+  &lt;/li&gt;
+  &lt;li class="wizard-nav__step active" role="presentation"&gt;…&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+      </section>
+    </main>
   </div>
 </body>
 </html>

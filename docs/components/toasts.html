@@ -34,7 +34,6 @@
         <li><a href="button-group.html" class="text-secondary-600 hover:text-primary">Button Group</a></li>
         <li><a href="calendars.html" class="text-secondary-600 hover:text-primary">Calendars</a></li>
         <li><a href="cards.html" class="text-secondary-600 hover:text-primary">Cards</a></li>
-        <li><a href="charts.html" class="text-secondary-600 hover:text-primary">Charts</a></li>
         <li><a href="data-grid.html" class="text-secondary-600 hover:text-primary">Data Grid</a></li>
         <li><a href="data-grid-filter.html" class="text-secondary-600 hover:text-primary">Data Grid Filter</a></li>
         <li><a href="dropdowns.html" class="text-secondary-600 hover:text-primary">Dropdowns</a></li>
@@ -60,15 +59,57 @@
       </ul>
     </aside>
     <main class="overflow-hidden pl-8">
-      <h1 class="text-display-sm text-secondary-900 mb-6">Toasts</h1>
-      <p class="text-secondary-600 mb-8">Toast notifications.</p>
-      <section class="mb-8">
-        <h2 class="text-lg font-semibold text-secondary-900 mb-3">Preview</h2>
-        <div class="p-4 bg-white rounded-card border border-secondary-200">
-          <div class="fixed bottom-4 right-4 w-80 p-4 rounded-card bg-secondary-900 text-white text-sm shadow-modal">Success! Your action was completed.</div>
+      <h1 class="text-display-sm text-secondary-900 mb-2">Toasts</h1>
+      <p class="text-secondary-600 text-sm mb-2 max-w-3xl">
+        Lightweight, transient notifications for system feedback without blocking workflow. Figma:
+        <a href="https://www.figma.com/design/hYuyPfbCcHwS3KN4CdFmDd/Cendyn-Product-Design-System?node-id=31855-25956&amp;m=dev" class="text-primary hover:underline" target="_blank" rel="noreferrer">31855-25956</a>.
+      </p>
+      <p class="text-paragraph-1 text-secondary-600 mb-8 max-w-3xl">
+        Use <code class="text-xs bg-secondary-100 px-1 rounded">.toast</code> with <code class="text-xs bg-secondary-100 px-1 rounded">.toast--basic</code> (single row: icon, title, dismiss) or <code class="text-xs bg-secondary-100 px-1 rounded">.toast--advanced</code> (header strip + body copy + optional link). Max width <strong>300px</strong>, <code class="text-xs bg-secondary-100 px-1 rounded">rounded-xl</code>, <code class="text-xs bg-secondary-100 px-1 rounded">border-neutrals-gray-400</code>, and Figma card drop shadows. Pair with <code class="text-xs bg-secondary-100 px-1 rounded">role=&quot;status&quot;</code> or <code class="text-xs bg-secondary-100 px-1 rounded">role=&quot;alert&quot;</code> and position fixed/stacked in your app shell.
+      </p>
+
+      <section class="mb-10">
+        <h2 class="text-heading-2 text-secondary-900 mb-3">Basic</h2>
+        <p class="text-paragraph-1 text-secondary-600 mb-4 max-w-3xl">One line: success-style icon (24px circle), <code class="text-xs bg-secondary-100 px-1 rounded">text-line-2</code> title, 16×16 dismiss. Shadow: <code class="text-xs bg-secondary-100 px-1 rounded">0 2px 25px -8px</code> <code class="text-xs bg-secondary-100 px-1 rounded">rgb(18 38 63 / 15%)</code>.</p>
+        <div class="p-6 bg-white rounded-card border border-secondary-200 inline-block max-w-full">
+          <div class="toast toast--basic" role="status" aria-live="polite">
+            <div class="toast__row">
+              <span class="toast__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none"><path d="M3.33 8l3.34 3.33L12.67 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <p class="toast__title m-0">Toast title</p>
+            </div>
+            <button type="button" class="toast__close" aria-label="Dismiss notification">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M12 4L4 12M4 4l8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </button>
+          </div>
         </div>
       </section>
-</main>
+
+      <section class="mb-10">
+        <h2 class="text-heading-2 text-secondary-900 mb-3">Advanced</h2>
+        <p class="text-paragraph-1 text-secondary-600 mb-4 max-w-3xl">Header row with <code class="text-xs bg-secondary-100 px-1 rounded">text-heading-4</code> title, inset bottom rule (<code class="text-xs bg-secondary-100 px-1 rounded">neutrals-gray-400</code>), then body with <code class="text-xs bg-secondary-100 px-1 rounded">text-paragraph-2</code> and optional <code class="text-xs bg-secondary-100 px-1 rounded">.btn-link-primary</code>. Shadow: <code class="text-xs bg-secondary-100 px-1 rounded">0 2px 25px 0</code> <code class="text-xs bg-secondary-100 px-1 rounded">rgb(18 38 63 / 15%)</code>.</p>
+        <div class="p-6 bg-white rounded-card border border-secondary-200 inline-block max-w-full">
+          <div class="toast toast--advanced max-w-[300px]" role="status" aria-live="polite">
+            <div class="toast__header">
+              <div class="toast__row">
+                <span class="toast__icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none"><path d="M3.33 8l3.34 3.33L12.67 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <p class="toast__title toast__title--advanced m-0">Toast title</p>
+              </div>
+              <button type="button" class="toast__close" aria-label="Dismiss notification">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M12 4L4 12M4 4l8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </button>
+            </div>
+            <div class="toast__body">
+              <p class="toast__body-text m-0">Hello, world! This is a toast message and it could have two lines.</p>
+              <a href="#" class="btn-link-primary">This is a link</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   </div>
 </body>
 </html>
