@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="../css/docs.css">
 </head>
 <body class="min-h-screen bg-neutrals-gray-50">
-  <header class="border-b border-neutrals-gray-200 bg-white">
+  <header class="border-b border-neutrals-gray-400 bg-white">
     <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
       <a href="../index.html" class="text-xl font-semibold text-primary">Cendyn Design System</a>
       <nav class="flex gap-6">
@@ -19,7 +19,7 @@
     </div>
   </header>
   <div class="max-w-6xl mx-auto px-4 py-8">
-    <aside class="w-56 float-left pr-8 border-r border-neutrals-gray-200 min-h-[60vh]">
+    <aside class="w-56 float-left pr-8 border-r border-neutrals-gray-400 min-h-[60vh]">
       <p class="text-xs font-semibold text-neutrals-gray-500 uppercase tracking-wider mb-3">Foundations</p>
       <ul class="space-y-1 text-sm mb-6">
         <li><a href="../typography.html" class="text-neutrals-gray-600 hover:text-primary">Typography</a></li>
@@ -80,7 +80,7 @@
       <section class="mb-10">
         <h2 class="text-heading-2 text-neutrals-gray-900 mb-3">Wizard (3 steps)</h2>
         <p class="text-paragraph-1 text-neutrals-gray-600 mb-4 max-w-3xl">Narrow stepper — max width <code class="text-xs bg-neutrals-gray-100 px-1 rounded">480px</code> per Figma. Same <code class="text-xs bg-neutrals-gray-100 px-1 rounded">ul</code> / <code class="text-xs bg-neutrals-gray-100 px-1 rounded">li</code> / <code class="text-xs bg-neutrals-gray-100 px-1 rounded">a</code> / <code class="text-xs bg-neutrals-gray-100 px-1 rounded">h6</code> structure as production.</p>
-        <div class="p-6 bg-white rounded-card border border-neutrals-gray-200 inline-block max-w-full">
+        <div class="p-6 bg-white rounded-card border border-neutrals-gray-400 inline-block max-w-full">
           <ul class="wizard-nav" role="tablist" aria-label="Wizard steps">
             <li class="wizard-nav__step wizard-nav__step--completed" role="presentation">
               <a href="#" class="wizard-nav__icon" role="tab" aria-selected="false" tabindex="-1"><svg class="wizard-nav__check" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -101,7 +101,7 @@
       <section class="mb-10">
         <h2 class="text-heading-2 text-neutrals-gray-900 mb-3">Example (production labels)</h2>
         <p class="text-paragraph-1 text-neutrals-gray-600 mb-4 max-w-3xl">Same structure as the app wizard (all steps shown with checks in markup; completed steps use <code class="text-xs bg-neutrals-gray-100 px-1 rounded">wizard-nav__step--completed</code>, current uses <code class="text-xs bg-neutrals-gray-100 px-1 rounded">active</code>).</p>
-        <div class="p-6 bg-white rounded-card border border-neutrals-gray-200 overflow-x-auto max-w-full">
+        <div class="p-6 bg-white rounded-card border border-neutrals-gray-400 overflow-x-auto max-w-full">
           <ul class="wizard-nav min-w-[600px]" role="tablist" aria-label="Campaign wizard">
             <li class="wizard-nav__step wizard-nav__step--completed" role="presentation"><a href="#" class="wizard-nav__icon" role="tab" aria-selected="false" tabindex="-1"><svg class="wizard-nav__check" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><h6 class="wizard-nav__title">Settings</h6></li>
             <li class="wizard-nav__step active" role="presentation"><a href="#" class="wizard-nav__icon" role="tab" aria-selected="true" tabindex="0"><svg class="wizard-nav__check" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><h6 class="wizard-nav__title">Audience</h6></li>
@@ -115,7 +115,7 @@
       <section class="mb-10">
         <h2 class="text-heading-2 text-neutrals-gray-900 mb-3">Wizard (8 steps)</h2>
         <p class="text-paragraph-1 text-neutrals-gray-600 mb-4 max-w-3xl">First step completed, second <code class="text-xs bg-neutrals-gray-100 px-1 rounded">active</code>, remainder upcoming — eight <code class="text-xs bg-neutrals-gray-100 px-1 rounded">li</code> items, connectors through step 7→8.</p>
-        <div class="p-6 bg-neutrals-gray-100 rounded-card border border-neutrals-gray-200 overflow-x-auto max-w-full">
+        <div class="p-6 bg-neutrals-gray-100 rounded-card border border-neutrals-gray-400 overflow-x-auto max-w-full">
           <ul class="wizard-nav wizard-nav--scroll" role="tablist" aria-label="Wizard steps">
             <li class="wizard-nav__step wizard-nav__step--completed" role="presentation"><a href="#" class="wizard-nav__icon" role="tab" aria-selected="false" tabindex="-1"><svg class="wizard-nav__check" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><h6 class="wizard-nav__title">Step one</h6></li>
             <li class="wizard-nav__step active" role="presentation"><a href="#" class="wizard-nav__icon" role="tab" aria-selected="true" tabindex="0"><svg class="wizard-nav__check" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><h6 class="wizard-nav__title">Step</h6></li>
@@ -132,7 +132,7 @@
       <section class="mb-10">
         <h2 class="text-heading-2 text-neutrals-gray-900 mb-3">Header + wizard</h2>
         <p class="text-paragraph-1 text-neutrals-gray-600 mb-4 max-w-3xl">Centered eyebrow + main title (<code class="text-xs bg-neutrals-gray-100 px-1 rounded">text-heading-1</code>), then a row: back (left), stepper (center, <code class="text-xs bg-neutrals-gray-100 px-1 rounded">max-w-[480px]</code>), primary action (right). Full-width <code class="text-xs bg-neutrals-gray-100 px-1 rounded">border-b border-neutrals-gray-400</code>.</p>
-        <div class="rounded-card border border-neutrals-gray-200 bg-neutrals-gray-100 p-4 overflow-x-auto">
+        <div class="rounded-card border border-neutrals-gray-400 bg-neutrals-gray-100 p-4 overflow-x-auto">
           <header class="header-wizard rounded-t-lg">
             <div class="header-wizard__head">
               <p class="header-wizard__eyebrow">Title Area</p>
@@ -155,7 +155,7 @@
               </div>
             </div>
           </header>
-          <div class="rounded-b-lg bg-white px-6 py-8 text-paragraph-2 text-neutrals-gray-600 border border-t-0 border-neutrals-gray-200">
+          <div class="rounded-b-lg bg-white px-6 py-8 text-paragraph-2 text-neutrals-gray-600 border border-t-0 border-neutrals-gray-400">
             Page content would continue below the header rule.
           </div>
         </div>
