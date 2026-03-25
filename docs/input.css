@@ -6,7 +6,7 @@
 
 @layer base {
   body {
-    @apply font-sans text-secondary-700 antialiased;
+    @apply font-sans text-neutrals-gray-700 antialiased;
   }
   /* All inputs and textareas: filled text neutrals-black, placeholder neutrals-gray-700 */
   input,
@@ -224,22 +224,22 @@
     @apply inline-flex items-center justify-center gap-space-8 rounded-md font-medium text-sm px-space-12 py-2 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed;
   }
   .btn-solid-primary { @apply btn bg-primary text-neutrals-white hover:bg-primary-140 focus:ring-primary-40; }
-  .btn-solid-secondary { @apply btn bg-secondary-700 text-neutrals-white hover:bg-secondary-800 focus:ring-secondary-400; }
+  .btn-solid-secondary { @apply btn bg-neutrals-gray-700 text-neutrals-white hover:bg-neutrals-gray-800 focus:ring-neutrals-gray-400; }
   .btn-solid-success { @apply btn bg-success text-neutrals-white hover:bg-success-140 focus:ring-success-40; }
   .btn-solid-error { @apply btn bg-error text-neutrals-white hover:bg-error-140 focus:ring-error-40; }
   .btn-solid-warning { @apply btn bg-warning text-neutrals-white hover:bg-warning-140 focus:ring-warning-40; }
   .btn-solid-info { @apply btn bg-info text-neutrals-white hover:bg-info-140 focus:ring-info-40; }
-  .btn-solid-default { @apply btn bg-white border border-neutrals-gray-400 text-neutrals-black hover:border-secondary-700 focus:ring-primary-40; }
+  .btn-solid-default { @apply btn bg-white border border-neutrals-gray-400 text-neutrals-black hover:border-neutrals-gray-700 focus:ring-primary-40; }
   .btn-outline-primary { @apply btn border border-primary text-primary bg-transparent hover:bg-primary hover:text-neutrals-white hover:border-primary focus:ring-primary-40; }
-  .btn-outline-secondary { @apply btn border border-secondary-400 text-secondary-700 bg-transparent hover:bg-secondary-700 hover:text-neutrals-white hover:border-secondary-700 focus:ring-secondary-400; }
+  .btn-outline-secondary { @apply btn border border-neutrals-gray-400 text-neutrals-gray-700 bg-transparent hover:bg-neutrals-gray-700 hover:text-neutrals-white hover:border-neutrals-gray-700 focus:ring-neutrals-gray-400; }
   .btn-outline-success { @apply btn border border-success text-success bg-transparent hover:bg-success hover:text-neutrals-white hover:border-success focus:ring-success-40; }
   .btn-outline-error { @apply btn border border-error text-error bg-transparent hover:bg-error hover:text-neutrals-white hover:border-error focus:ring-error-40; }
-  .btn-outline-default { @apply btn border border-neutrals-gray-400 text-neutrals-black bg-transparent hover:bg-secondary-100 hover:border-secondary-700 focus:ring-primary-40; }
-  .btn-link-primary { @apply text-primary bg-transparent hover:underline focus:ring-primary-40 focus:ring-offset-1; }
-  .btn-link-secondary { @apply text-secondary-700 bg-transparent hover:underline focus:ring-secondary-400 focus:ring-offset-1; }
-  .btn-link-success { @apply text-success bg-transparent hover:underline focus:ring-success-40 focus:ring-offset-1; }
-  .btn-link-error { @apply text-error bg-transparent hover:underline focus:ring-error-40 focus:ring-offset-1; }
-  .btn-link-default { @apply text-neutrals-black bg-transparent hover:underline focus:ring-secondary-400 focus:ring-offset-1; }
+  .btn-outline-default { @apply btn border border-neutrals-gray-400 text-neutrals-black bg-transparent hover:bg-neutrals-gray-100 hover:border-neutrals-gray-700 focus:ring-primary-40; }
+  .btn-link-primary { @apply inline-flex items-center gap-space-8 text-primary bg-transparent hover:underline focus:ring-primary-40 focus:ring-offset-1; }
+  .btn-link-secondary { @apply inline-flex items-center gap-space-8 text-neutrals-gray-700 bg-transparent hover:underline focus:ring-neutrals-gray-400 focus:ring-offset-1; }
+  .btn-link-success { @apply inline-flex items-center gap-space-8 text-success bg-transparent hover:underline focus:ring-success-40 focus:ring-offset-1; }
+  .btn-link-error { @apply inline-flex items-center gap-space-8 text-error bg-transparent hover:underline focus:ring-error-40 focus:ring-offset-1; }
+  .btn-link-default { @apply inline-flex items-center gap-space-8 text-neutrals-black bg-transparent hover:underline focus:ring-neutrals-gray-400 focus:ring-offset-1; }
   /* Size modifier: place after variant so it overrides padding/font (e.g. btn-solid-primary btn-sm) */
   .btn-sm {
     @apply px-space-8 py-1.5 text-xs;
@@ -248,32 +248,32 @@
   .btn-split { @apply inline-flex rounded-md overflow-hidden; }
   .btn-split-main-primary { @apply inline-flex items-center justify-center gap-space-8 px-space-12 py-2 bg-primary text-neutrals-white font-medium text-sm hover:bg-primary-140 focus:outline-none focus:ring-2 focus:ring-primary-40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed rounded-none; }
   .btn-split-trigger-primary { @apply inline-flex items-center justify-center p-2 bg-primary text-neutrals-white font-medium text-sm border-l border-white/20 hover:bg-primary-140 focus:outline-none focus:ring-2 focus:ring-primary-40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed; }
-  .btn-split-main-secondary { @apply inline-flex items-center justify-center gap-space-8 px-space-12 py-2 bg-secondary-700 text-neutrals-white font-medium text-sm hover:bg-secondary-800 focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed rounded-none; }
-  .btn-split-trigger-secondary { @apply inline-flex items-center justify-center p-2 bg-secondary-700 text-neutrals-white font-medium text-sm border-l border-white/20 hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed; }
+  .btn-split-main-secondary { @apply inline-flex items-center justify-center gap-space-8 px-space-12 py-2 bg-neutrals-gray-700 text-neutrals-white font-medium text-sm hover:bg-neutrals-gray-800 focus:outline-none focus:ring-2 focus:ring-neutrals-gray-400 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed rounded-none; }
+  .btn-split-trigger-secondary { @apply inline-flex items-center justify-center p-2 bg-neutrals-gray-700 text-neutrals-white font-medium text-sm border-l border-white/20 hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-neutrals-gray-400 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed; }
   .btn-split-main-success { @apply inline-flex items-center justify-center gap-space-8 px-space-12 py-2 bg-success text-neutrals-white font-medium text-sm hover:bg-success-140 focus:outline-none focus:ring-2 focus:ring-success-40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed rounded-none; }
   .btn-split-trigger-success { @apply inline-flex items-center justify-center p-2 bg-success text-neutrals-white font-medium text-sm border-l border-white/20 hover:bg-success-140 focus:outline-none focus:ring-2 focus:ring-success-40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed; }
   .btn-split-main-error { @apply inline-flex items-center justify-center gap-space-8 px-space-12 py-2 bg-error text-neutrals-white font-medium text-sm hover:bg-error-140 focus:outline-none focus:ring-2 focus:ring-error-40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed rounded-none; }
   .btn-split-trigger-error { @apply inline-flex items-center justify-center p-2 bg-error text-neutrals-white font-medium text-sm border-l border-white/20 hover:bg-error-140 focus:outline-none focus:ring-2 focus:ring-error-40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed; }
-  .btn-split-main-default { @apply inline-flex items-center justify-center gap-space-8 px-space-12 py-2 bg-white text-neutrals-black font-medium text-sm hover:border-secondary-700 focus:outline-none focus:ring-2 focus:ring-primary-40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed rounded-none border border-neutrals-gray-400 border-r-0; }
-  .btn-split-trigger-default { @apply inline-flex items-center justify-center p-2 bg-white text-neutrals-black font-medium text-sm border border-neutrals-gray-400 border-l-0 hover:border-secondary-700 hover:bg-secondary-100 focus:outline-none focus:ring-2 focus:ring-primary-40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed; }
+  .btn-split-main-default { @apply inline-flex items-center justify-center gap-space-8 px-space-12 py-2 bg-white text-neutrals-black font-medium text-sm hover:border-neutrals-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed rounded-none border border-neutrals-gray-400 border-r-0; }
+  .btn-split-trigger-default { @apply inline-flex items-center justify-center p-2 bg-white text-neutrals-black font-medium text-sm border border-neutrals-gray-400 border-l-0 hover:border-neutrals-gray-700 hover:bg-neutrals-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed; }
   .btn-split-main-primary.btn-sm, .btn-split-main-secondary.btn-sm, .btn-split-main-success.btn-sm, .btn-split-main-error.btn-sm, .btn-split-main-default.btn-sm { @apply px-space-8 py-1.5 text-xs; }
   .btn-split-trigger-primary.btn-icon-sm, .btn-split-trigger-secondary.btn-icon-sm, .btn-split-trigger-success.btn-icon-sm, .btn-split-trigger-error.btn-icon-sm, .btn-split-trigger-default.btn-icon-sm { @apply p-1.5 text-xs; }
   /* Icon-only buttons (default: p-space-12 / 24px; small: p-space-8 + icon-sm) */
   .btn-icon-solid-primary { @apply inline-flex items-center justify-center p-space-12 rounded-md bg-primary text-neutrals-white hover:bg-primary-140 focus:outline-none focus:ring-2 focus:ring-primary-40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed; }
-  .btn-icon-solid-secondary { @apply inline-flex items-center justify-center p-space-12 rounded-md bg-secondary-700 text-neutrals-white hover:bg-secondary-800 focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed; }
+  .btn-icon-solid-secondary { @apply inline-flex items-center justify-center p-space-12 rounded-md bg-neutrals-gray-700 text-neutrals-white hover:bg-neutrals-gray-800 focus:outline-none focus:ring-2 focus:ring-neutrals-gray-400 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed; }
   .btn-icon-solid-success { @apply inline-flex items-center justify-center p-space-12 rounded-md bg-success text-neutrals-white hover:bg-success-140 focus:outline-none focus:ring-2 focus:ring-success-40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed; }
   .btn-icon-solid-error { @apply inline-flex items-center justify-center p-space-12 rounded-md bg-error text-neutrals-white hover:bg-error-140 focus:outline-none focus:ring-2 focus:ring-error-40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed; }
-  .btn-icon-solid-default { @apply inline-flex items-center justify-center p-space-12 rounded-md bg-white border border-neutrals-gray-400 text-neutrals-black hover:border-secondary-700 focus:outline-none focus:ring-2 focus:ring-primary-40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed; }
+  .btn-icon-solid-default { @apply inline-flex items-center justify-center p-space-12 rounded-md bg-white border border-neutrals-gray-400 text-neutrals-black hover:border-neutrals-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed; }
   .btn-icon-outline-primary { @apply inline-flex items-center justify-center p-space-12 rounded-md border border-primary text-primary bg-transparent hover:bg-primary hover:text-neutrals-white hover:border-primary focus:outline-none focus:ring-2 focus:ring-primary-40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed; }
-  .btn-icon-outline-secondary { @apply inline-flex items-center justify-center p-space-12 rounded-md border border-secondary-400 text-secondary-700 bg-transparent hover:bg-secondary-700 hover:text-neutrals-white hover:border-secondary-700 focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed; }
+  .btn-icon-outline-secondary { @apply inline-flex items-center justify-center p-space-12 rounded-md border border-neutrals-gray-400 text-neutrals-gray-700 bg-transparent hover:bg-neutrals-gray-700 hover:text-neutrals-white hover:border-neutrals-gray-700 focus:outline-none focus:ring-2 focus:ring-neutrals-gray-400 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed; }
   .btn-icon-outline-success { @apply inline-flex items-center justify-center p-space-12 rounded-md border border-success text-success bg-transparent hover:bg-success hover:text-neutrals-white hover:border-success focus:outline-none focus:ring-2 focus:ring-success-40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed; }
   .btn-icon-outline-error { @apply inline-flex items-center justify-center p-space-12 rounded-md border border-error text-error bg-transparent hover:bg-error hover:text-neutrals-white hover:border-error focus:outline-none focus:ring-2 focus:ring-error-40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed; }
-  .btn-icon-outline-default { @apply inline-flex items-center justify-center p-space-12 rounded-md border border-neutrals-gray-400 text-neutrals-black bg-transparent hover:bg-secondary-100 hover:border-secondary-700 focus:outline-none focus:ring-2 focus:ring-primary-40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed; }
+  .btn-icon-outline-default { @apply inline-flex items-center justify-center p-space-12 rounded-md border border-neutrals-gray-400 text-neutrals-black bg-transparent hover:bg-neutrals-gray-100 hover:border-neutrals-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed; }
   .btn-icon-link-primary { @apply inline-flex items-center justify-center p-space-12 rounded-md text-primary bg-transparent hover:underline focus:outline-none focus:ring-2 focus:ring-primary-40 focus:ring-offset-1 disabled:opacity-60 disabled:cursor-not-allowed; }
-  .btn-icon-link-secondary { @apply inline-flex items-center justify-center p-space-12 rounded-md text-secondary-700 bg-transparent hover:underline focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-1 disabled:opacity-60 disabled:cursor-not-allowed; }
+  .btn-icon-link-secondary { @apply inline-flex items-center justify-center p-space-12 rounded-md text-neutrals-gray-700 bg-transparent hover:underline focus:outline-none focus:ring-2 focus:ring-neutrals-gray-400 focus:ring-offset-1 disabled:opacity-60 disabled:cursor-not-allowed; }
   .btn-icon-link-success { @apply inline-flex items-center justify-center p-space-12 rounded-md text-success bg-transparent hover:underline focus:outline-none focus:ring-2 focus:ring-success-40 focus:ring-offset-1 disabled:opacity-60 disabled:cursor-not-allowed; }
   .btn-icon-link-error { @apply inline-flex items-center justify-center p-space-12 rounded-md text-error bg-transparent hover:underline focus:outline-none focus:ring-2 focus:ring-error-40 focus:ring-offset-1 disabled:opacity-60 disabled:cursor-not-allowed; }
-  .btn-icon-link-default { @apply inline-flex items-center justify-center p-space-12 rounded-md text-neutrals-black bg-transparent hover:underline focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-1 disabled:opacity-60 disabled:cursor-not-allowed; }
+  .btn-icon-link-default { @apply inline-flex items-center justify-center p-space-12 rounded-md text-neutrals-black bg-transparent hover:underline focus:outline-none focus:ring-2 focus:ring-neutrals-gray-400 focus:ring-offset-1 disabled:opacity-60 disabled:cursor-not-allowed; }
   .btn-icon-sm { @apply p-2; }
 
   /* Dropdown menu — Figma 7312-548: white panel, 160px, 8px radius, gray-400 border, 24px/16px padding, 16px gap, gray-700 text */
@@ -1275,7 +1275,7 @@
   }
   /* Static docs preview: shorter panel without full viewport height */
   .side-panel-preview {
-    @apply border border-dashed border-secondary-300 rounded-lg bg-secondary-50 p-4 flex items-stretch justify-end min-h-[200px] overflow-x-auto;
+    @apply border border-dashed border-neutrals-gray-300 rounded-lg bg-neutrals-gray-50 p-4 flex items-stretch justify-end min-h-[200px] overflow-x-auto;
   }
   .side-panel-preview .side-panel {
     @apply h-[280px] shrink-0;

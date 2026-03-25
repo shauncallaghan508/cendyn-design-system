@@ -33,16 +33,6 @@ module.exports = {
           'gray-900': '#283E59',
           'gray-900-dark': '#132A46'
         },
-        // Semantic alias (use neutrals in components)
-        secondary: {
-          DEFAULT: '#6e84a3',
-          50: '#FCFDFE',
-          100: '#f9fbfd',
-          300: '#e4ebf6',
-          400: '#d2ddec',
-          700: '#6e84a3',
-          800: '#3B516C',
-        },
         // From Figma: color/informative/success/*
         success: {
           DEFAULT: '#008a50',
