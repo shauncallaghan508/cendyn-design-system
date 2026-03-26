@@ -1204,7 +1204,7 @@
 
   /* Dialog — Figma 7685-41782: compact decision UI, no chrome header; 400px; centered text + actions */
   .dialog {
-    @apply flex flex-col gap-space-24 items-center bg-neutrals-white border border-neutrals-gray-400 rounded-lg overflow-hidden p-space-24 w-full max-w-[400px] shadow-modal;
+    @apply flex flex-col gap-space-24 items-center bg-neutrals-white border border-neutrals-gray-400 rounded-lg overflow-hidden p-space-24 w-full max-w-[400px];
   }
   .dialog__body {
     @apply flex flex-col gap-space-16 items-stretch text-center w-full text-neutrals-black;
