@@ -6,10 +6,12 @@
   "exports": {
     ".": "./preset.js",
     "./preset": "./preset.js",
-    "./fonts.css": "./fonts.css"
+    "./fonts.css": "./fonts.css",
+    "./input.css": "./input.css"
   },
   "files": [
     "preset.js",
+    "input.css",
     "fonts.css",
     "fonts"
   ],
