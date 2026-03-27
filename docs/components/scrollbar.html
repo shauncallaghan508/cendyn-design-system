@@ -65,7 +65,7 @@
         <a href="https://www.figma.com/design/hYuyPfbCcHwS3KN4CdFmDd/Cendyn-Product-Design-System?node-id=13789-64424&amp;m=dev" class="text-primary hover:underline" target="_blank" rel="noreferrer">13789-64424</a>
       </p>
       <p class="text-neutrals-gray-600 mb-8 max-w-3xl">
-        Scrollbars are styled globally in <code class="text-xs bg-neutrals-gray-100 px-1 rounded">@layer base</code> in <code class="text-xs bg-neutrals-gray-100 px-1 rounded">docs/input.css</code> (compiled into <code class="text-xs bg-neutrals-gray-100 px-1 rounded">docs.css</code>). Any element that scrolls—page, side panels, lists, tables—uses the same thumb and track treatment. Add <code class="text-xs bg-neutrals-gray-100 px-1 rounded">overflow-y-auto</code> or <code class="text-xs bg-neutrals-gray-100 px-1 rounded">overflow-x-auto</code> on the scroll container; no extra utility class is required.
+        Scrollbars are styled globally in <code class="text-xs bg-neutrals-gray-100 px-1 rounded">@layer base</code> in <code class="text-xs bg-neutrals-gray-100 px-1 rounded">input.css</code> (compiled into <code class="text-xs bg-neutrals-gray-100 px-1 rounded">docs.css</code>). Any element that scrolls—page, side panels, lists, tables—uses the same thumb and track treatment. Add <code class="text-xs bg-neutrals-gray-100 px-1 rounded">overflow-y-auto</code> or <code class="text-xs bg-neutrals-gray-100 px-1 rounded">overflow-x-auto</code> on the scroll container; no extra utility class is required.
       </p>
 
       <section class="mb-10">
@@ -102,7 +102,7 @@
 
       <section class="mb-10">
         <h2 class="text-heading-2 text-neutrals-gray-900 mb-3">Implementation</h2>
-        <p class="text-paragraph-1 text-neutrals-gray-600 mb-4 max-w-3xl">Rules target <code class="text-xs bg-neutrals-gray-100 px-1 rounded">*</code> so scrollbars are consistent everywhere. To ship the same behavior in an app that consumes this repo, include the compiled CSS or copy the scrollbar block from <code class="text-xs bg-neutrals-gray-100 px-1 rounded">docs/input.css</code> into your global styles.</p>
+        <p class="text-paragraph-1 text-neutrals-gray-600 mb-4 max-w-3xl">Rules target <code class="text-xs bg-neutrals-gray-100 px-1 rounded">*</code> so scrollbars are consistent everywhere. To ship the same behavior in an app that consumes this repo, include the compiled CSS or copy the scrollbar block from <code class="text-xs bg-neutrals-gray-100 px-1 rounded">input.css</code> into your global styles.</p>
         <pre class="text-xs bg-neutrals-gray-900 text-neutrals-gray-100 p-4 rounded-lg overflow-x-auto max-w-3xl"><code>&lt;!-- Scroll container only: styling is global --&gt;
 &lt;div class="max-h-60 overflow-y-auto"&gt;
   ...scrollable content...

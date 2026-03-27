@@ -1,12 +1,14 @@
 /**
- * Font faces for docs (paths relative to output: docs/css/docs.css → ../../fonts/)
+ * Cendyn Design System — font faces
+ * Import this once in your app (e.g. in your main CSS or JS entry) so fonts
+ * load when using the preset. Font files live in the package "fonts" folder.
  */
 
 @font-face {
   font-family: "Cerebri Sans";
 
-  src: url("../../fonts/cerebrisans-book.woff") format("woff"),
-       url("../../fonts/cerebrisans-regular.woff") format("woff");
+  src: url("./fonts/cerebrisans-book.woff") format("woff"),
+       url("./fonts/cerebrisans-regular.woff") format("woff");
 
   font-weight: 400;
 
@@ -18,7 +20,7 @@
 @font-face {
   font-family: "Cerebri Sans";
 
-  src: url("../../fonts/cerebrisans-medium.woff") format("woff");
+  src: url("./fonts/cerebrisans-medium.woff") format("woff");
 
   font-weight: 500;
 
@@ -30,7 +32,7 @@
 @font-face {
   font-family: "Cerebri Sans";
 
-  src: url("../../fonts/cerebrisans-semibold.woff") format("woff");
+  src: url("./fonts/cerebrisans-semibold.woff") format("woff");
 
   font-weight: 600;
 
@@ -42,7 +44,7 @@
 @font-face {
   font-family: "Cerebri Sans";
 
-  src: url("../../fonts/cerebrisans-bold.woff") format("woff");
+  src: url("./fonts/cerebrisans-bold.woff") format("woff");
 
   font-weight: 700;
 

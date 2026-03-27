@@ -22,8 +22,8 @@
     "tailwindcss": "^3.4.0"
   },
   "scripts": {
-    "build:docs": "npx tailwindcss -i docs/input.css -o docs/css/docs.css",
-    "build:docs:watch": "npx tailwindcss -i docs/input.css -o docs/css/docs.css --watch"
+    "build:docs": "npx tailwindcss -i input.css -o docs/css/docs.css",
+    "build:docs:watch": "npx tailwindcss -i input.css -o docs/css/docs.css --watch"
   },
   "keywords": [
     "tailwind",
