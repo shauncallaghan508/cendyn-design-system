@@ -147,15 +147,6 @@
           <li>Put <code class="text-xs bg-neutrals-gray-100 px-1 rounded">active</code> on the current <code class="text-xs bg-neutrals-gray-100 px-1 rounded">li</code>; add <code class="text-xs bg-neutrals-gray-100 px-1 rounded">wizard-nav__step--completed</code> on finished steps. Connectors are <code class="text-xs bg-neutrals-gray-100 px-1 rounded">li:not(:last-child)::after</code> — primary when the <code class="text-xs bg-neutrals-gray-100 px-1 rounded">li</code> is <code class="text-xs bg-neutrals-gray-100 px-1 rounded">--completed</code>, gray otherwise.</li>
           <li>Optional <code class="text-xs bg-neutrals-gray-100 px-1 rounded">wizard-nav--scroll</code> on the list for <code class="text-xs bg-neutrals-gray-100 px-1 rounded">min-w-[480px]</code> in tight layouts. App shell may use <code class="text-xs bg-neutrals-gray-100 px-1 rounded">hidden md:flex</code> (or similar) on the list to mirror Bootstrap <code class="text-xs bg-neutrals-gray-100 px-1 rounded">d-none d-md-flex</code>.</li>
         </ul>
-        <pre class="text-xs bg-neutrals-gray-900 text-neutrals-gray-100 p-4 rounded-lg overflow-x-auto max-w-3xl mt-4"><code>&lt;ul class="wizard-nav" role="tablist" aria-label="Wizard steps"&gt;
-  &lt;li class="wizard-nav__step wizard-nav__step--completed" role="presentation"&gt;
-    &lt;a href="…" class="wizard-nav__icon" role="tab" aria-selected="false" tabindex="-1"&gt;
-      &lt;svg class="wizard-nav__check" …&gt;…&lt;/svg&gt;
-    &lt;/a&gt;
-    &lt;h6 class="wizard-nav__title"&gt;Settings&lt;/h6&gt;
-  &lt;/li&gt;
-  &lt;li class="wizard-nav__step active" role="presentation"&gt;…&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
       </section>
     </main>
   </div>
