@@ -1,7 +1,7 @@
 /**
  * Cendyn Product Design System — Tailwind preset
  * Theme tokens synced from Figma (Cendyn-Product-Design-System).
- * Usage: presets: [require('@cendyn/design-system')] in tailwind.config.js
+ * Usage: presets: [require('cendyn-design-system')] in tailwind.config.js
  */
 module.exports = {
   theme: {

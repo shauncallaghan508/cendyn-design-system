@@ -6,7 +6,7 @@ Tailwind CSS preset (design tokens), Cerebri Sans font assets, and a shared `inp
 
 ### 1. Add the package and Tailwind
 
-Install this repo with npm (package name **`@cendyn/design-system`**) and the Tailwind v3 toolchain:
+Install this repo with npm (package name **`cendyn-design-system`**) and the Tailwind v3 toolchain:
 
 ```bash
 npm install github:shauncallaghan508/cendyn-design-system#master
@@ -27,7 +27,7 @@ npm install -D tailwindcss@3 postcss autoprefixer
 **Monorepo / local checkout:** point `package.json` at a folder:
 
 ```json
-"@cendyn/design-system": "file:../cendyn-design-system"
+"cendyn-design-system": "file:../cendyn-design-system"
 ```
 
 Then `npm install`.
@@ -42,16 +42,15 @@ If you see **`could not determine executable to run`**, you have Tailwind v4 sel
 
 ### 3. Wire up the preset
 
-In **`tailwind.config.js`**:
+Replace **`tailwind.config.js`** with this (copy all of it). The package already ships the preset tokens and component CSS; **`content` is only for your app** — the files where you write Tailwind classes (including classes from this design system like `btn-solid-primary`). The default below matches a typical `index.html` + `src/` app. Add more glob strings if your templates live elsewhere.
 
 ```js
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  presets: [require('@cendyn/design-system')],
+  presets: [require('cendyn-design-system')],
   content: ['./index.html', './src/**/*.{html,js,jsx,ts,tsx}'],
 };
 ```
-
-Expand `content` so every file that uses utility classes is included.
 
 ### 4. CSS entry
 
@@ -60,13 +59,13 @@ Expand `content` so every file that uses utility classes is included.
 Use a single import in your main CSS file processed by Tailwind:
 
 ```css
-@import "@cendyn/design-system/input.css";
+@import "cendyn-design-system/input.css";
 ```
 
 **Minimal — tokens and fonts only** (you build your own components):
 
 ```css
-@import "@cendyn/design-system/fonts.css";
+@import "cendyn-design-system/fonts.css";
 
 @tailwind base;
 @tailwind components;

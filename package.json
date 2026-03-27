@@ -1,5 +1,5 @@
 {
-  "name": "@cendyn/design-system",
+  "name": "cendyn-design-system",
   "version": "1.0.0",
   "description": "Cendyn Tailwind design system preset — theme tokens for use across products",
   "main": "preset.js",
